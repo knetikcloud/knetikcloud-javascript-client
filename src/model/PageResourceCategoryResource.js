@@ -37,7 +37,7 @@
   /**
    * The PageResourceCategoryResource model module.
    * @module model/PageResourceCategoryResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The PageResourcePermissionResource model module.
    * @module model/PageResourcePermissionResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

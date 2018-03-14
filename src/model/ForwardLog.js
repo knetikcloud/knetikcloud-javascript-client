@@ -37,7 +37,7 @@
   /**
    * The ForwardLog model module.
    * @module model/ForwardLog
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -47,6 +47,12 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
+
+
 
 
 
@@ -76,11 +82,20 @@
       if (data.hasOwnProperty('error_msg')) {
         obj['error_msg'] = ApiClient.convertToType(data['error_msg'], 'String');
       }
+      if (data.hasOwnProperty('event_id')) {
+        obj['event_id'] = ApiClient.convertToType(data['event_id'], 'String');
+      }
+      if (data.hasOwnProperty('headers')) {
+        obj['headers'] = ApiClient.convertToType(data['headers'], 'String');
+      }
       if (data.hasOwnProperty('http_status_code')) {
         obj['http_status_code'] = ApiClient.convertToType(data['http_status_code'], 'Number');
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('method')) {
+        obj['method'] = ApiClient.convertToType(data['method'], 'String');
       }
       if (data.hasOwnProperty('payload')) {
         obj['payload'] = ApiClient.convertToType(data['payload'], Object);
@@ -91,8 +106,17 @@
       if (data.hasOwnProperty('retry_count')) {
         obj['retry_count'] = ApiClient.convertToType(data['retry_count'], 'Number');
       }
+      if (data.hasOwnProperty('retryable')) {
+        obj['retryable'] = ApiClient.convertToType(data['retryable'], 'Boolean');
+      }
+      if (data.hasOwnProperty('rule_id')) {
+        obj['rule_id'] = ApiClient.convertToType(data['rule_id'], 'String');
+      }
       if (data.hasOwnProperty('start_date')) {
         obj['start_date'] = ApiClient.convertToType(data['start_date'], 'Number');
+      }
+      if (data.hasOwnProperty('success')) {
+        obj['success'] = ApiClient.convertToType(data['success'], 'Boolean');
       }
       if (data.hasOwnProperty('url')) {
         obj['url'] = ApiClient.convertToType(data['url'], 'String');
@@ -125,6 +149,14 @@
    */
   exports.prototype['error_msg'] = undefined;
   /**
+   * @member {String} event_id
+   */
+  exports.prototype['event_id'] = undefined;
+  /**
+   * @member {String} headers
+   */
+  exports.prototype['headers'] = undefined;
+  /**
    * The http status code the forward log entry
    * @member {Number} http_status_code
    */
@@ -134,6 +166,10 @@
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
+  /**
+   * @member {String} method
+   */
+  exports.prototype['method'] = undefined;
   /**
    * The payload of the forward log entry
    * @member {Object} payload
@@ -150,10 +186,22 @@
    */
   exports.prototype['retry_count'] = undefined;
   /**
+   * @member {Boolean} retryable
+   */
+  exports.prototype['retryable'] = undefined;
+  /**
+   * @member {String} rule_id
+   */
+  exports.prototype['rule_id'] = undefined;
+  /**
    * The start date of the forward log entry
    * @member {Number} start_date
    */
   exports.prototype['start_date'] = undefined;
+  /**
+   * @member {Boolean} success
+   */
+  exports.prototype['success'] = undefined;
   /**
    * The endpoint url of the forward log entry
    * @member {String} url

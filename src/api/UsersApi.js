@@ -34,7 +34,7 @@
   /**
    * Users service.
    * @module api/UsersApi
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -257,7 +257,7 @@
       var returnType = PageResourceChatMessageResource;
 
       return this.apiClient.callApi(
-        '/users/users/{recipient_id}/messages', 'GET',
+        '/users/{recipient_id}/messages', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );

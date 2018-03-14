@@ -37,7 +37,7 @@
   /**
    * The PageResourceOauthAccessTokenResource model module.
    * @module model/PageResourceOauthAccessTokenResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

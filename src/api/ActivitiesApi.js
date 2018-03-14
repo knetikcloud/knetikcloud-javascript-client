@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ActivityOccurrenceCreationFailure', 'model/ActivityOccurrenceJoinResult', 'model/ActivityOccurrenceResource', 'model/ActivityOccurrenceResults', 'model/ActivityOccurrenceResultsResource', 'model/ActivityOccurrenceSettingsResource', 'model/ActivityResource', 'model/ActivityUserResource', 'model/CreateActivityOccurrenceRequest', 'model/IntWrapper', 'model/PageResourceActivityOccurrenceResource', 'model/PageResourceBareActivityResource', 'model/PageResourceTemplateResource', 'model/Result', 'model/TemplateResource', 'model/ValueWrapperstring'], factory);
+    define(['ApiClient', 'model/ActivityOccurrenceCreationFailure', 'model/ActivityOccurrenceJoinResult', 'model/ActivityOccurrenceResource', 'model/ActivityOccurrenceResults', 'model/ActivityOccurrenceResultsResource', 'model/ActivityOccurrenceSettingsResource', 'model/ActivityOccurrenceStatusWrapper', 'model/ActivityResource', 'model/ActivityUserResource', 'model/ActivityUserStatusWrapper', 'model/CreateActivityOccurrenceRequest', 'model/IntWrapper', 'model/PageResourceActivityOccurrenceResource', 'model/PageResourceBareActivityResource', 'model/PageResourceTemplateResource', 'model/Result', 'model/TemplateResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ActivityOccurrenceCreationFailure'), require('../model/ActivityOccurrenceJoinResult'), require('../model/ActivityOccurrenceResource'), require('../model/ActivityOccurrenceResults'), require('../model/ActivityOccurrenceResultsResource'), require('../model/ActivityOccurrenceSettingsResource'), require('../model/ActivityResource'), require('../model/ActivityUserResource'), require('../model/CreateActivityOccurrenceRequest'), require('../model/IntWrapper'), require('../model/PageResourceActivityOccurrenceResource'), require('../model/PageResourceBareActivityResource'), require('../model/PageResourceTemplateResource'), require('../model/Result'), require('../model/TemplateResource'), require('../model/ValueWrapperstring'));
+    module.exports = factory(require('../ApiClient'), require('../model/ActivityOccurrenceCreationFailure'), require('../model/ActivityOccurrenceJoinResult'), require('../model/ActivityOccurrenceResource'), require('../model/ActivityOccurrenceResults'), require('../model/ActivityOccurrenceResultsResource'), require('../model/ActivityOccurrenceSettingsResource'), require('../model/ActivityOccurrenceStatusWrapper'), require('../model/ActivityResource'), require('../model/ActivityUserResource'), require('../model/ActivityUserStatusWrapper'), require('../model/CreateActivityOccurrenceRequest'), require('../model/IntWrapper'), require('../model/PageResourceActivityOccurrenceResource'), require('../model/PageResourceBareActivityResource'), require('../model/PageResourceTemplateResource'), require('../model/Result'), require('../model/TemplateResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ActivitiesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityOccurrenceCreationFailure, root.KnetikCloud.ActivityOccurrenceJoinResult, root.KnetikCloud.ActivityOccurrenceResource, root.KnetikCloud.ActivityOccurrenceResults, root.KnetikCloud.ActivityOccurrenceResultsResource, root.KnetikCloud.ActivityOccurrenceSettingsResource, root.KnetikCloud.ActivityResource, root.KnetikCloud.ActivityUserResource, root.KnetikCloud.CreateActivityOccurrenceRequest, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceActivityOccurrenceResource, root.KnetikCloud.PageResourceBareActivityResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource, root.KnetikCloud.ValueWrapperstring);
+    root.KnetikCloud.ActivitiesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityOccurrenceCreationFailure, root.KnetikCloud.ActivityOccurrenceJoinResult, root.KnetikCloud.ActivityOccurrenceResource, root.KnetikCloud.ActivityOccurrenceResults, root.KnetikCloud.ActivityOccurrenceResultsResource, root.KnetikCloud.ActivityOccurrenceSettingsResource, root.KnetikCloud.ActivityOccurrenceStatusWrapper, root.KnetikCloud.ActivityResource, root.KnetikCloud.ActivityUserResource, root.KnetikCloud.ActivityUserStatusWrapper, root.KnetikCloud.CreateActivityOccurrenceRequest, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceActivityOccurrenceResource, root.KnetikCloud.PageResourceBareActivityResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource);
   }
-}(this, function(ApiClient, ActivityOccurrenceCreationFailure, ActivityOccurrenceJoinResult, ActivityOccurrenceResource, ActivityOccurrenceResults, ActivityOccurrenceResultsResource, ActivityOccurrenceSettingsResource, ActivityResource, ActivityUserResource, CreateActivityOccurrenceRequest, IntWrapper, PageResourceActivityOccurrenceResource, PageResourceBareActivityResource, PageResourceTemplateResource, Result, TemplateResource, ValueWrapperstring) {
+}(this, function(ApiClient, ActivityOccurrenceCreationFailure, ActivityOccurrenceJoinResult, ActivityOccurrenceResource, ActivityOccurrenceResults, ActivityOccurrenceResultsResource, ActivityOccurrenceSettingsResource, ActivityOccurrenceStatusWrapper, ActivityResource, ActivityUserResource, ActivityUserStatusWrapper, CreateActivityOccurrenceRequest, IntWrapper, PageResourceActivityOccurrenceResource, PageResourceBareActivityResource, PageResourceTemplateResource, Result, TemplateResource) {
   'use strict';
 
   /**
    * Activities service.
    * @module api/ActivitiesApi
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -499,7 +499,7 @@
 
     /**
      * Load a single activity occurrence details
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ActivityOccurrenceResource} and HTTP response
      */
@@ -538,7 +538,7 @@
 
     /**
      * Load a single activity occurrence details
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ActivityOccurrenceResource}
      */
@@ -662,7 +662,7 @@
 
     /**
      * List activity occurrences
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterActivity Filter for occurrences of the given activity ID
      * @param {String} opts.filterStatus Filter for occurrences in the given status
@@ -710,7 +710,7 @@
 
     /**
      * List activity occurrences
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterActivity Filter for occurrences of the given activity ID
      * @param {String} opts.filterStatus Filter for occurrences in the given status
@@ -799,7 +799,7 @@
 
     /**
      * Sets the status of an activity occurrence to FINISHED and logs metrics
-     * In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+     * In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityOccurrenceResultsResource} opts.activityOccurrenceResults The activity occurrence object
@@ -841,7 +841,7 @@
 
     /**
      * Sets the status of an activity occurrence to FINISHED and logs metrics
-     * In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+     * In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityOccurrenceResultsResource} opts.activityOccurrenceResults The activity occurrence object
@@ -857,6 +857,7 @@
 
     /**
      * Sets the settings of an activity occurrence
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityOccurrenceSettingsResource} opts.settings The new settings
@@ -898,6 +899,7 @@
 
     /**
      * Sets the settings of an activity occurrence
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityOccurrenceSettingsResource} opts.settings The new settings
@@ -916,7 +918,7 @@
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {String} userId The id of the user
      * @param {Object} opts Optional parameters
-     * @param {String} opts.status The new status
+     * @param {module:model/ActivityUserStatusWrapper} opts.status The new status
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ActivityUserResource} and HTTP response
      */
     this.setUserStatusWithHttpInfo = function(activityOccurrenceId, userId, opts) {
@@ -964,7 +966,7 @@
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {String} userId The id of the user
      * @param {Object} opts Optional parameters
-     * @param {String} opts.status The new status
+     * @param {module:model/ActivityUserStatusWrapper} opts.status The new status
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ActivityUserResource}
      */
     this.setUserStatus = function(activityOccurrenceId, userId, opts) {
@@ -1035,10 +1037,10 @@
 
     /**
      * Update the status of an activity occurrence
-     * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+     * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
-     * @param {module:model/ValueWrapperstring} opts.activityOccurrenceStatus The activity occurrence status object
+     * @param {module:model/ActivityOccurrenceStatusWrapper} opts.activityOccurrenceStatus The activity occurrence status object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.updateActivityOccurrenceStatusWithHttpInfo = function(activityOccurrenceId, opts) {
@@ -1077,10 +1079,10 @@
 
     /**
      * Update the status of an activity occurrence
-     * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+     * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
-     * @param {module:model/ValueWrapperstring} opts.activityOccurrenceStatus The activity occurrence status object
+     * @param {module:model/ActivityOccurrenceStatusWrapper} opts.activityOccurrenceStatus The activity occurrence status object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.updateActivityOccurrenceStatus = function(activityOccurrenceId, opts) {

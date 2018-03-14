@@ -37,7 +37,7 @@
   /**
    * The PageResourceRewardSetResource model module.
    * @module model/PageResourceRewardSetResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The UserActivityResultsResource model module.
    * @module model/UserActivityResultsResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The WalletAlterRequest model module.
    * @module model/WalletAlterRequest
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

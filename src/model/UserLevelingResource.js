@@ -37,7 +37,7 @@
   /**
    * The UserLevelingResource model module.
    * @module model/UserLevelingResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

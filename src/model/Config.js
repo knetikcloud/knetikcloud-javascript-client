@@ -37,7 +37,7 @@
   /**
    * The Config model module.
    * @module model/Config
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/NotificationResource', 'model/NotificationTypeResource', 'model/NotificationUserTypeResource', 'model/PageResourceNotificationTypeResource', 'model/PageResourceNotificationUserTypeResource', 'model/PageResourceUserNotificationResource', 'model/Result', 'model/ValueWrapperboolean', 'model/ValueWrapperstring'], factory);
+    define(['ApiClient', 'model/NotificationResource', 'model/NotificationTypeResource', 'model/NotificationUserTypeResource', 'model/PageResourceNotificationTypeResource', 'model/PageResourceNotificationUserTypeResource', 'model/PageResourceUserNotificationResource', 'model/Result', 'model/UserNotificationStatusWrapper', 'model/ValueWrapperboolean'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/NotificationResource'), require('../model/NotificationTypeResource'), require('../model/NotificationUserTypeResource'), require('../model/PageResourceNotificationTypeResource'), require('../model/PageResourceNotificationUserTypeResource'), require('../model/PageResourceUserNotificationResource'), require('../model/Result'), require('../model/ValueWrapperboolean'), require('../model/ValueWrapperstring'));
+    module.exports = factory(require('../ApiClient'), require('../model/NotificationResource'), require('../model/NotificationTypeResource'), require('../model/NotificationUserTypeResource'), require('../model/PageResourceNotificationTypeResource'), require('../model/PageResourceNotificationUserTypeResource'), require('../model/PageResourceUserNotificationResource'), require('../model/Result'), require('../model/UserNotificationStatusWrapper'), require('../model/ValueWrapperboolean'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.NotificationsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.NotificationResource, root.KnetikCloud.NotificationTypeResource, root.KnetikCloud.NotificationUserTypeResource, root.KnetikCloud.PageResourceNotificationTypeResource, root.KnetikCloud.PageResourceNotificationUserTypeResource, root.KnetikCloud.PageResourceUserNotificationResource, root.KnetikCloud.Result, root.KnetikCloud.ValueWrapperboolean, root.KnetikCloud.ValueWrapperstring);
+    root.KnetikCloud.NotificationsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.NotificationResource, root.KnetikCloud.NotificationTypeResource, root.KnetikCloud.NotificationUserTypeResource, root.KnetikCloud.PageResourceNotificationTypeResource, root.KnetikCloud.PageResourceNotificationUserTypeResource, root.KnetikCloud.PageResourceUserNotificationResource, root.KnetikCloud.Result, root.KnetikCloud.UserNotificationStatusWrapper, root.KnetikCloud.ValueWrapperboolean);
   }
-}(this, function(ApiClient, NotificationResource, NotificationTypeResource, NotificationUserTypeResource, PageResourceNotificationTypeResource, PageResourceNotificationUserTypeResource, PageResourceUserNotificationResource, Result, ValueWrapperboolean, ValueWrapperstring) {
+}(this, function(ApiClient, NotificationResource, NotificationTypeResource, NotificationUserTypeResource, PageResourceNotificationTypeResource, PageResourceNotificationUserTypeResource, PageResourceUserNotificationResource, Result, UserNotificationStatusWrapper, ValueWrapperboolean) {
   'use strict';
 
   /**
    * Notifications service.
    * @module api/NotificationsApi
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a notification type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/NotificationTypeResource} opts.notificationType notificationType
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NotificationTypeResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a notification type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/NotificationTypeResource} opts.notificationType notificationType
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NotificationTypeResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a notification type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -137,6 +140,7 @@
 
     /**
      * Delete a notification type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -150,6 +154,7 @@
 
     /**
      * Get a single notification type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NotificationTypeResource} and HTTP response
      */
@@ -188,6 +193,7 @@
 
     /**
      * Get a single notification type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NotificationTypeResource}
      */
@@ -201,7 +207,7 @@
 
     /**
      * List and search notification types
-     * Get a list of notification type with optional filtering
+     * Get a list of notification type with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -241,7 +247,7 @@
 
     /**
      * List and search notification types
-     * Get a list of notification type with optional filtering
+     * Get a list of notification type with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -258,6 +264,7 @@
 
     /**
      * View a user&#39;s notification settings for a type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} typeId The id of the topic
      * @param {String} userId The id of the subscriber or &#39;me&#39;
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NotificationUserTypeResource} and HTTP response
@@ -303,6 +310,7 @@
 
     /**
      * View a user&#39;s notification settings for a type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} typeId The id of the topic
      * @param {String} userId The id of the subscriber or &#39;me&#39;
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NotificationUserTypeResource}
@@ -317,6 +325,7 @@
 
     /**
      * View a user&#39;s notification settings
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} userId The id of the subscriber or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -363,6 +372,7 @@
 
     /**
      * View a user&#39;s notification settings
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} userId The id of the subscriber or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -380,6 +390,7 @@
 
     /**
      * Get notifications
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} id The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.filterStatus filter for notifications with a given status
@@ -428,6 +439,7 @@
 
     /**
      * Get notifications
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} id The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.filterStatus filter for notifications with a given status
@@ -446,6 +458,7 @@
 
     /**
      * Send a notification
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/NotificationResource} opts.notification notification
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NotificationResource} and HTTP response
@@ -480,6 +493,7 @@
 
     /**
      * Send a notification
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/NotificationResource} opts.notification notification
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NotificationResource}
@@ -494,10 +508,11 @@
 
     /**
      * Set notification status
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {String} notificationId The id of the notification
      * @param {Object} opts Optional parameters
-     * @param {module:model/ValueWrapperstring} opts.notification status
+     * @param {module:model/UserNotificationStatusWrapper} opts.notification status
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.setUserNotificationStatusWithHttpInfo = function(userId, notificationId, opts) {
@@ -542,10 +557,11 @@
 
     /**
      * Set notification status
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {String} notificationId The id of the notification
      * @param {Object} opts Optional parameters
-     * @param {module:model/ValueWrapperstring} opts.notification status
+     * @param {module:model/UserNotificationStatusWrapper} opts.notification status
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.setUserNotificationStatus = function(userId, notificationId, opts) {
@@ -558,7 +574,7 @@
 
     /**
      * Enable or disable direct notifications for a user
-     * Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+     * Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} typeId The id of the topic
      * @param {String} userId The id of the subscriber or &#39;me&#39;
      * @param {module:model/ValueWrapperboolean} silenced silenced
@@ -610,7 +626,7 @@
 
     /**
      * Enable or disable direct notifications for a user
-     * Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+     * Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
      * @param {String} typeId The id of the topic
      * @param {String} userId The id of the subscriber or &#39;me&#39;
      * @param {module:model/ValueWrapperboolean} silenced silenced
@@ -626,6 +642,7 @@
 
     /**
      * Update a notificationType
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {String} id id
      * @param {Object} opts Optional parameters
      * @param {module:model/NotificationTypeResource} opts.notificationType notificationType
@@ -667,6 +684,7 @@
 
     /**
      * Update a notificationType
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
      * @param {String} id id
      * @param {Object} opts Optional parameters
      * @param {module:model/NotificationTypeResource} opts.notificationType notificationType

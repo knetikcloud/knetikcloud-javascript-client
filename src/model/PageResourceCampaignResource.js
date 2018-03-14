@@ -37,7 +37,7 @@
   /**
    * The PageResourceCampaignResource model module.
    * @module model/PageResourceCampaignResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

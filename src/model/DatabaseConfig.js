@@ -37,7 +37,7 @@
   /**
    * The DatabaseConfig model module.
    * @module model/DatabaseConfig
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

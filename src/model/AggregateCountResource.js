@@ -37,7 +37,7 @@
   /**
    * The AggregateCountResource model module.
    * @module model/AggregateCountResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

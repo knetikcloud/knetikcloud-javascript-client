@@ -37,7 +37,7 @@
   /**
    * The InvoiceLogEntry model module.
    * @module model/InvoiceLogEntry
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The WebsocketSubscribeEvent model module.
    * @module model/WebsocketSubscribeEvent
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

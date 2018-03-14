@@ -37,7 +37,7 @@
   /**
    * The PageResourceUserAchievementGroupResource model module.
    * @module model/PageResourceUserAchievementGroupResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

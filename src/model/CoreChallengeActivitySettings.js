@@ -37,7 +37,7 @@
   /**
    * The CoreChallengeActivitySettings model module.
    * @module model/CoreChallengeActivitySettings
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

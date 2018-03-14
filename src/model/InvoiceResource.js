@@ -37,7 +37,7 @@
   /**
    * The InvoiceResource model module.
    * @module model/InvoiceResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

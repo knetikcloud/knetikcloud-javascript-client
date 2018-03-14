@@ -37,7 +37,7 @@
   /**
    * The LevelingResource model module.
    * @module model/LevelingResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

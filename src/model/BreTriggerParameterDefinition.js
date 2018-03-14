@@ -37,7 +37,7 @@
   /**
    * The BreTriggerParameterDefinition model module.
    * @module model/BreTriggerParameterDefinition
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

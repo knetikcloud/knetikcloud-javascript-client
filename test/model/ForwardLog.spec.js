@@ -69,6 +69,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eventId (base name: "event_id")', function() {
+      // uncomment below and update the code to test the property eventId
+      //var instane = new KnetikCloud.ForwardLog();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property headers (base name: "headers")', function() {
+      // uncomment below and update the code to test the property headers
+      //var instane = new KnetikCloud.ForwardLog();
+      //expect(instance).to.be();
+    });
+
     it('should have the property httpStatusCode (base name: "http_status_code")', function() {
       // uncomment below and update the code to test the property httpStatusCode
       //var instane = new KnetikCloud.ForwardLog();
@@ -77,6 +89,12 @@
 
     it('should have the property id (base name: "id")', function() {
       // uncomment below and update the code to test the property id
+      //var instane = new KnetikCloud.ForwardLog();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property method (base name: "method")', function() {
+      // uncomment below and update the code to test the property method
       //var instane = new KnetikCloud.ForwardLog();
       //expect(instance).to.be();
     });
@@ -99,8 +117,26 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property retryable (base name: "retryable")', function() {
+      // uncomment below and update the code to test the property retryable
+      //var instane = new KnetikCloud.ForwardLog();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property ruleId (base name: "rule_id")', function() {
+      // uncomment below and update the code to test the property ruleId
+      //var instane = new KnetikCloud.ForwardLog();
+      //expect(instance).to.be();
+    });
+
     it('should have the property startDate (base name: "start_date")', function() {
       // uncomment below and update the code to test the property startDate
+      //var instane = new KnetikCloud.ForwardLog();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property success (base name: "success")', function() {
+      // uncomment below and update the code to test the property success
       //var instane = new KnetikCloud.ForwardLog();
       //expect(instance).to.be();
     });

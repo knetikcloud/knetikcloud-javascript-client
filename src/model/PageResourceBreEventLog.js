@@ -37,7 +37,7 @@
   /**
    * The PageResourceBreEventLog model module.
    * @module model/PageResourceBreEventLog
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

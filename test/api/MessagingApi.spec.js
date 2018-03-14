@@ -101,10 +101,10 @@
         done();
       });
     });
-    describe('sendMessage1', function() {
-      it('should call sendMessage1 successfully', function(done) {
-        //uncomment below and update the code to test sendMessage1
-        //instance.sendMessage1(function(error) {
+    describe('sendMessage', function() {
+      it('should call sendMessage successfully', function(done) {
+        //uncomment below and update the code to test sendMessage
+        //instance.sendMessage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

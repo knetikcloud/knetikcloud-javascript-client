@@ -34,7 +34,7 @@
   /**
    * Chat service.
    * @module api/ChatApi
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -705,7 +705,7 @@
      * @param {module:model/ChatMessageResource} opts.chatMessageResource The chat message resource
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ChatMessageResource} and HTTP response
      */
-    this.sendMessageWithHttpInfo = function(opts) {
+    this.sendChatMessageWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['chatMessageResource'];
 
@@ -740,8 +740,8 @@
      * @param {module:model/ChatMessageResource} opts.chatMessageResource The chat message resource
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ChatMessageResource}
      */
-    this.sendMessage = function(opts) {
-      return this.sendMessageWithHttpInfo(opts)
+    this.sendChatMessage = function(opts) {
+      return this.sendChatMessageWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -37,7 +37,7 @@
   /**
    * The MetricResource model module.
    * @module model/MetricResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -103,7 +103,7 @@
    */
   exports.prototype['activity_occurence_id'] = undefined;
   /**
-   * Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 5 tags and 50 characters each
+   * Any tags for the metric. Each unique tag will translate into a unique leaderboard. Maximum 10 tags and 50 characters each
    * @member {Array.<String>} tags
    */
   exports.prototype['tags'] = undefined;

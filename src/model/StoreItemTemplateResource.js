@@ -37,7 +37,7 @@
   /**
    * The StoreItemTemplateResource model module.
    * @module model/StoreItemTemplateResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

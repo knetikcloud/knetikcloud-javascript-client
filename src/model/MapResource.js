@@ -37,7 +37,7 @@
   /**
    * The MapResource model module.
    * @module model/MapResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

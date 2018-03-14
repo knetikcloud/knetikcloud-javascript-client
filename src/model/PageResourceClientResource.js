@@ -37,7 +37,7 @@
   /**
    * The PageResourceClientResource model module.
    * @module model/PageResourceClientResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

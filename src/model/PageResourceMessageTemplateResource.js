@@ -37,7 +37,7 @@
   /**
    * The PageResourceMessageTemplateResource model module.
    * @module model/PageResourceMessageTemplateResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

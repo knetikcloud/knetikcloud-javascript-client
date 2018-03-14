@@ -1,6 +1,6 @@
 # KnetikCloud.ActivitiesApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 Load a single activity occurrence details
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 
 List activity occurrences
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -760,7 +760,7 @@ null (empty response body)
 
 Sets the status of an activity occurrence to FINISHED and logs metrics
 
-In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
+In addition to user permissions requirements there is security based on the core_settings.results_trust setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -815,6 +815,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResource setActivityOccurrenceSettings(activityOccurrenceId, opts)
 
 Sets the settings of an activity occurrence
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -890,7 +892,7 @@ var activityOccurrenceId = 789; // Number | The id of the activity occurrence
 var userId = "userId_example"; // String | The id of the user
 
 var opts = { 
-  'status': "status_example" // String | The new status
+  'status': new KnetikCloud.ActivityUserStatusWrapper() // ActivityUserStatusWrapper | The new status
 };
 apiInstance.setUserStatus(activityOccurrenceId, userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -906,7 +908,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **Number**| The id of the activity occurrence | 
  **userId** | **String**| The id of the user | 
- **status** | **String**| The new status | [optional] 
+ **status** | [**ActivityUserStatusWrapper**](ActivityUserStatusWrapper.md)| The new status | [optional] 
 
 ### Return type
 
@@ -983,7 +985,7 @@ Name | Type | Description  | Notes
 
 Update the status of an activity occurrence
 
-If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
+If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER and host or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -1003,7 +1005,7 @@ var apiInstance = new KnetikCloud.ActivitiesApi();
 var activityOccurrenceId = 789; // Number | The id of the activity occurrence
 
 var opts = { 
-  'activityOccurrenceStatus': new KnetikCloud.ValueWrapperstring() // ValueWrapperstring | The activity occurrence status object
+  'activityOccurrenceStatus': new KnetikCloud.ActivityOccurrenceStatusWrapper() // ActivityOccurrenceStatusWrapper | The activity occurrence status object
 };
 apiInstance.updateActivityOccurrenceStatus(activityOccurrenceId, opts).then(function() {
   console.log('API called successfully.');
@@ -1018,7 +1020,7 @@ apiInstance.updateActivityOccurrenceStatus(activityOccurrenceId, opts).then(func
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **Number**| The id of the activity occurrence | 
- **activityOccurrenceStatus** | [**ValueWrapperstring**](ValueWrapperstring.md)| The activity occurrence status object | [optional] 
+ **activityOccurrenceStatus** | [**ActivityOccurrenceStatusWrapper**](ActivityOccurrenceStatusWrapper.md)| The activity occurrence status object | [optional] 
 
 ### Return type
 

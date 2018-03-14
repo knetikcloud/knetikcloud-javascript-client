@@ -34,7 +34,7 @@
   /**
    * Fulfillment service.
    * @module api/FulfillmentApi
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -265,7 +265,7 @@
     /**
      * Update a fulfillment type
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
-     * @param {Number} id The id
+     * @param {Number} id The fulfillment id
      * @param {Object} opts Optional parameters
      * @param {module:model/FulfillmentType} opts.fulfillmentType The fulfillment type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -307,7 +307,7 @@
     /**
      * Update a fulfillment type
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; FULFILLMENT_ADMIN
-     * @param {Number} id The id
+     * @param {Number} id The fulfillment id
      * @param {Object} opts Optional parameters
      * @param {module:model/FulfillmentType} opts.fulfillmentType The fulfillment type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

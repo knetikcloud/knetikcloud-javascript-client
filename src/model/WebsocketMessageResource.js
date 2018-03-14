@@ -37,7 +37,7 @@
   /**
    * The WebsocketMessageResource model module.
    * @module model/WebsocketMessageResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

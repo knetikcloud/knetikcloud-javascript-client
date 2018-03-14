@@ -37,7 +37,7 @@
   /**
    * The VideoPropertyDefinitionResource model module.
    * @module model/VideoPropertyDefinitionResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

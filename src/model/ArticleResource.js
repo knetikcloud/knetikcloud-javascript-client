@@ -37,7 +37,7 @@
   /**
    * The ArticleResource model module.
    * @module model/ArticleResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

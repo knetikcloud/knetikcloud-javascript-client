@@ -1,6 +1,6 @@
 # KnetikCloud.ChatApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**getThreadMessages**](ChatApi.md#getThreadMessages) | **GET** /chat/threads/{id}/messages | List messages in a thread
 [**getTopicMessages**](ChatApi.md#getTopicMessages) | **GET** /chat/topics/{id}/messages | List messages in a topic
 [**removeChatBlacklist**](ChatApi.md#removeChatBlacklist) | **DELETE** /chat/users/{id}/blacklist/{blacklisted_user_id} | Remove a user from a blacklist
-[**sendMessage**](ChatApi.md#sendMessage) | **POST** /chat/messages | Send a message
+[**sendChatMessage**](ChatApi.md#sendChatMessage) | **POST** /chat/messages | Send a message
 
 
 <a name="acknowledgeChatMessage"></a>
@@ -633,9 +633,9 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="sendMessage"></a>
-# **sendMessage**
-> ChatMessageResource sendMessage(opts)
+<a name="sendChatMessage"></a>
+# **sendChatMessage**
+> ChatMessageResource sendChatMessage(opts)
 
 Send a message
 
@@ -659,7 +659,7 @@ var apiInstance = new KnetikCloud.ChatApi();
 var opts = { 
   'chatMessageResource': new KnetikCloud.ChatMessageResource() // ChatMessageResource | The chat message resource
 };
-apiInstance.sendMessage(opts).then(function(data) {
+apiInstance.sendChatMessage(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);

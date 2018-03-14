@@ -1,6 +1,6 @@
 # KnetikCloud.FulfillmentApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -248,7 +248,7 @@ oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.FulfillmentApi();
 
-var id = 56; // Number | The id
+var id = 56; // Number | The fulfillment id
 
 var opts = { 
   'fulfillmentType': new KnetikCloud.FulfillmentType() // FulfillmentType | The fulfillment type
@@ -265,7 +265,7 @@ apiInstance.updateFulfillmentType(id, opts).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **Number**| The id | 
+ **id** | **Number**| The fulfillment id | 
  **fulfillmentType** | [**FulfillmentType**](FulfillmentType.md)| The fulfillment type | [optional] 
 
 ### Return type

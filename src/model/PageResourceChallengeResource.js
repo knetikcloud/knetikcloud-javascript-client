@@ -37,7 +37,7 @@
   /**
    * The PageResourceChallengeResource model module.
    * @module model/PageResourceChallengeResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

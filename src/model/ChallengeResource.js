@@ -37,7 +37,7 @@
   /**
    * The ChallengeResource model module.
    * @module model/ChallengeResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

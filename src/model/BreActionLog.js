@@ -37,7 +37,7 @@
   /**
    * The BreActionLog model module.
    * @module model/BreActionLog
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

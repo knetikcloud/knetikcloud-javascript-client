@@ -37,7 +37,7 @@
   /**
    * The PageResourceBreTriggerResource model module.
    * @module model/PageResourceBreTriggerResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

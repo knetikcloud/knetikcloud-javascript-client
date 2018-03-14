@@ -37,7 +37,7 @@
   /**
    * The PropertyFieldListResource model module.
    * @module model/PropertyFieldListResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

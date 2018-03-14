@@ -1,6 +1,6 @@
 # KnetikCloud.NotificationsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,6 +22,8 @@ Method | HTTP request | Description
 > NotificationTypeResource createNotificationType(opts)
 
 Create a notification type
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
 
 ### Example
 ```javascript
@@ -74,6 +76,8 @@ Name | Type | Description  | Notes
 
 Delete a notification type
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -123,6 +127,8 @@ null (empty response body)
 > NotificationTypeResource getNotificationType(id)
 
 Get a single notification type
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
 
 ### Example
 ```javascript
@@ -174,7 +180,7 @@ Name | Type | Description  | Notes
 
 List and search notification types
 
-Get a list of notification type with optional filtering
+Get a list of notification type with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
 
 ### Example
 ```javascript
@@ -231,6 +237,8 @@ Name | Type | Description  | Notes
 
 View a user&#39;s notification settings for a type
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -283,6 +291,8 @@ Name | Type | Description  | Notes
 > PageResourceNotificationUserTypeResource getUserNotificationInfoList(userId, opts)
 
 View a user&#39;s notification settings
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
 
 ### Example
 ```javascript
@@ -341,6 +351,8 @@ Name | Type | Description  | Notes
 > PageResourceUserNotificationResource getUserNotifications(id, opts)
 
 Get notifications
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
 
 ### Example
 ```javascript
@@ -402,6 +414,8 @@ Name | Type | Description  | Notes
 
 Send a notification
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -453,6 +467,8 @@ Name | Type | Description  | Notes
 
 Set notification status
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -473,7 +489,7 @@ var userId = "userId_example"; // String | The id of the user or 'me'
 var notificationId = "notificationId_example"; // String | The id of the notification
 
 var opts = { 
-  'notification': new KnetikCloud.ValueWrapperstring() // ValueWrapperstring | status
+  'notification': new KnetikCloud.UserNotificationStatusWrapper() // UserNotificationStatusWrapper | status
 };
 apiInstance.setUserNotificationStatus(userId, notificationId, opts).then(function() {
   console.log('API called successfully.');
@@ -489,7 +505,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| The id of the user or &#39;me&#39; | 
  **notificationId** | **String**| The id of the notification | 
- **notification** | [**ValueWrapperstring**](ValueWrapperstring.md)| status | [optional] 
+ **notification** | [**UserNotificationStatusWrapper**](UserNotificationStatusWrapper.md)| status | [optional] 
 
 ### Return type
 
@@ -510,7 +526,7 @@ null (empty response body)
 
 Enable or disable direct notifications for a user
 
-Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there.
+Allows enabling or disabling messages for a given notification type when sent direct to the user. Notifications can still be retrieved by endpoint. For notifications broadcased to a topic, see the topic service to disable messages for the user there. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN or self
 
 ### Example
 ```javascript
@@ -567,6 +583,8 @@ null (empty response body)
 > NotificationTypeResource updateNotificationType(id, opts)
 
 Update a notificationType
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; NOTIFICATIONS_ADMIN
 
 ### Example
 ```javascript

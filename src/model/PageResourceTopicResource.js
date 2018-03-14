@@ -37,7 +37,7 @@
   /**
    * The PageResourceTopicResource model module.
    * @module model/PageResourceTopicResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

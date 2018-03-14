@@ -37,7 +37,7 @@
   /**
    * The BreEvent model module.
    * @module model/BreEvent
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The PageResourceItemTemplateResource model module.
    * @module model/PageResourceItemTemplateResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

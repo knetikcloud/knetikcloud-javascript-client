@@ -37,7 +37,7 @@
   /**
    * The PageResourceCountryTaxResource model module.
    * @module model/PageResourceCountryTaxResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

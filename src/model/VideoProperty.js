@@ -37,7 +37,7 @@
   /**
    * The VideoProperty model module.
    * @module model/VideoProperty
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

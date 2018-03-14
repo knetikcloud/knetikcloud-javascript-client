@@ -34,7 +34,7 @@
   /**
    * Messaging service.
    * @module api/MessagingApi
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -151,7 +151,7 @@
 
     /**
      * Delete an existing message template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      * @param {String} id The message_template id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -190,7 +190,7 @@
 
     /**
      * Delete an existing message template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      * @param {String} id The message_template id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -204,7 +204,7 @@
 
     /**
      * Get a single message template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      * @param {String} id The message_template id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MessageTemplateResource} and HTTP response
      */
@@ -243,7 +243,7 @@
 
     /**
      * Get a single message template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      * @param {String} id The message_template id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MessageTemplateResource}
      */
@@ -257,7 +257,7 @@
 
     /**
      * List and search message templates
-     * Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterTagset Filter for message templates with at least one of a specified set of tags (separated by comma)
      * @param {String} opts.filterTagIntersection Filter for message templates with all of a specified set of tags (separated by comma)
@@ -303,7 +303,7 @@
 
     /**
      * List and search message templates
-     * Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * Get a list of message templates with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterTagset Filter for message templates with at least one of a specified set of tags (separated by comma)
      * @param {String} opts.filterTagIntersection Filter for message templates with all of a specified set of tags (separated by comma)
@@ -328,7 +328,7 @@
      * @param {module:model/MessageResource} opts.messageResource The message to be sent
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.sendMessage1WithHttpInfo = function(opts) {
+    this.sendMessageWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['messageResource'];
 
@@ -363,8 +363,8 @@
      * @param {module:model/MessageResource} opts.messageResource The message to be sent
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.sendMessage1 = function(opts) {
-      return this.sendMessage1WithHttpInfo(opts)
+    this.sendMessage = function(opts) {
+      return this.sendMessageWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -723,7 +723,7 @@
 
     /**
      * Update an existing message template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      * @param {String} id The message_template id
      * @param {Object} opts Optional parameters
      * @param {module:model/MessageTemplateResource} opts.messageTemplateResource The message template
@@ -765,7 +765,7 @@
 
     /**
      * Update an existing message template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MESSAGING_ADMIN
      * @param {String} id The message_template id
      * @param {Object} opts Optional parameters
      * @param {module:model/MessageTemplateResource} opts.messageTemplateResource The message template

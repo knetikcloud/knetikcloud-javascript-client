@@ -161,10 +161,10 @@
         done();
       });
     });
-    describe('sendMessage', function() {
-      it('should call sendMessage successfully', function(done) {
-        //uncomment below and update the code to test sendMessage
-        //instance.sendMessage(function(error) {
+    describe('sendChatMessage', function() {
+      it('should call sendChatMessage successfully', function(done) {
+        //uncomment below and update the code to test sendChatMessage
+        //instance.sendChatMessage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

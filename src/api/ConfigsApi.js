@@ -34,7 +34,7 @@
   /**
    * Configs service.
    * @module api/ConfigsApi
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a new config
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Config} opts.config The config object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Config} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a new config
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Config} opts.config The config object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Config}

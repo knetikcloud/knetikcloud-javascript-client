@@ -37,7 +37,7 @@
   /**
    * The PageResourceUserBaseResource model module.
    * @module model/PageResourceUserBaseResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

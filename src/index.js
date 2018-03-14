@@ -17,12 +17,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AchievementDefinitionResource', 'model/ActionContextobject', 'model/ActionResource', 'model/ActionVariableResource', 'model/ActivityEntitlementResource', 'model/ActivityOccurrenceCreationFailure', 'model/ActivityOccurrenceJoinResult', 'model/ActivityOccurrenceResource', 'model/ActivityOccurrenceResults', 'model/ActivityOccurrenceResultsResource', 'model/ActivityOccurrenceSettingsResource', 'model/ActivityResource', 'model/ActivityUserResource', 'model/AddressResource', 'model/AggregateCountResource', 'model/AggregateInvoiceReportResource', 'model/AmazonS3Activity', 'model/AnswerResource', 'model/ApplyPaymentRequest', 'model/ArgumentResource', 'model/ArticleResource', 'model/ArtistResource', 'model/AvailableSettingResource', 'model/BareActivityResource', 'model/BareChallengeActivityResource', 'model/Batch', 'model/BatchRequest', 'model/BatchResult', 'model/BatchReturn', 'model/Behavior', 'model/BehaviorDefinitionResource', 'model/BillingReport', 'model/BooleanResource', 'model/BreActionLog', 'model/BreCategoryResource', 'model/BreEvent', 'model/BreEventLog', 'model/BreGlobalResource', 'model/BreGlobalScopeDefinition', 'model/BreRule', 'model/BreRuleLog', 'model/BreTriggerParameterDefinition', 'model/BreTriggerResource', 'model/BroadcastableEvent', 'model/BundledSku', 'model/CampaignResource', 'model/Cart', 'model/CartItemRequest', 'model/CartLineItem', 'model/CartShippableResponse', 'model/CartShippingAddressRequest', 'model/CartShippingOption', 'model/CartSummary', 'model/CatalogSale', 'model/CategoryResource', 'model/ChallengeActivityResource', 'model/ChallengeEventParticipantResource', 'model/ChallengeEventResource', 'model/ChallengeResource', 'model/ChatBlacklistResource', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/ChatThreadResource', 'model/ChatUserThreadResource', 'model/ClientResource', 'model/CommentResource', 'model/Config', 'model/ConfigLookupResource', 'model/ConstantResource', 'model/ContributionResource', 'model/CoreActivityOccurrenceSettings', 'model/CoreActivitySettings', 'model/CoreChallengeActivitySettings', 'model/Country', 'model/CountryResource', 'model/CountryTaxResource', 'model/CouponDefinition', 'model/CreateActivityOccurrenceRequest', 'model/CreateBillingAgreementRequest', 'model/CreatePayPalPaymentRequest', 'model/CurrencyResource', 'model/CustomerConfig', 'model/DatabaseConfig', 'model/DateOperationResource', 'model/DefaultOperationResource', 'model/DeltaResource', 'model/DeviceResource', 'model/Discount', 'model/DispositionCount', 'model/DispositionResource', 'model/DoubleOperationResource', 'model/EntitlementGrantRequest', 'model/ErrorResource', 'model/EventContextResource', 'model/ExpressionResource', 'model/Expressionobject', 'model/FacebookToken', 'model/FattMerchantPaymentMethod', 'model/FattMerchantPaymentMethodRequest', 'model/FinalizeBillingAgreementRequest', 'model/FinalizePayPalPaymentRequest', 'model/FlagReportResource', 'model/FlagResource', 'model/ForwardLog', 'model/FulfillmentType', 'model/GlobalCheckAndIncrementResource', 'model/GlobalResource', 'model/GooglePaymentRequest', 'model/GoogleToken', 'model/GrantTypeResource', 'model/GroupMemberResource', 'model/GroupResource', 'model/IdRef', 'model/ImportJobOutputResource', 'model/ImportJobResource', 'model/IntWrapper', 'model/IntegerOperationResource', 'model/InventorySubscriptionResource', 'model/InvoiceCreateRequest', 'model/InvoiceItemResource', 'model/InvoiceLogEntry', 'model/InvoicePaymentStatusRequest', 'model/InvoiceResource', 'model/Item', 'model/ItemBehaviorDefinitionResource', 'model/ItemIdRequest', 'model/ItemTemplateResource', 'model/KeyValuePairstringstring', 'model/LeaderboardEntryResource', 'model/LeaderboardResource', 'model/LevelingResource', 'model/LimitedGettableGroup', 'model/LocationLogResource', 'model/LookupResource', 'model/Maintenance', 'model/MapResource', 'model/MessageContentResource', 'model/MessageResource', 'model/MessageTemplateBulkRequest', 'model/MessageTemplateResource', 'model/MetricResource', 'model/MongoDatabaseConfig', 'model/NestedCategory', 'model/NewPasswordRequest', 'model/NotificationResource', 'model/NotificationTypeResource', 'model/NotificationUserTypeResource', 'model/OAuth2Resource', 'model/OauthAccessTokenResource', 'model/ObjectResource', 'model/OperationDefinitionResource', 'model/OperationResource', 'model/Operator', 'model/OptimalPaymentRequest', 'model/Order', 'model/PageResourceAchievementDefinitionResource', 'model/PageResourceActivityOccurrenceResource', 'model/PageResourceAggregateCountResource', 'model/PageResourceAggregateInvoiceReportResource', 'model/PageResourceArticleResource', 'model/PageResourceArtistResource', 'model/PageResourceBareActivityResource', 'model/PageResourceBareChallengeActivityResource', 'model/PageResourceBillingReport', 'model/PageResourceBreCategoryResource', 'model/PageResourceBreEventLog', 'model/PageResourceBreGlobalResource', 'model/PageResourceBreRule', 'model/PageResourceBreTriggerResource', 'model/PageResourceCampaignResource', 'model/PageResourceCartSummary', 'model/PageResourceCatalogSale', 'model/PageResourceCategoryResource', 'model/PageResourceChallengeEventParticipantResource', 'model/PageResourceChallengeEventResource', 'model/PageResourceChallengeResource', 'model/PageResourceChatMessageResource', 'model/PageResourceChatUserThreadResource', 'model/PageResourceClientResource', 'model/PageResourceCommentResource', 'model/PageResourceConfig', 'model/PageResourceCountryTaxResource', 'model/PageResourceCurrencyResource', 'model/PageResourceDeviceResource', 'model/PageResourceDispositionResource', 'model/PageResourceEntitlementItem', 'model/PageResourceFlagReportResource', 'model/PageResourceFlagResource', 'model/PageResourceForwardLog', 'model/PageResourceFulfillmentType', 'model/PageResourceGroupMemberResource', 'model/PageResourceGroupResource', 'model/PageResourceImportJobResource', 'model/PageResourceInvoiceLogEntry', 'model/PageResourceInvoiceResource', 'model/PageResourceItemTemplateResource', 'model/PageResourceLevelingResource', 'model/PageResourceLocationLogResource', 'model/PageResourceMessageTemplateResource', 'model/PageResourceNotificationTypeResource', 'model/PageResourceNotificationUserTypeResource', 'model/PageResourceOauthAccessTokenResource', 'model/PageResourceObjectResource', 'model/PageResourcePaymentMethodTypeResource', 'model/PageResourcePermissionResource', 'model/PageResourcePollResource', 'model/PageResourceQuestionResource', 'model/PageResourceQuestionTemplateResource', 'model/PageResourceRevenueCountryReportResource', 'model/PageResourceRevenueProductReportResource', 'model/PageResourceRewardSetResource', 'model/PageResourceRoleResource', 'model/PageResourceSavedAddressResource', 'model/PageResourceSimpleReferenceResourceobject', 'model/PageResourceSimpleUserResource', 'model/PageResourceSimpleWallet', 'model/PageResourceStateTaxResource', 'model/PageResourceStoreItem', 'model/PageResourceStoreItemTemplateResource', 'model/PageResourceSubscriptionResource', 'model/PageResourceSubscriptionTemplateResource', 'model/PageResourceTemplateResource', 'model/PageResourceTopicResource', 'model/PageResourceTopicSubscriberResource', 'model/PageResourceTransactionResource', 'model/PageResourceUsageInfo', 'model/PageResourceUserAchievementGroupResource', 'model/PageResourceUserActionLog', 'model/PageResourceUserBaseResource', 'model/PageResourceUserInventoryResource', 'model/PageResourceUserItemLogResource', 'model/PageResourceUserLevelingResource', 'model/PageResourceUserNotificationResource', 'model/PageResourceUserRelationshipResource', 'model/PageResourceVendorResource', 'model/PageResourceVideoRelationshipResource', 'model/PageResourceVideoResource', 'model/PageResourceWalletTotalResponse', 'model/PageResourceWalletTransactionResource', 'model/PageResourcestring', 'model/ParameterResource', 'model/Participant', 'model/PasswordResetRequest', 'model/PayBySavedMethodRequest', 'model/PaymentAuthorizationResource', 'model/PaymentMethodDetails', 'model/PaymentMethodResource', 'model/PaymentMethodTypeResource', 'model/PermissionResource', 'model/PollAnswerResource', 'model/PollResource', 'model/PollResponseResource', 'model/PredicateResource', 'model/Property', 'model/PropertyDefinitionResource', 'model/PropertyFieldListResource', 'model/PropertyFieldResource', 'model/QuestionResource', 'model/QuestionTemplateResource', 'model/QuickBuyRequest', 'model/RawEmailResource', 'model/RawPushResource', 'model/RawSMSResource', 'model/ReactivateSubscriptionRequest', 'model/RefundRequest', 'model/RefundResource', 'model/Result', 'model/RevenueCountryReportResource', 'model/RevenueProductReportResource', 'model/RevenueReportResource', 'model/RewardCurrencyResource', 'model/RewardItemResource', 'model/RewardSetResource', 'model/RoleResource', 'model/S3Config', 'model/SampleCountriesResponse', 'model/SavedAddressResource', 'model/Schedule', 'model/SelectedSettingRequest', 'model/SelectedSettingResource', 'model/SettingOption', 'model/SimpleGroupResource', 'model/SimpleReferenceResourceint', 'model/SimpleReferenceResourcelong', 'model/SimpleReferenceResourceobject', 'model/SimpleReferenceResourcestring', 'model/SimpleUserResource', 'model/SimpleWallet', 'model/Sku', 'model/SkuRequest', 'model/SqlDatabaseConfig', 'model/StateResource', 'model/StateTaxResource', 'model/StoreItemTemplateResource', 'model/StringOperationResource', 'model/StringWrapper', 'model/StripeCreatePaymentMethod', 'model/StripePaymentRequest', 'model/SubscriptionCreditResource', 'model/SubscriptionPlan', 'model/SubscriptionPlanResource', 'model/SubscriptionPriceOverrideRequest', 'model/SubscriptionResource', 'model/SubscriptionTemplateResource', 'model/TemplateEmailResource', 'model/TemplatePushResource', 'model/TemplateResource', 'model/TemplateSMSResource', 'model/TemplatedEmail', 'model/TierResource', 'model/TokenDetailsResource', 'model/Topic', 'model/TopicResource', 'model/TopicSubscriber', 'model/TopicSubscriberResource', 'model/TransactionResource', 'model/TypeHintLookupResource', 'model/UsageInfo', 'model/UserAchievementGroupResource', 'model/UserAchievementResource', 'model/UserActionLog', 'model/UserActivityResults', 'model/UserActivityResultsResource', 'model/UserBaseResource', 'model/UserInventoryAddRequest', 'model/UserInventoryResource', 'model/UserItemLogResource', 'model/UserLevelingResource', 'model/UserNotificationResource', 'model/UserRelationshipReferenceResource', 'model/UserRelationshipResource', 'model/UserResource', 'model/UsernameLookupResource', 'model/ValueWrapperboolean', 'model/ValueWrapperstring', 'model/VariableTypeResource', 'model/VendorEmailLookupResource', 'model/VendorResource', 'model/Version', 'model/VideoRelationshipResource', 'model/VideoResource', 'model/WalletAlterRequest', 'model/WalletTotalResponse', 'model/WalletTransactionResource', 'model/WebsocketMessageResource', 'model/XsollaPaymentRequest', 'model/AudioPropertyDefinitionResource', 'model/BooleanProperty', 'model/BooleanPropertyDefinitionResource', 'model/CacheClearEvent', 'model/Consumable', 'model/DateProperty', 'model/DatePropertyDefinitionResource', 'model/DoubleProperty', 'model/DoublePropertyDefinitionResource', 'model/EntitlementItem', 'model/Expirable', 'model/FileGroupProperty', 'model/FileGroupPropertyDefinitionResource', 'model/FileProperty', 'model/FilePropertyDefinitionResource', 'model/FormattedTextProperty', 'model/FormattedTextPropertyDefinitionResource', 'model/Fulfillable', 'model/GuestPlayable', 'model/ImagePropertyDefinitionResource', 'model/IntegerProperty', 'model/IntegerPropertyDefinitionResource', 'model/LimitedGettable', 'model/ListProperty', 'model/ListPropertyDefinitionResource', 'model/LogLevelEvent', 'model/LongProperty', 'model/LongPropertyDefinitionResource', 'model/MapProperty', 'model/MapPropertyDefinitionResource', 'model/MobileDeviceResource', 'model/NewCustomerEvent', 'model/PreReqEntitlement', 'model/PriceOverridable', 'model/RemoveCustomerEvent', 'model/Spendable', 'model/StoreItem', 'model/TextProperty', 'model/TextPropertyDefinitionResource', 'model/TimePeriodGettable', 'model/TimePeriodUsable', 'model/VideoPropertyDefinitionResource', 'model/WebsocketRemoveTopicEvent', 'model/WebsocketSendMessageEvent', 'model/WebsocketSendTopicMessageEvent', 'model/WebsocketSubscribeEvent', 'model/WebsocketUnsubscribeEvent', 'model/AudioGroupProperty', 'model/AudioGroupPropertyDefinitionResource', 'model/AudioProperty', 'model/BundleItem', 'model/CouponItem', 'model/ImageGroupProperty', 'model/ImageGroupPropertyDefinitionResource', 'model/ImageProperty', 'model/ShippingItem', 'model/Subscription', 'model/VideoGroupProperty', 'model/VideoGroupPropertyDefinitionResource', 'model/VideoProperty', 'api/AccessTokenApi', 'api/ActivitiesApi', 'api/AmazonWebServicesS3Api', 'api/AuthClientsApi', 'api/AuthPermissionsApi', 'api/AuthRolesApi', 'api/AuthTokensApi', 'api/BRERuleEngineActionsApi', 'api/BRERuleEngineCategoriesApi', 'api/BRERuleEngineEventsApi', 'api/BRERuleEngineExpressionsApi', 'api/BRERuleEngineGlobalsApi', 'api/BRERuleEngineRulesApi', 'api/BRERuleEngineTriggersApi', 'api/BRERuleEngineVariablesApi', 'api/CampaignsApi', 'api/CampaignsChallengesApi', 'api/CampaignsRewardsApi', 'api/CategoriesApi', 'api/ChatApi', 'api/ConfigsApi', 'api/ContentArticlesApi', 'api/ContentCommentsApi', 'api/ContentPollsApi', 'api/CurrenciesApi', 'api/DevicesApi', 'api/DispositionsApi', 'api/FulfillmentApi', 'api/GamificationAchievementsApi', 'api/GamificationLeaderboardsApi', 'api/GamificationLevelingApi', 'api/GamificationMetricsApi', 'api/GamificationTriviaApi', 'api/InvoicesApi', 'api/LocationsApi', 'api/LogsApi', 'api/MediaArtistsApi', 'api/MediaModerationApi', 'api/MediaVideosApi', 'api/MessagingApi', 'api/MessagingTopicsApi', 'api/NotificationsApi', 'api/ObjectsApi', 'api/PaymentsApi', 'api/PaymentsAppleApi', 'api/PaymentsFattMerchantApi', 'api/PaymentsGoogleApi', 'api/PaymentsOptimalApi', 'api/PaymentsPayPalClassicApi', 'api/PaymentsStripeApi', 'api/PaymentsTransactionsApi', 'api/PaymentsWalletsApi', 'api/PaymentsXsollaApi', 'api/ReportingChallengesApi', 'api/ReportingOrdersApi', 'api/ReportingRevenueApi', 'api/ReportingSubscriptionsApi', 'api/ReportingUsageApi', 'api/ReportingUsersApi', 'api/SearchApi', 'api/SocialFacebookApi', 'api/SocialGoogleApi', 'api/StoreApi', 'api/StoreBundlesApi', 'api/StoreCouponsApi', 'api/StoreSalesApi', 'api/StoreShippingApi', 'api/StoreShoppingCartsApi', 'api/StoreSubscriptionsApi', 'api/StoreVendorsApi', 'api/TaxesApi', 'api/TemplatesPropertiesApi', 'api/UsersApi', 'api/UsersAddressesApi', 'api/UsersFriendshipsApi', 'api/UsersGroupsApi', 'api/UsersInventoryApi', 'api/UsersRelationshipsApi', 'api/UsersSubscriptionsApi', 'api/UtilBatchApi', 'api/UtilHealthApi', 'api/UtilMaintenanceApi', 'api/UtilSecurityApi', 'api/UtilVersionApi'], factory);
+    define(['ApiClient', 'model/AchievementDefinitionResource', 'model/ActionContextobject', 'model/ActionResource', 'model/ActionVariableResource', 'model/ActivityEntitlementResource', 'model/ActivityOccurrenceCreationFailure', 'model/ActivityOccurrenceJoinResult', 'model/ActivityOccurrenceResource', 'model/ActivityOccurrenceResults', 'model/ActivityOccurrenceResultsResource', 'model/ActivityOccurrenceSettingsResource', 'model/ActivityOccurrenceStatusWrapper', 'model/ActivityResource', 'model/ActivityUserResource', 'model/ActivityUserStatusWrapper', 'model/AddressResource', 'model/AggregateCountResource', 'model/AggregateInvoiceReportResource', 'model/AmazonS3Activity', 'model/AnswerResource', 'model/ApplyPaymentRequest', 'model/ArgumentResource', 'model/ArticleResource', 'model/ArtistResource', 'model/AvailableSettingResource', 'model/BareActivityResource', 'model/BareChallengeActivityResource', 'model/BasicTemplatedResource', 'model/Batch', 'model/BatchRequest', 'model/BatchResult', 'model/BatchReturn', 'model/Behavior', 'model/BehaviorDefinitionResource', 'model/BillingReport', 'model/BooleanResource', 'model/BreActionLog', 'model/BreEvent', 'model/BreEventLog', 'model/BreGlobalResource', 'model/BreGlobalScopeDefinition', 'model/BreRule', 'model/BreRuleLog', 'model/BreTriggerParameterDefinition', 'model/BreTriggerResource', 'model/BroadcastableEvent', 'model/BundledSku', 'model/CampaignResource', 'model/Cart', 'model/CartItemRequest', 'model/CartLineItem', 'model/CartShippableResponse', 'model/CartShippingAddressRequest', 'model/CartShippingOption', 'model/CartSummary', 'model/CatalogSale', 'model/CategoryResource', 'model/ChallengeActivityResource', 'model/ChallengeEventParticipantResource', 'model/ChallengeEventResource', 'model/ChallengeResource', 'model/ChatBlacklistResource', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/ChatThreadResource', 'model/ChatUserThreadResource', 'model/ClientResource', 'model/CommentResource', 'model/Config', 'model/ConfigLookupResource', 'model/ConstantResource', 'model/ContributionResource', 'model/CoreActivityOccurrenceSettings', 'model/CoreActivitySettings', 'model/CoreChallengeActivitySettings', 'model/Country', 'model/CountryResource', 'model/CountryTaxResource', 'model/CouponDefinition', 'model/CreateActivityOccurrenceRequest', 'model/CreateBillingAgreementRequest', 'model/CreatePayPalPaymentRequest', 'model/CurrencyResource', 'model/CustomerConfig', 'model/DatabaseConfig', 'model/DateOperationResource', 'model/DefaultOperationResource', 'model/DeltaResource', 'model/DeviceResource', 'model/Discount', 'model/DispositionCount', 'model/DispositionResource', 'model/DoubleOperationResource', 'model/EntitlementGrantRequest', 'model/ErrorResource', 'model/EventContextResource', 'model/ExpressionResource', 'model/Expressionobject', 'model/FacebookToken', 'model/FattMerchantPaymentMethod', 'model/FattMerchantPaymentMethodRequest', 'model/FinalizeBillingAgreementRequest', 'model/FinalizePayPalPaymentRequest', 'model/FlagReportResource', 'model/FlagResource', 'model/ForwardLog', 'model/FulfillmentType', 'model/GlobalCheckAndIncrementResource', 'model/GlobalResource', 'model/GoogleToken', 'model/GrantTypeResource', 'model/GroupMemberResource', 'model/GroupMemberStatusWrapper', 'model/GroupResource', 'model/IdRef', 'model/ImportJobOutputResource', 'model/ImportJobResource', 'model/IntWrapper', 'model/IntegerOperationResource', 'model/InventoryStatusWrapper', 'model/InventorySubscriptionResource', 'model/InvoiceCreateRequest', 'model/InvoiceItemResource', 'model/InvoiceLogEntry', 'model/InvoicePaymentStatusRequest', 'model/InvoiceResource', 'model/Item', 'model/ItemBehaviorDefinitionResource', 'model/ItemIdRequest', 'model/ItemTemplateResource', 'model/KeyValuePairstringstring', 'model/LeaderboardEntryResource', 'model/LeaderboardResource', 'model/LevelingResource', 'model/LimitedGettableGroup', 'model/LocationLogResource', 'model/LookupResource', 'model/Maintenance', 'model/MapResource', 'model/MessageContentResource', 'model/MessageResource', 'model/MessageTemplateBulkRequest', 'model/MessageTemplateResource', 'model/MetricResource', 'model/MongoDatabaseConfig', 'model/NestedCategory', 'model/NewPasswordRequest', 'model/NotificationResource', 'model/NotificationTypeResource', 'model/NotificationUserTypeResource', 'model/OAuth2Resource', 'model/OauthAccessTokenResource', 'model/ObjectResource', 'model/OperationDefinitionResource', 'model/OperationResource', 'model/Operator', 'model/OptimalPaymentRequest', 'model/Order', 'model/PageResourceAchievementDefinitionResource', 'model/PageResourceActivityOccurrenceResource', 'model/PageResourceAggregateCountResource', 'model/PageResourceAggregateInvoiceReportResource', 'model/PageResourceArticleResource', 'model/PageResourceArtistResource', 'model/PageResourceBareActivityResource', 'model/PageResourceBareChallengeActivityResource', 'model/PageResourceBillingReport', 'model/PageResourceBreEventLog', 'model/PageResourceBreGlobalResource', 'model/PageResourceBreRule', 'model/PageResourceBreTriggerResource', 'model/PageResourceCampaignResource', 'model/PageResourceCartSummary', 'model/PageResourceCatalogSale', 'model/PageResourceCategoryResource', 'model/PageResourceChallengeEventParticipantResource', 'model/PageResourceChallengeEventResource', 'model/PageResourceChallengeResource', 'model/PageResourceChatMessageResource', 'model/PageResourceChatUserThreadResource', 'model/PageResourceClientResource', 'model/PageResourceCommentResource', 'model/PageResourceConfig', 'model/PageResourceCountryTaxResource', 'model/PageResourceCurrencyResource', 'model/PageResourceDeviceResource', 'model/PageResourceDispositionResource', 'model/PageResourceEntitlementItem', 'model/PageResourceFlagReportResource', 'model/PageResourceFlagResource', 'model/PageResourceForwardLog', 'model/PageResourceFulfillmentType', 'model/PageResourceGroupMemberResource', 'model/PageResourceGroupResource', 'model/PageResourceImportJobResource', 'model/PageResourceInvoiceLogEntry', 'model/PageResourceInvoiceResource', 'model/PageResourceItemTemplateResource', 'model/PageResourceLevelingResource', 'model/PageResourceLocationLogResource', 'model/PageResourceMessageTemplateResource', 'model/PageResourceNotificationTypeResource', 'model/PageResourceNotificationUserTypeResource', 'model/PageResourceOauthAccessTokenResource', 'model/PageResourceObjectResource', 'model/PageResourcePaymentMethodTypeResource', 'model/PageResourcePermissionResource', 'model/PageResourcePollResource', 'model/PageResourceQuestionResource', 'model/PageResourceQuestionTemplateResource', 'model/PageResourceRevenueCountryReportResource', 'model/PageResourceRevenueProductReportResource', 'model/PageResourceRewardSetResource', 'model/PageResourceRoleResource', 'model/PageResourceSavedAddressResource', 'model/PageResourceSimpleReferenceResourceobject', 'model/PageResourceSimpleUserResource', 'model/PageResourceSimpleWallet', 'model/PageResourceStateTaxResource', 'model/PageResourceStoreItem', 'model/PageResourceStoreItemTemplateResource', 'model/PageResourceSubscriptionResource', 'model/PageResourceSubscriptionTemplateResource', 'model/PageResourceTemplateResource', 'model/PageResourceTopicResource', 'model/PageResourceTransactionResource', 'model/PageResourceUsageInfo', 'model/PageResourceUserAchievementGroupResource', 'model/PageResourceUserActionLog', 'model/PageResourceUserBaseResource', 'model/PageResourceUserInventoryResource', 'model/PageResourceUserItemLogResource', 'model/PageResourceUserLevelingResource', 'model/PageResourceUserNotificationResource', 'model/PageResourceUserRelationshipResource', 'model/PageResourceVendorResource', 'model/PageResourceVideoRelationshipResource', 'model/PageResourceVideoResource', 'model/PageResourceWalletTotalResponse', 'model/PageResourceWalletTransactionResource', 'model/PageResourcestring', 'model/ParameterResource', 'model/Participant', 'model/PasswordResetRequest', 'model/PayBySavedMethodRequest', 'model/PaymentAuthorizationResource', 'model/PaymentMethodDetails', 'model/PaymentMethodResource', 'model/PaymentMethodTypeResource', 'model/PermissionResource', 'model/PollAnswerResource', 'model/PollResource', 'model/PollResponseResource', 'model/PredicateResource', 'model/Property', 'model/PropertyDefinitionResource', 'model/PropertyFieldListResource', 'model/PropertyFieldResource', 'model/QuestionResource', 'model/QuestionTemplateResource', 'model/QuickBuyRequest', 'model/RawEmailResource', 'model/RawPushResource', 'model/RawSMSResource', 'model/ReactivateSubscriptionRequest', 'model/RefundRequest', 'model/RefundResource', 'model/ResourceTypeDescription', 'model/Result', 'model/RevenueCountryReportResource', 'model/RevenueProductReportResource', 'model/RevenueReportResource', 'model/RewardCurrencyResource', 'model/RewardItemResource', 'model/RewardSetResource', 'model/RoleResource', 'model/S3Config', 'model/SampleCountriesResponse', 'model/SavedAddressResource', 'model/Schedule', 'model/SelectedSettingRequest', 'model/SelectedSettingResource', 'model/SettingOption', 'model/SimpleGroupResource', 'model/SimpleReferenceResourceint', 'model/SimpleReferenceResourcelong', 'model/SimpleReferenceResourceobject', 'model/SimpleReferenceResourcestring', 'model/SimpleUserResource', 'model/SimpleWallet', 'model/Sku', 'model/SkuRequest', 'model/SqlDatabaseConfig', 'model/StateResource', 'model/StateTaxResource', 'model/StoreItemTemplateResource', 'model/StringOperationResource', 'model/StringWrapper', 'model/StripeCreatePaymentMethod', 'model/StripePaymentRequest', 'model/SubscriptionCreditResource', 'model/SubscriptionPlan', 'model/SubscriptionPlanResource', 'model/SubscriptionPriceOverrideRequest', 'model/SubscriptionResource', 'model/SubscriptionStatusWrapper', 'model/SubscriptionTemplateResource', 'model/TemplateEmailResource', 'model/TemplatePushResource', 'model/TemplateResource', 'model/TemplateSMSResource', 'model/TemplatedEmail', 'model/TierResource', 'model/TokenDetailsResource', 'model/Topic', 'model/TopicResource', 'model/TopicSubscriber', 'model/TopicSubscriberResource', 'model/TransactionResource', 'model/TypeHintLookupResource', 'model/UsageInfo', 'model/UserAchievementGroupResource', 'model/UserAchievementResource', 'model/UserActionLog', 'model/UserActivityResults', 'model/UserActivityResultsResource', 'model/UserBaseResource', 'model/UserInventoryAddRequest', 'model/UserInventoryResource', 'model/UserItemLogResource', 'model/UserLevelingResource', 'model/UserNotificationResource', 'model/UserNotificationStatusWrapper', 'model/UserRelationshipReferenceResource', 'model/UserRelationshipResource', 'model/UserResource', 'model/UsernameLookupResource', 'model/ValueWrapperboolean', 'model/VariableTypeResource', 'model/VendorEmailLookupResource', 'model/VendorResource', 'model/Version', 'model/VideoRelationshipResource', 'model/VideoResource', 'model/WalletAlterRequest', 'model/WalletTotalResponse', 'model/WalletTransactionResource', 'model/WebsocketMessageResource', 'model/XsollaPaymentRequest', 'model/AudioPropertyDefinitionResource', 'model/BooleanProperty', 'model/BooleanPropertyDefinitionResource', 'model/CacheClearEvent', 'model/Consumable', 'model/DateProperty', 'model/DatePropertyDefinitionResource', 'model/DoubleProperty', 'model/DoublePropertyDefinitionResource', 'model/EntitlementItem', 'model/Expirable', 'model/FileGroupProperty', 'model/FileGroupPropertyDefinitionResource', 'model/FileProperty', 'model/FilePropertyDefinitionResource', 'model/FormattedTextProperty', 'model/FormattedTextPropertyDefinitionResource', 'model/Fulfillable', 'model/GuestPlayable', 'model/ImagePropertyDefinitionResource', 'model/IntegerProperty', 'model/IntegerPropertyDefinitionResource', 'model/LimitedGettable', 'model/ListProperty', 'model/ListPropertyDefinitionResource', 'model/LogLevelEvent', 'model/LongProperty', 'model/LongPropertyDefinitionResource', 'model/MapProperty', 'model/MapPropertyDefinitionResource', 'model/MobileDeviceResource', 'model/NewCustomerEvent', 'model/PreReqEntitlement', 'model/PriceOverridable', 'model/RemoveCustomerEvent', 'model/ServiceDeployedEvent', 'model/Spendable', 'model/StoreItem', 'model/TextProperty', 'model/TextPropertyDefinitionResource', 'model/TimePeriodGettable', 'model/TimePeriodUsable', 'model/VideoPropertyDefinitionResource', 'model/WebsocketRemoveTopicEvent', 'model/WebsocketSendMessageEvent', 'model/WebsocketSendTopicMessageEvent', 'model/WebsocketSubscribeEvent', 'model/WebsocketUnsubscribeEvent', 'model/AudioGroupProperty', 'model/AudioGroupPropertyDefinitionResource', 'model/AudioProperty', 'model/BundleItem', 'model/CouponItem', 'model/ImageGroupProperty', 'model/ImageGroupPropertyDefinitionResource', 'model/ImageProperty', 'model/ShippingItem', 'model/Subscription', 'model/VideoGroupProperty', 'model/VideoGroupPropertyDefinitionResource', 'model/VideoProperty', 'api/Access_TokenApi', 'api/ActivitiesApi', 'api/Amazon_Web_Services_S3Api', 'api/Auth_ClientsApi', 'api/Auth_PermissionsApi', 'api/Auth_RolesApi', 'api/Auth_TokensApi', 'api/CampaignsApi', 'api/Campaigns_ChallengesApi', 'api/Campaigns_RewardsApi', 'api/CategoriesApi', 'api/ChatApi', 'api/ConfigsApi', 'api/Content_ArticlesApi', 'api/Content_CommentsApi', 'api/CurrenciesApi', 'api/DevicesApi', 'api/DispositionsApi', 'api/FulfillmentApi', 'api/Gamification_AchievementsApi', 'api/Gamification_LeaderboardsApi', 'api/Gamification_LevelingApi', 'api/Gamification_MetricsApi', 'api/Gamification_TriviaApi', 'api/InvoicesApi', 'api/LocationsApi', 'api/LogsApi', 'api/Media_ArtistsApi', 'api/Media_ModerationApi', 'api/Media_PollsApi', 'api/Media_VideosApi', 'api/MessagingApi', 'api/Messaging_TopicsApi', 'api/NotificationsApi', 'api/ObjectsApi', 'api/PaymentsApi', 'api/Payments_AppleApi', 'api/Payments_FattMerchantApi', 'api/Payments_OptimalApi', 'api/Payments_PayPalClassicApi', 'api/Payments_StripeApi', 'api/Payments_TransactionsApi', 'api/Payments_WalletsApi', 'api/Payments_XsollaApi', 'api/Reporting_ChallengesApi', 'api/Reporting_OrdersApi', 'api/Reporting_RevenueApi', 'api/Reporting_SubscriptionsApi', 'api/Reporting_UsageApi', 'api/Reporting_UsersApi', 'api/Rule_Engine_ActionsApi', 'api/Rule_Engine_EventsApi', 'api/Rule_Engine_ExpressionsApi', 'api/Rule_Engine_GlobalsApi', 'api/Rule_Engine_RulesApi', 'api/Rule_Engine_TriggersApi', 'api/Rule_Engine_VariablesApi', 'api/SearchApi', 'api/Social_FacebookApi', 'api/Social_GoogleApi', 'api/StoreApi', 'api/Store_BundlesApi', 'api/Store_CouponsApi', 'api/Store_SalesApi', 'api/Store_ShippingApi', 'api/Store_Shopping_CartsApi', 'api/Store_SubscriptionsApi', 'api/Store_VendorsApi', 'api/TaxesApi', 'api/Templates_PropertiesApi', 'api/UsersApi', 'api/Users_AddressesApi', 'api/Users_FriendshipsApi', 'api/Users_GroupsApi', 'api/Users_InventoryApi', 'api/Users_RelationshipsApi', 'api/Users_SubscriptionsApi', 'api/Util_BatchApi', 'api/Util_HealthApi', 'api/Util_MaintenanceApi', 'api/Util_SecurityApi', 'api/Util_VersionApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/AchievementDefinitionResource'), require('./model/ActionContextobject'), require('./model/ActionResource'), require('./model/ActionVariableResource'), require('./model/ActivityEntitlementResource'), require('./model/ActivityOccurrenceCreationFailure'), require('./model/ActivityOccurrenceJoinResult'), require('./model/ActivityOccurrenceResource'), require('./model/ActivityOccurrenceResults'), require('./model/ActivityOccurrenceResultsResource'), require('./model/ActivityOccurrenceSettingsResource'), require('./model/ActivityResource'), require('./model/ActivityUserResource'), require('./model/AddressResource'), require('./model/AggregateCountResource'), require('./model/AggregateInvoiceReportResource'), require('./model/AmazonS3Activity'), require('./model/AnswerResource'), require('./model/ApplyPaymentRequest'), require('./model/ArgumentResource'), require('./model/ArticleResource'), require('./model/ArtistResource'), require('./model/AvailableSettingResource'), require('./model/BareActivityResource'), require('./model/BareChallengeActivityResource'), require('./model/Batch'), require('./model/BatchRequest'), require('./model/BatchResult'), require('./model/BatchReturn'), require('./model/Behavior'), require('./model/BehaviorDefinitionResource'), require('./model/BillingReport'), require('./model/BooleanResource'), require('./model/BreActionLog'), require('./model/BreCategoryResource'), require('./model/BreEvent'), require('./model/BreEventLog'), require('./model/BreGlobalResource'), require('./model/BreGlobalScopeDefinition'), require('./model/BreRule'), require('./model/BreRuleLog'), require('./model/BreTriggerParameterDefinition'), require('./model/BreTriggerResource'), require('./model/BroadcastableEvent'), require('./model/BundledSku'), require('./model/CampaignResource'), require('./model/Cart'), require('./model/CartItemRequest'), require('./model/CartLineItem'), require('./model/CartShippableResponse'), require('./model/CartShippingAddressRequest'), require('./model/CartShippingOption'), require('./model/CartSummary'), require('./model/CatalogSale'), require('./model/CategoryResource'), require('./model/ChallengeActivityResource'), require('./model/ChallengeEventParticipantResource'), require('./model/ChallengeEventResource'), require('./model/ChallengeResource'), require('./model/ChatBlacklistResource'), require('./model/ChatMessageRequest'), require('./model/ChatMessageResource'), require('./model/ChatThreadResource'), require('./model/ChatUserThreadResource'), require('./model/ClientResource'), require('./model/CommentResource'), require('./model/Config'), require('./model/ConfigLookupResource'), require('./model/ConstantResource'), require('./model/ContributionResource'), require('./model/CoreActivityOccurrenceSettings'), require('./model/CoreActivitySettings'), require('./model/CoreChallengeActivitySettings'), require('./model/Country'), require('./model/CountryResource'), require('./model/CountryTaxResource'), require('./model/CouponDefinition'), require('./model/CreateActivityOccurrenceRequest'), require('./model/CreateBillingAgreementRequest'), require('./model/CreatePayPalPaymentRequest'), require('./model/CurrencyResource'), require('./model/CustomerConfig'), require('./model/DatabaseConfig'), require('./model/DateOperationResource'), require('./model/DefaultOperationResource'), require('./model/DeltaResource'), require('./model/DeviceResource'), require('./model/Discount'), require('./model/DispositionCount'), require('./model/DispositionResource'), require('./model/DoubleOperationResource'), require('./model/EntitlementGrantRequest'), require('./model/ErrorResource'), require('./model/EventContextResource'), require('./model/ExpressionResource'), require('./model/Expressionobject'), require('./model/FacebookToken'), require('./model/FattMerchantPaymentMethod'), require('./model/FattMerchantPaymentMethodRequest'), require('./model/FinalizeBillingAgreementRequest'), require('./model/FinalizePayPalPaymentRequest'), require('./model/FlagReportResource'), require('./model/FlagResource'), require('./model/ForwardLog'), require('./model/FulfillmentType'), require('./model/GlobalCheckAndIncrementResource'), require('./model/GlobalResource'), require('./model/GooglePaymentRequest'), require('./model/GoogleToken'), require('./model/GrantTypeResource'), require('./model/GroupMemberResource'), require('./model/GroupResource'), require('./model/IdRef'), require('./model/ImportJobOutputResource'), require('./model/ImportJobResource'), require('./model/IntWrapper'), require('./model/IntegerOperationResource'), require('./model/InventorySubscriptionResource'), require('./model/InvoiceCreateRequest'), require('./model/InvoiceItemResource'), require('./model/InvoiceLogEntry'), require('./model/InvoicePaymentStatusRequest'), require('./model/InvoiceResource'), require('./model/Item'), require('./model/ItemBehaviorDefinitionResource'), require('./model/ItemIdRequest'), require('./model/ItemTemplateResource'), require('./model/KeyValuePairstringstring'), require('./model/LeaderboardEntryResource'), require('./model/LeaderboardResource'), require('./model/LevelingResource'), require('./model/LimitedGettableGroup'), require('./model/LocationLogResource'), require('./model/LookupResource'), require('./model/Maintenance'), require('./model/MapResource'), require('./model/MessageContentResource'), require('./model/MessageResource'), require('./model/MessageTemplateBulkRequest'), require('./model/MessageTemplateResource'), require('./model/MetricResource'), require('./model/MongoDatabaseConfig'), require('./model/NestedCategory'), require('./model/NewPasswordRequest'), require('./model/NotificationResource'), require('./model/NotificationTypeResource'), require('./model/NotificationUserTypeResource'), require('./model/OAuth2Resource'), require('./model/OauthAccessTokenResource'), require('./model/ObjectResource'), require('./model/OperationDefinitionResource'), require('./model/OperationResource'), require('./model/Operator'), require('./model/OptimalPaymentRequest'), require('./model/Order'), require('./model/PageResourceAchievementDefinitionResource'), require('./model/PageResourceActivityOccurrenceResource'), require('./model/PageResourceAggregateCountResource'), require('./model/PageResourceAggregateInvoiceReportResource'), require('./model/PageResourceArticleResource'), require('./model/PageResourceArtistResource'), require('./model/PageResourceBareActivityResource'), require('./model/PageResourceBareChallengeActivityResource'), require('./model/PageResourceBillingReport'), require('./model/PageResourceBreCategoryResource'), require('./model/PageResourceBreEventLog'), require('./model/PageResourceBreGlobalResource'), require('./model/PageResourceBreRule'), require('./model/PageResourceBreTriggerResource'), require('./model/PageResourceCampaignResource'), require('./model/PageResourceCartSummary'), require('./model/PageResourceCatalogSale'), require('./model/PageResourceCategoryResource'), require('./model/PageResourceChallengeEventParticipantResource'), require('./model/PageResourceChallengeEventResource'), require('./model/PageResourceChallengeResource'), require('./model/PageResourceChatMessageResource'), require('./model/PageResourceChatUserThreadResource'), require('./model/PageResourceClientResource'), require('./model/PageResourceCommentResource'), require('./model/PageResourceConfig'), require('./model/PageResourceCountryTaxResource'), require('./model/PageResourceCurrencyResource'), require('./model/PageResourceDeviceResource'), require('./model/PageResourceDispositionResource'), require('./model/PageResourceEntitlementItem'), require('./model/PageResourceFlagReportResource'), require('./model/PageResourceFlagResource'), require('./model/PageResourceForwardLog'), require('./model/PageResourceFulfillmentType'), require('./model/PageResourceGroupMemberResource'), require('./model/PageResourceGroupResource'), require('./model/PageResourceImportJobResource'), require('./model/PageResourceInvoiceLogEntry'), require('./model/PageResourceInvoiceResource'), require('./model/PageResourceItemTemplateResource'), require('./model/PageResourceLevelingResource'), require('./model/PageResourceLocationLogResource'), require('./model/PageResourceMessageTemplateResource'), require('./model/PageResourceNotificationTypeResource'), require('./model/PageResourceNotificationUserTypeResource'), require('./model/PageResourceOauthAccessTokenResource'), require('./model/PageResourceObjectResource'), require('./model/PageResourcePaymentMethodTypeResource'), require('./model/PageResourcePermissionResource'), require('./model/PageResourcePollResource'), require('./model/PageResourceQuestionResource'), require('./model/PageResourceQuestionTemplateResource'), require('./model/PageResourceRevenueCountryReportResource'), require('./model/PageResourceRevenueProductReportResource'), require('./model/PageResourceRewardSetResource'), require('./model/PageResourceRoleResource'), require('./model/PageResourceSavedAddressResource'), require('./model/PageResourceSimpleReferenceResourceobject'), require('./model/PageResourceSimpleUserResource'), require('./model/PageResourceSimpleWallet'), require('./model/PageResourceStateTaxResource'), require('./model/PageResourceStoreItem'), require('./model/PageResourceStoreItemTemplateResource'), require('./model/PageResourceSubscriptionResource'), require('./model/PageResourceSubscriptionTemplateResource'), require('./model/PageResourceTemplateResource'), require('./model/PageResourceTopicResource'), require('./model/PageResourceTopicSubscriberResource'), require('./model/PageResourceTransactionResource'), require('./model/PageResourceUsageInfo'), require('./model/PageResourceUserAchievementGroupResource'), require('./model/PageResourceUserActionLog'), require('./model/PageResourceUserBaseResource'), require('./model/PageResourceUserInventoryResource'), require('./model/PageResourceUserItemLogResource'), require('./model/PageResourceUserLevelingResource'), require('./model/PageResourceUserNotificationResource'), require('./model/PageResourceUserRelationshipResource'), require('./model/PageResourceVendorResource'), require('./model/PageResourceVideoRelationshipResource'), require('./model/PageResourceVideoResource'), require('./model/PageResourceWalletTotalResponse'), require('./model/PageResourceWalletTransactionResource'), require('./model/PageResourcestring'), require('./model/ParameterResource'), require('./model/Participant'), require('./model/PasswordResetRequest'), require('./model/PayBySavedMethodRequest'), require('./model/PaymentAuthorizationResource'), require('./model/PaymentMethodDetails'), require('./model/PaymentMethodResource'), require('./model/PaymentMethodTypeResource'), require('./model/PermissionResource'), require('./model/PollAnswerResource'), require('./model/PollResource'), require('./model/PollResponseResource'), require('./model/PredicateResource'), require('./model/Property'), require('./model/PropertyDefinitionResource'), require('./model/PropertyFieldListResource'), require('./model/PropertyFieldResource'), require('./model/QuestionResource'), require('./model/QuestionTemplateResource'), require('./model/QuickBuyRequest'), require('./model/RawEmailResource'), require('./model/RawPushResource'), require('./model/RawSMSResource'), require('./model/ReactivateSubscriptionRequest'), require('./model/RefundRequest'), require('./model/RefundResource'), require('./model/Result'), require('./model/RevenueCountryReportResource'), require('./model/RevenueProductReportResource'), require('./model/RevenueReportResource'), require('./model/RewardCurrencyResource'), require('./model/RewardItemResource'), require('./model/RewardSetResource'), require('./model/RoleResource'), require('./model/S3Config'), require('./model/SampleCountriesResponse'), require('./model/SavedAddressResource'), require('./model/Schedule'), require('./model/SelectedSettingRequest'), require('./model/SelectedSettingResource'), require('./model/SettingOption'), require('./model/SimpleGroupResource'), require('./model/SimpleReferenceResourceint'), require('./model/SimpleReferenceResourcelong'), require('./model/SimpleReferenceResourceobject'), require('./model/SimpleReferenceResourcestring'), require('./model/SimpleUserResource'), require('./model/SimpleWallet'), require('./model/Sku'), require('./model/SkuRequest'), require('./model/SqlDatabaseConfig'), require('./model/StateResource'), require('./model/StateTaxResource'), require('./model/StoreItemTemplateResource'), require('./model/StringOperationResource'), require('./model/StringWrapper'), require('./model/StripeCreatePaymentMethod'), require('./model/StripePaymentRequest'), require('./model/SubscriptionCreditResource'), require('./model/SubscriptionPlan'), require('./model/SubscriptionPlanResource'), require('./model/SubscriptionPriceOverrideRequest'), require('./model/SubscriptionResource'), require('./model/SubscriptionTemplateResource'), require('./model/TemplateEmailResource'), require('./model/TemplatePushResource'), require('./model/TemplateResource'), require('./model/TemplateSMSResource'), require('./model/TemplatedEmail'), require('./model/TierResource'), require('./model/TokenDetailsResource'), require('./model/Topic'), require('./model/TopicResource'), require('./model/TopicSubscriber'), require('./model/TopicSubscriberResource'), require('./model/TransactionResource'), require('./model/TypeHintLookupResource'), require('./model/UsageInfo'), require('./model/UserAchievementGroupResource'), require('./model/UserAchievementResource'), require('./model/UserActionLog'), require('./model/UserActivityResults'), require('./model/UserActivityResultsResource'), require('./model/UserBaseResource'), require('./model/UserInventoryAddRequest'), require('./model/UserInventoryResource'), require('./model/UserItemLogResource'), require('./model/UserLevelingResource'), require('./model/UserNotificationResource'), require('./model/UserRelationshipReferenceResource'), require('./model/UserRelationshipResource'), require('./model/UserResource'), require('./model/UsernameLookupResource'), require('./model/ValueWrapperboolean'), require('./model/ValueWrapperstring'), require('./model/VariableTypeResource'), require('./model/VendorEmailLookupResource'), require('./model/VendorResource'), require('./model/Version'), require('./model/VideoRelationshipResource'), require('./model/VideoResource'), require('./model/WalletAlterRequest'), require('./model/WalletTotalResponse'), require('./model/WalletTransactionResource'), require('./model/WebsocketMessageResource'), require('./model/XsollaPaymentRequest'), require('./model/AudioPropertyDefinitionResource'), require('./model/BooleanProperty'), require('./model/BooleanPropertyDefinitionResource'), require('./model/CacheClearEvent'), require('./model/Consumable'), require('./model/DateProperty'), require('./model/DatePropertyDefinitionResource'), require('./model/DoubleProperty'), require('./model/DoublePropertyDefinitionResource'), require('./model/EntitlementItem'), require('./model/Expirable'), require('./model/FileGroupProperty'), require('./model/FileGroupPropertyDefinitionResource'), require('./model/FileProperty'), require('./model/FilePropertyDefinitionResource'), require('./model/FormattedTextProperty'), require('./model/FormattedTextPropertyDefinitionResource'), require('./model/Fulfillable'), require('./model/GuestPlayable'), require('./model/ImagePropertyDefinitionResource'), require('./model/IntegerProperty'), require('./model/IntegerPropertyDefinitionResource'), require('./model/LimitedGettable'), require('./model/ListProperty'), require('./model/ListPropertyDefinitionResource'), require('./model/LogLevelEvent'), require('./model/LongProperty'), require('./model/LongPropertyDefinitionResource'), require('./model/MapProperty'), require('./model/MapPropertyDefinitionResource'), require('./model/MobileDeviceResource'), require('./model/NewCustomerEvent'), require('./model/PreReqEntitlement'), require('./model/PriceOverridable'), require('./model/RemoveCustomerEvent'), require('./model/Spendable'), require('./model/StoreItem'), require('./model/TextProperty'), require('./model/TextPropertyDefinitionResource'), require('./model/TimePeriodGettable'), require('./model/TimePeriodUsable'), require('./model/VideoPropertyDefinitionResource'), require('./model/WebsocketRemoveTopicEvent'), require('./model/WebsocketSendMessageEvent'), require('./model/WebsocketSendTopicMessageEvent'), require('./model/WebsocketSubscribeEvent'), require('./model/WebsocketUnsubscribeEvent'), require('./model/AudioGroupProperty'), require('./model/AudioGroupPropertyDefinitionResource'), require('./model/AudioProperty'), require('./model/BundleItem'), require('./model/CouponItem'), require('./model/ImageGroupProperty'), require('./model/ImageGroupPropertyDefinitionResource'), require('./model/ImageProperty'), require('./model/ShippingItem'), require('./model/Subscription'), require('./model/VideoGroupProperty'), require('./model/VideoGroupPropertyDefinitionResource'), require('./model/VideoProperty'), require('./api/AccessTokenApi'), require('./api/ActivitiesApi'), require('./api/AmazonWebServicesS3Api'), require('./api/AuthClientsApi'), require('./api/AuthPermissionsApi'), require('./api/AuthRolesApi'), require('./api/AuthTokensApi'), require('./api/BRERuleEngineActionsApi'), require('./api/BRERuleEngineCategoriesApi'), require('./api/BRERuleEngineEventsApi'), require('./api/BRERuleEngineExpressionsApi'), require('./api/BRERuleEngineGlobalsApi'), require('./api/BRERuleEngineRulesApi'), require('./api/BRERuleEngineTriggersApi'), require('./api/BRERuleEngineVariablesApi'), require('./api/CampaignsApi'), require('./api/CampaignsChallengesApi'), require('./api/CampaignsRewardsApi'), require('./api/CategoriesApi'), require('./api/ChatApi'), require('./api/ConfigsApi'), require('./api/ContentArticlesApi'), require('./api/ContentCommentsApi'), require('./api/ContentPollsApi'), require('./api/CurrenciesApi'), require('./api/DevicesApi'), require('./api/DispositionsApi'), require('./api/FulfillmentApi'), require('./api/GamificationAchievementsApi'), require('./api/GamificationLeaderboardsApi'), require('./api/GamificationLevelingApi'), require('./api/GamificationMetricsApi'), require('./api/GamificationTriviaApi'), require('./api/InvoicesApi'), require('./api/LocationsApi'), require('./api/LogsApi'), require('./api/MediaArtistsApi'), require('./api/MediaModerationApi'), require('./api/MediaVideosApi'), require('./api/MessagingApi'), require('./api/MessagingTopicsApi'), require('./api/NotificationsApi'), require('./api/ObjectsApi'), require('./api/PaymentsApi'), require('./api/PaymentsAppleApi'), require('./api/PaymentsFattMerchantApi'), require('./api/PaymentsGoogleApi'), require('./api/PaymentsOptimalApi'), require('./api/PaymentsPayPalClassicApi'), require('./api/PaymentsStripeApi'), require('./api/PaymentsTransactionsApi'), require('./api/PaymentsWalletsApi'), require('./api/PaymentsXsollaApi'), require('./api/ReportingChallengesApi'), require('./api/ReportingOrdersApi'), require('./api/ReportingRevenueApi'), require('./api/ReportingSubscriptionsApi'), require('./api/ReportingUsageApi'), require('./api/ReportingUsersApi'), require('./api/SearchApi'), require('./api/SocialFacebookApi'), require('./api/SocialGoogleApi'), require('./api/StoreApi'), require('./api/StoreBundlesApi'), require('./api/StoreCouponsApi'), require('./api/StoreSalesApi'), require('./api/StoreShippingApi'), require('./api/StoreShoppingCartsApi'), require('./api/StoreSubscriptionsApi'), require('./api/StoreVendorsApi'), require('./api/TaxesApi'), require('./api/TemplatesPropertiesApi'), require('./api/UsersApi'), require('./api/UsersAddressesApi'), require('./api/UsersFriendshipsApi'), require('./api/UsersGroupsApi'), require('./api/UsersInventoryApi'), require('./api/UsersRelationshipsApi'), require('./api/UsersSubscriptionsApi'), require('./api/UtilBatchApi'), require('./api/UtilHealthApi'), require('./api/UtilMaintenanceApi'), require('./api/UtilSecurityApi'), require('./api/UtilVersionApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AchievementDefinitionResource'), require('./model/ActionContextobject'), require('./model/ActionResource'), require('./model/ActionVariableResource'), require('./model/ActivityEntitlementResource'), require('./model/ActivityOccurrenceCreationFailure'), require('./model/ActivityOccurrenceJoinResult'), require('./model/ActivityOccurrenceResource'), require('./model/ActivityOccurrenceResults'), require('./model/ActivityOccurrenceResultsResource'), require('./model/ActivityOccurrenceSettingsResource'), require('./model/ActivityOccurrenceStatusWrapper'), require('./model/ActivityResource'), require('./model/ActivityUserResource'), require('./model/ActivityUserStatusWrapper'), require('./model/AddressResource'), require('./model/AggregateCountResource'), require('./model/AggregateInvoiceReportResource'), require('./model/AmazonS3Activity'), require('./model/AnswerResource'), require('./model/ApplyPaymentRequest'), require('./model/ArgumentResource'), require('./model/ArticleResource'), require('./model/ArtistResource'), require('./model/AvailableSettingResource'), require('./model/BareActivityResource'), require('./model/BareChallengeActivityResource'), require('./model/BasicTemplatedResource'), require('./model/Batch'), require('./model/BatchRequest'), require('./model/BatchResult'), require('./model/BatchReturn'), require('./model/Behavior'), require('./model/BehaviorDefinitionResource'), require('./model/BillingReport'), require('./model/BooleanResource'), require('./model/BreActionLog'), require('./model/BreEvent'), require('./model/BreEventLog'), require('./model/BreGlobalResource'), require('./model/BreGlobalScopeDefinition'), require('./model/BreRule'), require('./model/BreRuleLog'), require('./model/BreTriggerParameterDefinition'), require('./model/BreTriggerResource'), require('./model/BroadcastableEvent'), require('./model/BundledSku'), require('./model/CampaignResource'), require('./model/Cart'), require('./model/CartItemRequest'), require('./model/CartLineItem'), require('./model/CartShippableResponse'), require('./model/CartShippingAddressRequest'), require('./model/CartShippingOption'), require('./model/CartSummary'), require('./model/CatalogSale'), require('./model/CategoryResource'), require('./model/ChallengeActivityResource'), require('./model/ChallengeEventParticipantResource'), require('./model/ChallengeEventResource'), require('./model/ChallengeResource'), require('./model/ChatBlacklistResource'), require('./model/ChatMessageRequest'), require('./model/ChatMessageResource'), require('./model/ChatThreadResource'), require('./model/ChatUserThreadResource'), require('./model/ClientResource'), require('./model/CommentResource'), require('./model/Config'), require('./model/ConfigLookupResource'), require('./model/ConstantResource'), require('./model/ContributionResource'), require('./model/CoreActivityOccurrenceSettings'), require('./model/CoreActivitySettings'), require('./model/CoreChallengeActivitySettings'), require('./model/Country'), require('./model/CountryResource'), require('./model/CountryTaxResource'), require('./model/CouponDefinition'), require('./model/CreateActivityOccurrenceRequest'), require('./model/CreateBillingAgreementRequest'), require('./model/CreatePayPalPaymentRequest'), require('./model/CurrencyResource'), require('./model/CustomerConfig'), require('./model/DatabaseConfig'), require('./model/DateOperationResource'), require('./model/DefaultOperationResource'), require('./model/DeltaResource'), require('./model/DeviceResource'), require('./model/Discount'), require('./model/DispositionCount'), require('./model/DispositionResource'), require('./model/DoubleOperationResource'), require('./model/EntitlementGrantRequest'), require('./model/ErrorResource'), require('./model/EventContextResource'), require('./model/ExpressionResource'), require('./model/Expressionobject'), require('./model/FacebookToken'), require('./model/FattMerchantPaymentMethod'), require('./model/FattMerchantPaymentMethodRequest'), require('./model/FinalizeBillingAgreementRequest'), require('./model/FinalizePayPalPaymentRequest'), require('./model/FlagReportResource'), require('./model/FlagResource'), require('./model/ForwardLog'), require('./model/FulfillmentType'), require('./model/GlobalCheckAndIncrementResource'), require('./model/GlobalResource'), require('./model/GoogleToken'), require('./model/GrantTypeResource'), require('./model/GroupMemberResource'), require('./model/GroupMemberStatusWrapper'), require('./model/GroupResource'), require('./model/IdRef'), require('./model/ImportJobOutputResource'), require('./model/ImportJobResource'), require('./model/IntWrapper'), require('./model/IntegerOperationResource'), require('./model/InventoryStatusWrapper'), require('./model/InventorySubscriptionResource'), require('./model/InvoiceCreateRequest'), require('./model/InvoiceItemResource'), require('./model/InvoiceLogEntry'), require('./model/InvoicePaymentStatusRequest'), require('./model/InvoiceResource'), require('./model/Item'), require('./model/ItemBehaviorDefinitionResource'), require('./model/ItemIdRequest'), require('./model/ItemTemplateResource'), require('./model/KeyValuePairstringstring'), require('./model/LeaderboardEntryResource'), require('./model/LeaderboardResource'), require('./model/LevelingResource'), require('./model/LimitedGettableGroup'), require('./model/LocationLogResource'), require('./model/LookupResource'), require('./model/Maintenance'), require('./model/MapResource'), require('./model/MessageContentResource'), require('./model/MessageResource'), require('./model/MessageTemplateBulkRequest'), require('./model/MessageTemplateResource'), require('./model/MetricResource'), require('./model/MongoDatabaseConfig'), require('./model/NestedCategory'), require('./model/NewPasswordRequest'), require('./model/NotificationResource'), require('./model/NotificationTypeResource'), require('./model/NotificationUserTypeResource'), require('./model/OAuth2Resource'), require('./model/OauthAccessTokenResource'), require('./model/ObjectResource'), require('./model/OperationDefinitionResource'), require('./model/OperationResource'), require('./model/Operator'), require('./model/OptimalPaymentRequest'), require('./model/Order'), require('./model/PageResourceAchievementDefinitionResource'), require('./model/PageResourceActivityOccurrenceResource'), require('./model/PageResourceAggregateCountResource'), require('./model/PageResourceAggregateInvoiceReportResource'), require('./model/PageResourceArticleResource'), require('./model/PageResourceArtistResource'), require('./model/PageResourceBareActivityResource'), require('./model/PageResourceBareChallengeActivityResource'), require('./model/PageResourceBillingReport'), require('./model/PageResourceBreEventLog'), require('./model/PageResourceBreGlobalResource'), require('./model/PageResourceBreRule'), require('./model/PageResourceBreTriggerResource'), require('./model/PageResourceCampaignResource'), require('./model/PageResourceCartSummary'), require('./model/PageResourceCatalogSale'), require('./model/PageResourceCategoryResource'), require('./model/PageResourceChallengeEventParticipantResource'), require('./model/PageResourceChallengeEventResource'), require('./model/PageResourceChallengeResource'), require('./model/PageResourceChatMessageResource'), require('./model/PageResourceChatUserThreadResource'), require('./model/PageResourceClientResource'), require('./model/PageResourceCommentResource'), require('./model/PageResourceConfig'), require('./model/PageResourceCountryTaxResource'), require('./model/PageResourceCurrencyResource'), require('./model/PageResourceDeviceResource'), require('./model/PageResourceDispositionResource'), require('./model/PageResourceEntitlementItem'), require('./model/PageResourceFlagReportResource'), require('./model/PageResourceFlagResource'), require('./model/PageResourceForwardLog'), require('./model/PageResourceFulfillmentType'), require('./model/PageResourceGroupMemberResource'), require('./model/PageResourceGroupResource'), require('./model/PageResourceImportJobResource'), require('./model/PageResourceInvoiceLogEntry'), require('./model/PageResourceInvoiceResource'), require('./model/PageResourceItemTemplateResource'), require('./model/PageResourceLevelingResource'), require('./model/PageResourceLocationLogResource'), require('./model/PageResourceMessageTemplateResource'), require('./model/PageResourceNotificationTypeResource'), require('./model/PageResourceNotificationUserTypeResource'), require('./model/PageResourceOauthAccessTokenResource'), require('./model/PageResourceObjectResource'), require('./model/PageResourcePaymentMethodTypeResource'), require('./model/PageResourcePermissionResource'), require('./model/PageResourcePollResource'), require('./model/PageResourceQuestionResource'), require('./model/PageResourceQuestionTemplateResource'), require('./model/PageResourceRevenueCountryReportResource'), require('./model/PageResourceRevenueProductReportResource'), require('./model/PageResourceRewardSetResource'), require('./model/PageResourceRoleResource'), require('./model/PageResourceSavedAddressResource'), require('./model/PageResourceSimpleReferenceResourceobject'), require('./model/PageResourceSimpleUserResource'), require('./model/PageResourceSimpleWallet'), require('./model/PageResourceStateTaxResource'), require('./model/PageResourceStoreItem'), require('./model/PageResourceStoreItemTemplateResource'), require('./model/PageResourceSubscriptionResource'), require('./model/PageResourceSubscriptionTemplateResource'), require('./model/PageResourceTemplateResource'), require('./model/PageResourceTopicResource'), require('./model/PageResourceTransactionResource'), require('./model/PageResourceUsageInfo'), require('./model/PageResourceUserAchievementGroupResource'), require('./model/PageResourceUserActionLog'), require('./model/PageResourceUserBaseResource'), require('./model/PageResourceUserInventoryResource'), require('./model/PageResourceUserItemLogResource'), require('./model/PageResourceUserLevelingResource'), require('./model/PageResourceUserNotificationResource'), require('./model/PageResourceUserRelationshipResource'), require('./model/PageResourceVendorResource'), require('./model/PageResourceVideoRelationshipResource'), require('./model/PageResourceVideoResource'), require('./model/PageResourceWalletTotalResponse'), require('./model/PageResourceWalletTransactionResource'), require('./model/PageResourcestring'), require('./model/ParameterResource'), require('./model/Participant'), require('./model/PasswordResetRequest'), require('./model/PayBySavedMethodRequest'), require('./model/PaymentAuthorizationResource'), require('./model/PaymentMethodDetails'), require('./model/PaymentMethodResource'), require('./model/PaymentMethodTypeResource'), require('./model/PermissionResource'), require('./model/PollAnswerResource'), require('./model/PollResource'), require('./model/PollResponseResource'), require('./model/PredicateResource'), require('./model/Property'), require('./model/PropertyDefinitionResource'), require('./model/PropertyFieldListResource'), require('./model/PropertyFieldResource'), require('./model/QuestionResource'), require('./model/QuestionTemplateResource'), require('./model/QuickBuyRequest'), require('./model/RawEmailResource'), require('./model/RawPushResource'), require('./model/RawSMSResource'), require('./model/ReactivateSubscriptionRequest'), require('./model/RefundRequest'), require('./model/RefundResource'), require('./model/ResourceTypeDescription'), require('./model/Result'), require('./model/RevenueCountryReportResource'), require('./model/RevenueProductReportResource'), require('./model/RevenueReportResource'), require('./model/RewardCurrencyResource'), require('./model/RewardItemResource'), require('./model/RewardSetResource'), require('./model/RoleResource'), require('./model/S3Config'), require('./model/SampleCountriesResponse'), require('./model/SavedAddressResource'), require('./model/Schedule'), require('./model/SelectedSettingRequest'), require('./model/SelectedSettingResource'), require('./model/SettingOption'), require('./model/SimpleGroupResource'), require('./model/SimpleReferenceResourceint'), require('./model/SimpleReferenceResourcelong'), require('./model/SimpleReferenceResourceobject'), require('./model/SimpleReferenceResourcestring'), require('./model/SimpleUserResource'), require('./model/SimpleWallet'), require('./model/Sku'), require('./model/SkuRequest'), require('./model/SqlDatabaseConfig'), require('./model/StateResource'), require('./model/StateTaxResource'), require('./model/StoreItemTemplateResource'), require('./model/StringOperationResource'), require('./model/StringWrapper'), require('./model/StripeCreatePaymentMethod'), require('./model/StripePaymentRequest'), require('./model/SubscriptionCreditResource'), require('./model/SubscriptionPlan'), require('./model/SubscriptionPlanResource'), require('./model/SubscriptionPriceOverrideRequest'), require('./model/SubscriptionResource'), require('./model/SubscriptionStatusWrapper'), require('./model/SubscriptionTemplateResource'), require('./model/TemplateEmailResource'), require('./model/TemplatePushResource'), require('./model/TemplateResource'), require('./model/TemplateSMSResource'), require('./model/TemplatedEmail'), require('./model/TierResource'), require('./model/TokenDetailsResource'), require('./model/Topic'), require('./model/TopicResource'), require('./model/TopicSubscriber'), require('./model/TopicSubscriberResource'), require('./model/TransactionResource'), require('./model/TypeHintLookupResource'), require('./model/UsageInfo'), require('./model/UserAchievementGroupResource'), require('./model/UserAchievementResource'), require('./model/UserActionLog'), require('./model/UserActivityResults'), require('./model/UserActivityResultsResource'), require('./model/UserBaseResource'), require('./model/UserInventoryAddRequest'), require('./model/UserInventoryResource'), require('./model/UserItemLogResource'), require('./model/UserLevelingResource'), require('./model/UserNotificationResource'), require('./model/UserNotificationStatusWrapper'), require('./model/UserRelationshipReferenceResource'), require('./model/UserRelationshipResource'), require('./model/UserResource'), require('./model/UsernameLookupResource'), require('./model/ValueWrapperboolean'), require('./model/VariableTypeResource'), require('./model/VendorEmailLookupResource'), require('./model/VendorResource'), require('./model/Version'), require('./model/VideoRelationshipResource'), require('./model/VideoResource'), require('./model/WalletAlterRequest'), require('./model/WalletTotalResponse'), require('./model/WalletTransactionResource'), require('./model/WebsocketMessageResource'), require('./model/XsollaPaymentRequest'), require('./model/AudioPropertyDefinitionResource'), require('./model/BooleanProperty'), require('./model/BooleanPropertyDefinitionResource'), require('./model/CacheClearEvent'), require('./model/Consumable'), require('./model/DateProperty'), require('./model/DatePropertyDefinitionResource'), require('./model/DoubleProperty'), require('./model/DoublePropertyDefinitionResource'), require('./model/EntitlementItem'), require('./model/Expirable'), require('./model/FileGroupProperty'), require('./model/FileGroupPropertyDefinitionResource'), require('./model/FileProperty'), require('./model/FilePropertyDefinitionResource'), require('./model/FormattedTextProperty'), require('./model/FormattedTextPropertyDefinitionResource'), require('./model/Fulfillable'), require('./model/GuestPlayable'), require('./model/ImagePropertyDefinitionResource'), require('./model/IntegerProperty'), require('./model/IntegerPropertyDefinitionResource'), require('./model/LimitedGettable'), require('./model/ListProperty'), require('./model/ListPropertyDefinitionResource'), require('./model/LogLevelEvent'), require('./model/LongProperty'), require('./model/LongPropertyDefinitionResource'), require('./model/MapProperty'), require('./model/MapPropertyDefinitionResource'), require('./model/MobileDeviceResource'), require('./model/NewCustomerEvent'), require('./model/PreReqEntitlement'), require('./model/PriceOverridable'), require('./model/RemoveCustomerEvent'), require('./model/ServiceDeployedEvent'), require('./model/Spendable'), require('./model/StoreItem'), require('./model/TextProperty'), require('./model/TextPropertyDefinitionResource'), require('./model/TimePeriodGettable'), require('./model/TimePeriodUsable'), require('./model/VideoPropertyDefinitionResource'), require('./model/WebsocketRemoveTopicEvent'), require('./model/WebsocketSendMessageEvent'), require('./model/WebsocketSendTopicMessageEvent'), require('./model/WebsocketSubscribeEvent'), require('./model/WebsocketUnsubscribeEvent'), require('./model/AudioGroupProperty'), require('./model/AudioGroupPropertyDefinitionResource'), require('./model/AudioProperty'), require('./model/BundleItem'), require('./model/CouponItem'), require('./model/ImageGroupProperty'), require('./model/ImageGroupPropertyDefinitionResource'), require('./model/ImageProperty'), require('./model/ShippingItem'), require('./model/Subscription'), require('./model/VideoGroupProperty'), require('./model/VideoGroupPropertyDefinitionResource'), require('./model/VideoProperty'), require('./api/Access_TokenApi'), require('./api/ActivitiesApi'), require('./api/Amazon_Web_Services_S3Api'), require('./api/Auth_ClientsApi'), require('./api/Auth_PermissionsApi'), require('./api/Auth_RolesApi'), require('./api/Auth_TokensApi'), require('./api/CampaignsApi'), require('./api/Campaigns_ChallengesApi'), require('./api/Campaigns_RewardsApi'), require('./api/CategoriesApi'), require('./api/ChatApi'), require('./api/ConfigsApi'), require('./api/Content_ArticlesApi'), require('./api/Content_CommentsApi'), require('./api/CurrenciesApi'), require('./api/DevicesApi'), require('./api/DispositionsApi'), require('./api/FulfillmentApi'), require('./api/Gamification_AchievementsApi'), require('./api/Gamification_LeaderboardsApi'), require('./api/Gamification_LevelingApi'), require('./api/Gamification_MetricsApi'), require('./api/Gamification_TriviaApi'), require('./api/InvoicesApi'), require('./api/LocationsApi'), require('./api/LogsApi'), require('./api/Media_ArtistsApi'), require('./api/Media_ModerationApi'), require('./api/Media_PollsApi'), require('./api/Media_VideosApi'), require('./api/MessagingApi'), require('./api/Messaging_TopicsApi'), require('./api/NotificationsApi'), require('./api/ObjectsApi'), require('./api/PaymentsApi'), require('./api/Payments_AppleApi'), require('./api/Payments_FattMerchantApi'), require('./api/Payments_OptimalApi'), require('./api/Payments_PayPalClassicApi'), require('./api/Payments_StripeApi'), require('./api/Payments_TransactionsApi'), require('./api/Payments_WalletsApi'), require('./api/Payments_XsollaApi'), require('./api/Reporting_ChallengesApi'), require('./api/Reporting_OrdersApi'), require('./api/Reporting_RevenueApi'), require('./api/Reporting_SubscriptionsApi'), require('./api/Reporting_UsageApi'), require('./api/Reporting_UsersApi'), require('./api/Rule_Engine_ActionsApi'), require('./api/Rule_Engine_EventsApi'), require('./api/Rule_Engine_ExpressionsApi'), require('./api/Rule_Engine_GlobalsApi'), require('./api/Rule_Engine_RulesApi'), require('./api/Rule_Engine_TriggersApi'), require('./api/Rule_Engine_VariablesApi'), require('./api/SearchApi'), require('./api/Social_FacebookApi'), require('./api/Social_GoogleApi'), require('./api/StoreApi'), require('./api/Store_BundlesApi'), require('./api/Store_CouponsApi'), require('./api/Store_SalesApi'), require('./api/Store_ShippingApi'), require('./api/Store_Shopping_CartsApi'), require('./api/Store_SubscriptionsApi'), require('./api/Store_VendorsApi'), require('./api/TaxesApi'), require('./api/Templates_PropertiesApi'), require('./api/UsersApi'), require('./api/Users_AddressesApi'), require('./api/Users_FriendshipsApi'), require('./api/Users_GroupsApi'), require('./api/Users_InventoryApi'), require('./api/Users_RelationshipsApi'), require('./api/Users_SubscriptionsApi'), require('./api/Util_BatchApi'), require('./api/Util_HealthApi'), require('./api/Util_MaintenanceApi'), require('./api/Util_SecurityApi'), require('./api/Util_VersionApi'));
   }
-}(function(ApiClient, AchievementDefinitionResource, ActionContextobject, ActionResource, ActionVariableResource, ActivityEntitlementResource, ActivityOccurrenceCreationFailure, ActivityOccurrenceJoinResult, ActivityOccurrenceResource, ActivityOccurrenceResults, ActivityOccurrenceResultsResource, ActivityOccurrenceSettingsResource, ActivityResource, ActivityUserResource, AddressResource, AggregateCountResource, AggregateInvoiceReportResource, AmazonS3Activity, AnswerResource, ApplyPaymentRequest, ArgumentResource, ArticleResource, ArtistResource, AvailableSettingResource, BareActivityResource, BareChallengeActivityResource, Batch, BatchRequest, BatchResult, BatchReturn, Behavior, BehaviorDefinitionResource, BillingReport, BooleanResource, BreActionLog, BreCategoryResource, BreEvent, BreEventLog, BreGlobalResource, BreGlobalScopeDefinition, BreRule, BreRuleLog, BreTriggerParameterDefinition, BreTriggerResource, BroadcastableEvent, BundledSku, CampaignResource, Cart, CartItemRequest, CartLineItem, CartShippableResponse, CartShippingAddressRequest, CartShippingOption, CartSummary, CatalogSale, CategoryResource, ChallengeActivityResource, ChallengeEventParticipantResource, ChallengeEventResource, ChallengeResource, ChatBlacklistResource, ChatMessageRequest, ChatMessageResource, ChatThreadResource, ChatUserThreadResource, ClientResource, CommentResource, Config, ConfigLookupResource, ConstantResource, ContributionResource, CoreActivityOccurrenceSettings, CoreActivitySettings, CoreChallengeActivitySettings, Country, CountryResource, CountryTaxResource, CouponDefinition, CreateActivityOccurrenceRequest, CreateBillingAgreementRequest, CreatePayPalPaymentRequest, CurrencyResource, CustomerConfig, DatabaseConfig, DateOperationResource, DefaultOperationResource, DeltaResource, DeviceResource, Discount, DispositionCount, DispositionResource, DoubleOperationResource, EntitlementGrantRequest, ErrorResource, EventContextResource, ExpressionResource, Expressionobject, FacebookToken, FattMerchantPaymentMethod, FattMerchantPaymentMethodRequest, FinalizeBillingAgreementRequest, FinalizePayPalPaymentRequest, FlagReportResource, FlagResource, ForwardLog, FulfillmentType, GlobalCheckAndIncrementResource, GlobalResource, GooglePaymentRequest, GoogleToken, GrantTypeResource, GroupMemberResource, GroupResource, IdRef, ImportJobOutputResource, ImportJobResource, IntWrapper, IntegerOperationResource, InventorySubscriptionResource, InvoiceCreateRequest, InvoiceItemResource, InvoiceLogEntry, InvoicePaymentStatusRequest, InvoiceResource, Item, ItemBehaviorDefinitionResource, ItemIdRequest, ItemTemplateResource, KeyValuePairstringstring, LeaderboardEntryResource, LeaderboardResource, LevelingResource, LimitedGettableGroup, LocationLogResource, LookupResource, Maintenance, MapResource, MessageContentResource, MessageResource, MessageTemplateBulkRequest, MessageTemplateResource, MetricResource, MongoDatabaseConfig, NestedCategory, NewPasswordRequest, NotificationResource, NotificationTypeResource, NotificationUserTypeResource, OAuth2Resource, OauthAccessTokenResource, ObjectResource, OperationDefinitionResource, OperationResource, Operator, OptimalPaymentRequest, Order, PageResourceAchievementDefinitionResource, PageResourceActivityOccurrenceResource, PageResourceAggregateCountResource, PageResourceAggregateInvoiceReportResource, PageResourceArticleResource, PageResourceArtistResource, PageResourceBareActivityResource, PageResourceBareChallengeActivityResource, PageResourceBillingReport, PageResourceBreCategoryResource, PageResourceBreEventLog, PageResourceBreGlobalResource, PageResourceBreRule, PageResourceBreTriggerResource, PageResourceCampaignResource, PageResourceCartSummary, PageResourceCatalogSale, PageResourceCategoryResource, PageResourceChallengeEventParticipantResource, PageResourceChallengeEventResource, PageResourceChallengeResource, PageResourceChatMessageResource, PageResourceChatUserThreadResource, PageResourceClientResource, PageResourceCommentResource, PageResourceConfig, PageResourceCountryTaxResource, PageResourceCurrencyResource, PageResourceDeviceResource, PageResourceDispositionResource, PageResourceEntitlementItem, PageResourceFlagReportResource, PageResourceFlagResource, PageResourceForwardLog, PageResourceFulfillmentType, PageResourceGroupMemberResource, PageResourceGroupResource, PageResourceImportJobResource, PageResourceInvoiceLogEntry, PageResourceInvoiceResource, PageResourceItemTemplateResource, PageResourceLevelingResource, PageResourceLocationLogResource, PageResourceMessageTemplateResource, PageResourceNotificationTypeResource, PageResourceNotificationUserTypeResource, PageResourceOauthAccessTokenResource, PageResourceObjectResource, PageResourcePaymentMethodTypeResource, PageResourcePermissionResource, PageResourcePollResource, PageResourceQuestionResource, PageResourceQuestionTemplateResource, PageResourceRevenueCountryReportResource, PageResourceRevenueProductReportResource, PageResourceRewardSetResource, PageResourceRoleResource, PageResourceSavedAddressResource, PageResourceSimpleReferenceResourceobject, PageResourceSimpleUserResource, PageResourceSimpleWallet, PageResourceStateTaxResource, PageResourceStoreItem, PageResourceStoreItemTemplateResource, PageResourceSubscriptionResource, PageResourceSubscriptionTemplateResource, PageResourceTemplateResource, PageResourceTopicResource, PageResourceTopicSubscriberResource, PageResourceTransactionResource, PageResourceUsageInfo, PageResourceUserAchievementGroupResource, PageResourceUserActionLog, PageResourceUserBaseResource, PageResourceUserInventoryResource, PageResourceUserItemLogResource, PageResourceUserLevelingResource, PageResourceUserNotificationResource, PageResourceUserRelationshipResource, PageResourceVendorResource, PageResourceVideoRelationshipResource, PageResourceVideoResource, PageResourceWalletTotalResponse, PageResourceWalletTransactionResource, PageResourcestring, ParameterResource, Participant, PasswordResetRequest, PayBySavedMethodRequest, PaymentAuthorizationResource, PaymentMethodDetails, PaymentMethodResource, PaymentMethodTypeResource, PermissionResource, PollAnswerResource, PollResource, PollResponseResource, PredicateResource, Property, PropertyDefinitionResource, PropertyFieldListResource, PropertyFieldResource, QuestionResource, QuestionTemplateResource, QuickBuyRequest, RawEmailResource, RawPushResource, RawSMSResource, ReactivateSubscriptionRequest, RefundRequest, RefundResource, Result, RevenueCountryReportResource, RevenueProductReportResource, RevenueReportResource, RewardCurrencyResource, RewardItemResource, RewardSetResource, RoleResource, S3Config, SampleCountriesResponse, SavedAddressResource, Schedule, SelectedSettingRequest, SelectedSettingResource, SettingOption, SimpleGroupResource, SimpleReferenceResourceint, SimpleReferenceResourcelong, SimpleReferenceResourceobject, SimpleReferenceResourcestring, SimpleUserResource, SimpleWallet, Sku, SkuRequest, SqlDatabaseConfig, StateResource, StateTaxResource, StoreItemTemplateResource, StringOperationResource, StringWrapper, StripeCreatePaymentMethod, StripePaymentRequest, SubscriptionCreditResource, SubscriptionPlan, SubscriptionPlanResource, SubscriptionPriceOverrideRequest, SubscriptionResource, SubscriptionTemplateResource, TemplateEmailResource, TemplatePushResource, TemplateResource, TemplateSMSResource, TemplatedEmail, TierResource, TokenDetailsResource, Topic, TopicResource, TopicSubscriber, TopicSubscriberResource, TransactionResource, TypeHintLookupResource, UsageInfo, UserAchievementGroupResource, UserAchievementResource, UserActionLog, UserActivityResults, UserActivityResultsResource, UserBaseResource, UserInventoryAddRequest, UserInventoryResource, UserItemLogResource, UserLevelingResource, UserNotificationResource, UserRelationshipReferenceResource, UserRelationshipResource, UserResource, UsernameLookupResource, ValueWrapperboolean, ValueWrapperstring, VariableTypeResource, VendorEmailLookupResource, VendorResource, Version, VideoRelationshipResource, VideoResource, WalletAlterRequest, WalletTotalResponse, WalletTransactionResource, WebsocketMessageResource, XsollaPaymentRequest, AudioPropertyDefinitionResource, BooleanProperty, BooleanPropertyDefinitionResource, CacheClearEvent, Consumable, DateProperty, DatePropertyDefinitionResource, DoubleProperty, DoublePropertyDefinitionResource, EntitlementItem, Expirable, FileGroupProperty, FileGroupPropertyDefinitionResource, FileProperty, FilePropertyDefinitionResource, FormattedTextProperty, FormattedTextPropertyDefinitionResource, Fulfillable, GuestPlayable, ImagePropertyDefinitionResource, IntegerProperty, IntegerPropertyDefinitionResource, LimitedGettable, ListProperty, ListPropertyDefinitionResource, LogLevelEvent, LongProperty, LongPropertyDefinitionResource, MapProperty, MapPropertyDefinitionResource, MobileDeviceResource, NewCustomerEvent, PreReqEntitlement, PriceOverridable, RemoveCustomerEvent, Spendable, StoreItem, TextProperty, TextPropertyDefinitionResource, TimePeriodGettable, TimePeriodUsable, VideoPropertyDefinitionResource, WebsocketRemoveTopicEvent, WebsocketSendMessageEvent, WebsocketSendTopicMessageEvent, WebsocketSubscribeEvent, WebsocketUnsubscribeEvent, AudioGroupProperty, AudioGroupPropertyDefinitionResource, AudioProperty, BundleItem, CouponItem, ImageGroupProperty, ImageGroupPropertyDefinitionResource, ImageProperty, ShippingItem, Subscription, VideoGroupProperty, VideoGroupPropertyDefinitionResource, VideoProperty, AccessTokenApi, ActivitiesApi, AmazonWebServicesS3Api, AuthClientsApi, AuthPermissionsApi, AuthRolesApi, AuthTokensApi, BRERuleEngineActionsApi, BRERuleEngineCategoriesApi, BRERuleEngineEventsApi, BRERuleEngineExpressionsApi, BRERuleEngineGlobalsApi, BRERuleEngineRulesApi, BRERuleEngineTriggersApi, BRERuleEngineVariablesApi, CampaignsApi, CampaignsChallengesApi, CampaignsRewardsApi, CategoriesApi, ChatApi, ConfigsApi, ContentArticlesApi, ContentCommentsApi, ContentPollsApi, CurrenciesApi, DevicesApi, DispositionsApi, FulfillmentApi, GamificationAchievementsApi, GamificationLeaderboardsApi, GamificationLevelingApi, GamificationMetricsApi, GamificationTriviaApi, InvoicesApi, LocationsApi, LogsApi, MediaArtistsApi, MediaModerationApi, MediaVideosApi, MessagingApi, MessagingTopicsApi, NotificationsApi, ObjectsApi, PaymentsApi, PaymentsAppleApi, PaymentsFattMerchantApi, PaymentsGoogleApi, PaymentsOptimalApi, PaymentsPayPalClassicApi, PaymentsStripeApi, PaymentsTransactionsApi, PaymentsWalletsApi, PaymentsXsollaApi, ReportingChallengesApi, ReportingOrdersApi, ReportingRevenueApi, ReportingSubscriptionsApi, ReportingUsageApi, ReportingUsersApi, SearchApi, SocialFacebookApi, SocialGoogleApi, StoreApi, StoreBundlesApi, StoreCouponsApi, StoreSalesApi, StoreShippingApi, StoreShoppingCartsApi, StoreSubscriptionsApi, StoreVendorsApi, TaxesApi, TemplatesPropertiesApi, UsersApi, UsersAddressesApi, UsersFriendshipsApi, UsersGroupsApi, UsersInventoryApi, UsersRelationshipsApi, UsersSubscriptionsApi, UtilBatchApi, UtilHealthApi, UtilMaintenanceApi, UtilSecurityApi, UtilVersionApi) {
+}(function(ApiClient, AchievementDefinitionResource, ActionContextobject, ActionResource, ActionVariableResource, ActivityEntitlementResource, ActivityOccurrenceCreationFailure, ActivityOccurrenceJoinResult, ActivityOccurrenceResource, ActivityOccurrenceResults, ActivityOccurrenceResultsResource, ActivityOccurrenceSettingsResource, ActivityOccurrenceStatusWrapper, ActivityResource, ActivityUserResource, ActivityUserStatusWrapper, AddressResource, AggregateCountResource, AggregateInvoiceReportResource, AmazonS3Activity, AnswerResource, ApplyPaymentRequest, ArgumentResource, ArticleResource, ArtistResource, AvailableSettingResource, BareActivityResource, BareChallengeActivityResource, BasicTemplatedResource, Batch, BatchRequest, BatchResult, BatchReturn, Behavior, BehaviorDefinitionResource, BillingReport, BooleanResource, BreActionLog, BreEvent, BreEventLog, BreGlobalResource, BreGlobalScopeDefinition, BreRule, BreRuleLog, BreTriggerParameterDefinition, BreTriggerResource, BroadcastableEvent, BundledSku, CampaignResource, Cart, CartItemRequest, CartLineItem, CartShippableResponse, CartShippingAddressRequest, CartShippingOption, CartSummary, CatalogSale, CategoryResource, ChallengeActivityResource, ChallengeEventParticipantResource, ChallengeEventResource, ChallengeResource, ChatBlacklistResource, ChatMessageRequest, ChatMessageResource, ChatThreadResource, ChatUserThreadResource, ClientResource, CommentResource, Config, ConfigLookupResource, ConstantResource, ContributionResource, CoreActivityOccurrenceSettings, CoreActivitySettings, CoreChallengeActivitySettings, Country, CountryResource, CountryTaxResource, CouponDefinition, CreateActivityOccurrenceRequest, CreateBillingAgreementRequest, CreatePayPalPaymentRequest, CurrencyResource, CustomerConfig, DatabaseConfig, DateOperationResource, DefaultOperationResource, DeltaResource, DeviceResource, Discount, DispositionCount, DispositionResource, DoubleOperationResource, EntitlementGrantRequest, ErrorResource, EventContextResource, ExpressionResource, Expressionobject, FacebookToken, FattMerchantPaymentMethod, FattMerchantPaymentMethodRequest, FinalizeBillingAgreementRequest, FinalizePayPalPaymentRequest, FlagReportResource, FlagResource, ForwardLog, FulfillmentType, GlobalCheckAndIncrementResource, GlobalResource, GoogleToken, GrantTypeResource, GroupMemberResource, GroupMemberStatusWrapper, GroupResource, IdRef, ImportJobOutputResource, ImportJobResource, IntWrapper, IntegerOperationResource, InventoryStatusWrapper, InventorySubscriptionResource, InvoiceCreateRequest, InvoiceItemResource, InvoiceLogEntry, InvoicePaymentStatusRequest, InvoiceResource, Item, ItemBehaviorDefinitionResource, ItemIdRequest, ItemTemplateResource, KeyValuePairstringstring, LeaderboardEntryResource, LeaderboardResource, LevelingResource, LimitedGettableGroup, LocationLogResource, LookupResource, Maintenance, MapResource, MessageContentResource, MessageResource, MessageTemplateBulkRequest, MessageTemplateResource, MetricResource, MongoDatabaseConfig, NestedCategory, NewPasswordRequest, NotificationResource, NotificationTypeResource, NotificationUserTypeResource, OAuth2Resource, OauthAccessTokenResource, ObjectResource, OperationDefinitionResource, OperationResource, Operator, OptimalPaymentRequest, Order, PageResourceAchievementDefinitionResource, PageResourceActivityOccurrenceResource, PageResourceAggregateCountResource, PageResourceAggregateInvoiceReportResource, PageResourceArticleResource, PageResourceArtistResource, PageResourceBareActivityResource, PageResourceBareChallengeActivityResource, PageResourceBillingReport, PageResourceBreEventLog, PageResourceBreGlobalResource, PageResourceBreRule, PageResourceBreTriggerResource, PageResourceCampaignResource, PageResourceCartSummary, PageResourceCatalogSale, PageResourceCategoryResource, PageResourceChallengeEventParticipantResource, PageResourceChallengeEventResource, PageResourceChallengeResource, PageResourceChatMessageResource, PageResourceChatUserThreadResource, PageResourceClientResource, PageResourceCommentResource, PageResourceConfig, PageResourceCountryTaxResource, PageResourceCurrencyResource, PageResourceDeviceResource, PageResourceDispositionResource, PageResourceEntitlementItem, PageResourceFlagReportResource, PageResourceFlagResource, PageResourceForwardLog, PageResourceFulfillmentType, PageResourceGroupMemberResource, PageResourceGroupResource, PageResourceImportJobResource, PageResourceInvoiceLogEntry, PageResourceInvoiceResource, PageResourceItemTemplateResource, PageResourceLevelingResource, PageResourceLocationLogResource, PageResourceMessageTemplateResource, PageResourceNotificationTypeResource, PageResourceNotificationUserTypeResource, PageResourceOauthAccessTokenResource, PageResourceObjectResource, PageResourcePaymentMethodTypeResource, PageResourcePermissionResource, PageResourcePollResource, PageResourceQuestionResource, PageResourceQuestionTemplateResource, PageResourceRevenueCountryReportResource, PageResourceRevenueProductReportResource, PageResourceRewardSetResource, PageResourceRoleResource, PageResourceSavedAddressResource, PageResourceSimpleReferenceResourceobject, PageResourceSimpleUserResource, PageResourceSimpleWallet, PageResourceStateTaxResource, PageResourceStoreItem, PageResourceStoreItemTemplateResource, PageResourceSubscriptionResource, PageResourceSubscriptionTemplateResource, PageResourceTemplateResource, PageResourceTopicResource, PageResourceTransactionResource, PageResourceUsageInfo, PageResourceUserAchievementGroupResource, PageResourceUserActionLog, PageResourceUserBaseResource, PageResourceUserInventoryResource, PageResourceUserItemLogResource, PageResourceUserLevelingResource, PageResourceUserNotificationResource, PageResourceUserRelationshipResource, PageResourceVendorResource, PageResourceVideoRelationshipResource, PageResourceVideoResource, PageResourceWalletTotalResponse, PageResourceWalletTransactionResource, PageResourcestring, ParameterResource, Participant, PasswordResetRequest, PayBySavedMethodRequest, PaymentAuthorizationResource, PaymentMethodDetails, PaymentMethodResource, PaymentMethodTypeResource, PermissionResource, PollAnswerResource, PollResource, PollResponseResource, PredicateResource, Property, PropertyDefinitionResource, PropertyFieldListResource, PropertyFieldResource, QuestionResource, QuestionTemplateResource, QuickBuyRequest, RawEmailResource, RawPushResource, RawSMSResource, ReactivateSubscriptionRequest, RefundRequest, RefundResource, ResourceTypeDescription, Result, RevenueCountryReportResource, RevenueProductReportResource, RevenueReportResource, RewardCurrencyResource, RewardItemResource, RewardSetResource, RoleResource, S3Config, SampleCountriesResponse, SavedAddressResource, Schedule, SelectedSettingRequest, SelectedSettingResource, SettingOption, SimpleGroupResource, SimpleReferenceResourceint, SimpleReferenceResourcelong, SimpleReferenceResourceobject, SimpleReferenceResourcestring, SimpleUserResource, SimpleWallet, Sku, SkuRequest, SqlDatabaseConfig, StateResource, StateTaxResource, StoreItemTemplateResource, StringOperationResource, StringWrapper, StripeCreatePaymentMethod, StripePaymentRequest, SubscriptionCreditResource, SubscriptionPlan, SubscriptionPlanResource, SubscriptionPriceOverrideRequest, SubscriptionResource, SubscriptionStatusWrapper, SubscriptionTemplateResource, TemplateEmailResource, TemplatePushResource, TemplateResource, TemplateSMSResource, TemplatedEmail, TierResource, TokenDetailsResource, Topic, TopicResource, TopicSubscriber, TopicSubscriberResource, TransactionResource, TypeHintLookupResource, UsageInfo, UserAchievementGroupResource, UserAchievementResource, UserActionLog, UserActivityResults, UserActivityResultsResource, UserBaseResource, UserInventoryAddRequest, UserInventoryResource, UserItemLogResource, UserLevelingResource, UserNotificationResource, UserNotificationStatusWrapper, UserRelationshipReferenceResource, UserRelationshipResource, UserResource, UsernameLookupResource, ValueWrapperboolean, VariableTypeResource, VendorEmailLookupResource, VendorResource, Version, VideoRelationshipResource, VideoResource, WalletAlterRequest, WalletTotalResponse, WalletTransactionResource, WebsocketMessageResource, XsollaPaymentRequest, AudioPropertyDefinitionResource, BooleanProperty, BooleanPropertyDefinitionResource, CacheClearEvent, Consumable, DateProperty, DatePropertyDefinitionResource, DoubleProperty, DoublePropertyDefinitionResource, EntitlementItem, Expirable, FileGroupProperty, FileGroupPropertyDefinitionResource, FileProperty, FilePropertyDefinitionResource, FormattedTextProperty, FormattedTextPropertyDefinitionResource, Fulfillable, GuestPlayable, ImagePropertyDefinitionResource, IntegerProperty, IntegerPropertyDefinitionResource, LimitedGettable, ListProperty, ListPropertyDefinitionResource, LogLevelEvent, LongProperty, LongPropertyDefinitionResource, MapProperty, MapPropertyDefinitionResource, MobileDeviceResource, NewCustomerEvent, PreReqEntitlement, PriceOverridable, RemoveCustomerEvent, ServiceDeployedEvent, Spendable, StoreItem, TextProperty, TextPropertyDefinitionResource, TimePeriodGettable, TimePeriodUsable, VideoPropertyDefinitionResource, WebsocketRemoveTopicEvent, WebsocketSendMessageEvent, WebsocketSendTopicMessageEvent, WebsocketSubscribeEvent, WebsocketUnsubscribeEvent, AudioGroupProperty, AudioGroupPropertyDefinitionResource, AudioProperty, BundleItem, CouponItem, ImageGroupProperty, ImageGroupPropertyDefinitionResource, ImageProperty, ShippingItem, Subscription, VideoGroupProperty, VideoGroupPropertyDefinitionResource, VideoProperty, Access_TokenApi, ActivitiesApi, Amazon_Web_Services_S3Api, Auth_ClientsApi, Auth_PermissionsApi, Auth_RolesApi, Auth_TokensApi, CampaignsApi, Campaigns_ChallengesApi, Campaigns_RewardsApi, CategoriesApi, ChatApi, ConfigsApi, Content_ArticlesApi, Content_CommentsApi, CurrenciesApi, DevicesApi, DispositionsApi, FulfillmentApi, Gamification_AchievementsApi, Gamification_LeaderboardsApi, Gamification_LevelingApi, Gamification_MetricsApi, Gamification_TriviaApi, InvoicesApi, LocationsApi, LogsApi, Media_ArtistsApi, Media_ModerationApi, Media_PollsApi, Media_VideosApi, MessagingApi, Messaging_TopicsApi, NotificationsApi, ObjectsApi, PaymentsApi, Payments_AppleApi, Payments_FattMerchantApi, Payments_OptimalApi, Payments_PayPalClassicApi, Payments_StripeApi, Payments_TransactionsApi, Payments_WalletsApi, Payments_XsollaApi, Reporting_ChallengesApi, Reporting_OrdersApi, Reporting_RevenueApi, Reporting_SubscriptionsApi, Reporting_UsageApi, Reporting_UsersApi, Rule_Engine_ActionsApi, Rule_Engine_EventsApi, Rule_Engine_ExpressionsApi, Rule_Engine_GlobalsApi, Rule_Engine_RulesApi, Rule_Engine_TriggersApi, Rule_Engine_VariablesApi, SearchApi, Social_FacebookApi, Social_GoogleApi, StoreApi, Store_BundlesApi, Store_CouponsApi, Store_SalesApi, Store_ShippingApi, Store_Shopping_CartsApi, Store_SubscriptionsApi, Store_VendorsApi, TaxesApi, Templates_PropertiesApi, UsersApi, Users_AddressesApi, Users_FriendshipsApi, Users_GroupsApi, Users_InventoryApi, Users_RelationshipsApi, Users_SubscriptionsApi, Util_BatchApi, Util_HealthApi, Util_MaintenanceApi, Util_SecurityApi, Util_VersionApi) {
   'use strict';
 
   /**
@@ -54,7 +54,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 3.0.8
+   * @version 3.0.9
    */
   var exports = {
     /**
@@ -118,6 +118,11 @@
      */
     ActivityOccurrenceSettingsResource: ActivityOccurrenceSettingsResource,
     /**
+     * The ActivityOccurrenceStatusWrapper model constructor.
+     * @property {module:model/ActivityOccurrenceStatusWrapper}
+     */
+    ActivityOccurrenceStatusWrapper: ActivityOccurrenceStatusWrapper,
+    /**
      * The ActivityResource model constructor.
      * @property {module:model/ActivityResource}
      */
@@ -127,6 +132,11 @@
      * @property {module:model/ActivityUserResource}
      */
     ActivityUserResource: ActivityUserResource,
+    /**
+     * The ActivityUserStatusWrapper model constructor.
+     * @property {module:model/ActivityUserStatusWrapper}
+     */
+    ActivityUserStatusWrapper: ActivityUserStatusWrapper,
     /**
      * The AddressResource model constructor.
      * @property {module:model/AddressResource}
@@ -188,6 +198,11 @@
      */
     BareChallengeActivityResource: BareChallengeActivityResource,
     /**
+     * The BasicTemplatedResource model constructor.
+     * @property {module:model/BasicTemplatedResource}
+     */
+    BasicTemplatedResource: BasicTemplatedResource,
+    /**
      * The Batch model constructor.
      * @property {module:model/Batch}
      */
@@ -232,11 +247,6 @@
      * @property {module:model/BreActionLog}
      */
     BreActionLog: BreActionLog,
-    /**
-     * The BreCategoryResource model constructor.
-     * @property {module:model/BreCategoryResource}
-     */
-    BreCategoryResource: BreCategoryResource,
     /**
      * The BreEvent model constructor.
      * @property {module:model/BreEvent}
@@ -598,11 +608,6 @@
      */
     GlobalResource: GlobalResource,
     /**
-     * The GooglePaymentRequest model constructor.
-     * @property {module:model/GooglePaymentRequest}
-     */
-    GooglePaymentRequest: GooglePaymentRequest,
-    /**
      * The GoogleToken model constructor.
      * @property {module:model/GoogleToken}
      */
@@ -617,6 +622,11 @@
      * @property {module:model/GroupMemberResource}
      */
     GroupMemberResource: GroupMemberResource,
+    /**
+     * The GroupMemberStatusWrapper model constructor.
+     * @property {module:model/GroupMemberStatusWrapper}
+     */
+    GroupMemberStatusWrapper: GroupMemberStatusWrapper,
     /**
      * The GroupResource model constructor.
      * @property {module:model/GroupResource}
@@ -647,6 +657,11 @@
      * @property {module:model/IntegerOperationResource}
      */
     IntegerOperationResource: IntegerOperationResource,
+    /**
+     * The InventoryStatusWrapper model constructor.
+     * @property {module:model/InventoryStatusWrapper}
+     */
+    InventoryStatusWrapper: InventoryStatusWrapper,
     /**
      * The InventorySubscriptionResource model constructor.
      * @property {module:model/InventorySubscriptionResource}
@@ -882,11 +897,6 @@
      * @property {module:model/PageResourceBillingReport}
      */
     PageResourceBillingReport: PageResourceBillingReport,
-    /**
-     * The PageResourceBreCategoryResource model constructor.
-     * @property {module:model/PageResourceBreCategoryResource}
-     */
-    PageResourceBreCategoryResource: PageResourceBreCategoryResource,
     /**
      * The PageResourceBreEventLog model constructor.
      * @property {module:model/PageResourceBreEventLog}
@@ -1178,11 +1188,6 @@
      */
     PageResourceTopicResource: PageResourceTopicResource,
     /**
-     * The PageResourceTopicSubscriberResource model constructor.
-     * @property {module:model/PageResourceTopicSubscriberResource}
-     */
-    PageResourceTopicSubscriberResource: PageResourceTopicSubscriberResource,
-    /**
      * The PageResourceTransactionResource model constructor.
      * @property {module:model/PageResourceTransactionResource}
      */
@@ -1393,6 +1398,11 @@
      */
     RefundResource: RefundResource,
     /**
+     * The ResourceTypeDescription model constructor.
+     * @property {module:model/ResourceTypeDescription}
+     */
+    ResourceTypeDescription: ResourceTypeDescription,
+    /**
      * The Result model constructor.
      * @property {module:model/Result}
      */
@@ -1578,6 +1588,11 @@
      */
     SubscriptionResource: SubscriptionResource,
     /**
+     * The SubscriptionStatusWrapper model constructor.
+     * @property {module:model/SubscriptionStatusWrapper}
+     */
+    SubscriptionStatusWrapper: SubscriptionStatusWrapper,
+    /**
      * The SubscriptionTemplateResource model constructor.
      * @property {module:model/SubscriptionTemplateResource}
      */
@@ -1708,6 +1723,11 @@
      */
     UserNotificationResource: UserNotificationResource,
     /**
+     * The UserNotificationStatusWrapper model constructor.
+     * @property {module:model/UserNotificationStatusWrapper}
+     */
+    UserNotificationStatusWrapper: UserNotificationStatusWrapper,
+    /**
      * The UserRelationshipReferenceResource model constructor.
      * @property {module:model/UserRelationshipReferenceResource}
      */
@@ -1732,11 +1752,6 @@
      * @property {module:model/ValueWrapperboolean}
      */
     ValueWrapperboolean: ValueWrapperboolean,
-    /**
-     * The ValueWrapperstring model constructor.
-     * @property {module:model/ValueWrapperstring}
-     */
-    ValueWrapperstring: ValueWrapperstring,
     /**
      * The VariableTypeResource model constructor.
      * @property {module:model/VariableTypeResource}
@@ -1968,6 +1983,11 @@
      */
     RemoveCustomerEvent: RemoveCustomerEvent,
     /**
+     * The ServiceDeployedEvent model constructor.
+     * @property {module:model/ServiceDeployedEvent}
+     */
+    ServiceDeployedEvent: ServiceDeployedEvent,
+    /**
      * The Spendable model constructor.
      * @property {module:model/Spendable}
      */
@@ -2093,95 +2113,55 @@
      */
     VideoProperty: VideoProperty,
     /**
-     * The AccessTokenApi service constructor.
-     * @property {module:api/AccessTokenApi}
+     * The Access_TokenApi service constructor.
+     * @property {module:api/Access_TokenApi}
      */
-    AccessTokenApi: AccessTokenApi,
+    Access_TokenApi: Access_TokenApi,
     /**
      * The ActivitiesApi service constructor.
      * @property {module:api/ActivitiesApi}
      */
     ActivitiesApi: ActivitiesApi,
     /**
-     * The AmazonWebServicesS3Api service constructor.
-     * @property {module:api/AmazonWebServicesS3Api}
+     * The Amazon_Web_Services_S3Api service constructor.
+     * @property {module:api/Amazon_Web_Services_S3Api}
      */
-    AmazonWebServicesS3Api: AmazonWebServicesS3Api,
+    Amazon_Web_Services_S3Api: Amazon_Web_Services_S3Api,
     /**
-     * The AuthClientsApi service constructor.
-     * @property {module:api/AuthClientsApi}
+     * The Auth_ClientsApi service constructor.
+     * @property {module:api/Auth_ClientsApi}
      */
-    AuthClientsApi: AuthClientsApi,
+    Auth_ClientsApi: Auth_ClientsApi,
     /**
-     * The AuthPermissionsApi service constructor.
-     * @property {module:api/AuthPermissionsApi}
+     * The Auth_PermissionsApi service constructor.
+     * @property {module:api/Auth_PermissionsApi}
      */
-    AuthPermissionsApi: AuthPermissionsApi,
+    Auth_PermissionsApi: Auth_PermissionsApi,
     /**
-     * The AuthRolesApi service constructor.
-     * @property {module:api/AuthRolesApi}
+     * The Auth_RolesApi service constructor.
+     * @property {module:api/Auth_RolesApi}
      */
-    AuthRolesApi: AuthRolesApi,
+    Auth_RolesApi: Auth_RolesApi,
     /**
-     * The AuthTokensApi service constructor.
-     * @property {module:api/AuthTokensApi}
+     * The Auth_TokensApi service constructor.
+     * @property {module:api/Auth_TokensApi}
      */
-    AuthTokensApi: AuthTokensApi,
-    /**
-     * The BRERuleEngineActionsApi service constructor.
-     * @property {module:api/BRERuleEngineActionsApi}
-     */
-    BRERuleEngineActionsApi: BRERuleEngineActionsApi,
-    /**
-     * The BRERuleEngineCategoriesApi service constructor.
-     * @property {module:api/BRERuleEngineCategoriesApi}
-     */
-    BRERuleEngineCategoriesApi: BRERuleEngineCategoriesApi,
-    /**
-     * The BRERuleEngineEventsApi service constructor.
-     * @property {module:api/BRERuleEngineEventsApi}
-     */
-    BRERuleEngineEventsApi: BRERuleEngineEventsApi,
-    /**
-     * The BRERuleEngineExpressionsApi service constructor.
-     * @property {module:api/BRERuleEngineExpressionsApi}
-     */
-    BRERuleEngineExpressionsApi: BRERuleEngineExpressionsApi,
-    /**
-     * The BRERuleEngineGlobalsApi service constructor.
-     * @property {module:api/BRERuleEngineGlobalsApi}
-     */
-    BRERuleEngineGlobalsApi: BRERuleEngineGlobalsApi,
-    /**
-     * The BRERuleEngineRulesApi service constructor.
-     * @property {module:api/BRERuleEngineRulesApi}
-     */
-    BRERuleEngineRulesApi: BRERuleEngineRulesApi,
-    /**
-     * The BRERuleEngineTriggersApi service constructor.
-     * @property {module:api/BRERuleEngineTriggersApi}
-     */
-    BRERuleEngineTriggersApi: BRERuleEngineTriggersApi,
-    /**
-     * The BRERuleEngineVariablesApi service constructor.
-     * @property {module:api/BRERuleEngineVariablesApi}
-     */
-    BRERuleEngineVariablesApi: BRERuleEngineVariablesApi,
+    Auth_TokensApi: Auth_TokensApi,
     /**
      * The CampaignsApi service constructor.
      * @property {module:api/CampaignsApi}
      */
     CampaignsApi: CampaignsApi,
     /**
-     * The CampaignsChallengesApi service constructor.
-     * @property {module:api/CampaignsChallengesApi}
+     * The Campaigns_ChallengesApi service constructor.
+     * @property {module:api/Campaigns_ChallengesApi}
      */
-    CampaignsChallengesApi: CampaignsChallengesApi,
+    Campaigns_ChallengesApi: Campaigns_ChallengesApi,
     /**
-     * The CampaignsRewardsApi service constructor.
-     * @property {module:api/CampaignsRewardsApi}
+     * The Campaigns_RewardsApi service constructor.
+     * @property {module:api/Campaigns_RewardsApi}
      */
-    CampaignsRewardsApi: CampaignsRewardsApi,
+    Campaigns_RewardsApi: Campaigns_RewardsApi,
     /**
      * The CategoriesApi service constructor.
      * @property {module:api/CategoriesApi}
@@ -2198,20 +2178,15 @@
      */
     ConfigsApi: ConfigsApi,
     /**
-     * The ContentArticlesApi service constructor.
-     * @property {module:api/ContentArticlesApi}
+     * The Content_ArticlesApi service constructor.
+     * @property {module:api/Content_ArticlesApi}
      */
-    ContentArticlesApi: ContentArticlesApi,
+    Content_ArticlesApi: Content_ArticlesApi,
     /**
-     * The ContentCommentsApi service constructor.
-     * @property {module:api/ContentCommentsApi}
+     * The Content_CommentsApi service constructor.
+     * @property {module:api/Content_CommentsApi}
      */
-    ContentCommentsApi: ContentCommentsApi,
-    /**
-     * The ContentPollsApi service constructor.
-     * @property {module:api/ContentPollsApi}
-     */
-    ContentPollsApi: ContentPollsApi,
+    Content_CommentsApi: Content_CommentsApi,
     /**
      * The CurrenciesApi service constructor.
      * @property {module:api/CurrenciesApi}
@@ -2233,30 +2208,30 @@
      */
     FulfillmentApi: FulfillmentApi,
     /**
-     * The GamificationAchievementsApi service constructor.
-     * @property {module:api/GamificationAchievementsApi}
+     * The Gamification_AchievementsApi service constructor.
+     * @property {module:api/Gamification_AchievementsApi}
      */
-    GamificationAchievementsApi: GamificationAchievementsApi,
+    Gamification_AchievementsApi: Gamification_AchievementsApi,
     /**
-     * The GamificationLeaderboardsApi service constructor.
-     * @property {module:api/GamificationLeaderboardsApi}
+     * The Gamification_LeaderboardsApi service constructor.
+     * @property {module:api/Gamification_LeaderboardsApi}
      */
-    GamificationLeaderboardsApi: GamificationLeaderboardsApi,
+    Gamification_LeaderboardsApi: Gamification_LeaderboardsApi,
     /**
-     * The GamificationLevelingApi service constructor.
-     * @property {module:api/GamificationLevelingApi}
+     * The Gamification_LevelingApi service constructor.
+     * @property {module:api/Gamification_LevelingApi}
      */
-    GamificationLevelingApi: GamificationLevelingApi,
+    Gamification_LevelingApi: Gamification_LevelingApi,
     /**
-     * The GamificationMetricsApi service constructor.
-     * @property {module:api/GamificationMetricsApi}
+     * The Gamification_MetricsApi service constructor.
+     * @property {module:api/Gamification_MetricsApi}
      */
-    GamificationMetricsApi: GamificationMetricsApi,
+    Gamification_MetricsApi: Gamification_MetricsApi,
     /**
-     * The GamificationTriviaApi service constructor.
-     * @property {module:api/GamificationTriviaApi}
+     * The Gamification_TriviaApi service constructor.
+     * @property {module:api/Gamification_TriviaApi}
      */
-    GamificationTriviaApi: GamificationTriviaApi,
+    Gamification_TriviaApi: Gamification_TriviaApi,
     /**
      * The InvoicesApi service constructor.
      * @property {module:api/InvoicesApi}
@@ -2273,30 +2248,35 @@
      */
     LogsApi: LogsApi,
     /**
-     * The MediaArtistsApi service constructor.
-     * @property {module:api/MediaArtistsApi}
+     * The Media_ArtistsApi service constructor.
+     * @property {module:api/Media_ArtistsApi}
      */
-    MediaArtistsApi: MediaArtistsApi,
+    Media_ArtistsApi: Media_ArtistsApi,
     /**
-     * The MediaModerationApi service constructor.
-     * @property {module:api/MediaModerationApi}
+     * The Media_ModerationApi service constructor.
+     * @property {module:api/Media_ModerationApi}
      */
-    MediaModerationApi: MediaModerationApi,
+    Media_ModerationApi: Media_ModerationApi,
     /**
-     * The MediaVideosApi service constructor.
-     * @property {module:api/MediaVideosApi}
+     * The Media_PollsApi service constructor.
+     * @property {module:api/Media_PollsApi}
      */
-    MediaVideosApi: MediaVideosApi,
+    Media_PollsApi: Media_PollsApi,
+    /**
+     * The Media_VideosApi service constructor.
+     * @property {module:api/Media_VideosApi}
+     */
+    Media_VideosApi: Media_VideosApi,
     /**
      * The MessagingApi service constructor.
      * @property {module:api/MessagingApi}
      */
     MessagingApi: MessagingApi,
     /**
-     * The MessagingTopicsApi service constructor.
-     * @property {module:api/MessagingTopicsApi}
+     * The Messaging_TopicsApi service constructor.
+     * @property {module:api/Messaging_TopicsApi}
      */
-    MessagingTopicsApi: MessagingTopicsApi,
+    Messaging_TopicsApi: Messaging_TopicsApi,
     /**
      * The NotificationsApi service constructor.
      * @property {module:api/NotificationsApi}
@@ -2313,205 +2293,235 @@
      */
     PaymentsApi: PaymentsApi,
     /**
-     * The PaymentsAppleApi service constructor.
-     * @property {module:api/PaymentsAppleApi}
+     * The Payments_AppleApi service constructor.
+     * @property {module:api/Payments_AppleApi}
      */
-    PaymentsAppleApi: PaymentsAppleApi,
+    Payments_AppleApi: Payments_AppleApi,
     /**
-     * The PaymentsFattMerchantApi service constructor.
-     * @property {module:api/PaymentsFattMerchantApi}
+     * The Payments_FattMerchantApi service constructor.
+     * @property {module:api/Payments_FattMerchantApi}
      */
-    PaymentsFattMerchantApi: PaymentsFattMerchantApi,
+    Payments_FattMerchantApi: Payments_FattMerchantApi,
     /**
-     * The PaymentsGoogleApi service constructor.
-     * @property {module:api/PaymentsGoogleApi}
+     * The Payments_OptimalApi service constructor.
+     * @property {module:api/Payments_OptimalApi}
      */
-    PaymentsGoogleApi: PaymentsGoogleApi,
+    Payments_OptimalApi: Payments_OptimalApi,
     /**
-     * The PaymentsOptimalApi service constructor.
-     * @property {module:api/PaymentsOptimalApi}
+     * The Payments_PayPalClassicApi service constructor.
+     * @property {module:api/Payments_PayPalClassicApi}
      */
-    PaymentsOptimalApi: PaymentsOptimalApi,
+    Payments_PayPalClassicApi: Payments_PayPalClassicApi,
     /**
-     * The PaymentsPayPalClassicApi service constructor.
-     * @property {module:api/PaymentsPayPalClassicApi}
+     * The Payments_StripeApi service constructor.
+     * @property {module:api/Payments_StripeApi}
      */
-    PaymentsPayPalClassicApi: PaymentsPayPalClassicApi,
+    Payments_StripeApi: Payments_StripeApi,
     /**
-     * The PaymentsStripeApi service constructor.
-     * @property {module:api/PaymentsStripeApi}
+     * The Payments_TransactionsApi service constructor.
+     * @property {module:api/Payments_TransactionsApi}
      */
-    PaymentsStripeApi: PaymentsStripeApi,
+    Payments_TransactionsApi: Payments_TransactionsApi,
     /**
-     * The PaymentsTransactionsApi service constructor.
-     * @property {module:api/PaymentsTransactionsApi}
+     * The Payments_WalletsApi service constructor.
+     * @property {module:api/Payments_WalletsApi}
      */
-    PaymentsTransactionsApi: PaymentsTransactionsApi,
+    Payments_WalletsApi: Payments_WalletsApi,
     /**
-     * The PaymentsWalletsApi service constructor.
-     * @property {module:api/PaymentsWalletsApi}
+     * The Payments_XsollaApi service constructor.
+     * @property {module:api/Payments_XsollaApi}
      */
-    PaymentsWalletsApi: PaymentsWalletsApi,
+    Payments_XsollaApi: Payments_XsollaApi,
     /**
-     * The PaymentsXsollaApi service constructor.
-     * @property {module:api/PaymentsXsollaApi}
+     * The Reporting_ChallengesApi service constructor.
+     * @property {module:api/Reporting_ChallengesApi}
      */
-    PaymentsXsollaApi: PaymentsXsollaApi,
+    Reporting_ChallengesApi: Reporting_ChallengesApi,
     /**
-     * The ReportingChallengesApi service constructor.
-     * @property {module:api/ReportingChallengesApi}
+     * The Reporting_OrdersApi service constructor.
+     * @property {module:api/Reporting_OrdersApi}
      */
-    ReportingChallengesApi: ReportingChallengesApi,
+    Reporting_OrdersApi: Reporting_OrdersApi,
     /**
-     * The ReportingOrdersApi service constructor.
-     * @property {module:api/ReportingOrdersApi}
+     * The Reporting_RevenueApi service constructor.
+     * @property {module:api/Reporting_RevenueApi}
      */
-    ReportingOrdersApi: ReportingOrdersApi,
+    Reporting_RevenueApi: Reporting_RevenueApi,
     /**
-     * The ReportingRevenueApi service constructor.
-     * @property {module:api/ReportingRevenueApi}
+     * The Reporting_SubscriptionsApi service constructor.
+     * @property {module:api/Reporting_SubscriptionsApi}
      */
-    ReportingRevenueApi: ReportingRevenueApi,
+    Reporting_SubscriptionsApi: Reporting_SubscriptionsApi,
     /**
-     * The ReportingSubscriptionsApi service constructor.
-     * @property {module:api/ReportingSubscriptionsApi}
+     * The Reporting_UsageApi service constructor.
+     * @property {module:api/Reporting_UsageApi}
      */
-    ReportingSubscriptionsApi: ReportingSubscriptionsApi,
+    Reporting_UsageApi: Reporting_UsageApi,
     /**
-     * The ReportingUsageApi service constructor.
-     * @property {module:api/ReportingUsageApi}
+     * The Reporting_UsersApi service constructor.
+     * @property {module:api/Reporting_UsersApi}
      */
-    ReportingUsageApi: ReportingUsageApi,
+    Reporting_UsersApi: Reporting_UsersApi,
     /**
-     * The ReportingUsersApi service constructor.
-     * @property {module:api/ReportingUsersApi}
+     * The Rule_Engine_ActionsApi service constructor.
+     * @property {module:api/Rule_Engine_ActionsApi}
      */
-    ReportingUsersApi: ReportingUsersApi,
+    Rule_Engine_ActionsApi: Rule_Engine_ActionsApi,
+    /**
+     * The Rule_Engine_EventsApi service constructor.
+     * @property {module:api/Rule_Engine_EventsApi}
+     */
+    Rule_Engine_EventsApi: Rule_Engine_EventsApi,
+    /**
+     * The Rule_Engine_ExpressionsApi service constructor.
+     * @property {module:api/Rule_Engine_ExpressionsApi}
+     */
+    Rule_Engine_ExpressionsApi: Rule_Engine_ExpressionsApi,
+    /**
+     * The Rule_Engine_GlobalsApi service constructor.
+     * @property {module:api/Rule_Engine_GlobalsApi}
+     */
+    Rule_Engine_GlobalsApi: Rule_Engine_GlobalsApi,
+    /**
+     * The Rule_Engine_RulesApi service constructor.
+     * @property {module:api/Rule_Engine_RulesApi}
+     */
+    Rule_Engine_RulesApi: Rule_Engine_RulesApi,
+    /**
+     * The Rule_Engine_TriggersApi service constructor.
+     * @property {module:api/Rule_Engine_TriggersApi}
+     */
+    Rule_Engine_TriggersApi: Rule_Engine_TriggersApi,
+    /**
+     * The Rule_Engine_VariablesApi service constructor.
+     * @property {module:api/Rule_Engine_VariablesApi}
+     */
+    Rule_Engine_VariablesApi: Rule_Engine_VariablesApi,
     /**
      * The SearchApi service constructor.
      * @property {module:api/SearchApi}
      */
     SearchApi: SearchApi,
     /**
-     * The SocialFacebookApi service constructor.
-     * @property {module:api/SocialFacebookApi}
+     * The Social_FacebookApi service constructor.
+     * @property {module:api/Social_FacebookApi}
      */
-    SocialFacebookApi: SocialFacebookApi,
+    Social_FacebookApi: Social_FacebookApi,
     /**
-     * The SocialGoogleApi service constructor.
-     * @property {module:api/SocialGoogleApi}
+     * The Social_GoogleApi service constructor.
+     * @property {module:api/Social_GoogleApi}
      */
-    SocialGoogleApi: SocialGoogleApi,
+    Social_GoogleApi: Social_GoogleApi,
     /**
      * The StoreApi service constructor.
      * @property {module:api/StoreApi}
      */
     StoreApi: StoreApi,
     /**
-     * The StoreBundlesApi service constructor.
-     * @property {module:api/StoreBundlesApi}
+     * The Store_BundlesApi service constructor.
+     * @property {module:api/Store_BundlesApi}
      */
-    StoreBundlesApi: StoreBundlesApi,
+    Store_BundlesApi: Store_BundlesApi,
     /**
-     * The StoreCouponsApi service constructor.
-     * @property {module:api/StoreCouponsApi}
+     * The Store_CouponsApi service constructor.
+     * @property {module:api/Store_CouponsApi}
      */
-    StoreCouponsApi: StoreCouponsApi,
+    Store_CouponsApi: Store_CouponsApi,
     /**
-     * The StoreSalesApi service constructor.
-     * @property {module:api/StoreSalesApi}
+     * The Store_SalesApi service constructor.
+     * @property {module:api/Store_SalesApi}
      */
-    StoreSalesApi: StoreSalesApi,
+    Store_SalesApi: Store_SalesApi,
     /**
-     * The StoreShippingApi service constructor.
-     * @property {module:api/StoreShippingApi}
+     * The Store_ShippingApi service constructor.
+     * @property {module:api/Store_ShippingApi}
      */
-    StoreShippingApi: StoreShippingApi,
+    Store_ShippingApi: Store_ShippingApi,
     /**
-     * The StoreShoppingCartsApi service constructor.
-     * @property {module:api/StoreShoppingCartsApi}
+     * The Store_Shopping_CartsApi service constructor.
+     * @property {module:api/Store_Shopping_CartsApi}
      */
-    StoreShoppingCartsApi: StoreShoppingCartsApi,
+    Store_Shopping_CartsApi: Store_Shopping_CartsApi,
     /**
-     * The StoreSubscriptionsApi service constructor.
-     * @property {module:api/StoreSubscriptionsApi}
+     * The Store_SubscriptionsApi service constructor.
+     * @property {module:api/Store_SubscriptionsApi}
      */
-    StoreSubscriptionsApi: StoreSubscriptionsApi,
+    Store_SubscriptionsApi: Store_SubscriptionsApi,
     /**
-     * The StoreVendorsApi service constructor.
-     * @property {module:api/StoreVendorsApi}
+     * The Store_VendorsApi service constructor.
+     * @property {module:api/Store_VendorsApi}
      */
-    StoreVendorsApi: StoreVendorsApi,
+    Store_VendorsApi: Store_VendorsApi,
     /**
      * The TaxesApi service constructor.
      * @property {module:api/TaxesApi}
      */
     TaxesApi: TaxesApi,
     /**
-     * The TemplatesPropertiesApi service constructor.
-     * @property {module:api/TemplatesPropertiesApi}
+     * The Templates_PropertiesApi service constructor.
+     * @property {module:api/Templates_PropertiesApi}
      */
-    TemplatesPropertiesApi: TemplatesPropertiesApi,
+    Templates_PropertiesApi: Templates_PropertiesApi,
     /**
      * The UsersApi service constructor.
      * @property {module:api/UsersApi}
      */
     UsersApi: UsersApi,
     /**
-     * The UsersAddressesApi service constructor.
-     * @property {module:api/UsersAddressesApi}
+     * The Users_AddressesApi service constructor.
+     * @property {module:api/Users_AddressesApi}
      */
-    UsersAddressesApi: UsersAddressesApi,
+    Users_AddressesApi: Users_AddressesApi,
     /**
-     * The UsersFriendshipsApi service constructor.
-     * @property {module:api/UsersFriendshipsApi}
+     * The Users_FriendshipsApi service constructor.
+     * @property {module:api/Users_FriendshipsApi}
      */
-    UsersFriendshipsApi: UsersFriendshipsApi,
+    Users_FriendshipsApi: Users_FriendshipsApi,
     /**
-     * The UsersGroupsApi service constructor.
-     * @property {module:api/UsersGroupsApi}
+     * The Users_GroupsApi service constructor.
+     * @property {module:api/Users_GroupsApi}
      */
-    UsersGroupsApi: UsersGroupsApi,
+    Users_GroupsApi: Users_GroupsApi,
     /**
-     * The UsersInventoryApi service constructor.
-     * @property {module:api/UsersInventoryApi}
+     * The Users_InventoryApi service constructor.
+     * @property {module:api/Users_InventoryApi}
      */
-    UsersInventoryApi: UsersInventoryApi,
+    Users_InventoryApi: Users_InventoryApi,
     /**
-     * The UsersRelationshipsApi service constructor.
-     * @property {module:api/UsersRelationshipsApi}
+     * The Users_RelationshipsApi service constructor.
+     * @property {module:api/Users_RelationshipsApi}
      */
-    UsersRelationshipsApi: UsersRelationshipsApi,
+    Users_RelationshipsApi: Users_RelationshipsApi,
     /**
-     * The UsersSubscriptionsApi service constructor.
-     * @property {module:api/UsersSubscriptionsApi}
+     * The Users_SubscriptionsApi service constructor.
+     * @property {module:api/Users_SubscriptionsApi}
      */
-    UsersSubscriptionsApi: UsersSubscriptionsApi,
+    Users_SubscriptionsApi: Users_SubscriptionsApi,
     /**
-     * The UtilBatchApi service constructor.
-     * @property {module:api/UtilBatchApi}
+     * The Util_BatchApi service constructor.
+     * @property {module:api/Util_BatchApi}
      */
-    UtilBatchApi: UtilBatchApi,
+    Util_BatchApi: Util_BatchApi,
     /**
-     * The UtilHealthApi service constructor.
-     * @property {module:api/UtilHealthApi}
+     * The Util_HealthApi service constructor.
+     * @property {module:api/Util_HealthApi}
      */
-    UtilHealthApi: UtilHealthApi,
+    Util_HealthApi: Util_HealthApi,
     /**
-     * The UtilMaintenanceApi service constructor.
-     * @property {module:api/UtilMaintenanceApi}
+     * The Util_MaintenanceApi service constructor.
+     * @property {module:api/Util_MaintenanceApi}
      */
-    UtilMaintenanceApi: UtilMaintenanceApi,
+    Util_MaintenanceApi: Util_MaintenanceApi,
     /**
-     * The UtilSecurityApi service constructor.
-     * @property {module:api/UtilSecurityApi}
+     * The Util_SecurityApi service constructor.
+     * @property {module:api/Util_SecurityApi}
      */
-    UtilSecurityApi: UtilSecurityApi,
+    Util_SecurityApi: Util_SecurityApi,
     /**
-     * The UtilVersionApi service constructor.
-     * @property {module:api/UtilVersionApi}
+     * The Util_VersionApi service constructor.
+     * @property {module:api/Util_VersionApi}
      */
-    UtilVersionApi: UtilVersionApi
+    Util_VersionApi: Util_VersionApi
   };
 
   return exports;

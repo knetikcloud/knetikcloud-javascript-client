@@ -137,7 +137,7 @@
    */
   exports.prototype['created_date'] = undefined;
   /**
-   * The description of the achievement. Must be at least 2 characters in length.
+   * The description of the achievement
    * @member {String} description
    */
   exports.prototype['description'] = undefined;

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additional_properties** | [**{String: Property}**](Property.md) | A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this resource type | [optional] 
 **created_date** | **Number** | The date/time this resource was created in seconds since unix epoch | [optional] 
-**description** | **String** | The description of the achievement. Must be at least 2 characters in length. | [optional] 
+**description** | **String** | The description of the achievement | [optional] 
 **hidden** | **Boolean** | Whether the achievement is hidden from the user | 
 **name** | **String** | The name of the achievement. Must be at least 6 characters in length. IMMUTABLE | 
 **required_progress** | **Number** | The required progress for the achievement definition | 

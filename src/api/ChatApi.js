@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ChatBlacklistResource', 'model/ChatMessageResource', 'model/PageResourceChatMessageResource', 'model/PageResourceChatUserThreadResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/ChatBlacklistResource', 'model/ChatMessageResource', 'model/IntWrapper', 'model/PageResourceChatMessageResource', 'model/PageResourceChatUserThreadResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ChatBlacklistResource'), require('../model/ChatMessageResource'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceChatUserThreadResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/ChatBlacklistResource'), require('../model/ChatMessageResource'), require('../model/IntWrapper'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceChatUserThreadResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ChatApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatBlacklistResource, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceChatUserThreadResource, root.KnetikCloud.Result);
+    root.KnetikCloud.ChatApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatBlacklistResource, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceChatUserThreadResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, ChatBlacklistResource, ChatMessageResource, PageResourceChatMessageResource, PageResourceChatUserThreadResource, Result) {
+}(this, function(ApiClient, ChatBlacklistResource, ChatMessageResource, IntWrapper, PageResourceChatMessageResource, PageResourceChatUserThreadResource, Result) {
   'use strict';
 
   /**
@@ -54,7 +54,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
      * @param {String} id The thread id
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.readCount The amount of messages read
+     * @param {module:model/IntWrapper} opts.readCount The amount of messages read
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.acknowledgeChatMessageWithHttpInfo = function(id, opts) {
@@ -96,7 +96,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
      * @param {String} id The thread id
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.readCount The amount of messages read
+     * @param {module:model/IntWrapper} opts.readCount The amount of messages read
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.acknowledgeChatMessage = function(id, opts) {

@@ -44,7 +44,7 @@ var apiInstance = new KnetikCloud.ChatApi();
 var id = "id_example"; // String | The thread id
 
 var opts = { 
-  'readCount': 56 // Number | The amount of messages read
+  'readCount': new KnetikCloud.IntWrapper() // IntWrapper | The amount of messages read
 };
 apiInstance.acknowledgeChatMessage(id, opts).then(function() {
   console.log('API called successfully.');
@@ -59,7 +59,7 @@ apiInstance.acknowledgeChatMessage(id, opts).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The thread id | 
- **readCount** | **Number**| The amount of messages read | [optional] 
+ **readCount** | [**IntWrapper**](IntWrapper.md)| The amount of messages read | [optional] 
 
 ### Return type
 

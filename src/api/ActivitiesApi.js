@@ -51,7 +51,7 @@
 
     /**
      * Add a user to an occurrence
-     * If called with no body, defaults to the user making the call.
+     * If called with no body, defaults to the user making the call. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.test if true, indicates that the user should NOT be added. This can be used to test for eligibility (default to false)
@@ -97,7 +97,7 @@
 
     /**
      * Add a user to an occurrence
-     * If called with no body, defaults to the user making the call.
+     * If called with no body, defaults to the user making the call. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.test if true, indicates that the user should NOT be added. This can be used to test for eligibility (default to false)
@@ -731,6 +731,7 @@
 
     /**
      * Remove a user from an occurrence
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {String} userId The id of the user, or &#39;me&#39;
      * @param {Object} opts Optional parameters
@@ -782,6 +783,7 @@
 
     /**
      * Remove a user from an occurrence
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {String} userId The id of the user, or &#39;me&#39;
      * @param {Object} opts Optional parameters
@@ -915,6 +917,7 @@
 
     /**
      * Set a user&#39;s status within an occurrence
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {String} userId The id of the user
      * @param {Object} opts Optional parameters
@@ -963,6 +966,7 @@
 
     /**
      * Set a user&#39;s status within an occurrence
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {String} userId The id of the user
      * @param {Object} opts Optional parameters

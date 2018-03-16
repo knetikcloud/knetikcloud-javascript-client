@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 Add a user to an occurrence
 
-If called with no body, defaults to the user making the call.
+If called with no body, defaults to the user making the call. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -701,6 +701,8 @@ Name | Type | Description  | Notes
 
 Remove a user from an occurrence
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -871,6 +873,8 @@ Name | Type | Description  | Notes
 > ActivityUserResource setUserStatus(activityOccurrenceId, userId, opts)
 
 Set a user&#39;s status within an occurrence
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript

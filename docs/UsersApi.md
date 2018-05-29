@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 Add a tag to a user
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
 
 ### Example
 ```javascript
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 Get a single user
 
-Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+Additional private info is included if access controls allow GET. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 List tags for a user
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 
 List and search users
 
-Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+Additional private info is included with LIST_PRIVATE. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -647,7 +647,7 @@ No authorization required
 
 Register a new user
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -700,7 +700,7 @@ Name | Type | Description  | Notes
 
 Remove a tag from a user
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
 
 ### Example
 ```javascript
@@ -755,7 +755,7 @@ null (empty response body)
 
 Set a user&#39;s password
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or (USERS_USER and owner)
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -916,7 +916,7 @@ null (empty response body)
 
 Update a user
 
-Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
+Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript

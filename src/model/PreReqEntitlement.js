@@ -37,7 +37,7 @@
   /**
    * The PreReqEntitlement model module.
    * @module model/PreReqEntitlement
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**

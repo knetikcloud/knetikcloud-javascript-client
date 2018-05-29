@@ -37,7 +37,7 @@
   /**
    * The GroupResource model module.
    * @module model/GroupResource
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -45,9 +45,8 @@
    * @alias module:model/GroupResource
    * @class
    * @param name {String} The name of the group. Max 50 characters
-   * @param status {module:model/GroupResource.StatusEnum} The status which describes whether other users can freely join the group or not
    */
-  var exports = function(name, status) {
+  var exports = function(name) {
     var _this = this;
 
 
@@ -56,7 +55,7 @@
 
     _this['name'] = name;
 
-    _this['status'] = status;
+
 
 
 
@@ -156,8 +155,8 @@
    */
   exports.prototype['parent'] = undefined;
   /**
-   * The status which describes whether other users can freely join the group or not
-   * @member {module:model/GroupResource.StatusEnum} status
+   * The status of the group. Max size 50
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -181,23 +180,6 @@
    */
   exports.prototype['unique_name'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "open"
-     * @const
-     */
-    "open": "open",
-    /**
-     * value: "closed"
-     * @const
-     */
-    "closed": "closed"  };
 
 
   return exports;

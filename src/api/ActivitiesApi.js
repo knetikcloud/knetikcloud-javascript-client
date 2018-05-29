@@ -34,7 +34,7 @@
   /**
    * Activities service.
    * @module api/ActivitiesApi
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**

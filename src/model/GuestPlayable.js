@@ -37,7 +37,7 @@
   /**
    * The GuestPlayable model module.
    * @module model/GuestPlayable
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**

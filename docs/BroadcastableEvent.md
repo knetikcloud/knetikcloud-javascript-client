@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **client** | **String** |  | [optional] 
 **customer** | **String** |  | [optional] 
 **do_not_broadcast** | **Boolean** |  | [optional] 
+**local** | **Boolean** |  | [optional] 
 **section** | **String** |  | [optional] 
 **source** | **Object** |  | [optional] 
 **specifics** | **String** |  | [optional] 

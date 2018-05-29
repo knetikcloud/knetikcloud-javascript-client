@@ -51,6 +51,46 @@
   }
 
   describe('SearchApi', function() {
+    describe('indexDocument', function() {
+      it('should call indexDocument successfully', function(done) {
+        //uncomment below and update the code to test indexDocument
+        //instance.indexDocument(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('registerDefinition', function() {
+      it('should call registerDefinition successfully', function(done) {
+        //uncomment below and update the code to test registerDefinition
+        //instance.registerDefinition(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('reindex', function() {
+      it('should call reindex successfully', function(done) {
+        //uncomment below and update the code to test reindex
+        //instance.reindex(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('removeDocument', function() {
+      it('should call removeDocument successfully', function(done) {
+        //uncomment below and update the code to test removeDocument
+        //instance.removeDocument(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('searchCountGET', function() {
       it('should call searchCountGET successfully', function(done) {
         //uncomment below and update the code to test searchCountGET
@@ -215,6 +255,26 @@
       it('should call searchMappingsWithTemplateGET successfully', function(done) {
         //uncomment below and update the code to test searchMappingsWithTemplateGET
         //instance.searchMappingsWithTemplateGET(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('searchPublicIndex', function() {
+      it('should call searchPublicIndex successfully', function(done) {
+        //uncomment below and update the code to test searchPublicIndex
+        //instance.searchPublicIndex(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('searchPublicIndexWithTemplate', function() {
+      it('should call searchPublicIndexWithTemplate successfully', function(done) {
+        //uncomment below and update the code to test searchPublicIndexWithTemplate
+        //instance.searchPublicIndexWithTemplate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

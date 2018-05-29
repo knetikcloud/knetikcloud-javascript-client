@@ -34,7 +34,7 @@
   /**
    * MediaVideos service.
    * @module api/MediaVideosApi
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -614,11 +614,17 @@
     /**
      * Delete a video disposition
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
+     * @param {Number} videoId The video id
      * @param {Number} dispositionId The disposition id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteVideoDispositionWithHttpInfo = function(dispositionId) {
+    this.deleteVideoDispositionWithHttpInfo = function(videoId, dispositionId) {
       var postBody = null;
+
+      // verify the required parameter 'videoId' is set
+      if (videoId === undefined || videoId === null) {
+        throw new Error("Missing the required parameter 'videoId' when calling deleteVideoDisposition");
+      }
 
       // verify the required parameter 'dispositionId' is set
       if (dispositionId === undefined || dispositionId === null) {
@@ -627,6 +633,7 @@
 
 
       var pathParams = {
+        'video_id': videoId,
         'disposition_id': dispositionId
       };
       var queryParams = {
@@ -653,11 +660,12 @@
     /**
      * Delete a video disposition
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
+     * @param {Number} videoId The video id
      * @param {Number} dispositionId The disposition id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.deleteVideoDisposition = function(dispositionId) {
-      return this.deleteVideoDispositionWithHttpInfo(dispositionId)
+    this.deleteVideoDisposition = function(videoId, dispositionId) {
+      return this.deleteVideoDispositionWithHttpInfo(videoId, dispositionId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1022,6 +1030,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterCreatedDate Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceDispositionResource} and HTTP response
@@ -1040,6 +1049,7 @@
         'video_id': videoId
       };
       var queryParams = {
+        'filter_created_date': opts['filterCreatedDate'],
         'size': opts['size'],
         'page': opts['page'],
       };
@@ -1067,6 +1077,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterCreatedDate Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceDispositionResource}

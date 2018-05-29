@@ -586,7 +586,7 @@ null (empty response body)
 
 <a name="deleteVideoDisposition"></a>
 # **deleteVideoDisposition**
-> deleteVideoDisposition(dispositionId)
+> deleteVideoDisposition(videoId, dispositionId)
 
 Delete a video disposition
 
@@ -607,9 +607,11 @@ oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.MediaVideosApi();
 
+var videoId = 789; // Number | The video id
+
 var dispositionId = 789; // Number | The disposition id
 
-apiInstance.deleteVideoDisposition(dispositionId).then(function() {
+apiInstance.deleteVideoDisposition(videoId, dispositionId).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -621,6 +623,7 @@ apiInstance.deleteVideoDisposition(dispositionId).then(function() {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **videoId** | **Number**| The video id | 
  **dispositionId** | **Number**| The disposition id | 
 
 ### Return type
@@ -995,6 +998,7 @@ var apiInstance = new KnetikCloud.MediaVideosApi();
 var videoId = 56; // Number | The video id
 
 var opts = { 
+  'filterCreatedDate': "filterCreatedDate_example", // String | Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date=OP,ts&... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date=GT,1452154258,LT,1554254874
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
@@ -1011,6 +1015,7 @@ apiInstance.getVideoDispositions(videoId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **videoId** | **Number**| The video id | 
+ **filterCreatedDate** | **String**| Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874 | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 

@@ -4,7 +4,6 @@ All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.c
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addUserLog**](LogsApi.md#addUserLog) | **POST** /audit/logs | Add a user log entry
 [**getBREEventLog**](LogsApi.md#getBREEventLog) | **GET** /bre/logs/event-log/{id} | Get an existing BRE event log entry by id
 [**getBREEventLogs**](LogsApi.md#getBREEventLogs) | **GET** /bre/logs/event-log | Returns a list of BRE event log entries
 [**getBREForwardLog**](LogsApi.md#getBREForwardLog) | **GET** /bre/logs/forward-log/{id} | Get an existing forward log entry by id
@@ -12,59 +11,6 @@ Method | HTTP request | Description
 [**getUserLog**](LogsApi.md#getUserLog) | **GET** /audit/logs/{id} | Returns a user log entry by id
 [**getUserLogs**](LogsApi.md#getUserLogs) | **GET** /audit/logs | Returns a page of user logs entries
 
-
-<a name="addUserLog"></a>
-# **addUserLog**
-> addUserLog(opts)
-
-Add a user log entry
-
-&lt;b&gt;Permissions Needed:&lt;/b&gt; owner
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.LogsApi();
-
-var opts = { 
-  'logEntry': new KnetikCloud.UserActionLog() // UserActionLog | The user log entry to be added
-};
-apiInstance.addUserLog(opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **logEntry** | [**UserActionLog**](UserActionLog.md)| The user log entry to be added | [optional] 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
 
 <a name="getBREEventLog"></a>
 # **getBREEventLog**

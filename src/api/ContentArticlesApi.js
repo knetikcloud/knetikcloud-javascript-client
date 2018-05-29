@@ -34,7 +34,7 @@
   /**
    * ContentArticles service.
    * @module api/ContentArticlesApi
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a new article
-     * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
+     * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ArticleResource} opts.articleResource The new article
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ArticleResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a new article
-     * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
+     * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ArticleResource} opts.articleResource The new article
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ArticleResource}
@@ -209,7 +209,7 @@
 
     /**
      * Delete an existing article
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The article id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -248,7 +248,7 @@
 
     /**
      * Delete an existing article
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The article id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -387,7 +387,7 @@
 
     /**
      * Get a single article
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The article id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ArticleResource} and HTTP response
      */
@@ -426,7 +426,7 @@
 
     /**
      * Get a single article
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The article id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ArticleResource}
      */
@@ -550,7 +550,7 @@
 
     /**
      * List and search articles
-     * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterActiveOnly Filter for articles that are active (true) or inactive (false)
      * @param {String} opts.filterCategory Filter for articles from a specific category by id
@@ -602,7 +602,7 @@
 
     /**
      * List and search articles
-     * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterActiveOnly Filter for articles that are active (true) or inactive (false)
      * @param {String} opts.filterCategory Filter for articles from a specific category by id
@@ -751,7 +751,7 @@
 
     /**
      * Update an existing article
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The article id
      * @param {Object} opts Optional parameters
      * @param {module:model/ArticleResource} opts.articleResource The article object
@@ -793,7 +793,7 @@
 
     /**
      * Update an existing article
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The article id
      * @param {Object} opts Optional parameters
      * @param {module:model/ArticleResource} opts.articleResource The article object

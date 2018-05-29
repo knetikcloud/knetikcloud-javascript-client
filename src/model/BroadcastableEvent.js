@@ -37,7 +37,7 @@
   /**
    * The BroadcastableEvent model module.
    * @module model/BroadcastableEvent
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -48,6 +48,7 @@
    */
   var exports = function(type) {
     var _this = this;
+
 
 
 
@@ -79,6 +80,9 @@
       }
       if (data.hasOwnProperty('do_not_broadcast')) {
         obj['do_not_broadcast'] = ApiClient.convertToType(data['do_not_broadcast'], 'Boolean');
+      }
+      if (data.hasOwnProperty('local')) {
+        obj['local'] = ApiClient.convertToType(data['local'], 'Boolean');
       }
       if (data.hasOwnProperty('section')) {
         obj['section'] = ApiClient.convertToType(data['section'], 'String');
@@ -128,6 +132,10 @@ exports.discriminatorField = 'type';
    * @member {Boolean} do_not_broadcast
    */
   exports.prototype['do_not_broadcast'] = undefined;
+  /**
+   * @member {Boolean} local
+   */
+  exports.prototype['local'] = undefined;
   /**
    * @member {String} section
    */

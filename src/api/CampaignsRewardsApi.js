@@ -34,7 +34,7 @@
   /**
    * CampaignsRewards service.
    * @module api/CampaignsRewardsApi
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**

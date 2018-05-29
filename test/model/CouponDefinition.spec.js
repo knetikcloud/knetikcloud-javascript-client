@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property couponId (base name: "coupon_id")', function() {
+      // uncomment below and update the code to test the property couponId
+      //var instane = new KnetikCloud.CouponDefinition();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instane = new KnetikCloud.CouponDefinition();

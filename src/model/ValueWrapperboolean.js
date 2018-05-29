@@ -37,7 +37,7 @@
   /**
    * The ValueWrapperboolean model module.
    * @module model/ValueWrapperboolean
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**

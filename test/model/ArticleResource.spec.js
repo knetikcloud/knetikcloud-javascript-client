@@ -117,6 +117,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property viewCount (base name: "view_count")', function() {
+      // uncomment below and update the code to test the property viewCount
+      //var instane = new KnetikCloud.ArticleResource();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

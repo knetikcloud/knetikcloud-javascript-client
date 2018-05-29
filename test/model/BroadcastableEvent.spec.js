@@ -75,6 +75,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property local (base name: "local")', function() {
+      // uncomment below and update the code to test the property local
+      //var instane = new KnetikCloud.BroadcastableEvent();
+      //expect(instance).to.be();
+    });
+
     it('should have the property section (base name: "section")', function() {
       // uncomment below and update the code to test the property section
       //var instane = new KnetikCloud.BroadcastableEvent();

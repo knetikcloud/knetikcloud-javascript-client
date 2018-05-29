@@ -34,7 +34,7 @@
   /**
    * Logs service.
    * @module api/LogsApi
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -47,56 +47,6 @@
   var exports = function(apiClient) {
     this.apiClient = apiClient || ApiClient.instance;
 
-
-
-    /**
-     * Add a user log entry
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserActionLog} opts.logEntry The user log entry to be added
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.addUserLogWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['logEntry'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/audit/logs', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Add a user log entry
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
-     * @param {Object} opts Optional parameters
-     * @param {module:model/UserActionLog} opts.logEntry The user log entry to be added
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.addUserLog = function(opts) {
-      return this.addUserLogWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
 
 
     /**

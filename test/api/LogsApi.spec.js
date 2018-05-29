@@ -51,16 +51,6 @@
   }
 
   describe('LogsApi', function() {
-    describe('addUserLog', function() {
-      it('should call addUserLog successfully', function(done) {
-        //uncomment below and update the code to test addUserLog
-        //instance.addUserLog(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('getBREEventLog', function() {
       it('should call getBREEventLog successfully', function(done) {
         //uncomment below and update the code to test getBREEventLog

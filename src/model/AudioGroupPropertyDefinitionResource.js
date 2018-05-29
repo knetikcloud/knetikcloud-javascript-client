@@ -37,7 +37,7 @@
   /**
    * The AudioGroupPropertyDefinitionResource model module.
    * @module model/AudioGroupPropertyDefinitionResource
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**

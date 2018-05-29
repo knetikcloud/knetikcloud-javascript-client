@@ -34,7 +34,7 @@
   /**
    * UsersSubscriptions service.
    * @module api/UsersSubscriptionsApi
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -503,12 +503,12 @@
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters
-     * @param {module:model/SubscriptionPriceOverrideRequest} opts.theOverrideDetails override
+     * @param {module:model/SubscriptionPriceOverrideRequest} opts.override The override details
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.setUserSubscriptionPriceWithHttpInfo = function(userId, inventoryId, opts) {
       opts = opts || {};
-      var postBody = opts['theOverrideDetails'];
+      var postBody = opts['override'];
 
       // verify the required parameter 'userId' is set
       if (userId === undefined || userId === null) {
@@ -552,7 +552,7 @@
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters
-     * @param {module:model/SubscriptionPriceOverrideRequest} opts.theOverrideDetails override
+     * @param {module:model/SubscriptionPriceOverrideRequest} opts.override The override details
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.setUserSubscriptionPrice = function(userId, inventoryId, opts) {

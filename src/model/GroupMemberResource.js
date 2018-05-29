@@ -37,7 +37,7 @@
   /**
    * The GroupMemberResource model module.
    * @module model/GroupMemberResource
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -138,8 +138,8 @@
    */
   exports.prototype['order'] = undefined;
   /**
-   * The member's access level. Default: member
-   * @member {module:model/GroupMemberResource.StatusEnum} status
+   * The member's status. Max size 50. Default: member
+   * @member {String} status
    */
   exports.prototype['status'] = undefined;
   /**
@@ -153,23 +153,6 @@
    */
   exports.prototype['user'] = undefined;
 
-
-  /**
-   * Allowed values for the <code>status</code> property.
-   * @enum {String}
-   * @readonly
-   */
-  exports.StatusEnum = {
-    /**
-     * value: "moderator"
-     * @const
-     */
-    "moderator": "moderator",
-    /**
-     * value: "member"
-     * @const
-     */
-    "member": "member"  };
 
 
   return exports;

@@ -37,7 +37,7 @@
   /**
    * The ArticleResource model module.
    * @module model/ArticleResource
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -61,6 +61,7 @@
 
 
     _this['title'] = title;
+
 
   };
 
@@ -104,6 +105,9 @@
       }
       if (data.hasOwnProperty('updated_date')) {
         obj['updated_date'] = ApiClient.convertToType(data['updated_date'], 'Number');
+      }
+      if (data.hasOwnProperty('view_count')) {
+        obj['view_count'] = ApiClient.convertToType(data['view_count'], 'Number');
       }
     }
     return obj;
@@ -173,6 +177,11 @@
    * @member {Number} updated_date
    */
   exports.prototype['updated_date'] = undefined;
+  /**
+   * The view count of the article
+   * @member {Number} view_count
+   */
+  exports.prototype['view_count'] = undefined;
 
 
 

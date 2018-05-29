@@ -37,7 +37,7 @@
   /**
    * The CartItemRequest model module.
    * @module model/CartItemRequest
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -45,15 +45,14 @@
    * @alias module:model/CartItemRequest
    * @class
    * @param catalogSku {String} The catalog SKU of the item
-   * @param priceOverride {Number} Allows to override the price of an item, if the behavior configuration permits it
    * @param quantity {Number} The quantity of the item
    */
-  var exports = function(catalogSku, priceOverride, quantity) {
+  var exports = function(catalogSku, quantity) {
     var _this = this;
 
 
     _this['catalog_sku'] = catalogSku;
-    _this['price_override'] = priceOverride;
+
     _this['quantity'] = quantity;
   };
 
@@ -109,7 +108,7 @@
    */
   exports.prototype['catalog_sku'] = undefined;
   /**
-   * Allows to override the price of an item, if the behavior configuration permits it
+   * Override the price of an item, if the behavior configuration permits it. Do not send if taking standard pricing. Minimum 0
    * @member {Number} price_override
    */
   exports.prototype['price_override'] = undefined;

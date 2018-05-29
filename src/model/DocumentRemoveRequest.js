@@ -26,7 +26,7 @@
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.GroupMemberStatusWrapper = factory(root.KnetikCloud.ApiClient);
+    root.KnetikCloud.DocumentRemoveRequest = factory(root.KnetikCloud.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,35 +35,43 @@
 
 
   /**
-   * The GroupMemberStatusWrapper model module.
-   * @module model/GroupMemberStatusWrapper
-   * @version 3.0.9
+   * The DocumentRemoveRequest model module.
+   * @module model/DocumentRemoveRequest
+   * @version 3.0.10
    */
 
   /**
-   * Constructs a new <code>GroupMemberStatusWrapper</code>.
-   * @alias module:model/GroupMemberStatusWrapper
+   * Constructs a new <code>DocumentRemoveRequest</code>.
+   * @alias module:model/DocumentRemoveRequest
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
+
+
   };
 
   /**
-   * Constructs a <code>GroupMemberStatusWrapper</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>DocumentRemoveRequest</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/GroupMemberStatusWrapper} obj Optional instance to populate.
-   * @return {module:model/GroupMemberStatusWrapper} The populated <code>GroupMemberStatusWrapper</code> instance.
+   * @param {module:model/DocumentRemoveRequest} obj Optional instance to populate.
+   * @return {module:model/DocumentRemoveRequest} The populated <code>DocumentRemoveRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('value')) {
-        obj['value'] = ApiClient.convertToType(data['value'], 'String');
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      }
+      if (data.hasOwnProperty('template')) {
+        obj['template'] = ApiClient.convertToType(data['template'], 'String');
+      }
+      if (data.hasOwnProperty('type')) {
+        obj['type'] = ApiClient.convertToType(data['type'], 'String');
       }
     }
     return obj;
@@ -80,31 +88,25 @@
 		  exports.parent.registerChild(child, discriminatorValue);
   }
   
-  var discriminatorValue = 'GroupMemberStatusWrapper';
+  var discriminatorValue = 'DocumentRemoveRequest';
 
 
   /**
-   * @member {module:model/GroupMemberStatusWrapper.ValueEnum} value
+   * The id of the document
+   * @member {String} id
    */
-  exports.prototype['value'] = undefined;
-
-
+  exports.prototype['id'] = undefined;
   /**
-   * Allowed values for the <code>value</code> property.
-   * @enum {String}
-   * @readonly
+   * The id of the template if this document is based on a templated resource
+   * @member {String} template
    */
-  exports.ValueEnum = {
-    /**
-     * value: "moderator"
-     * @const
-     */
-    "moderator": "moderator",
-    /**
-     * value: "member"
-     * @const
-     */
-    "member": "member"  };
+  exports.prototype['template'] = undefined;
+  /**
+   * The type of document
+   * @member {String} type
+   */
+  exports.prototype['type'] = undefined;
+
 
 
   return exports;

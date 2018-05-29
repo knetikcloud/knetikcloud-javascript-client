@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 Create a new article
 
-Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
+Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 Delete an existing article
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -357,7 +357,7 @@ null (empty response body)
 
 Get a single article
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 List and search articles
 
-Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 Update an existing article
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript

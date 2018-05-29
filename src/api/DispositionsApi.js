@@ -34,7 +34,7 @@
   /**
    * Dispositions service.
    * @module api/DispositionsApi
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -209,6 +209,7 @@
      * Returns a list of disposition counts
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterCreatedDate Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DispositionCount>} and HTTP response
@@ -221,6 +222,7 @@
       var pathParams = {
       };
       var queryParams = {
+        'filter_created_date': opts['filterCreatedDate'],
         'filter_context': opts['filterContext'],
         'filter_owner': opts['filterOwner'],
       };
@@ -247,6 +249,7 @@
      * Returns a list of disposition counts
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterCreatedDate Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DispositionCount>}
@@ -263,6 +266,7 @@
      * Returns a page of dispositions
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterCreatedDate Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -278,6 +282,7 @@
       var pathParams = {
       };
       var queryParams = {
+        'filter_created_date': opts['filterCreatedDate'],
         'filter_context': opts['filterContext'],
         'filter_owner': opts['filterOwner'],
         'size': opts['size'],
@@ -307,6 +312,7 @@
      * Returns a page of dispositions
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterCreatedDate Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;
      * @param {Number} opts.size The number of objects returned per page (default to 25)

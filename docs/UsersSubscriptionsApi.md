@@ -442,7 +442,7 @@ var userId = 56; // Number | The id of the user
 var inventoryId = 56; // Number | The id of the user's inventory
 
 var opts = { 
-  'theOverrideDetails': new KnetikCloud.SubscriptionPriceOverrideRequest() // SubscriptionPriceOverrideRequest | override
+  'override': new KnetikCloud.SubscriptionPriceOverrideRequest() // SubscriptionPriceOverrideRequest | The override details
 };
 apiInstance.setUserSubscriptionPrice(userId, inventoryId, opts).then(function() {
   console.log('API called successfully.');
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The id of the user | 
  **inventoryId** | **Number**| The id of the user&#39;s inventory | 
- **theOverrideDetails** | [**SubscriptionPriceOverrideRequest**](SubscriptionPriceOverrideRequest.md)| override | [optional] 
+ **override** | [**SubscriptionPriceOverrideRequest**](SubscriptionPriceOverrideRequest.md)| The override details | [optional] 
 
 ### Return type
 

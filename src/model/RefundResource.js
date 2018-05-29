@@ -37,7 +37,7 @@
   /**
    * The RefundResource model module.
    * @module model/RefundResource
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**

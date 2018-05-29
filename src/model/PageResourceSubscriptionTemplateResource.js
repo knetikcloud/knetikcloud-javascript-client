@@ -37,7 +37,7 @@
   /**
    * The PageResourceSubscriptionTemplateResource model module.
    * @module model/PageResourceSubscriptionTemplateResource
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**

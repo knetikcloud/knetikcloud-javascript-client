@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KnetikCloud.GroupMemberStatusWrapper();
+    instance = new KnetikCloud.UserSidResource();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,16 +50,22 @@
       object[property] = value;
   }
 
-  describe('GroupMemberStatusWrapper', function() {
-    it('should create an instance of GroupMemberStatusWrapper', function() {
-      // uncomment below and update the code to test GroupMemberStatusWrapper
-      //var instane = new KnetikCloud.GroupMemberStatusWrapper();
-      //expect(instance).to.be.a(KnetikCloud.GroupMemberStatusWrapper);
+  describe('UserSidResource', function() {
+    it('should create an instance of UserSidResource', function() {
+      // uncomment below and update the code to test UserSidResource
+      //var instane = new KnetikCloud.UserSidResource();
+      //expect(instance).to.be.a(KnetikCloud.UserSidResource);
     });
 
-    it('should have the property value (base name: "value")', function() {
-      // uncomment below and update the code to test the property value
-      //var instane = new KnetikCloud.GroupMemberStatusWrapper();
+    it('should have the property sid (base name: "sid")', function() {
+      // uncomment below and update the code to test the property sid
+      //var instane = new KnetikCloud.UserSidResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property userId (base name: "user_id")', function() {
+      // uncomment below and update the code to test the property userId
+      //var instane = new KnetikCloud.UserSidResource();
       //expect(instance).to.be();
     });
 

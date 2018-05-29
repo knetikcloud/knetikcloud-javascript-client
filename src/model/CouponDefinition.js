@@ -37,7 +37,7 @@
   /**
    * The CouponDefinition model module.
    * @module model/CouponDefinition
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -55,6 +55,7 @@
     var _this = this;
 
     _this['code'] = code;
+
 
     _this['discount_type'] = discountType;
 
@@ -84,6 +85,9 @@
 
       if (data.hasOwnProperty('code')) {
         obj['code'] = ApiClient.convertToType(data['code'], 'String');
+      }
+      if (data.hasOwnProperty('coupon_id')) {
+        obj['coupon_id'] = ApiClient.convertToType(data['coupon_id'], 'Number');
       }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -150,6 +154,11 @@
    * @member {String} code
    */
   exports.prototype['code'] = undefined;
+  /**
+   * The id of the coupon.
+   * @member {Number} coupon_id
+   */
+  exports.prototype['coupon_id'] = undefined;
   /**
    * A description for the discount.
    * @member {String} description

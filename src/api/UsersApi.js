@@ -34,7 +34,7 @@
   /**
    * Users service.
    * @module api/UsersApi
-   * @version 3.0.9
+   * @version 3.0.10
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Add a tag to a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
      * @param {Number} userId The id of the user
      * @param {module:model/StringWrapper} tag tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -96,7 +96,7 @@
 
     /**
      * Add a tag to a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
      * @param {Number} userId The id of the user
      * @param {module:model/StringWrapper} tag tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -282,7 +282,7 @@
 
     /**
      * Get a single user
-     * Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Additional private info is included if access controls allow GET. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The id of the user or &#39;me&#39;
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResource} and HTTP response
      */
@@ -321,7 +321,7 @@
 
     /**
      * Get a single user
-     * Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Additional private info is included if access controls allow GET. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The id of the user or &#39;me&#39;
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResource}
      */
@@ -335,7 +335,7 @@
 
     /**
      * List tags for a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {Number} userId The id of the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
      */
@@ -374,7 +374,7 @@
 
     /**
      * List tags for a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {Number} userId The id of the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
      */
@@ -498,7 +498,7 @@
 
     /**
      * List and search users
-     * Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Additional private info is included with LIST_PRIVATE. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterDisplayname Filter for users whose display name starts with provided string.
      * @param {String} opts.filterEmail Filter for users whose email starts with provided string. Requires USERS_ADMIN permission
@@ -562,7 +562,7 @@
 
     /**
      * List and search users
-     * Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Additional private info is included with LIST_PRIVATE. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterDisplayname Filter for users whose display name starts with provided string.
      * @param {String} opts.filterEmail Filter for users whose email starts with provided string. Requires USERS_ADMIN permission
@@ -705,7 +705,7 @@
 
     /**
      * Register a new user
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/UserResource} opts.userResource The user resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResource} and HTTP response
@@ -740,7 +740,7 @@
 
     /**
      * Register a new user
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/UserResource} opts.userResource The user resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResource}
@@ -755,7 +755,7 @@
 
     /**
      * Remove a tag from a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
      * @param {Number} userId The id of the user
      * @param {String} tag The tag to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -801,7 +801,7 @@
 
     /**
      * Remove a tag from a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
      * @param {Number} userId The id of the user
      * @param {String} tag The tag to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -816,7 +816,7 @@
 
     /**
      * Set a user&#39;s password
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or (USERS_USER and owner)
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.password The new plain text password
@@ -858,7 +858,7 @@
 
     /**
      * Set a user&#39;s password
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or (USERS_USER and owner)
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.password The new plain text password
@@ -977,7 +977,7 @@
 
     /**
      * Update a user
-     * Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
+     * Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {module:model/UserResource} opts.userResource The user resource object
@@ -1019,7 +1019,7 @@
 
     /**
      * Update a user
-     * Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
+     * Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {module:model/UserResource} opts.userResource The user resource object

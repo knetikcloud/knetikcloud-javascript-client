@@ -58,6 +58,10 @@ Name | Type | Description | Notes
 
 * `event` (value: `"event"`)
 
+* `monitoring` (value: `"monitoring"`)
+
+* `verification` (value: `"verification"`)
+
 
 
 

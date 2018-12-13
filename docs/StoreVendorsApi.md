@@ -1,6 +1,6 @@
 # KnetikCloud.StoreVendorsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**getVendorTemplates**](StoreVendorsApi.md#getVendorTemplates) | **GET** /vendors/templates | List and search vendor templates
 [**getVendors**](StoreVendorsApi.md#getVendors) | **GET** /vendors | List and search vendors
 [**updateVendor**](StoreVendorsApi.md#updateVendor) | **PUT** /vendors/{id} | Update a vendor
-[**updateVendorTemplate**](StoreVendorsApi.md#updateVendorTemplate) | **PUT** /vendors/templates/{id} | Update a vendor template
+[**updateVendorTemplate**](StoreVendorsApi.md#updateVendorTemplate) | **PATCH** /vendors/templates/{id} | Update a vendor template
 
 
 <a name="createVendor"></a>
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 Create a vendor template
 
-Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -180,7 +180,7 @@ null (empty response body)
 
 Delete a vendor template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 Get a single vendor template
 
-Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 List and search vendor templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 
 Update a vendor template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -532,7 +532,8 @@ var apiInstance = new KnetikCloud.StoreVendorsApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'vendorTemplateResource': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The vendor template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateVendorTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -547,7 +548,8 @@ apiInstance.updateVendorTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **vendorTemplateResource** | [**ItemTemplateResource**](ItemTemplateResource.md)| The vendor template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

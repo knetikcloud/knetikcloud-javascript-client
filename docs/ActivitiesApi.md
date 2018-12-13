@@ -1,15 +1,15 @@
 # KnetikCloud.ActivitiesApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addUser**](ActivitiesApi.md#addUser) | **POST** /activity-occurrences/{activity_occurrence_id}/users | Add a user to an occurrence
 [**createActivity**](ActivitiesApi.md#createActivity) | **POST** /activities | Create an activity
 [**createActivityOccurrence**](ActivitiesApi.md#createActivityOccurrence) | **POST** /activity-occurrences | Create a new activity occurrence. Ex: start a game
-[**createActivityTemplate**](ActivitiesApi.md#createActivityTemplate) | **POST** /activities/templates | Create a activity template
+[**createActivityTemplate**](ActivitiesApi.md#createActivityTemplate) | **POST** /activities/templates | Create an activity template
 [**deleteActivity**](ActivitiesApi.md#deleteActivity) | **DELETE** /activities/{id} | Delete an activity
-[**deleteActivityTemplate**](ActivitiesApi.md#deleteActivityTemplate) | **DELETE** /activities/templates/{id} | Delete a activity template
+[**deleteActivityTemplate**](ActivitiesApi.md#deleteActivityTemplate) | **DELETE** /activities/templates/{id} | Delete an activity template
 [**getActivities**](ActivitiesApi.md#getActivities) | **GET** /activities | List activity definitions
 [**getActivity**](ActivitiesApi.md#getActivity) | **GET** /activities/{id} | Get a single activity
 [**getActivityOccurrenceDetails**](ActivitiesApi.md#getActivityOccurrenceDetails) | **GET** /activity-occurrences/{activity_occurrence_id} | Load a single activity occurrence details
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 [**setUserStatus**](ActivitiesApi.md#setUserStatus) | **PUT** /activity-occurrences/{activity_occurrence_id}/users/{user_id}/status | Set a user&#39;s status within an occurrence
 [**updateActivity**](ActivitiesApi.md#updateActivity) | **PUT** /activities/{id} | Update an activity
 [**updateActivityOccurrenceStatus**](ActivitiesApi.md#updateActivityOccurrenceStatus) | **PUT** /activity-occurrences/{activity_occurrence_id}/status | Update the status of an activity occurrence
-[**updateActivityTemplate**](ActivitiesApi.md#updateActivityTemplate) | **PUT** /activities/templates/{id} | Update an activity template
+[**updateActivityTemplate**](ActivitiesApi.md#updateActivityTemplate) | **PATCH** /activities/templates/{id} | Update an activity template
 
 
 <a name="addUser"></a>
@@ -197,9 +197,9 @@ Name | Type | Description  | Notes
 # **createActivityTemplate**
 > TemplateResource createActivityTemplate(opts)
 
-Create a activity template
+Create an activity template
 
-Activity Templates define a type of activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Activity Templates define a type of activity and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -302,9 +302,9 @@ null (empty response body)
 # **deleteActivityTemplate**
 > deleteActivityTemplate(id, opts)
 
-Delete a activity template
+Delete an activity template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 Get a single activity template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
 
 List and search activity templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -1045,7 +1045,7 @@ null (empty response body)
 
 Update an activity template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -1065,7 +1065,8 @@ var apiInstance = new KnetikCloud.ActivitiesApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'activityTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The activity template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateActivityTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1080,7 +1081,8 @@ apiInstance.updateActivityTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **activityTemplateResource** | [**TemplateResource**](TemplateResource.md)| The activity template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

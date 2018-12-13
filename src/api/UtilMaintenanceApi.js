@@ -34,7 +34,7 @@
   /**
    * UtilMaintenance service.
    * @module api/UtilMaintenanceApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -183,56 +183,6 @@
      */
     this.setMaintenance = function(opts) {
       return this.setMaintenanceWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Update current maintenance info
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Maintenance} opts.maintenance The maintenance object
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.updateMaintenanceWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['maintenance'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/maintenance', 'PUT',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Update current maintenance info
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Maintenance} opts.maintenance The maintenance object
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.updateMaintenance = function(opts) {
-      return this.updateMaintenanceWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

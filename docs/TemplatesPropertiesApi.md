@@ -1,6 +1,6 @@
 # KnetikCloud.TemplatesPropertiesApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,11 +10,11 @@ Method | HTTP request | Description
 
 <a name="getTemplatePropertyType"></a>
 # **getTemplatePropertyType**
-> PropertyFieldListResource getTemplatePropertyType(type)
+> PropertyFieldListResource getTemplatePropertyType(type, opts)
 
 Get details for a template property type
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -33,7 +33,11 @@ var apiInstance = new KnetikCloud.TemplatesPropertiesApi();
 
 var type = "type_example"; // String | type
 
-apiInstance.getTemplatePropertyType(type).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getTemplatePropertyType(type, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -46,6 +50,8 @@ apiInstance.getTemplatePropertyType(type).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**| type | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
@@ -62,11 +68,11 @@ Name | Type | Description  | Notes
 
 <a name="getTemplatePropertyTypes"></a>
 # **getTemplatePropertyTypes**
-> [PropertyFieldListResource] getTemplatePropertyTypes()
+> PageResourcePropertyFieldListResource getTemplatePropertyTypes()
 
 List template property types
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -95,7 +101,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[PropertyFieldListResource]**](PropertyFieldListResource.md)
+[**PageResourcePropertyFieldListResource**](PageResourcePropertyFieldListResource.md)
 
 ### Authorization
 

@@ -61,20 +61,10 @@
         done();
       });
     });
-    describe('registerDefinition', function() {
-      it('should call registerDefinition successfully', function(done) {
-        //uncomment below and update the code to test registerDefinition
-        //instance.registerDefinition(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('reindex', function() {
-      it('should call reindex successfully', function(done) {
-        //uncomment below and update the code to test reindex
-        //instance.reindex(function(error) {
+    describe('reindexAll', function() {
+      it('should call reindexAll successfully', function(done) {
+        //uncomment below and update the code to test reindexAll
+        //instance.reindexAll(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -111,40 +101,10 @@
         done();
       });
     });
-    describe('searchCountWithTemplateGET', function() {
-      it('should call searchCountWithTemplateGET successfully', function(done) {
-        //uncomment below and update the code to test searchCountWithTemplateGET
-        //instance.searchCountWithTemplateGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchCountWithTemplatePOST', function() {
-      it('should call searchCountWithTemplatePOST successfully', function(done) {
-        //uncomment below and update the code to test searchCountWithTemplatePOST
-        //instance.searchCountWithTemplatePOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('searchDocumentGET', function() {
       it('should call searchDocumentGET successfully', function(done) {
         //uncomment below and update the code to test searchDocumentGET
         //instance.searchDocumentGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchDocumentWithTemplateGET', function() {
-      it('should call searchDocumentWithTemplateGET successfully', function(done) {
-        //uncomment below and update the code to test searchDocumentWithTemplateGET
-        //instance.searchDocumentWithTemplateGET(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -171,26 +131,6 @@
         done();
       });
     });
-    describe('searchExplainWithTemplateGET', function() {
-      it('should call searchExplainWithTemplateGET successfully', function(done) {
-        //uncomment below and update the code to test searchExplainWithTemplateGET
-        //instance.searchExplainWithTemplateGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchExplainWithTemplatePOST', function() {
-      it('should call searchExplainWithTemplatePOST successfully', function(done) {
-        //uncomment below and update the code to test searchExplainWithTemplatePOST
-        //instance.searchExplainWithTemplatePOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('searchIndex', function() {
       it('should call searchIndex successfully', function(done) {
         //uncomment below and update the code to test searchIndex
@@ -205,26 +145,6 @@
       it('should call searchIndexGET successfully', function(done) {
         //uncomment below and update the code to test searchIndexGET
         //instance.searchIndexGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchIndexWithTemplateGET', function() {
-      it('should call searchIndexWithTemplateGET successfully', function(done) {
-        //uncomment below and update the code to test searchIndexWithTemplateGET
-        //instance.searchIndexWithTemplateGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchIndexWithTemplatePOST', function() {
-      it('should call searchIndexWithTemplatePOST successfully', function(done) {
-        //uncomment below and update the code to test searchIndexWithTemplatePOST
-        //instance.searchIndexWithTemplatePOST(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -251,30 +171,10 @@
         done();
       });
     });
-    describe('searchMappingsWithTemplateGET', function() {
-      it('should call searchMappingsWithTemplateGET successfully', function(done) {
-        //uncomment below and update the code to test searchMappingsWithTemplateGET
-        //instance.searchMappingsWithTemplateGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('searchPublicIndex', function() {
       it('should call searchPublicIndex successfully', function(done) {
         //uncomment below and update the code to test searchPublicIndex
         //instance.searchPublicIndex(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchPublicIndexWithTemplate', function() {
-      it('should call searchPublicIndexWithTemplate successfully', function(done) {
-        //uncomment below and update the code to test searchPublicIndexWithTemplate
-        //instance.searchPublicIndexWithTemplate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -295,26 +195,6 @@
       it('should call searchValidatePOST successfully', function(done) {
         //uncomment below and update the code to test searchValidatePOST
         //instance.searchValidatePOST(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchValidateWithTemplateGET', function() {
-      it('should call searchValidateWithTemplateGET successfully', function(done) {
-        //uncomment below and update the code to test searchValidateWithTemplateGET
-        //instance.searchValidateWithTemplateGET(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('searchValidateWithTemplatePOST', function() {
-      it('should call searchValidateWithTemplatePOST successfully', function(done) {
-        //uncomment below and update the code to test searchValidateWithTemplatePOST
-        //instance.searchValidateWithTemplatePOST(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

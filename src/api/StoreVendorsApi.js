@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ItemTemplateResource', 'model/PageResourceItemTemplateResource', 'model/PageResourceVendorResource', 'model/Result', 'model/VendorResource'], factory);
+    define(['ApiClient', 'model/ItemTemplateResource', 'model/PageResourceItemTemplateResource', 'model/PageResourceVendorResource', 'model/PatchResource', 'model/Result', 'model/VendorResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ItemTemplateResource'), require('../model/PageResourceItemTemplateResource'), require('../model/PageResourceVendorResource'), require('../model/Result'), require('../model/VendorResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/ItemTemplateResource'), require('../model/PageResourceItemTemplateResource'), require('../model/PageResourceVendorResource'), require('../model/PatchResource'), require('../model/Result'), require('../model/VendorResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.StoreVendorsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.PageResourceVendorResource, root.KnetikCloud.Result, root.KnetikCloud.VendorResource);
+    root.KnetikCloud.StoreVendorsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.PageResourceVendorResource, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.VendorResource);
   }
-}(this, function(ApiClient, ItemTemplateResource, PageResourceItemTemplateResource, PageResourceVendorResource, Result, VendorResource) {
+}(this, function(ApiClient, ItemTemplateResource, PageResourceItemTemplateResource, PageResourceVendorResource, PatchResource, Result, VendorResource) {
   'use strict';
 
   /**
    * StoreVendors service.
    * @module api/StoreVendorsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -101,7 +101,7 @@
 
     /**
      * Create a vendor template
-     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.vendorTemplateResource The new vendor template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
@@ -136,7 +136,7 @@
 
     /**
      * Create a vendor template
-     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.vendorTemplateResource The new vendor template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
@@ -204,7 +204,7 @@
 
     /**
      * Delete a vendor template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -247,7 +247,7 @@
 
     /**
      * Delete a vendor template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -316,7 +316,7 @@
 
     /**
      * Get a single vendor template
-     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -355,7 +355,7 @@
 
     /**
      * Get a single vendor template
-     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -369,7 +369,7 @@
 
     /**
      * List and search vendor templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -409,7 +409,7 @@
 
     /**
      * List and search vendor templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -544,15 +544,16 @@
 
     /**
      * Update a vendor template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/ItemTemplateResource} opts.vendorTemplateResource The vendor template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
     this.updateVendorTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['vendorTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -564,6 +565,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -578,7 +580,7 @@
       var returnType = ItemTemplateResource;
 
       return this.apiClient.callApi(
-        '/vendors/templates/{id}', 'PUT',
+        '/vendors/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -586,10 +588,11 @@
 
     /**
      * Update a vendor template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/ItemTemplateResource} opts.vendorTemplateResource The vendor template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
     this.updateVendorTemplate = function(id, opts) {

@@ -87,18 +87,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property notAvailable (base name: "not_available")', function() {
-      // uncomment below and update the code to test the property notAvailable
-      //var instane = new KnetikCloud.Sku();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property notDisplayable (base name: "not_displayable")', function() {
-      // uncomment below and update the code to test the property notDisplayable
-      //var instane = new KnetikCloud.Sku();
-      //expect(instance).to.be();
-    });
-
     it('should have the property originalPrice (base name: "original_price")', function() {
       // uncomment below and update the code to test the property originalPrice
       //var instane = new KnetikCloud.Sku();

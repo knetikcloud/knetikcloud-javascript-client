@@ -37,7 +37,7 @@
   /**
    * The GroupResource model module.
    * @module model/GroupResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -53,7 +53,9 @@
 
 
 
+
     _this['name'] = name;
+
 
 
 
@@ -75,6 +77,9 @@
 
       if (data.hasOwnProperty('additional_properties')) {
         obj['additional_properties'] = ApiClient.convertToType(data['additional_properties'], {'String': Property});
+      }
+      if (data.hasOwnProperty('created_date')) {
+        obj['created_date'] = ApiClient.convertToType(data['created_date'], 'Number');
       }
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
@@ -106,6 +111,9 @@
       if (data.hasOwnProperty('unique_name')) {
         obj['unique_name'] = ApiClient.convertToType(data['unique_name'], 'String');
       }
+      if (data.hasOwnProperty('updated_date')) {
+        obj['updated_date'] = ApiClient.convertToType(data['updated_date'], 'Number');
+      }
     }
     return obj;
   }
@@ -129,6 +137,11 @@
    * @member {Object.<String, module:model/Property>} additional_properties
    */
   exports.prototype['additional_properties'] = undefined;
+  /**
+   * The date the group was created as a unix timestamp
+   * @member {Number} created_date
+   */
+  exports.prototype['created_date'] = undefined;
   /**
    * A description of the group
    * @member {String} description
@@ -179,6 +192,11 @@
    * @member {String} unique_name
    */
   exports.prototype['unique_name'] = undefined;
+  /**
+   * The date the group's info was last updated as a unix timestamp
+   * @member {Number} updated_date
+   */
+  exports.prototype['updated_date'] = undefined;
 
 
 

@@ -281,20 +281,20 @@
         done();
       });
     });
-    describe('updateGroupMemberProperties', function() {
-      it('should call updateGroupMemberProperties successfully', function(done) {
-        //uncomment below and update the code to test updateGroupMemberProperties
-        //instance.updateGroupMemberProperties(function(error) {
+    describe('updateGroupMemberOrder', function() {
+      it('should call updateGroupMemberOrder successfully', function(done) {
+        //uncomment below and update the code to test updateGroupMemberOrder
+        //instance.updateGroupMemberOrder(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('updateGroupMemberProperties1', function() {
-      it('should call updateGroupMemberProperties1 successfully', function(done) {
-        //uncomment below and update the code to test updateGroupMemberProperties1
-        //instance.updateGroupMemberProperties1(function(error) {
+    describe('updateGroupMemberProperties', function() {
+      it('should call updateGroupMemberProperties successfully', function(done) {
+        //uncomment below and update the code to test updateGroupMemberProperties
+        //instance.updateGroupMemberProperties(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

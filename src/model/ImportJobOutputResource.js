@@ -37,7 +37,7 @@
   /**
    * The ImportJobOutputResource model module.
    * @module model/ImportJobOutputResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**

@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BundleItem', 'model/ItemTemplateResource', 'model/PageResourceItemTemplateResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/BundleItem', 'model/ItemTemplateResource', 'model/PageResourceItemTemplateResource', 'model/PatchResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BundleItem'), require('../model/ItemTemplateResource'), require('../model/PageResourceItemTemplateResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/BundleItem'), require('../model/ItemTemplateResource'), require('../model/PageResourceItemTemplateResource'), require('../model/PatchResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.StoreBundlesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.BundleItem, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.Result);
+    root.KnetikCloud.StoreBundlesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.BundleItem, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.PatchResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, BundleItem, ItemTemplateResource, PageResourceItemTemplateResource, Result) {
+}(this, function(ApiClient, BundleItem, ItemTemplateResource, PageResourceItemTemplateResource, PatchResource, Result) {
   'use strict';
 
   /**
    * StoreBundles service.
    * @module api/StoreBundlesApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -104,7 +104,7 @@
 
     /**
      * Create a bundle template
-     * Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
+     * Bundle Templates define a type of bundle and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.bundleTemplateResource The new bundle template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
@@ -139,7 +139,7 @@
 
     /**
      * Create a bundle template
-     * Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
+     * Bundle Templates define a type of bundle and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.bundleTemplateResource The new bundle template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
@@ -207,7 +207,7 @@
 
     /**
      * Delete a bundle template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -250,7 +250,7 @@
 
     /**
      * Delete a bundle template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -319,7 +319,7 @@
 
     /**
      * Get a single bundle template
-     * Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Bundle Templates define a type of bundle and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -358,7 +358,7 @@
 
     /**
      * Get a single bundle template
-     * Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Bundle Templates define a type of bundle and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -372,7 +372,7 @@
 
     /**
      * List and search bundle templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -412,7 +412,7 @@
 
     /**
      * List and search bundle templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -490,15 +490,16 @@
 
     /**
      * Update a bundle template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/ItemTemplateResource} opts.bundleTemplateResource The bundle template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
     this.updateBundleTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['bundleTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -510,6 +511,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -524,7 +526,7 @@
       var returnType = ItemTemplateResource;
 
       return this.apiClient.callApi(
-        '/store/bundles/templates/{id}', 'PUT',
+        '/store/bundles/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -532,10 +534,11 @@
 
     /**
      * Update a bundle template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/ItemTemplateResource} opts.bundleTemplateResource The bundle template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
     this.updateBundleTemplate = function(id, opts) {

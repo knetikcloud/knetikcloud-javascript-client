@@ -1,6 +1,6 @@
 # KnetikCloud.StoreApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**getStoreItem**](StoreApi.md#getStoreItem) | **GET** /store/items/{id} | Get a single store item
 [**getStoreItems**](StoreApi.md#getStoreItems) | **GET** /store/items | List and search store items
 [**quickBuy**](StoreApi.md#quickBuy) | **POST** /store/quick-buy | One-step purchase and pay for a single SKU item from a user&#39;s wallet
-[**updateItemTemplate**](StoreApi.md#updateItemTemplate) | **PUT** /store/items/templates/{id} | Update an item template
+[**updateItemTemplate**](StoreApi.md#updateItemTemplate) | **PATCH** /store/items/templates/{id} | Update an item template
 [**updateStoreItem**](StoreApi.md#updateStoreItem) | **PUT** /store/items/{id} | Update a store item
 
 
@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 Create an item template
 
-Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 Delete an item template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -236,7 +236,7 @@ null (empty response body)
 
 <a name="getBehaviors"></a>
 # **getBehaviors**
-> [BehaviorDefinitionResource] getBehaviors()
+> PageResourceBehaviorDefinitionResource getBehaviors(opts)
 
 List available item behaviors
 
@@ -256,7 +256,12 @@ var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant
 oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.StoreApi();
-apiInstance.getBehaviors().then(function(data) {
+
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getBehaviors(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -265,11 +270,15 @@ apiInstance.getBehaviors().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[BehaviorDefinitionResource]**](BehaviorDefinitionResource.md)
+[**PageResourceBehaviorDefinitionResource**](PageResourceBehaviorDefinitionResource.md)
 
 ### Authorization
 
@@ -286,7 +295,7 @@ This endpoint does not need any parameter.
 
 Get a single item template
 
-Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -338,7 +347,7 @@ Name | Type | Description  | Notes
 
 List and search item templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -585,7 +594,7 @@ Name | Type | Description  | Notes
 
 Update an item template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -605,7 +614,8 @@ var apiInstance = new KnetikCloud.StoreApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'itemTemplateResource': new KnetikCloud.StoreItemTemplateResource() // StoreItemTemplateResource | The item template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateItemTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -620,7 +630,8 @@ apiInstance.updateItemTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **itemTemplateResource** | [**StoreItemTemplateResource**](StoreItemTemplateResource.md)| The item template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

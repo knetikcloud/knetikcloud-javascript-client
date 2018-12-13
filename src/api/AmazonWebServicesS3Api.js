@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AmazonS3Activity', 'model/Result'], factory);
+    define(['ApiClient', 'model/AmazonS3Activity', 'model/Result', 'model/StringWrapper'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AmazonS3Activity'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/AmazonS3Activity'), require('../model/Result'), require('../model/StringWrapper'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.AmazonWebServicesS3Api = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AmazonS3Activity, root.KnetikCloud.Result);
+    root.KnetikCloud.AmazonWebServicesS3Api = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AmazonS3Activity, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
   }
-}(this, function(ApiClient, AmazonS3Activity, Result) {
+}(this, function(ApiClient, AmazonS3Activity, Result, StringWrapper) {
   'use strict';
 
   /**
    * AmazonWebServicesS3 service.
    * @module api/AmazonWebServicesS3Api
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -54,9 +54,9 @@
      * To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.bucket S3 bucket name
-     * @param {String} opts.path The path to the file relative to the bucket (the s3 object key)
+     * @param {String} opts.path The path to the file relative the bucket (the s3 object key)
      * @param {Number} opts.expiration The number of seconds this URL will be valid. Default to 60 (default to 60)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.getDownloadURLWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -80,10 +80,10 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = 'String';
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
-        '/amazon/s3/downloadurl', 'GET',
+        '/amazon/s3/download-url', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -94,9 +94,9 @@
      * To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.bucket S3 bucket name
-     * @param {String} opts.path The path to the file relative to the bucket (the s3 object key)
+     * @param {String} opts.path The path to the file relative the bucket (the s3 object key)
      * @param {Number} opts.expiration The number of seconds this URL will be valid. Default to 60 (default to 60)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.getDownloadURL = function(opts) {
       return this.getDownloadURLWithHttpInfo(opts)
@@ -138,7 +138,7 @@
       var returnType = AmazonS3Activity;
 
       return this.apiClient.callApi(
-        '/amazon/s3/signedposturl', 'GET',
+        '/amazon/s3/signed-post-url', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );

@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EntitlementGrantRequest', 'model/EntitlementItem', 'model/InventoryStatusWrapper', 'model/InvoiceResource', 'model/ItemTemplateResource', 'model/PageResourceEntitlementItem', 'model/PageResourceItemTemplateResource', 'model/PageResourceUserInventoryResource', 'model/PageResourceUserItemLogResource', 'model/Result', 'model/UserInventoryAddRequest', 'model/UserInventoryResource'], factory);
+    define(['ApiClient', 'model/EntitlementGrantRequest', 'model/EntitlementItem', 'model/InventoryStatusWrapper', 'model/InvoiceResource', 'model/ItemTemplateResource', 'model/PageResourceEntitlementItem', 'model/PageResourceItemTemplateResource', 'model/PageResourceUserInventoryResource', 'model/PageResourceUserItemLogResource', 'model/PatchResource', 'model/Result', 'model/UserInventoryAddRequest', 'model/UserInventoryResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/EntitlementGrantRequest'), require('../model/EntitlementItem'), require('../model/InventoryStatusWrapper'), require('../model/InvoiceResource'), require('../model/ItemTemplateResource'), require('../model/PageResourceEntitlementItem'), require('../model/PageResourceItemTemplateResource'), require('../model/PageResourceUserInventoryResource'), require('../model/PageResourceUserItemLogResource'), require('../model/Result'), require('../model/UserInventoryAddRequest'), require('../model/UserInventoryResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/EntitlementGrantRequest'), require('../model/EntitlementItem'), require('../model/InventoryStatusWrapper'), require('../model/InvoiceResource'), require('../model/ItemTemplateResource'), require('../model/PageResourceEntitlementItem'), require('../model/PageResourceItemTemplateResource'), require('../model/PageResourceUserInventoryResource'), require('../model/PageResourceUserItemLogResource'), require('../model/PatchResource'), require('../model/Result'), require('../model/UserInventoryAddRequest'), require('../model/UserInventoryResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.UsersInventoryApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.EntitlementGrantRequest, root.KnetikCloud.EntitlementItem, root.KnetikCloud.InventoryStatusWrapper, root.KnetikCloud.InvoiceResource, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.PageResourceEntitlementItem, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.PageResourceUserInventoryResource, root.KnetikCloud.PageResourceUserItemLogResource, root.KnetikCloud.Result, root.KnetikCloud.UserInventoryAddRequest, root.KnetikCloud.UserInventoryResource);
+    root.KnetikCloud.UsersInventoryApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.EntitlementGrantRequest, root.KnetikCloud.EntitlementItem, root.KnetikCloud.InventoryStatusWrapper, root.KnetikCloud.InvoiceResource, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.PageResourceEntitlementItem, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.PageResourceUserInventoryResource, root.KnetikCloud.PageResourceUserItemLogResource, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.UserInventoryAddRequest, root.KnetikCloud.UserInventoryResource);
   }
-}(this, function(ApiClient, EntitlementGrantRequest, EntitlementItem, InventoryStatusWrapper, InvoiceResource, ItemTemplateResource, PageResourceEntitlementItem, PageResourceItemTemplateResource, PageResourceUserInventoryResource, PageResourceUserItemLogResource, Result, UserInventoryAddRequest, UserInventoryResource) {
+}(this, function(ApiClient, EntitlementGrantRequest, EntitlementItem, InventoryStatusWrapper, InvoiceResource, ItemTemplateResource, PageResourceEntitlementItem, PageResourceItemTemplateResource, PageResourceUserInventoryResource, PageResourceUserItemLogResource, PatchResource, Result, UserInventoryAddRequest, UserInventoryResource) {
   'use strict';
 
   /**
    * UsersInventory service.
    * @module api/UsersInventoryApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -229,7 +229,7 @@
 
     /**
      * Create an entitlement template
-     * Entitlement templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Entitlement templates define a type of entitlement and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The entitlement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
@@ -264,7 +264,7 @@
 
     /**
      * Create an entitlement template
-     * Entitlement templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Entitlement templates define a type of entitlement and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The entitlement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
@@ -332,7 +332,7 @@
 
     /**
      * Delete an entitlement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -375,7 +375,7 @@
 
     /**
      * Delete an entitlement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -504,7 +504,7 @@
 
     /**
      * Get a single entitlement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -543,7 +543,7 @@
 
     /**
      * Get a single entitlement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -557,7 +557,7 @@
 
     /**
      * List and search entitlement templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -597,7 +597,7 @@
 
     /**
      * List and search entitlement templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -606,6 +606,78 @@
      */
     this.getEntitlementTemplates = function(opts) {
       return this.getEntitlementTemplatesWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List the user inventory entries for all users
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.inactive If true, accepts inactive user inventories (default to false)
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.filterItemName Filter by items whose name starts with a string
+     * @param {Number} opts.filterItemId Filter by item id
+     * @param {String} opts.filterUsername Filter by entries owned by the user with the specified username
+     * @param {String} opts.filterGroup Filter by entries owned by the users in a given group, by unique name
+     * @param {String} opts.filterDate A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceUserInventoryResource} and HTTP response
+     */
+    this.getInventoryListWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'inactive': opts['inactive'],
+        'size': opts['size'],
+        'page': opts['page'],
+        'filter_item_name': opts['filterItemName'],
+        'filter_item_id': opts['filterItemId'],
+        'filter_username': opts['filterUsername'],
+        'filter_group': opts['filterGroup'],
+        'filter_date': opts['filterDate'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = PageResourceUserInventoryResource;
+
+      return this.apiClient.callApi(
+        '/inventories', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * List the user inventory entries for all users
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.inactive If true, accepts inactive user inventories (default to false)
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.filterItemName Filter by items whose name starts with a string
+     * @param {Number} opts.filterItemId Filter by item id
+     * @param {String} opts.filterUsername Filter by entries owned by the user with the specified username
+     * @param {String} opts.filterGroup Filter by entries owned by the users in a given group, by unique name
+     * @param {String} opts.filterDate A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceUserInventoryResource}
+     */
+    this.getInventoryList = function(opts) {
+      return this.getInventoryListWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -824,78 +896,6 @@
 
 
     /**
-     * List the user inventory entries for all users
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.inactive If true, accepts inactive user inventories (default to false)
-     * @param {Number} opts.size The number of objects returned per page (default to 25)
-     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
-     * @param {String} opts.filterItemName Filter by items whose name starts with a string
-     * @param {Number} opts.filterItemId Filter by item id
-     * @param {String} opts.filterUsername Filter by entries owned by the user with the specified username
-     * @param {String} opts.filterGroup Filter by entries owned by the users in a given group, by unique name
-     * @param {String} opts.filterDate A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceUserInventoryResource} and HTTP response
-     */
-    this.getUsersInventoryWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = null;
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'inactive': opts['inactive'],
-        'size': opts['size'],
-        'page': opts['page'],
-        'filter_item_name': opts['filterItemName'],
-        'filter_item_id': opts['filterItemId'],
-        'filter_username': opts['filterUsername'],
-        'filter_group': opts['filterGroup'],
-        'filter_date': opts['filterDate'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PageResourceUserInventoryResource;
-
-      return this.apiClient.callApi(
-        '/inventories', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * List the user inventory entries for all users
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
-     * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.inactive If true, accepts inactive user inventories (default to false)
-     * @param {Number} opts.size The number of objects returned per page (default to 25)
-     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
-     * @param {String} opts.filterItemName Filter by items whose name starts with a string
-     * @param {Number} opts.filterItemId Filter by item id
-     * @param {String} opts.filterUsername Filter by entries owned by the user with the specified username
-     * @param {String} opts.filterGroup Filter by entries owned by the users in a given group, by unique name
-     * @param {String} opts.filterDate A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceUserInventoryResource}
-     */
-    this.getUsersInventory = function(opts) {
-      return this.getUsersInventoryWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Grant an entitlement
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} userId The id of the user to grant the entitlement to
@@ -1018,15 +1018,16 @@
 
     /**
      * Update an entitlement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/ItemTemplateResource} opts.template The updated template
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
     this.updateEntitlementTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['template'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -1038,6 +1039,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -1052,7 +1054,7 @@
       var returnType = ItemTemplateResource;
 
       return this.apiClient.callApi(
-        '/entitlements/templates/{id}', 'PUT',
+        '/entitlements/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -1060,10 +1062,11 @@
 
     /**
      * Update an entitlement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/ItemTemplateResource} opts.template The updated template
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
     this.updateEntitlementTemplate = function(id, opts) {

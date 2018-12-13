@@ -37,7 +37,7 @@
   /**
    * The StoreItemTemplateResource model module.
    * @module model/StoreItemTemplateResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -48,7 +48,6 @@
    */
   var exports = function(name) {
     var _this = this;
-
 
 
 
@@ -70,9 +69,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('allow_additional')) {
-        obj['allow_additional'] = ApiClient.convertToType(data['allow_additional'], 'Boolean');
-      }
       if (data.hasOwnProperty('behaviors')) {
         obj['behaviors'] = ApiClient.convertToType(data['behaviors'], [ItemBehaviorDefinitionResource]);
       }
@@ -112,11 +108,6 @@
   var discriminatorValue = 'StoreItemTemplateResource';
 
 
-  /**
-   * Whether to allow additional properties beyond those specified or not
-   * @member {Boolean} allow_additional
-   */
-  exports.prototype['allow_additional'] = undefined;
   /**
    * The customized behaviors that are required or default for this type of item
    * @member {Array.<module:model/ItemBehaviorDefinitionResource>} behaviors

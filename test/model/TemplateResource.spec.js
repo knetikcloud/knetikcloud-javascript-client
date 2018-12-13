@@ -57,12 +57,6 @@
       //expect(instance).to.be.a(KnetikCloud.TemplateResource);
     });
 
-    it('should have the property allowAdditional (base name: "allow_additional")', function() {
-      // uncomment below and update the code to test the property allowAdditional
-      //var instane = new KnetikCloud.TemplateResource();
-      //expect(instance).to.be();
-    });
-
     it('should have the property createdDate (base name: "created_date")', function() {
       // uncomment below and update the code to test the property createdDate
       //var instane = new KnetikCloud.TemplateResource();

@@ -37,20 +37,21 @@
   /**
    * The DocumentRemoveRequest model module.
    * @module model/DocumentRemoveRequest
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
    * Constructs a new <code>DocumentRemoveRequest</code>.
    * @alias module:model/DocumentRemoveRequest
    * @class
+   * @param id {String} The id of the document
+   * @param type {String} The type of document
    */
-  var exports = function() {
+  var exports = function(id, type) {
     var _this = this;
 
-
-
-
+    _this['id'] = id;
+    _this['type'] = type;
   };
 
   /**
@@ -66,9 +67,6 @@
 
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
-      if (data.hasOwnProperty('template')) {
-        obj['template'] = ApiClient.convertToType(data['template'], 'String');
       }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -96,11 +94,6 @@
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
-  /**
-   * The id of the template if this document is based on a templated resource
-   * @member {String} template
-   */
-  exports.prototype['template'] = undefined;
   /**
    * The type of document
    * @member {String} type

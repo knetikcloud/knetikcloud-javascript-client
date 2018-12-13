@@ -37,7 +37,7 @@
   /**
    * The SubscriptionTemplateResource model module.
    * @module model/SubscriptionTemplateResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -48,7 +48,6 @@
    */
   var exports = function(name) {
     var _this = this;
-
 
 
 
@@ -69,9 +68,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('allow_additional')) {
-        obj['allow_additional'] = ApiClient.convertToType(data['allow_additional'], 'Boolean');
-      }
       if (data.hasOwnProperty('created_date')) {
         obj['created_date'] = ApiClient.convertToType(data['created_date'], 'Number');
       }
@@ -108,11 +104,6 @@
   var discriminatorValue = 'SubscriptionTemplateResource';
 
 
-  /**
-   * Whether to allow additional properties beyond those specified or not
-   * @member {Boolean} allow_additional
-   */
-  exports.prototype['allow_additional'] = undefined;
   /**
    * The date/time this resource was created in seconds since unix epoch
    * @member {Number} created_date

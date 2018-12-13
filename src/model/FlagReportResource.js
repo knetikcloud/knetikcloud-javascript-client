@@ -37,7 +37,7 @@
   /**
    * The FlagReportResource model module.
    * @module model/FlagReportResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**

@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/NewPasswordRequest', 'model/PageResourceChatMessageResource', 'model/PageResourceTemplateResource', 'model/PageResourceUserBaseResource', 'model/PasswordResetRequest', 'model/Result', 'model/StringWrapper', 'model/TemplateResource', 'model/UserResource'], factory);
+    define(['ApiClient', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/NewPasswordRequest', 'model/PageResourceChatMessageResource', 'model/PageResourceTemplateResource', 'model/PageResourceUserBaseResource', 'model/PageResourcestring', 'model/PasswordResetRequest', 'model/PatchResource', 'model/Result', 'model/StringWrapper', 'model/TemplateResource', 'model/UserResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ChatMessageRequest'), require('../model/ChatMessageResource'), require('../model/NewPasswordRequest'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourceUserBaseResource'), require('../model/PasswordResetRequest'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'), require('../model/UserResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/ChatMessageRequest'), require('../model/ChatMessageResource'), require('../model/NewPasswordRequest'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourceUserBaseResource'), require('../model/PageResourcestring'), require('../model/PasswordResetRequest'), require('../model/PatchResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'), require('../model/UserResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.UsersApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatMessageRequest, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.NewPasswordRequest, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourceUserBaseResource, root.KnetikCloud.PasswordResetRequest, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource, root.KnetikCloud.UserResource);
+    root.KnetikCloud.UsersApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatMessageRequest, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.NewPasswordRequest, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourceUserBaseResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PasswordResetRequest, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource, root.KnetikCloud.UserResource);
   }
-}(this, function(ApiClient, ChatMessageRequest, ChatMessageResource, NewPasswordRequest, PageResourceChatMessageResource, PageResourceTemplateResource, PageResourceUserBaseResource, PasswordResetRequest, Result, StringWrapper, TemplateResource, UserResource) {
+}(this, function(ApiClient, ChatMessageRequest, ChatMessageResource, NewPasswordRequest, PageResourceChatMessageResource, PageResourceTemplateResource, PageResourceUserBaseResource, PageResourcestring, PasswordResetRequest, PatchResource, Result, StringWrapper, TemplateResource, UserResource) {
   'use strict';
 
   /**
    * Users service.
    * @module api/UsersApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Add a tag to a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
      * @param {Number} userId The id of the user
      * @param {module:model/StringWrapper} tag tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -96,7 +96,7 @@
 
     /**
      * Add a tag to a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
      * @param {Number} userId The id of the user
      * @param {module:model/StringWrapper} tag tag
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -111,7 +111,7 @@
 
     /**
      * Create a user template
-     * User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.userTemplateResource The user template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -146,7 +146,7 @@
 
     /**
      * Create a user template
-     * User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.userTemplateResource The user template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -161,7 +161,7 @@
 
     /**
      * Delete a user template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -204,7 +204,7 @@
 
     /**
      * Delete a user template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -282,7 +282,7 @@
 
     /**
      * Get a single user
-     * Additional private info is included if access controls allow GET. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Additional private info is included if access controls allow GET.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the user or &#39;me&#39;
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResource} and HTTP response
      */
@@ -321,7 +321,7 @@
 
     /**
      * Get a single user
-     * Additional private info is included if access controls allow GET. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Additional private info is included if access controls allow GET.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the user or &#39;me&#39;
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResource}
      */
@@ -337,9 +337,13 @@
      * List tags for a user
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {Number} userId The id of the user
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcestring} and HTTP response
      */
-    this.getUserTagsWithHttpInfo = function(userId) {
+    this.getUserTagsWithHttpInfo = function(userId, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'userId' is set
@@ -352,6 +356,8 @@
         'user_id': userId
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -363,7 +369,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourcestring;
 
       return this.apiClient.callApi(
         '/users/{user_id}/tags', 'GET',
@@ -376,10 +382,13 @@
      * List tags for a user
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {Number} userId The id of the user
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcestring}
      */
-    this.getUserTags = function(userId) {
-      return this.getUserTagsWithHttpInfo(userId)
+    this.getUserTags = function(userId, opts) {
+      return this.getUserTagsWithHttpInfo(userId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -388,7 +397,7 @@
 
     /**
      * Get a single user template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -427,7 +436,7 @@
 
     /**
      * Get a single user template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -441,7 +450,7 @@
 
     /**
      * List and search user templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -481,7 +490,7 @@
 
     /**
      * List and search user templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -498,7 +507,7 @@
 
     /**
      * List and search users
-     * Additional private info is included with LIST_PRIVATE. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+     * Additional private info is included with LIST_PRIVATE. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterDisplayname Filter for users whose display name starts with provided string.
      * @param {String} opts.filterEmail Filter for users whose email starts with provided string. Requires USERS_ADMIN permission
@@ -562,7 +571,7 @@
 
     /**
      * List and search users
-     * Additional private info is included with LIST_PRIVATE. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+     * Additional private info is included with LIST_PRIVATE. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterDisplayname Filter for users whose display name starts with provided string.
      * @param {String} opts.filterEmail Filter for users whose email starts with provided string. Requires USERS_ADMIN permission
@@ -591,7 +600,7 @@
 
     /**
      * Choose a new password after a reset
-     * Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/NewPasswordRequest} opts.newPasswordRequest The new password request object
@@ -633,7 +642,7 @@
 
     /**
      * Choose a new password after a reset
-     * Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/NewPasswordRequest} opts.newPasswordRequest The new password request object
@@ -676,7 +685,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ChatMessageResource;
@@ -705,7 +714,7 @@
 
     /**
      * Register a new user
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/UserResource} opts.userResource The user resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResource} and HTTP response
@@ -740,7 +749,7 @@
 
     /**
      * Register a new user
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/UserResource} opts.userResource The user resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResource}
@@ -755,7 +764,7 @@
 
     /**
      * Remove a tag from a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
      * @param {Number} userId The id of the user
      * @param {String} tag The tag to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -801,7 +810,7 @@
 
     /**
      * Remove a tag from a user
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
      * @param {Number} userId The id of the user
      * @param {String} tag The tag to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -816,7 +825,7 @@
 
     /**
      * Set a user&#39;s password
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.password The new plain text password
@@ -858,7 +867,7 @@
 
     /**
      * Set a user&#39;s password
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.password The new plain text password
@@ -874,7 +883,7 @@
 
     /**
      * Reset a user&#39;s password
-     * A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -913,7 +922,7 @@
 
     /**
      * Reset a user&#39;s password
-     * A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -927,7 +936,7 @@
 
     /**
      * Reset a user&#39;s password without user id
-     * A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Object} opts Optional parameters
      * @param {module:model/PasswordResetRequest} opts.passwordReset An object containing one of three methods to look up a user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -962,7 +971,7 @@
 
     /**
      * Reset a user&#39;s password without user id
-     * A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Object} opts Optional parameters
      * @param {module:model/PasswordResetRequest} opts.passwordReset An object containing one of three methods to look up a user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -977,7 +986,7 @@
 
     /**
      * Update a user
-     * Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {module:model/UserResource} opts.userResource The user resource object
@@ -1019,7 +1028,7 @@
 
     /**
      * Update a user
-     * Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {module:model/UserResource} opts.userResource The user resource object
@@ -1035,15 +1044,16 @@
 
     /**
      * Update a user template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.userTemplateResource The user template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
     this.updateUserTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['userTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -1055,6 +1065,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -1069,7 +1080,7 @@
       var returnType = TemplateResource;
 
       return this.apiClient.callApi(
-        '/users/templates/{id}', 'PUT',
+        '/users/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -1077,10 +1088,11 @@
 
     /**
      * Update a user template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.userTemplateResource The user template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
     this.updateUserTemplate = function(id, opts) {

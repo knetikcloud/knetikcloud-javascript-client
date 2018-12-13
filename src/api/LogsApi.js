@@ -34,7 +34,7 @@
   /**
    * Logs service.
    * @module api/LogsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -104,7 +104,7 @@
 
     /**
      * Returns a list of BRE event log entries
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+     * Logs are kept for 24 hours. &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the event log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEventName Filter event logs by event name
@@ -152,7 +152,7 @@
 
     /**
      * Returns a list of BRE event log entries
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+     * Logs are kept for 24 hours. &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the event log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEventName Filter event logs by event name
@@ -226,7 +226,7 @@
 
     /**
      * Returns a list of forward log entries
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+     * Logs are kept for 24 hours. &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEndDate A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -274,7 +274,7 @@
 
     /**
      * Returns a list of forward log entries
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+     * Logs are kept for 24 hours. &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEndDate A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -299,12 +299,12 @@
      * @param {String} id The user log entry id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserActionLog} and HTTP response
      */
-    this.getUserLogWithHttpInfo = function(id) {
+    this.getUserLogsWithHttpInfo = function(id) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getUserLog");
+        throw new Error("Missing the required parameter 'id' when calling getUserLogs");
       }
 
 
@@ -338,8 +338,8 @@
      * @param {String} id The user log entry id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserActionLog}
      */
-    this.getUserLog = function(id) {
-      return this.getUserLogWithHttpInfo(id)
+    this.getUserLogs = function(id) {
+      return this.getUserLogsWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -357,7 +357,7 @@
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to timestamp:DESC)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceUserActionLog} and HTTP response
      */
-    this.getUserLogsWithHttpInfo = function(opts) {
+    this.getUserLogs1WithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = null;
 
@@ -401,8 +401,8 @@
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to timestamp:DESC)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceUserActionLog}
      */
-    this.getUserLogs = function(opts) {
-      return this.getUserLogsWithHttpInfo(opts)
+    this.getUserLogs1 = function(opts) {
+      return this.getUserLogs1WithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

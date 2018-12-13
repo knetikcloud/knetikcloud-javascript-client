@@ -1,6 +1,6 @@
 # KnetikCloud.PaymentsXsollaApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="createXsollaTokenUrl"></a>
 # **createXsollaTokenUrl**
-> &#39;String&#39; createXsollaTokenUrl(opts)
+> StringWrapper createXsollaTokenUrl(opts)
 
 Create a payment token that should be used to forward the user to Xsolla so they can complete payment
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 

@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property createdDate (base name: "created_date")', function() {
+      // uncomment below and update the code to test the property createdDate
+      //var instane = new KnetikCloud.GroupResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property description (base name: "description")', function() {
       // uncomment below and update the code to test the property description
       //var instane = new KnetikCloud.GroupResource();
@@ -119,6 +125,12 @@
 
     it('should have the property uniqueName (base name: "unique_name")', function() {
       // uncomment below and update the code to test the property uniqueName
+      //var instane = new KnetikCloud.GroupResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedDate (base name: "updated_date")', function() {
+      // uncomment below and update the code to test the property updatedDate
       //var instane = new KnetikCloud.GroupResource();
       //expect(instance).to.be();
     });

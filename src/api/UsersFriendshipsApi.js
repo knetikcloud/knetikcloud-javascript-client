@@ -34,7 +34,7 @@
   /**
    * UsersFriendships service.
    * @module api/UsersFriendshipsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -182,7 +182,7 @@
      * Returns the invite token
      * This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.getInviteTokenWithHttpInfo = function(userId) {
       var postBody = null;
@@ -208,7 +208,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = 'String';
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
         '/users/{user_id}/invite-token', 'GET',
@@ -221,7 +221,7 @@
      * Returns the invite token
      * This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.getInviteToken = function(userId) {
       return this.getInviteTokenWithHttpInfo(userId)

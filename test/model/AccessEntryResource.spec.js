@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property fieldBlacklist (base name: "field_blacklist")', function() {
+      // uncomment below and update the code to test the property fieldBlacklist
+      //var instane = new KnetikCloud.AccessEntryResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property sid (base name: "sid")', function() {
       // uncomment below and update the code to test the property sid
       //var instane = new KnetikCloud.AccessEntryResource();

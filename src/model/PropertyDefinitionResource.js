@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PropertyFieldListResource'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PropertyFieldListResource'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.PropertyDefinitionResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PropertyFieldListResource);
+    root.KnetikCloud.PropertyDefinitionResource = factory(root.KnetikCloud.ApiClient);
   }
-}(this, function(ApiClient, PropertyFieldListResource) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -37,20 +37,19 @@
   /**
    * The PropertyDefinitionResource model module.
    * @module model/PropertyDefinitionResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
    * Constructs a new <code>PropertyDefinitionResource</code>.
    * @alias module:model/PropertyDefinitionResource
    * @class
-   * @param name {String} The name of the property
+   * @param name {String} The name of the property. Must start with a letter
    * @param required {Boolean} Whether the property is required
    * @param type {String} The type of the property. Used for polymorphic type recognition and thus must match an expected type with additional properties.
    */
   var exports = function(name, required, type) {
     var _this = this;
-
 
 
 
@@ -75,9 +74,6 @@
 
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
-      }
-      if (data.hasOwnProperty('field_list')) {
-        obj['field_list'] = PropertyFieldListResource.constructFromObject(data['field_list']);
       }
       if (data.hasOwnProperty('friendly_name')) {
         obj['friendly_name'] = ApiClient.convertToType(data['friendly_name'], 'String');
@@ -124,17 +120,12 @@ exports.discriminatorField = 'type';
    */
   exports.prototype['description'] = undefined;
   /**
-   * A list of the fields on both the property definition and property of this type
-   * @member {module:model/PropertyFieldListResource} field_list
-   */
-  exports.prototype['field_list'] = undefined;
-  /**
    * The friendly front-facing name of the property
    * @member {String} friendly_name
    */
   exports.prototype['friendly_name'] = undefined;
   /**
-   * The name of the property
+   * The name of the property. Must start with a letter
    * @member {String} name
    */
   exports.prototype['name'] = undefined;

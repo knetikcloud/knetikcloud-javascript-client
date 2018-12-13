@@ -37,7 +37,7 @@
   /**
    * The KeyValuePairstringstring model module.
    * @module model/KeyValuePairstringstring
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**

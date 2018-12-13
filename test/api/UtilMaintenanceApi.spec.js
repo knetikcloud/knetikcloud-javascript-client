@@ -81,16 +81,6 @@
         done();
       });
     });
-    describe('updateMaintenance', function() {
-      it('should call updateMaintenance successfully', function(done) {
-        //uncomment below and update the code to test updateMaintenance
-        //instance.updateMaintenance(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
   });
 
 }));

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/FileGroupPropertyDefinitionResource', 'model/PropertyFieldListResource'], factory);
+    define(['ApiClient', 'model/FileGroupPropertyDefinitionResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./FileGroupPropertyDefinitionResource'), require('./PropertyFieldListResource'));
+    module.exports = factory(require('../ApiClient'), require('./FileGroupPropertyDefinitionResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.AudioGroupPropertyDefinitionResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.FileGroupPropertyDefinitionResource, root.KnetikCloud.PropertyFieldListResource);
+    root.KnetikCloud.AudioGroupPropertyDefinitionResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.FileGroupPropertyDefinitionResource);
   }
-}(this, function(ApiClient, FileGroupPropertyDefinitionResource, PropertyFieldListResource) {
+}(this, function(ApiClient, FileGroupPropertyDefinitionResource) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The AudioGroupPropertyDefinitionResource model module.
    * @module model/AudioGroupPropertyDefinitionResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -45,7 +45,7 @@
    * @alias module:model/AudioGroupPropertyDefinitionResource
    * @class
    * @extends module:model/FileGroupPropertyDefinitionResource
-   * @param name {String} The name of the property
+   * @param name {String} The name of the property. Must start with a letter
    * @param required {Boolean} Whether the property is required
    * @param type {String} The type of the property. Used for polymorphic type recognition and thus must match an expected type with additional properties.
    */

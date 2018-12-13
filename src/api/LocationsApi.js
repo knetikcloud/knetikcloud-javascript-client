@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CountryResource', 'model/CurrencyResource', 'model/Result', 'model/StateResource'], factory);
+    define(['ApiClient', 'model/CurrencyResource', 'model/PageResourceCountryResource', 'model/PageResourceStateResource', 'model/Result', 'model/StringWrapper'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CountryResource'), require('../model/CurrencyResource'), require('../model/Result'), require('../model/StateResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/CurrencyResource'), require('../model/PageResourceCountryResource'), require('../model/PageResourceStateResource'), require('../model/Result'), require('../model/StringWrapper'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.LocationsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CountryResource, root.KnetikCloud.CurrencyResource, root.KnetikCloud.Result, root.KnetikCloud.StateResource);
+    root.KnetikCloud.LocationsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CurrencyResource, root.KnetikCloud.PageResourceCountryResource, root.KnetikCloud.PageResourceStateResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
   }
-}(this, function(ApiClient, CountryResource, CurrencyResource, Result, StateResource) {
+}(this, function(ApiClient, CurrencyResource, PageResourceCountryResource, PageResourceStateResource, Result, StringWrapper) {
   'use strict';
 
   /**
    * Locations service.
    * @module api/LocationsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -52,15 +52,21 @@
     /**
      * Get a list of countries
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CountryResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceCountryResource} and HTTP response
      */
-    this.getCountriesWithHttpInfo = function() {
+    this.getCountriesWithHttpInfo = function(opts) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -72,7 +78,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [CountryResource];
+      var returnType = PageResourceCountryResource;
 
       return this.apiClient.callApi(
         '/location/countries', 'GET',
@@ -84,10 +90,13 @@
     /**
      * Get a list of countries
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CountryResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceCountryResource}
      */
-    this.getCountries = function() {
-      return this.getCountriesWithHttpInfo()
+    this.getCountries = function(opts) {
+      return this.getCountriesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -97,7 +106,7 @@
     /**
      * Get the iso3 code of your country
      * Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.getCountryByGeoLocationWithHttpInfo = function() {
       var postBody = null;
@@ -117,7 +126,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = 'String';
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
         '/location/geolocation/country', 'GET',
@@ -129,7 +138,7 @@
     /**
      * Get the iso3 code of your country
      * Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.getCountryByGeoLocation = function() {
       return this.getCountryByGeoLocationWithHttpInfo()
@@ -143,9 +152,13 @@
      * Get a list of a country&#39;s states
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/StateResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceStateResource} and HTTP response
      */
-    this.getCountryStatesWithHttpInfo = function(countryCodeIso3) {
+    this.getCountryStatesWithHttpInfo = function(countryCodeIso3, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'countryCodeIso3' is set
@@ -158,6 +171,8 @@
         'country_code_iso3': countryCodeIso3
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -169,7 +184,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [StateResource];
+      var returnType = PageResourceStateResource;
 
       return this.apiClient.callApi(
         '/location/countries/{country_code_iso3}/states', 'GET',
@@ -182,10 +197,13 @@
      * Get a list of a country&#39;s states
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/StateResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceStateResource}
      */
-    this.getCountryStates = function(countryCodeIso3) {
-      return this.getCountryStatesWithHttpInfo(countryCodeIso3)
+    this.getCountryStates = function(countryCodeIso3, opts) {
+      return this.getCountryStatesWithHttpInfo(countryCodeIso3, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

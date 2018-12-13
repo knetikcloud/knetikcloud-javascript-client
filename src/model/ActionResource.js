@@ -37,7 +37,7 @@
   /**
    * The ActionResource model module.
    * @module model/ActionResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -244,7 +244,17 @@
      * value: "event"
      * @const
      */
-    "event": "event"  };
+    "event": "event",
+    /**
+     * value: "monitoring"
+     * @const
+     */
+    "monitoring": "monitoring",
+    /**
+     * value: "verification"
+     * @const
+     */
+    "verification": "verification"  };
 
 
   return exports;

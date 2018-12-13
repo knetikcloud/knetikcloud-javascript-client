@@ -63,12 +63,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property fieldList (base name: "field_list")', function() {
-      // uncomment below and update the code to test the property fieldList
-      //var instane = new KnetikCloud.PropertyDefinitionResource();
-      //expect(instance).to.be();
-    });
-
     it('should have the property friendlyName (base name: "friendly_name")', function() {
       // uncomment below and update the code to test the property friendlyName
       //var instane = new KnetikCloud.PropertyDefinitionResource();

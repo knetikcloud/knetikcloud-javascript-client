@@ -37,20 +37,21 @@
   /**
    * The TierResource model module.
    * @module model/TierResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
    * Constructs a new <code>TierResource</code>.
    * @alias module:model/TierResource
    * @class
+   * @param name {String} The name of the tier
    * @param requiredProgress {Number} The required progress for the tier
    */
-  var exports = function(requiredProgress) {
+  var exports = function(name, requiredProgress) {
     var _this = this;
 
 
-
+    _this['name'] = name;
     _this['required_progress'] = requiredProgress;
   };
 

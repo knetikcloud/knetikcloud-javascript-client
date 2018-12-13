@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DispositionCount', 'model/DispositionResource', 'model/PageResourceDispositionResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/DispositionResource', 'model/PageResourceDispositionCount', 'model/PageResourceDispositionResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/DispositionCount'), require('../model/DispositionResource'), require('../model/PageResourceDispositionResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/DispositionResource'), require('../model/PageResourceDispositionCount'), require('../model/PageResourceDispositionResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.DispositionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.DispositionCount, root.KnetikCloud.DispositionResource, root.KnetikCloud.PageResourceDispositionResource, root.KnetikCloud.Result);
+    root.KnetikCloud.DispositionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.DispositionResource, root.KnetikCloud.PageResourceDispositionCount, root.KnetikCloud.PageResourceDispositionResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, DispositionCount, DispositionResource, PageResourceDispositionResource, Result) {
+}(this, function(ApiClient, DispositionResource, PageResourceDispositionCount, PageResourceDispositionResource, Result) {
   'use strict';
 
   /**
    * Dispositions service.
    * @module api/DispositionsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -212,7 +212,9 @@
      * @param {String} opts.filterCreatedDate Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DispositionCount>} and HTTP response
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceDispositionCount} and HTTP response
      */
     this.getDispositionCountsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -225,6 +227,8 @@
         'filter_created_date': opts['filterCreatedDate'],
         'filter_context': opts['filterContext'],
         'filter_owner': opts['filterOwner'],
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -236,7 +240,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [DispositionCount];
+      var returnType = PageResourceDispositionCount;
 
       return this.apiClient.callApi(
         '/dispositions/count', 'GET',
@@ -252,7 +256,9 @@
      * @param {String} opts.filterCreatedDate Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DispositionCount>}
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceDispositionCount}
      */
     this.getDispositionCounts = function(opts) {
       return this.getDispositionCountsWithHttpInfo(opts)

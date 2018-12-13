@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ActivityOccurrenceCreationFailure', 'model/ActivityOccurrenceJoinResult', 'model/ActivityOccurrenceResource', 'model/ActivityOccurrenceResults', 'model/ActivityOccurrenceResultsResource', 'model/ActivityOccurrenceSettingsResource', 'model/ActivityOccurrenceStatusWrapper', 'model/ActivityResource', 'model/ActivityUserResource', 'model/ActivityUserStatusWrapper', 'model/CreateActivityOccurrenceRequest', 'model/IntWrapper', 'model/PageResourceActivityOccurrenceResource', 'model/PageResourceBareActivityResource', 'model/PageResourceTemplateResource', 'model/Result', 'model/TemplateResource'], factory);
+    define(['ApiClient', 'model/ActivityOccurrenceCreationFailure', 'model/ActivityOccurrenceJoinResult', 'model/ActivityOccurrenceResource', 'model/ActivityOccurrenceResults', 'model/ActivityOccurrenceResultsResource', 'model/ActivityOccurrenceSettingsResource', 'model/ActivityOccurrenceStatusWrapper', 'model/ActivityResource', 'model/ActivityUserResource', 'model/ActivityUserStatusWrapper', 'model/CreateActivityOccurrenceRequest', 'model/IntWrapper', 'model/PageResourceActivityOccurrenceResource', 'model/PageResourceBareActivityResource', 'model/PageResourceTemplateResource', 'model/PatchResource', 'model/Result', 'model/TemplateResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ActivityOccurrenceCreationFailure'), require('../model/ActivityOccurrenceJoinResult'), require('../model/ActivityOccurrenceResource'), require('../model/ActivityOccurrenceResults'), require('../model/ActivityOccurrenceResultsResource'), require('../model/ActivityOccurrenceSettingsResource'), require('../model/ActivityOccurrenceStatusWrapper'), require('../model/ActivityResource'), require('../model/ActivityUserResource'), require('../model/ActivityUserStatusWrapper'), require('../model/CreateActivityOccurrenceRequest'), require('../model/IntWrapper'), require('../model/PageResourceActivityOccurrenceResource'), require('../model/PageResourceBareActivityResource'), require('../model/PageResourceTemplateResource'), require('../model/Result'), require('../model/TemplateResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/ActivityOccurrenceCreationFailure'), require('../model/ActivityOccurrenceJoinResult'), require('../model/ActivityOccurrenceResource'), require('../model/ActivityOccurrenceResults'), require('../model/ActivityOccurrenceResultsResource'), require('../model/ActivityOccurrenceSettingsResource'), require('../model/ActivityOccurrenceStatusWrapper'), require('../model/ActivityResource'), require('../model/ActivityUserResource'), require('../model/ActivityUserStatusWrapper'), require('../model/CreateActivityOccurrenceRequest'), require('../model/IntWrapper'), require('../model/PageResourceActivityOccurrenceResource'), require('../model/PageResourceBareActivityResource'), require('../model/PageResourceTemplateResource'), require('../model/PatchResource'), require('../model/Result'), require('../model/TemplateResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ActivitiesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityOccurrenceCreationFailure, root.KnetikCloud.ActivityOccurrenceJoinResult, root.KnetikCloud.ActivityOccurrenceResource, root.KnetikCloud.ActivityOccurrenceResults, root.KnetikCloud.ActivityOccurrenceResultsResource, root.KnetikCloud.ActivityOccurrenceSettingsResource, root.KnetikCloud.ActivityOccurrenceStatusWrapper, root.KnetikCloud.ActivityResource, root.KnetikCloud.ActivityUserResource, root.KnetikCloud.ActivityUserStatusWrapper, root.KnetikCloud.CreateActivityOccurrenceRequest, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceActivityOccurrenceResource, root.KnetikCloud.PageResourceBareActivityResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource);
+    root.KnetikCloud.ActivitiesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityOccurrenceCreationFailure, root.KnetikCloud.ActivityOccurrenceJoinResult, root.KnetikCloud.ActivityOccurrenceResource, root.KnetikCloud.ActivityOccurrenceResults, root.KnetikCloud.ActivityOccurrenceResultsResource, root.KnetikCloud.ActivityOccurrenceSettingsResource, root.KnetikCloud.ActivityOccurrenceStatusWrapper, root.KnetikCloud.ActivityResource, root.KnetikCloud.ActivityUserResource, root.KnetikCloud.ActivityUserStatusWrapper, root.KnetikCloud.CreateActivityOccurrenceRequest, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceActivityOccurrenceResource, root.KnetikCloud.PageResourceBareActivityResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource);
   }
-}(this, function(ApiClient, ActivityOccurrenceCreationFailure, ActivityOccurrenceJoinResult, ActivityOccurrenceResource, ActivityOccurrenceResults, ActivityOccurrenceResultsResource, ActivityOccurrenceSettingsResource, ActivityOccurrenceStatusWrapper, ActivityResource, ActivityUserResource, ActivityUserStatusWrapper, CreateActivityOccurrenceRequest, IntWrapper, PageResourceActivityOccurrenceResource, PageResourceBareActivityResource, PageResourceTemplateResource, Result, TemplateResource) {
+}(this, function(ApiClient, ActivityOccurrenceCreationFailure, ActivityOccurrenceJoinResult, ActivityOccurrenceResource, ActivityOccurrenceResults, ActivityOccurrenceResultsResource, ActivityOccurrenceSettingsResource, ActivityOccurrenceStatusWrapper, ActivityResource, ActivityUserResource, ActivityUserStatusWrapper, CreateActivityOccurrenceRequest, IntWrapper, PageResourceActivityOccurrenceResource, PageResourceBareActivityResource, PageResourceTemplateResource, PatchResource, Result, TemplateResource) {
   'use strict';
 
   /**
    * Activities service.
    * @module api/ActivitiesApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -217,8 +217,8 @@
 
 
     /**
-     * Create a activity template
-     * Activity Templates define a type of activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Create an activity template
+     * Activity Templates define a type of activity and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.activityTemplateResource The activity template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -252,8 +252,8 @@
     }
 
     /**
-     * Create a activity template
-     * Activity Templates define a type of activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Create an activity template
+     * Activity Templates define a type of activity and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.activityTemplateResource The activity template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -320,8 +320,8 @@
 
 
     /**
-     * Delete a activity template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Delete an activity template
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -363,8 +363,8 @@
     }
 
     /**
-     * Delete a activity template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Delete an activity template
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -552,7 +552,7 @@
 
     /**
      * Get a single activity template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -591,7 +591,7 @@
 
     /**
      * Get a single activity template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -605,7 +605,7 @@
 
     /**
      * List and search activity templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -645,7 +645,7 @@
 
     /**
      * List and search activity templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1099,15 +1099,16 @@
 
     /**
      * Update an activity template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.activityTemplateResource The activity template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
     this.updateActivityTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['activityTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -1119,6 +1120,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -1133,7 +1135,7 @@
       var returnType = TemplateResource;
 
       return this.apiClient.callApi(
-        '/activities/templates/{id}', 'PUT',
+        '/activities/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -1141,10 +1143,11 @@
 
     /**
      * Update an activity template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.activityTemplateResource The activity template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
     this.updateActivityTemplate = function(id, opts) {

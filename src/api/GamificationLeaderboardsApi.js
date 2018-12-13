@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/LeaderboardEntryResource', 'model/LeaderboardResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/LeaderboardEntryResource', 'model/LeaderboardResource', 'model/PageResourcestring', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/LeaderboardEntryResource'), require('../model/LeaderboardResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/LeaderboardEntryResource'), require('../model/LeaderboardResource'), require('../model/PageResourcestring'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.GamificationLeaderboardsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.LeaderboardEntryResource, root.KnetikCloud.LeaderboardResource, root.KnetikCloud.Result);
+    root.KnetikCloud.GamificationLeaderboardsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.LeaderboardEntryResource, root.KnetikCloud.LeaderboardResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, LeaderboardEntryResource, LeaderboardResource, Result) {
+}(this, function(ApiClient, LeaderboardEntryResource, LeaderboardResource, PageResourcestring, Result) {
   'use strict';
 
   /**
    * GamificationLeaderboards service.
    * @module api/GamificationLeaderboardsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -194,15 +194,21 @@
     /**
      * Get a list of available leaderboard strategy names
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcestring} and HTTP response
      */
-    this.getLeaderboardStrategiesWithHttpInfo = function() {
+    this.getLeaderboardStrategiesWithHttpInfo = function(opts) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -214,7 +220,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourcestring;
 
       return this.apiClient.callApi(
         '/leaderboards/strategies', 'GET',
@@ -226,10 +232,13 @@
     /**
      * Get a list of available leaderboard strategy names
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcestring}
      */
-    this.getLeaderboardStrategies = function() {
-      return this.getLeaderboardStrategiesWithHttpInfo()
+    this.getLeaderboardStrategies = function(opts) {
+      return this.getLeaderboardStrategiesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

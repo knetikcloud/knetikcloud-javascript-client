@@ -1,6 +1,6 @@
 # KnetikCloud.RuleEngineExpressionsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 <a name="getBREExpressions"></a>
 # **getBREExpressions**
-> [ExpressionResource] getBREExpressions(opts)
+> PageResourceExpressionResource getBREExpressions(opts)
 
 Get a list of supported expressions to use in conditions or actions.
 
@@ -85,7 +85,9 @@ oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new KnetikCloud.RuleEngineExpressionsApi();
 
 var opts = { 
-  'filterTypeGroup': "filterTypeGroup_example" // String | Filter for expressions by type group
+  'filterTypeGroup': "filterTypeGroup_example", // String | Filter for expressions by type group
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
 };
 apiInstance.getBREExpressions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -100,10 +102,12 @@ apiInstance.getBREExpressions(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterTypeGroup** | **String**| Filter for expressions by type group | [optional] 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[ExpressionResource]**](ExpressionResource.md)
+[**PageResourceExpressionResource**](PageResourceExpressionResource.md)
 
 ### Authorization
 

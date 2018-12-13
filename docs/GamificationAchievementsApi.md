@@ -1,6 +1,6 @@
 # KnetikCloud.GamificationAchievementsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 [**incrementAchievementProgress**](GamificationAchievementsApi.md#incrementAchievementProgress) | **POST** /users/{user_id}/achievements/{achievement_name}/progress | Increment an achievement progress record for a user
 [**setAchievementProgress**](GamificationAchievementsApi.md#setAchievementProgress) | **PUT** /users/{user_id}/achievements/{achievement_name}/progress | Set an achievement progress record for a user
 [**updateAchievement**](GamificationAchievementsApi.md#updateAchievement) | **PUT** /achievements/{name} | Update an achievement definition
-[**updateAchievementTemplate**](GamificationAchievementsApi.md#updateAchievementTemplate) | **PUT** /achievements/templates/{id} | Update an achievement template
+[**updateAchievementTemplate**](GamificationAchievementsApi.md#updateAchievementTemplate) | **PATCH** /achievements/templates/{id} | Update an achievement template
 
 
 <a name="createAchievement"></a>
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 Create an achievement template
 
-Achievement templates define a type of achievement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Achievement templates define a type of achievement and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -188,7 +188,7 @@ null (empty response body)
 
 Delete an achievement template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 Get a single achievement template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 List and search achievement templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 <a name="getAchievementTriggers"></a>
 # **getAchievementTriggers**
-> [BreTriggerResource] getAchievementTriggers()
+> PageResourceBreTriggerResource getAchievementTriggers(opts)
 
 Get the list of triggers that can be used to trigger an achievement progress update
 
@@ -421,7 +421,12 @@ var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant
 oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.GamificationAchievementsApi();
-apiInstance.getAchievementTriggers().then(function(data) {
+
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getAchievementTriggers(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -430,11 +435,15 @@ apiInstance.getAchievementTriggers().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[BreTriggerResource]**](BreTriggerResource.md)
+[**PageResourceBreTriggerResource**](PageResourceBreTriggerResource.md)
 
 ### Authorization
 
@@ -512,7 +521,7 @@ Name | Type | Description  | Notes
 
 <a name="getDerivedAchievements"></a>
 # **getDerivedAchievements**
-> [AchievementDefinitionResource] getDerivedAchievements(name)
+> PageResourceAchievementDefinitionResource getDerivedAchievements(name, opts)
 
 Get a list of derived achievements
 
@@ -535,7 +544,11 @@ var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
 var name = "name_example"; // String | The name of the derived achievement
 
-apiInstance.getDerivedAchievements(name).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getDerivedAchievements(name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -548,10 +561,12 @@ apiInstance.getDerivedAchievements(name).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| The name of the derived achievement | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[AchievementDefinitionResource]**](AchievementDefinitionResource.md)
+[**PageResourceAchievementDefinitionResource**](PageResourceAchievementDefinitionResource.md)
 
 ### Authorization
 
@@ -645,7 +660,7 @@ var userId = 56; // Number | The user's id
 var opts = { 
   'filterAchievementDerived': true, // Boolean | Filter for achievements that are derived from other services
   'filterAchievementTagset': "filterAchievementTagset_example", // String | Filter for achievements with specified tags (separated by comma)
-  'filterAchievementName': "filterAchievementName_example", // String | Filter for achievements whose name contains a string
+  'filterGroupName': "filterGroupName_example", // String | Filter for achievements whose group/level name contains a string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
@@ -664,7 +679,7 @@ Name | Type | Description  | Notes
  **userId** | **Number**| The user&#39;s id | 
  **filterAchievementDerived** | **Boolean**| Filter for achievements that are derived from other services | [optional] 
  **filterAchievementTagset** | **String**| Filter for achievements with specified tags (separated by comma) | [optional] 
- **filterAchievementName** | **String**| Filter for achievements whose name contains a string | [optional] 
+ **filterGroupName** | **String**| Filter for achievements whose group/level name contains a string | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
@@ -687,7 +702,7 @@ Name | Type | Description  | Notes
 
 Retrieve progress on a given achievement for all users
 
-Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
+Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -709,7 +724,7 @@ var achievementName = "achievementName_example"; // String | The achievement's n
 var opts = { 
   'filterAchievementDerived': true, // Boolean | Filter for achievements that are derived from other services
   'filterAchievementTagset': "filterAchievementTagset_example", // String | Filter for achievements with specified tags (separated by comma)
-  'filterAchievementName': "filterAchievementName_example", // String | Filter for achievements whose name contains a string
+  'filterGroupName': "filterGroupName_example", // String | Filter for achievements whose group/level name contains a string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
@@ -728,7 +743,7 @@ Name | Type | Description  | Notes
  **achievementName** | **String**| The achievement&#39;s name | 
  **filterAchievementDerived** | **Boolean**| Filter for achievements that are derived from other services | [optional] 
  **filterAchievementTagset** | **String**| Filter for achievements with specified tags (separated by comma) | [optional] 
- **filterAchievementName** | **String**| Filter for achievements whose name contains a string | [optional] 
+ **filterGroupName** | **String**| Filter for achievements whose group/level name contains a string | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
@@ -751,7 +766,7 @@ Name | Type | Description  | Notes
 
 Retrieve progress on achievements for all users
 
-Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
+Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -771,7 +786,7 @@ var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 var opts = { 
   'filterAchievementDerived': true, // Boolean | Filter for achievements that are derived from other services
   'filterAchievementTagset': "filterAchievementTagset_example", // String | Filter for achievements with specified tags (separated by comma)
-  'filterAchievementName': "filterAchievementName_example", // String | Filter for achievements whose name contains a string
+  'filterGroupName': "filterGroupName_example", // String | Filter for achievements whose group/level name contains a string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
@@ -789,7 +804,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterAchievementDerived** | **Boolean**| Filter for achievements that are derived from other services | [optional] 
  **filterAchievementTagset** | **String**| Filter for achievements with specified tags (separated by comma) | [optional] 
- **filterAchievementName** | **String**| Filter for achievements whose name contains a string | [optional] 
+ **filterGroupName** | **String**| Filter for achievements whose group/level name contains a string | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
@@ -986,7 +1001,7 @@ Name | Type | Description  | Notes
 
 Update an achievement template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -1006,7 +1021,8 @@ var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'template': new KnetikCloud.TemplateResource() // TemplateResource | The updated template
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateAchievementTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1021,7 +1037,8 @@ apiInstance.updateAchievementTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **template** | [**TemplateResource**](TemplateResource.md)| The updated template | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

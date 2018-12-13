@@ -1,6 +1,6 @@
 # KnetikCloud.UsersSubscriptionsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsersSubscriptionDetails"></a>
 # **getUsersSubscriptionDetails**
-> [InventorySubscriptionResource] getUsersSubscriptionDetails(userId)
+> PageResourceInventorySubscriptionResource getUsersSubscriptionDetails(userId, opts)
 
 Get details about a user&#39;s subscriptions
 
@@ -94,7 +94,11 @@ var apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
 var userId = 56; // Number | The id of the user
 
-apiInstance.getUsersSubscriptionDetails(userId).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getUsersSubscriptionDetails(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -107,10 +111,12 @@ apiInstance.getUsersSubscriptionDetails(userId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The id of the user | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[InventorySubscriptionResource]**](InventorySubscriptionResource.md)
+[**PageResourceInventorySubscriptionResource**](PageResourceInventorySubscriptionResource.md)
 
 ### Authorization
 

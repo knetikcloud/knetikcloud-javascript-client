@@ -71,16 +71,6 @@
         done();
       });
     });
-    describe('createTemplate', function() {
-      it('should call createTemplate successfully', function(done) {
-        //uncomment below and update the code to test createTemplate
-        //instance.createTemplate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('deleteArticle', function() {
       it('should call deleteArticle successfully', function(done) {
         //uncomment below and update the code to test deleteArticle
@@ -95,16 +85,6 @@
       it('should call deleteArticleTemplate successfully', function(done) {
         //uncomment below and update the code to test deleteArticleTemplate
         //instance.deleteArticleTemplate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('deleteTemplate', function() {
-      it('should call deleteTemplate successfully', function(done) {
-        //uncomment below and update the code to test deleteTemplate
-        //instance.deleteTemplate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -151,26 +131,6 @@
         done();
       });
     });
-    describe('getTemplate', function() {
-      it('should call getTemplate successfully', function(done) {
-        //uncomment below and update the code to test getTemplate
-        //instance.getTemplate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getTemplates', function() {
-      it('should call getTemplates successfully', function(done) {
-        //uncomment below and update the code to test getTemplates
-        //instance.getTemplates(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('updateArticle', function() {
       it('should call updateArticle successfully', function(done) {
         //uncomment below and update the code to test updateArticle
@@ -185,26 +145,6 @@
       it('should call updateArticleTemplate successfully', function(done) {
         //uncomment below and update the code to test updateArticleTemplate
         //instance.updateArticleTemplate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('updateTemplate', function() {
-      it('should call updateTemplate successfully', function(done) {
-        //uncomment below and update the code to test updateTemplate
-        //instance.updateTemplate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('validate', function() {
-      it('should call validate successfully', function(done) {
-        //uncomment below and update the code to test validate
-        //instance.validate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

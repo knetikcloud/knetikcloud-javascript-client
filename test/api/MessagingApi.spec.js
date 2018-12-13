@@ -51,10 +51,10 @@
   }
 
   describe('MessagingApi', function() {
-    describe('compileMessageTemplate', function() {
-      it('should call compileMessageTemplate successfully', function(done) {
-        //uncomment below and update the code to test compileMessageTemplate
-        //instance.compileMessageTemplate(function(error) {
+    describe('compileMessageTemplates', function() {
+      it('should call compileMessageTemplates successfully', function(done) {
+        //uncomment below and update the code to test compileMessageTemplates
+        //instance.compileMessageTemplates(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -37,7 +37,7 @@
   /**
    * The CoreActivitySettings model module.
    * @module model/CoreActivitySettings
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**

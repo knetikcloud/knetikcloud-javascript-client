@@ -37,7 +37,7 @@
   /**
    * The GroupMemberResource model module.
    * @module model/GroupMemberResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -48,6 +48,8 @@
    */
   var exports = function(user) {
     var _this = this;
+
+
 
 
 
@@ -79,6 +81,9 @@
       if (data.hasOwnProperty('implicit')) {
         obj['implicit'] = ApiClient.convertToType(data['implicit'], 'Boolean');
       }
+      if (data.hasOwnProperty('member_since')) {
+        obj['member_since'] = ApiClient.convertToType(data['member_since'], 'Number');
+      }
       if (data.hasOwnProperty('membership_id')) {
         obj['membership_id'] = ApiClient.convertToType(data['membership_id'], 'Number');
       }
@@ -90,6 +95,9 @@
       }
       if (data.hasOwnProperty('template')) {
         obj['template'] = ApiClient.convertToType(data['template'], 'String');
+      }
+      if (data.hasOwnProperty('updated_date')) {
+        obj['updated_date'] = ApiClient.convertToType(data['updated_date'], 'Number');
       }
       if (data.hasOwnProperty('user')) {
         obj['user'] = SimpleUserResource.constructFromObject(data['user']);
@@ -128,6 +136,11 @@
    */
   exports.prototype['implicit'] = undefined;
   /**
+   * The group member's membership date as a unix timestamp
+   * @member {Number} member_since
+   */
+  exports.prototype['member_since'] = undefined;
+  /**
    * The id of the membership entry
    * @member {Number} membership_id
    */
@@ -147,6 +160,11 @@
    * @member {String} template
    */
   exports.prototype['template'] = undefined;
+  /**
+   * The date the group member's info was updated as a unix timestamp
+   * @member {Number} updated_date
+   */
+  exports.prototype['updated_date'] = undefined;
   /**
    * The user
    * @member {module:model/SimpleUserResource} user

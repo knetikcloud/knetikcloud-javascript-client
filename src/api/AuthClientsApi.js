@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ClientResource', 'model/GrantTypeResource', 'model/PageResourceClientResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/ClientResource', 'model/PageResourceClientResource', 'model/PageResourceGrantTypeResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ClientResource'), require('../model/GrantTypeResource'), require('../model/PageResourceClientResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/ClientResource'), require('../model/PageResourceClientResource'), require('../model/PageResourceGrantTypeResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.AuthClientsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ClientResource, root.KnetikCloud.GrantTypeResource, root.KnetikCloud.PageResourceClientResource, root.KnetikCloud.Result);
+    root.KnetikCloud.AuthClientsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ClientResource, root.KnetikCloud.PageResourceClientResource, root.KnetikCloud.PageResourceGrantTypeResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, ClientResource, GrantTypeResource, PageResourceClientResource, Result) {
+}(this, function(ApiClient, ClientResource, PageResourceClientResource, PageResourceGrantTypeResource, Result) {
   'use strict';
 
   /**
    * AuthClients service.
    * @module api/AuthClientsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -208,15 +208,21 @@
     /**
      * List available client grant types
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/GrantTypeResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceGrantTypeResource} and HTTP response
      */
-    this.getClientGrantTypesWithHttpInfo = function() {
+    this.getClientGrantTypesWithHttpInfo = function(opts) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -228,7 +234,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [GrantTypeResource];
+      var returnType = PageResourceGrantTypeResource;
 
       return this.apiClient.callApi(
         '/auth/clients/grant-types', 'GET',
@@ -240,10 +246,13 @@
     /**
      * List available client grant types
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/GrantTypeResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceGrantTypeResource}
      */
-    this.getClientGrantTypes = function() {
-      return this.getClientGrantTypesWithHttpInfo()
+    this.getClientGrantTypes = function(opts) {
+      return this.getClientGrantTypesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

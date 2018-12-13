@@ -1,6 +1,6 @@
 # KnetikCloud.MediaPollsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**getPollTemplates**](MediaPollsApi.md#getPollTemplates) | **GET** /media/polls/templates | List and search poll templates
 [**getPolls**](MediaPollsApi.md#getPolls) | **GET** /media/polls | List and search polls
 [**updatePoll**](MediaPollsApi.md#updatePoll) | **PUT** /media/polls/{id} | Update an existing poll
-[**updatePollTemplate**](MediaPollsApi.md#updatePollTemplate) | **PUT** /media/polls/templates/{id} | Update a poll template
+[**updatePollTemplate**](MediaPollsApi.md#updatePollTemplate) | **PATCH** /media/polls/templates/{id} | Update a poll template
 
 
 <a name="answerPoll"></a>
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 Create a poll template
 
-Poll templates define a type of poll and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Poll templates define a type of poll and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -238,7 +238,7 @@ null (empty response body)
 
 Delete a poll template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 Get a single poll template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -450,7 +450,7 @@ Name | Type | Description  | Notes
 
 List and search poll templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 
 Update a poll template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -646,7 +646,8 @@ var apiInstance = new KnetikCloud.MediaPollsApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'pollTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The poll template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updatePollTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -661,7 +662,8 @@ apiInstance.updatePollTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **pollTemplateResource** | [**TemplateResource**](TemplateResource.md)| The poll template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

@@ -37,7 +37,7 @@
   /**
    * The BreEventLog model module.
    * @module model/BreEventLog
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -47,6 +47,11 @@
    */
   var exports = function() {
     var _this = this;
+
+
+
+
+
 
 
 
@@ -68,14 +73,26 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('age')) {
+        obj['age'] = ApiClient.convertToType(data['age'], 'Number');
+      }
       if (data.hasOwnProperty('customer')) {
         obj['customer'] = ApiClient.convertToType(data['customer'], 'String');
+      }
+      if (data.hasOwnProperty('event_expansion_duration')) {
+        obj['event_expansion_duration'] = ApiClient.convertToType(data['event_expansion_duration'], 'Number');
       }
       if (data.hasOwnProperty('event_id')) {
         obj['event_id'] = ApiClient.convertToType(data['event_id'], 'String');
       }
+      if (data.hasOwnProperty('event_logging_duration')) {
+        obj['event_logging_duration'] = ApiClient.convertToType(data['event_logging_duration'], 'Number');
+      }
       if (data.hasOwnProperty('event_name')) {
         obj['event_name'] = ApiClient.convertToType(data['event_name'], 'String');
+      }
+      if (data.hasOwnProperty('event_received_date')) {
+        obj['event_received_date'] = ApiClient.convertToType(data['event_received_date'], 'Number');
       }
       if (data.hasOwnProperty('event_start_date')) {
         obj['event_start_date'] = ApiClient.convertToType(data['event_start_date'], 'Number');
@@ -88,6 +105,9 @@
       }
       if (data.hasOwnProperty('rules')) {
         obj['rules'] = ApiClient.convertToType(data['rules'], [BreRuleLog]);
+      }
+      if (data.hasOwnProperty('runtime')) {
+        obj['runtime'] = ApiClient.convertToType(data['runtime'], 'Number');
       }
     }
     return obj;
@@ -108,40 +128,65 @@
 
 
   /**
-   * The customer of the BRE event log
+   * The difference between received and handlded in ms
+   * @member {Number} age
+   */
+  exports.prototype['age'] = undefined;
+  /**
+   * The customer
    * @member {String} customer
    */
   exports.prototype['customer'] = undefined;
   /**
-   * The event id of the BRE event log
+   * The time it took to expand the event parameters
+   * @member {Number} event_expansion_duration
+   */
+  exports.prototype['event_expansion_duration'] = undefined;
+  /**
+   * The event id
    * @member {String} event_id
    */
   exports.prototype['event_id'] = undefined;
   /**
-   * The event name of the BRE event log
+   * The time it took to log the event in IO
+   * @member {Number} event_logging_duration
+   */
+  exports.prototype['event_logging_duration'] = undefined;
+  /**
+   * The event name
    * @member {String} event_name
    */
   exports.prototype['event_name'] = undefined;
   /**
-   * The event start date of the BRE event log
+   * The date the event was fired
+   * @member {Number} event_received_date
+   */
+  exports.prototype['event_received_date'] = undefined;
+  /**
+   * The date the event was handled
    * @member {Number} event_start_date
    */
   exports.prototype['event_start_date'] = undefined;
   /**
-   * The id of the BRE event log
+   * The id
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
   /**
-   * The event paramters of the BRE event log
+   * The event paramters
    * @member {Object} parameters
    */
   exports.prototype['parameters'] = undefined;
   /**
-   * The rules of the BRE event log
+   * The rules
    * @member {Array.<module:model/BreRuleLog>} rules
    */
   exports.prototype['rules'] = undefined;
+  /**
+   * The time it took to run all the rules for that event
+   * @member {Number} runtime
+   */
+  exports.prototype['runtime'] = undefined;
 
 
 

@@ -33,7 +33,7 @@
 
   /**
    * @module ApiClient
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -47,9 +47,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://jsapi-integration.us-east-1.elasticbeanstalk.com
+     * @default https://devsandbox.knetikcloud.com
      */
-    this.basePath = 'https://jsapi-integration.us-east-1.elasticbeanstalk.com'.replace(/\/+$/, '');
+    this.basePath = 'https://devsandbox.knetikcloud.com'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
@@ -57,6 +57,7 @@
      */
     this.authentications = {
       'oauth2_client_credentials_grant': {type: 'oauth2'},
+      'oauth2_implicit_grant': {type: 'oauth2'},
       'oauth2_password_grant': {type: 'oauth2'}
     };
     /**

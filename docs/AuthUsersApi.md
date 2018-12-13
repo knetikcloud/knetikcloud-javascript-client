@@ -1,12 +1,12 @@
 # KnetikCloud.AuthUsersApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addSid**](AuthUsersApi.md#addSid) | **POST** /access/users/{user_id}/sids | Add a sid to a user
+[**getResources1**](AuthUsersApi.md#getResources1) | **GET** /access/users/{user_id}/sids | List and search user sids
 [**getSid**](AuthUsersApi.md#getSid) | **GET** /access/users/{user_id}/sids/{sid} | Get a user sid
-[**getSids**](AuthUsersApi.md#getSids) | **GET** /access/users/{user_id}/sids | List and search user sids
 [**removeSid**](AuthUsersApi.md#removeSid) | **DELETE** /access/users/{user_id}/sids/{sid} | Remove a sid from a user
 
 
@@ -33,7 +33,7 @@ oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.AuthUsersApi();
 
-var userId = 56; // Number | The resource type
+var userId = 56; // Number | The user id
 
 var opts = { 
   'sid': new KnetikCloud.UserSidResource() // UserSidResource | The new sid for the user
@@ -50,7 +50,7 @@ apiInstance.addSid(userId, opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **Number**| The resource type | 
+ **userId** | **Number**| The user id | 
  **sid** | [**UserSidResource**](UserSidResource.md)| The new sid for the user | [optional] 
 
 ### Return type
@@ -66,64 +66,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="getSid"></a>
-# **getSid**
-> UserSidResource getSid(userId, sid)
-
-Get a user sid
-
-Http error 404 means the user does not have the sid&lt;b&gt;Resources Needed:&lt;/b&gt; VIEW_ACCESS
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.AuthUsersApi();
-
-var userId = 56; // Number | The resource type
-
-var sid = "sid_example"; // String | The resource id
-
-apiInstance.getSid(userId, sid).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **Number**| The resource type | 
- **sid** | **String**| The resource id | 
-
-### Return type
-
-[**UserSidResource**](UserSidResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getSids"></a>
-# **getSids**
-> PageResourceUserSidResource getSids(userId, opts)
+<a name="getResources1"></a>
+# **getResources1**
+> PageResourceUserSidResource getResources1(userId, opts)
 
 List and search user sids
 
@@ -151,7 +96,7 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "resource:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getSids(userId, opts).then(function(data) {
+apiInstance.getResources1(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -171,6 +116,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PageResourceUserSidResource**](PageResourceUserSidResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getSid"></a>
+# **getSid**
+> UserSidResource getSid(userId, sid)
+
+Get a user sid
+
+Http error 404 means the user does not have the sid&lt;b&gt;Resources Needed:&lt;/b&gt; VIEW_ACCESS
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.AuthUsersApi();
+
+var userId = 56; // Number | The user id
+
+var sid = "sid_example"; // String | The security id
+
+apiInstance.getSid(userId, sid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **Number**| The user id | 
+ **sid** | **String**| The security id | 
+
+### Return type
+
+[**UserSidResource**](UserSidResource.md)
 
 ### Authorization
 

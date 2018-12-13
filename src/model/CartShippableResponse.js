@@ -37,7 +37,7 @@
   /**
    * The CartShippableResponse model module.
    * @module model/CartShippableResponse
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**

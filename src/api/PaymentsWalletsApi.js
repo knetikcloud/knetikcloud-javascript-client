@@ -34,7 +34,7 @@
   /**
    * PaymentsWallets service.
    * @module api/PaymentsWalletsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -199,9 +199,13 @@
      * List all of a user&#39;s wallets
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      * @param {Number} userId The ID of the user for whom wallets are being retrieved
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SimpleWallet>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceSimpleWallet} and HTTP response
      */
-    this.getUserWalletsWithHttpInfo = function(userId) {
+    this.getUserWalletsWithHttpInfo = function(userId, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'userId' is set
@@ -214,6 +218,8 @@
         'user_id': userId
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -225,7 +231,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [SimpleWallet];
+      var returnType = PageResourceSimpleWallet;
 
       return this.apiClient.callApi(
         '/users/{user_id}/wallets', 'GET',
@@ -238,10 +244,13 @@
      * List all of a user&#39;s wallets
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      * @param {Number} userId The ID of the user for whom wallets are being retrieved
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SimpleWallet>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceSimpleWallet}
      */
-    this.getUserWallets = function(userId) {
-      return this.getUserWalletsWithHttpInfo(userId)
+    this.getUserWallets = function(userId, opts) {
+      return this.getUserWalletsWithHttpInfo(userId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

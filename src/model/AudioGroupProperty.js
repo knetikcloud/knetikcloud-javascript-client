@@ -37,7 +37,7 @@
   /**
    * The AudioGroupProperty model module.
    * @module model/AudioGroupProperty
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**

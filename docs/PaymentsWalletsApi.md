@@ -1,6 +1,6 @@
 # KnetikCloud.PaymentsWalletsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserWallets"></a>
 # **getUserWallets**
-> [SimpleWallet] getUserWallets(userId)
+> PageResourceSimpleWallet getUserWallets(userId, opts)
 
 List all of a user&#39;s wallets
 
@@ -164,7 +164,11 @@ var apiInstance = new KnetikCloud.PaymentsWalletsApi();
 
 var userId = 56; // Number | The ID of the user for whom wallets are being retrieved
 
-apiInstance.getUserWallets(userId).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getUserWallets(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -177,10 +181,12 @@ apiInstance.getUserWallets(userId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The ID of the user for whom wallets are being retrieved | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[SimpleWallet]**](SimpleWallet.md)
+[**PageResourceSimpleWallet**](PageResourceSimpleWallet.md)
 
 ### Authorization
 

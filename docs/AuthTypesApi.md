@@ -1,6 +1,6 @@
 # KnetikCloud.AuthTypesApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**allowedTypeActions**](AuthTypesApi.md#allowedTypeActions) | **GET** /access/types/{type}/actions | Get allowed actions on a type
 [**createResource**](AuthTypesApi.md#createResource) | **POST** /access/resources/{type} | Create or update resource
 [**createType**](AuthTypesApi.md#createType) | **POST** /access/types | Create a new type
+[**deleteAllOfType**](AuthTypesApi.md#deleteAllOfType) | **DELETE** /access/resources/{type} | Delete all resources of a type
 [**deleteResource**](AuthTypesApi.md#deleteResource) | **DELETE** /access/resources/{type}/{id} | Delete a resource
-[**deleteResources**](AuthTypesApi.md#deleteResources) | **DELETE** /access/resources/{type} | Delete all resources of a type
 [**deleteType**](AuthTypesApi.md#deleteType) | **DELETE** /access/types/{type} | Delete a root type
 [**getResource**](AuthTypesApi.md#getResource) | **GET** /access/resources/{type}/{id} | Get a single resource
 [**getResources**](AuthTypesApi.md#getResources) | **GET** /access/resources/{type} | List and search resources
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 <a name="allowedResourceActions"></a>
 # **allowedResourceActions**
-> [&#39;String&#39;] allowedResourceActions(type, id)
+> PageResourceAccessResultsResource allowedResourceActions(type, id, opts)
 
 Get allowed action
 
@@ -46,7 +46,11 @@ var type = "type_example"; // String | The type value
 
 var id = "id_example"; // String | The resource id
 
-apiInstance.allowedResourceActions(type, id).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.allowedResourceActions(type, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -60,10 +64,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**| The type value | 
  **id** | **String**| The resource id | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**PageResourceAccessResultsResource**](PageResourceAccessResultsResource.md)
 
 ### Authorization
 
@@ -76,7 +82,7 @@ Name | Type | Description  | Notes
 
 <a name="allowedTypeActions"></a>
 # **allowedTypeActions**
-> [&#39;String&#39;] allowedTypeActions(type)
+> PageResourceAccessResultsResource allowedTypeActions(type, opts)
 
 Get allowed actions on a type
 
@@ -99,7 +105,11 @@ var apiInstance = new KnetikCloud.AuthTypesApi();
 
 var type = "type_example"; // String | The type value
 
-apiInstance.allowedTypeActions(type).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.allowedTypeActions(type, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -112,10 +122,12 @@ apiInstance.allowedTypeActions(type).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**| The type value | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**PageResourceAccessResultsResource**](PageResourceAccessResultsResource.md)
 
 ### Authorization
 
@@ -235,6 +247,58 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="deleteAllOfType"></a>
+# **deleteAllOfType**
+> deleteAllOfType(type)
+
+Delete all resources of a type
+
+&lt;b&gt;Types Needed:&lt;/b&gt; ROLE_SUPER_ADMIN
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.AuthTypesApi();
+
+var type = "type_example"; // String | The type value
+
+apiInstance.deleteAllOfType(type).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **String**| The type value | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="deleteResource"></a>
 # **deleteResource**
 > deleteResource(type, id)
@@ -276,58 +340,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**| The type value | 
  **id** | **String**| The resource id | 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteResources"></a>
-# **deleteResources**
-> deleteResources(type)
-
-Delete all resources of a type
-
-&lt;b&gt;Types Needed:&lt;/b&gt; ROLE_SUPER_ADMIN
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.AuthTypesApi();
-
-var type = "type_example"; // String | The type value
-
-apiInstance.deleteResources(type).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**| The type value | 
 
 ### Return type
 

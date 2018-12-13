@@ -37,7 +37,7 @@
   /**
    * The Fulfillable model module.
    * @module model/Fulfillable
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**

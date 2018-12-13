@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/GroupMemberResource', 'model/GroupResource', 'model/PageResourceChatMessageResource', 'model/PageResourceGroupMemberResource', 'model/PageResourceGroupResource', 'model/PageResourceTemplateResource', 'model/Result', 'model/StringWrapper', 'model/TemplateResource', 'model/ValueWrapperboolean'], factory);
+    define(['ApiClient', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/GroupMemberResource', 'model/GroupResource', 'model/PageResourceChatMessageResource', 'model/PageResourceGroupMemberResource', 'model/PageResourceGroupResource', 'model/PageResourceTemplateResource', 'model/PageResourcestring', 'model/PatchResource', 'model/Result', 'model/StringWrapper', 'model/TemplateResource', 'model/ValueWrapperboolean'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ChatMessageRequest'), require('../model/ChatMessageResource'), require('../model/GroupMemberResource'), require('../model/GroupResource'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceGroupMemberResource'), require('../model/PageResourceGroupResource'), require('../model/PageResourceTemplateResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'), require('../model/ValueWrapperboolean'));
+    module.exports = factory(require('../ApiClient'), require('../model/ChatMessageRequest'), require('../model/ChatMessageResource'), require('../model/GroupMemberResource'), require('../model/GroupResource'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceGroupMemberResource'), require('../model/PageResourceGroupResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourcestring'), require('../model/PatchResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'), require('../model/ValueWrapperboolean'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.UsersGroupsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatMessageRequest, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.GroupMemberResource, root.KnetikCloud.GroupResource, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceGroupMemberResource, root.KnetikCloud.PageResourceGroupResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource, root.KnetikCloud.ValueWrapperboolean);
+    root.KnetikCloud.UsersGroupsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatMessageRequest, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.GroupMemberResource, root.KnetikCloud.GroupResource, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceGroupMemberResource, root.KnetikCloud.PageResourceGroupResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource, root.KnetikCloud.ValueWrapperboolean);
   }
-}(this, function(ApiClient, ChatMessageRequest, ChatMessageResource, GroupMemberResource, GroupResource, PageResourceChatMessageResource, PageResourceGroupMemberResource, PageResourceGroupResource, PageResourceTemplateResource, Result, StringWrapper, TemplateResource, ValueWrapperboolean) {
+}(this, function(ApiClient, ChatMessageRequest, ChatMessageResource, GroupMemberResource, GroupResource, PageResourceChatMessageResource, PageResourceGroupMemberResource, PageResourceGroupResource, PageResourceTemplateResource, PageResourcestring, PatchResource, Result, StringWrapper, TemplateResource, ValueWrapperboolean) {
   'use strict';
 
   /**
    * UsersGroups service.
    * @module api/UsersGroupsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Adds a new member to the group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST or JOIN if self
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST or JOIN if self&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {String} uniqueName The group unique name
      * @param {module:model/GroupMemberResource} user The id and status for a user to add to the group
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GroupMemberResource} and HTTP response
@@ -96,7 +96,7 @@
 
     /**
      * Adds a new member to the group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST or JOIN if self
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST or JOIN if self&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {String} uniqueName The group unique name
      * @param {module:model/GroupMemberResource} user The id and status for a user to add to the group
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GroupMemberResource}
@@ -111,7 +111,7 @@
 
     /**
      * Adds multiple members to the group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {String} uniqueName The group unique name
      * @param {Array.<module:model/GroupMemberResource>} users The id and status for a list of users to add to the group
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/GroupMemberResource>} and HTTP response
@@ -156,7 +156,7 @@
 
     /**
      * Adds multiple members to the group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {String} uniqueName The group unique name
      * @param {Array.<module:model/GroupMemberResource>} users The id and status for a list of users to add to the group
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/GroupMemberResource>}
@@ -171,7 +171,7 @@
 
     /**
      * Create a group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/GroupResource} opts.groupResource The new group
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GroupResource} and HTTP response
@@ -206,7 +206,7 @@
 
     /**
      * Create a group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/GroupResource} opts.groupResource The new group
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GroupResource}
@@ -220,8 +220,8 @@
 
 
     /**
-     * Create an group member template
-     * GroupMember Templates define a type of group member and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Create a group member template
+     * GroupMember Templates define a type of group member and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.groupMemberTemplateResource The group member template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -255,8 +255,8 @@
     }
 
     /**
-     * Create an group member template
-     * GroupMember Templates define a type of group member and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Create a group member template
+     * GroupMember Templates define a type of group member and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.groupMemberTemplateResource The group member template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -271,7 +271,7 @@
 
     /**
      * Create a group template
-     * Group Templates define a type of group and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Group Templates define a type of group and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.groupTemplateResource The group template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -306,7 +306,7 @@
 
     /**
      * Create a group template
-     * Group Templates define a type of group and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Group Templates define a type of group and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.groupTemplateResource The group template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -321,7 +321,7 @@
 
     /**
      * Removes a group from the system
-     * All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
+     * All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} uniqueName The group unique name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -360,7 +360,7 @@
 
     /**
      * Removes a group from the system
-     * All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
+     * All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} uniqueName The group unique name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -373,8 +373,8 @@
 
 
     /**
-     * Delete an group member template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Delete a group member template
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -416,8 +416,8 @@
     }
 
     /**
-     * Delete an group member template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Delete a group member template
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -433,7 +433,7 @@
 
     /**
      * Delete a group template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -476,7 +476,7 @@
 
     /**
      * Delete a group template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -560,7 +560,7 @@
 
     /**
      * Loads a specific group&#39;s details
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} uniqueName The group unique name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GroupResource} and HTTP response
      */
@@ -599,7 +599,7 @@
 
     /**
      * Loads a specific group&#39;s details
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} uniqueName The group unique name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GroupResource}
      */
@@ -613,11 +613,15 @@
 
     /**
      * Get group ancestors
-     * Returns a list of ancestor groups in reverse order (parent, then grandparent, etc). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Returns a list of ancestor groups in reverse order (parent, then grandparent, etc). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {String} uniqueName The group unique name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/GroupResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceGroupResource} and HTTP response
      */
-    this.getGroupAncestorsWithHttpInfo = function(uniqueName) {
+    this.getGroupAncestorsWithHttpInfo = function(uniqueName, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'uniqueName' is set
@@ -630,6 +634,8 @@
         'unique_name': uniqueName
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -641,7 +647,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [GroupResource];
+      var returnType = PageResourceGroupResource;
 
       return this.apiClient.callApi(
         '/users/groups/{unique_name}/ancestors', 'GET',
@@ -652,12 +658,15 @@
 
     /**
      * Get group ancestors
-     * Returns a list of ancestor groups in reverse order (parent, then grandparent, etc). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Returns a list of ancestor groups in reverse order (parent, then grandparent, etc). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {String} uniqueName The group unique name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/GroupResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceGroupResource}
      */
-    this.getGroupAncestors = function(uniqueName) {
-      return this.getGroupAncestorsWithHttpInfo(uniqueName)
+    this.getGroupAncestors = function(uniqueName, opts) {
+      return this.getGroupAncestorsWithHttpInfo(uniqueName, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -666,7 +675,7 @@
 
     /**
      * Get a user from a group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The id of the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GroupMemberResource} and HTTP response
@@ -712,7 +721,7 @@
 
     /**
      * Get a user from a group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The id of the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GroupMemberResource}
@@ -727,7 +736,7 @@
 
     /**
      * Get a single group member template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -766,7 +775,7 @@
 
     /**
      * Get a single group member template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -780,7 +789,7 @@
 
     /**
      * List and search group member templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -820,7 +829,7 @@
 
     /**
      * List and search group member templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -837,7 +846,7 @@
 
     /**
      * Lists members of the group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -884,7 +893,7 @@
 
     /**
      * Lists members of the group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -907,6 +916,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceChatMessageResource} and HTTP response
      */
     this.getGroupMessagesWithHttpInfo = function(uniqueName, opts) {
@@ -925,6 +935,7 @@
       var queryParams = {
         'size': opts['size'],
         'page': opts['page'],
+        'order': opts['order'],
       };
       var collectionQueryParams = {
       };
@@ -952,6 +963,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceChatMessageResource}
      */
     this.getGroupMessages = function(uniqueName, opts) {
@@ -964,7 +976,7 @@
 
     /**
      * Get a single group template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -1003,7 +1015,7 @@
 
     /**
      * Get a single group template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -1017,7 +1029,7 @@
 
     /**
      * List and search group templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1057,7 +1069,7 @@
 
     /**
      * List and search group templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1074,11 +1086,13 @@
 
     /**
      * List groups a user is in
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST_GROUPS
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST_GROUPS&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST_GROUPS
      * @param {Number} userId The id of the user
      * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {Boolean} opts.filterChildren Whether to limit group list to children of groups only. If true, shows only groups with parents. If false, shows only groups with no parent.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcestring} and HTTP response
      */
     this.getGroupsForUserWithHttpInfo = function(userId, opts) {
       opts = opts || {};
@@ -1094,6 +1108,8 @@
         'user_id': userId
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
         'filter_children': opts['filterChildren'],
       };
       var collectionQueryParams = {
@@ -1106,7 +1122,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourcestring;
 
       return this.apiClient.callApi(
         '/users/{user_id}/groups', 'GET',
@@ -1117,11 +1133,13 @@
 
     /**
      * List groups a user is in
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST_GROUPS
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST_GROUPS&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST_GROUPS
      * @param {Number} userId The id of the user
      * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {Boolean} opts.filterChildren Whether to limit group list to children of groups only. If true, shows only groups with parents. If false, shows only groups with no parent.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcestring}
      */
     this.getGroupsForUser = function(userId, opts) {
       return this.getGroupsForUserWithHttpInfo(userId, opts)
@@ -1133,7 +1151,7 @@
 
     /**
      * List and search groups
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterTemplate Filter for groups using a specific template, by id
      * @param {String} opts.filterMemberCount Filters groups by member count. Multiple values possible for range search. Format: filter_member_count&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_member_count&#x3D;GT,14,LT,17
@@ -1185,7 +1203,7 @@
 
     /**
      * List and search groups
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterTemplate Filter for groups using a specific template, by id
      * @param {String} opts.filterMemberCount Filters groups by member count. Multiple values possible for range search. Format: filter_member_count&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_member_count&#x3D;GT,14,LT,17
@@ -1235,7 +1253,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ChatMessageResource;
@@ -1264,7 +1282,7 @@
 
     /**
      * Removes a user from a group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The id of the user to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -1310,7 +1328,7 @@
 
     /**
      * Removes a user from a group
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The id of the user to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -1325,7 +1343,7 @@
 
     /**
      * Update a group
-     * If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {module:model/GroupResource} opts.groupResource The updated group
@@ -1367,7 +1385,7 @@
 
     /**
      * Update a group
-     * If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {module:model/GroupResource} opts.groupResource The updated group
@@ -1383,28 +1401,28 @@
 
     /**
      * Change a user&#39;s order
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The user id of the member to modify
      * @param {module:model/StringWrapper} order The new order for the membership
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.updateGroupMemberPropertiesWithHttpInfo = function(uniqueName, userId, order) {
+    this.updateGroupMemberOrderWithHttpInfo = function(uniqueName, userId, order) {
       var postBody = order;
 
       // verify the required parameter 'uniqueName' is set
       if (uniqueName === undefined || uniqueName === null) {
-        throw new Error("Missing the required parameter 'uniqueName' when calling updateGroupMemberProperties");
+        throw new Error("Missing the required parameter 'uniqueName' when calling updateGroupMemberOrder");
       }
 
       // verify the required parameter 'userId' is set
       if (userId === undefined || userId === null) {
-        throw new Error("Missing the required parameter 'userId' when calling updateGroupMemberProperties");
+        throw new Error("Missing the required parameter 'userId' when calling updateGroupMemberOrder");
       }
 
       // verify the required parameter 'order' is set
       if (order === undefined || order === null) {
-        throw new Error("Missing the required parameter 'order' when calling updateGroupMemberProperties");
+        throw new Error("Missing the required parameter 'order' when calling updateGroupMemberOrder");
       }
 
 
@@ -1435,14 +1453,14 @@
 
     /**
      * Change a user&#39;s order
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The user id of the member to modify
      * @param {module:model/StringWrapper} order The new order for the membership
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.updateGroupMemberProperties = function(uniqueName, userId, order) {
-      return this.updateGroupMemberPropertiesWithHttpInfo(uniqueName, userId, order)
+    this.updateGroupMemberOrder = function(uniqueName, userId, order) {
+      return this.updateGroupMemberOrderWithHttpInfo(uniqueName, userId, order)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1451,28 +1469,28 @@
 
     /**
      * Change a user&#39;s membership properties
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The user id of the member to modify
      * @param {Object} properties The new properties for the membership
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.updateGroupMemberProperties1WithHttpInfo = function(uniqueName, userId, properties) {
+    this.updateGroupMemberPropertiesWithHttpInfo = function(uniqueName, userId, properties) {
       var postBody = properties;
 
       // verify the required parameter 'uniqueName' is set
       if (uniqueName === undefined || uniqueName === null) {
-        throw new Error("Missing the required parameter 'uniqueName' when calling updateGroupMemberProperties1");
+        throw new Error("Missing the required parameter 'uniqueName' when calling updateGroupMemberProperties");
       }
 
       // verify the required parameter 'userId' is set
       if (userId === undefined || userId === null) {
-        throw new Error("Missing the required parameter 'userId' when calling updateGroupMemberProperties1");
+        throw new Error("Missing the required parameter 'userId' when calling updateGroupMemberProperties");
       }
 
       // verify the required parameter 'properties' is set
       if (properties === undefined || properties === null) {
-        throw new Error("Missing the required parameter 'properties' when calling updateGroupMemberProperties1");
+        throw new Error("Missing the required parameter 'properties' when calling updateGroupMemberProperties");
       }
 
 
@@ -1503,14 +1521,14 @@
 
     /**
      * Change a user&#39;s membership properties
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The user id of the member to modify
      * @param {Object} properties The new properties for the membership
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.updateGroupMemberProperties1 = function(uniqueName, userId, properties) {
-      return this.updateGroupMemberProperties1WithHttpInfo(uniqueName, userId, properties)
+    this.updateGroupMemberProperties = function(uniqueName, userId, properties) {
+      return this.updateGroupMemberPropertiesWithHttpInfo(uniqueName, userId, properties)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1519,7 +1537,7 @@
 
     /**
      * Change a user&#39;s status
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The user id of the member to modify
      * @param {module:model/StringWrapper} status The new status for the user
@@ -1571,7 +1589,7 @@
 
     /**
      * Change a user&#39;s status
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} uniqueName The group unique name
      * @param {Number} userId The user id of the member to modify
      * @param {module:model/StringWrapper} status The new status for the user
@@ -1586,16 +1604,17 @@
 
 
     /**
-     * Update an group member template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Update a group member template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.groupMemberTemplateResource The group member template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
     this.updateGroupMemberTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['groupMemberTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -1607,6 +1626,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -1621,18 +1641,19 @@
       var returnType = TemplateResource;
 
       return this.apiClient.callApi(
-        '/users/groups/members/templates/{id}', 'PUT',
+        '/users/groups/members/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Update an group member template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Update a group member template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.groupMemberTemplateResource The group member template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
     this.updateGroupMemberTemplate = function(id, opts) {
@@ -1645,15 +1666,16 @@
 
     /**
      * Update a group template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.groupTemplateResource The group template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
     this.updateGroupTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['groupTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -1665,6 +1687,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -1679,7 +1702,7 @@
       var returnType = TemplateResource;
 
       return this.apiClient.callApi(
-        '/users/groups/templates/{id}', 'PUT',
+        '/users/groups/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -1687,10 +1710,11 @@
 
     /**
      * Update a group template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.groupTemplateResource The group template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
     this.updateGroupTemplate = function(id, opts) {

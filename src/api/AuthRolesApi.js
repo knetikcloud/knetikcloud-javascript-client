@@ -34,7 +34,7 @@
   /**
    * AuthRoles service.
    * @module api/AuthRolesApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -162,9 +162,13 @@
      * Get roles for a client
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} clientKey The client key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RoleResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceRoleResource} and HTTP response
      */
-    this.getClientRolesWithHttpInfo = function(clientKey) {
+    this.getClientRolesWithHttpInfo = function(clientKey, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'clientKey' is set
@@ -177,6 +181,8 @@
         'client_key': clientKey
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -188,7 +194,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [RoleResource];
+      var returnType = PageResourceRoleResource;
 
       return this.apiClient.callApi(
         '/auth/clients/{client_key}/roles', 'GET',
@@ -201,10 +207,13 @@
      * Get roles for a client
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} clientKey The client key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RoleResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceRoleResource}
      */
-    this.getClientRoles = function(clientKey) {
-      return this.getClientRolesWithHttpInfo(clientKey)
+    this.getClientRoles = function(clientKey, opts) {
+      return this.getClientRolesWithHttpInfo(clientKey, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -331,9 +340,13 @@
      * Get roles for a user
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Number} userId The user&#39;s id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RoleResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceRoleResource} and HTTP response
      */
-    this.getUserRolesWithHttpInfo = function(userId) {
+    this.getUserRolesWithHttpInfo = function(userId, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'userId' is set
@@ -346,6 +359,8 @@
         'user_id': userId
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -357,7 +372,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [RoleResource];
+      var returnType = PageResourceRoleResource;
 
       return this.apiClient.callApi(
         '/auth/users/{user_id}/roles', 'GET',
@@ -370,10 +385,13 @@
      * Get roles for a user
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Number} userId The user&#39;s id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RoleResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceRoleResource}
      */
-    this.getUserRoles = function(userId) {
-      return this.getUserRolesWithHttpInfo(userId)
+    this.getUserRoles = function(userId, opts) {
+      return this.getUserRolesWithHttpInfo(userId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

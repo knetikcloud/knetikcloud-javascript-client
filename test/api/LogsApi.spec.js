@@ -91,20 +91,20 @@
         done();
       });
     });
-    describe('getUserLog', function() {
-      it('should call getUserLog successfully', function(done) {
-        //uncomment below and update the code to test getUserLog
-        //instance.getUserLog(function(error) {
+    describe('getUserLogs', function() {
+      it('should call getUserLogs successfully', function(done) {
+        //uncomment below and update the code to test getUserLogs
+        //instance.getUserLogs(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getUserLogs', function() {
-      it('should call getUserLogs successfully', function(done) {
-        //uncomment below and update the code to test getUserLogs
-        //instance.getUserLogs(function(error) {
+    describe('getUserLogs1', function() {
+      it('should call getUserLogs1 successfully', function(done) {
+        //uncomment below and update the code to test getUserLogs1
+        //instance.getUserLogs1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

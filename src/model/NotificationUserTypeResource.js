@@ -37,7 +37,7 @@
   /**
    * The NotificationUserTypeResource model module.
    * @module model/NotificationUserTypeResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**

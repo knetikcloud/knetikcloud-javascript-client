@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BreTriggerResource', 'model/IntWrapper', 'model/LevelingResource', 'model/PageResourceLevelingResource', 'model/PageResourceUserLevelingResource', 'model/Result', 'model/UserLevelingResource'], factory);
+    define(['ApiClient', 'model/IntWrapper', 'model/LevelingResource', 'model/PageResourceBreTriggerResource', 'model/PageResourceLevelingResource', 'model/PageResourceUserLevelingResource', 'model/Result', 'model/UserLevelingResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BreTriggerResource'), require('../model/IntWrapper'), require('../model/LevelingResource'), require('../model/PageResourceLevelingResource'), require('../model/PageResourceUserLevelingResource'), require('../model/Result'), require('../model/UserLevelingResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/IntWrapper'), require('../model/LevelingResource'), require('../model/PageResourceBreTriggerResource'), require('../model/PageResourceLevelingResource'), require('../model/PageResourceUserLevelingResource'), require('../model/Result'), require('../model/UserLevelingResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.GamificationLevelingApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.BreTriggerResource, root.KnetikCloud.IntWrapper, root.KnetikCloud.LevelingResource, root.KnetikCloud.PageResourceLevelingResource, root.KnetikCloud.PageResourceUserLevelingResource, root.KnetikCloud.Result, root.KnetikCloud.UserLevelingResource);
+    root.KnetikCloud.GamificationLevelingApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.IntWrapper, root.KnetikCloud.LevelingResource, root.KnetikCloud.PageResourceBreTriggerResource, root.KnetikCloud.PageResourceLevelingResource, root.KnetikCloud.PageResourceUserLevelingResource, root.KnetikCloud.Result, root.KnetikCloud.UserLevelingResource);
   }
-}(this, function(ApiClient, BreTriggerResource, IntWrapper, LevelingResource, PageResourceLevelingResource, PageResourceUserLevelingResource, Result, UserLevelingResource) {
+}(this, function(ApiClient, IntWrapper, LevelingResource, PageResourceBreTriggerResource, PageResourceLevelingResource, PageResourceUserLevelingResource, Result, UserLevelingResource) {
   'use strict';
 
   /**
    * GamificationLeveling service.
    * @module api/GamificationLevelingApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -208,15 +208,21 @@
     /**
      * Get the list of triggers that can be used to trigger a leveling progress update
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BreTriggerResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceBreTriggerResource} and HTTP response
      */
-    this.getLevelTriggersWithHttpInfo = function() {
+    this.getLevelTriggersWithHttpInfo = function(opts) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -228,7 +234,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [BreTriggerResource];
+      var returnType = PageResourceBreTriggerResource;
 
       return this.apiClient.callApi(
         '/leveling/triggers', 'GET',
@@ -240,10 +246,13 @@
     /**
      * Get the list of triggers that can be used to trigger a leveling progress update
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BreTriggerResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceBreTriggerResource}
      */
-    this.getLevelTriggers = function() {
-      return this.getLevelTriggersWithHttpInfo()
+    this.getLevelTriggers = function(opts) {
+      return this.getLevelTriggersWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -577,7 +586,7 @@
      * @param {String} name The level schema name
      * @param {Object} opts Optional parameters
      * @param {module:model/LevelingResource} opts.newLevel The level schema definition
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LevelingResource} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.updateLevelWithHttpInfo = function(name, opts) {
       opts = opts || {};
@@ -604,7 +613,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = LevelingResource;
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/leveling/{name}', 'PUT',
@@ -619,7 +628,7 @@
      * @param {String} name The level schema name
      * @param {Object} opts Optional parameters
      * @param {module:model/LevelingResource} opts.newLevel The level schema definition
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LevelingResource}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.updateLevel = function(name, opts) {
       return this.updateLevelWithHttpInfo(name, opts)

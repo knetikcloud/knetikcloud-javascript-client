@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AnswerResource', 'model/DeltaResource', 'model/ImportJobResource', 'model/PageResourceImportJobResource', 'model/PageResourceQuestionResource', 'model/PageResourceQuestionTemplateResource', 'model/QuestionResource', 'model/QuestionTemplateResource', 'model/Result', 'model/StringWrapper'], factory);
+    define(['ApiClient', 'model/AnswerResource', 'model/ImportJobResource', 'model/LongWrapper', 'model/PageResourceAnswerResource', 'model/PageResourceDeltaResource', 'model/PageResourceImportJobResource', 'model/PageResourceQuestionResource', 'model/PageResourceQuestionTemplateResource', 'model/PageResourcestring', 'model/PatchResource', 'model/QuestionResource', 'model/QuestionTemplateResource', 'model/Result', 'model/StringWrapper'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AnswerResource'), require('../model/DeltaResource'), require('../model/ImportJobResource'), require('../model/PageResourceImportJobResource'), require('../model/PageResourceQuestionResource'), require('../model/PageResourceQuestionTemplateResource'), require('../model/QuestionResource'), require('../model/QuestionTemplateResource'), require('../model/Result'), require('../model/StringWrapper'));
+    module.exports = factory(require('../ApiClient'), require('../model/AnswerResource'), require('../model/ImportJobResource'), require('../model/LongWrapper'), require('../model/PageResourceAnswerResource'), require('../model/PageResourceDeltaResource'), require('../model/PageResourceImportJobResource'), require('../model/PageResourceQuestionResource'), require('../model/PageResourceQuestionTemplateResource'), require('../model/PageResourcestring'), require('../model/PatchResource'), require('../model/QuestionResource'), require('../model/QuestionTemplateResource'), require('../model/Result'), require('../model/StringWrapper'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.GamificationTriviaApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AnswerResource, root.KnetikCloud.DeltaResource, root.KnetikCloud.ImportJobResource, root.KnetikCloud.PageResourceImportJobResource, root.KnetikCloud.PageResourceQuestionResource, root.KnetikCloud.PageResourceQuestionTemplateResource, root.KnetikCloud.QuestionResource, root.KnetikCloud.QuestionTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
+    root.KnetikCloud.GamificationTriviaApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AnswerResource, root.KnetikCloud.ImportJobResource, root.KnetikCloud.LongWrapper, root.KnetikCloud.PageResourceAnswerResource, root.KnetikCloud.PageResourceDeltaResource, root.KnetikCloud.PageResourceImportJobResource, root.KnetikCloud.PageResourceQuestionResource, root.KnetikCloud.PageResourceQuestionTemplateResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PatchResource, root.KnetikCloud.QuestionResource, root.KnetikCloud.QuestionTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
   }
-}(this, function(ApiClient, AnswerResource, DeltaResource, ImportJobResource, PageResourceImportJobResource, PageResourceQuestionResource, PageResourceQuestionTemplateResource, QuestionResource, QuestionTemplateResource, Result, StringWrapper) {
+}(this, function(ApiClient, AnswerResource, ImportJobResource, LongWrapper, PageResourceAnswerResource, PageResourceDeltaResource, PageResourceImportJobResource, PageResourceQuestionResource, PageResourceQuestionTemplateResource, PageResourcestring, PatchResource, QuestionResource, QuestionTemplateResource, Result, StringWrapper) {
   'use strict';
 
   /**
    * GamificationTrivia service.
    * @module api/GamificationTriviaApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -341,7 +341,7 @@
 
     /**
      * Create a question template
-     * Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
+     * Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionTemplateResource} opts.questionTemplateResource The question template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/QuestionTemplateResource} and HTTP response
@@ -376,7 +376,7 @@
 
     /**
      * Create a question template
-     * Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
+     * Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionTemplateResource} opts.questionTemplateResource The question template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/QuestionTemplateResource}
@@ -558,7 +558,7 @@
 
     /**
      * Delete a question template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -601,7 +601,7 @@
 
     /**
      * Delete a question template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -855,9 +855,13 @@
      * List the answers available for a question
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AnswerResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceAnswerResource} and HTTP response
      */
-    this.getQuestionAnswersWithHttpInfo = function(questionId) {
+    this.getQuestionAnswersWithHttpInfo = function(questionId, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'questionId' is set
@@ -870,6 +874,8 @@
         'question_id': questionId
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -881,7 +887,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [AnswerResource];
+      var returnType = PageResourceAnswerResource;
 
       return this.apiClient.callApi(
         '/trivia/questions/{question_id}/answers', 'GET',
@@ -894,10 +900,13 @@
      * List the answers available for a question
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AnswerResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceAnswerResource}
      */
-    this.getQuestionAnswers = function(questionId) {
-      return this.getQuestionAnswersWithHttpInfo(questionId)
+    this.getQuestionAnswers = function(questionId, opts) {
+      return this.getQuestionAnswersWithHttpInfo(questionId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -909,7 +918,9 @@
      * The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.since Timestamp in seconds
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DeltaResource>} and HTTP response
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceDeltaResource} and HTTP response
      */
     this.getQuestionDeltasWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -920,6 +931,8 @@
       };
       var queryParams = {
         'since': opts['since'],
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -931,7 +944,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [DeltaResource];
+      var returnType = PageResourceDeltaResource;
 
       return this.apiClient.callApi(
         '/trivia/questions/delta', 'GET',
@@ -945,7 +958,9 @@
      * The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.since Timestamp in seconds
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DeltaResource>}
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceDeltaResource}
      */
     this.getQuestionDeltas = function(opts) {
       return this.getQuestionDeltasWithHttpInfo(opts)
@@ -959,9 +974,13 @@
      * List the tags for a question
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcestring} and HTTP response
      */
-    this.getQuestionTagsWithHttpInfo = function(id) {
+    this.getQuestionTagsWithHttpInfo = function(id, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id' is set
@@ -974,6 +993,8 @@
         'id': id
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -985,7 +1006,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourcestring;
 
       return this.apiClient.callApi(
         '/trivia/questions/{id}/tags', 'GET',
@@ -998,10 +1019,13 @@
      * List the tags for a question
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcestring}
      */
-    this.getQuestionTags = function(id) {
-      return this.getQuestionTagsWithHttpInfo(id)
+    this.getQuestionTags = function(id, opts) {
+      return this.getQuestionTagsWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1010,7 +1034,7 @@
 
     /**
      * Get a single question template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/QuestionTemplateResource} and HTTP response
      */
@@ -1049,7 +1073,7 @@
 
     /**
      * Get a single question template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/QuestionTemplateResource}
      */
@@ -1063,7 +1087,7 @@
 
     /**
      * List and search question templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1103,7 +1127,7 @@
 
     /**
      * List and search question templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1210,7 +1234,7 @@
      * @param {String} opts.filterTagset Filter for questions with specified tags (separated by comma)
      * @param {String} opts.filterType Filter for questions with specified type.  Allowable values: (&#39;TEXT&#39;, &#39;IMAGE&#39;, &#39;VIDEO&#39;, &#39;AUDIO&#39;)
      * @param {Boolean} opts.filterPublished Filter for questions currenctly published or not
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'Number'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LongWrapper} and HTTP response
      */
     this.getQuestionsCountWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -1238,7 +1262,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = 'Number';
+      var returnType = LongWrapper;
 
       return this.apiClient.callApi(
         '/trivia/questions/count', 'GET',
@@ -1258,7 +1282,7 @@
      * @param {String} opts.filterTagset Filter for questions with specified tags (separated by comma)
      * @param {String} opts.filterType Filter for questions with specified type.  Allowable values: (&#39;TEXT&#39;, &#39;IMAGE&#39;, &#39;VIDEO&#39;, &#39;AUDIO&#39;)
      * @param {Boolean} opts.filterPublished Filter for questions currenctly published or not
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'Number'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LongWrapper}
      */
     this.getQuestionsCount = function(opts) {
       return this.getQuestionsCountWithHttpInfo(opts)
@@ -1477,7 +1501,9 @@
      * @param {String} opts.filterSearch Filter for tags starting with the given text
      * @param {String} opts.filterCategory Filter for tags on questions from a specific category
      * @param {Number} opts.filterImportId Filter for tags on questions from a specific import job
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcestring} and HTTP response
      */
     this.searchQuestionTagsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -1490,6 +1516,8 @@
         'filter_search': opts['filterSearch'],
         'filter_category': opts['filterCategory'],
         'filter_import_id': opts['filterImportId'],
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -1501,7 +1529,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourcestring;
 
       return this.apiClient.callApi(
         '/trivia/tags', 'GET',
@@ -1517,7 +1545,9 @@
      * @param {String} opts.filterSearch Filter for tags starting with the given text
      * @param {String} opts.filterCategory Filter for tags on questions from a specific category
      * @param {Number} opts.filterImportId Filter for tags on questions from a specific import job
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcestring}
      */
     this.searchQuestionTags = function(opts) {
       return this.searchQuestionTagsWithHttpInfo(opts)
@@ -1711,15 +1741,16 @@
 
     /**
      * Update a question template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/QuestionTemplateResource} opts.questionTemplateResource The question template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/QuestionTemplateResource} and HTTP response
      */
     this.updateQuestionTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['questionTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -1731,6 +1762,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -1745,7 +1777,7 @@
       var returnType = QuestionTemplateResource;
 
       return this.apiClient.callApi(
-        '/trivia/questions/templates/{id}', 'PUT',
+        '/trivia/questions/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -1753,10 +1785,11 @@
 
     /**
      * Update a question template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/QuestionTemplateResource} opts.questionTemplateResource The question template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/QuestionTemplateResource}
      */
     this.updateQuestionTemplate = function(id, opts) {

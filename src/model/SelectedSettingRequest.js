@@ -37,7 +37,7 @@
   /**
    * The SelectedSettingRequest model module.
    * @module model/SelectedSettingRequest
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**

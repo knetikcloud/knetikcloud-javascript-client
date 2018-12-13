@@ -1,6 +1,6 @@
 # KnetikCloud.UsersApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 [**startPasswordReset**](UsersApi.md#startPasswordReset) | **POST** /users/{id}/password-reset | Reset a user&#39;s password
 [**submitPasswordReset**](UsersApi.md#submitPasswordReset) | **POST** /users/password-reset | Reset a user&#39;s password without user id
 [**updateUser**](UsersApi.md#updateUser) | **PUT** /users/{id} | Update a user
-[**updateUserTemplate**](UsersApi.md#updateUserTemplate) | **PUT** /users/templates/{id} | Update a user template
+[**updateUserTemplate**](UsersApi.md#updateUserTemplate) | **PATCH** /users/templates/{id} | Update a user template
 
 
 <a name="addUserTag"></a>
@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 Add a tag to a user
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
 
 ### Example
 ```javascript
@@ -85,7 +85,7 @@ null (empty response body)
 
 Create a user template
 
-User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 Delete a user template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 Get a single user
 
-Additional private info is included if access controls allow GET. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+Additional private info is included if access controls allow GET.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserTags"></a>
 # **getUserTags**
-> [&#39;String&#39;] getUserTags(userId)
+> PageResourcestring getUserTags(userId, opts)
 
 List tags for a user
 
@@ -323,7 +323,11 @@ var apiInstance = new KnetikCloud.UsersApi();
 
 var userId = 56; // Number | The id of the user
 
-apiInstance.getUserTags(userId).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getUserTags(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -336,10 +340,12 @@ apiInstance.getUserTags(userId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The id of the user | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**PageResourcestring**](PageResourcestring.md)
 
 ### Authorization
 
@@ -356,7 +362,7 @@ Name | Type | Description  | Notes
 
 Get a single user template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -408,7 +414,7 @@ Name | Type | Description  | Notes
 
 List and search user templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -465,7 +471,7 @@ Name | Type | Description  | Notes
 
 List and search users
 
-Additional private info is included with LIST_PRIVATE. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+Additional private info is included with LIST_PRIVATE. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -546,7 +552,7 @@ Name | Type | Description  | Notes
 
 Choose a new password after a reset
 
-Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -605,6 +611,15 @@ Send a user message
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.UsersApi();
 
@@ -634,7 +649,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -647,7 +662,7 @@ No authorization required
 
 Register a new user
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+Password should be in plain text and will be encrypted on receipt. Use SSL for security.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -700,7 +715,7 @@ Name | Type | Description  | Notes
 
 Remove a tag from a user
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TAGS
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
 
 ### Example
 ```javascript
@@ -755,7 +770,7 @@ null (empty response body)
 
 Set a user&#39;s password
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -811,7 +826,7 @@ null (empty response body)
 
 Reset a user&#39;s password
 
-A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -863,7 +878,7 @@ null (empty response body)
 
 Reset a user&#39;s password without user id
 
-A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -916,7 +931,7 @@ null (empty response body)
 
 Update a user
 
-Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -972,7 +987,7 @@ null (empty response body)
 
 Update a user template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -992,7 +1007,8 @@ var apiInstance = new KnetikCloud.UsersApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'userTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The user template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateUserTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1007,7 +1023,8 @@ apiInstance.updateUserTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **userTemplateResource** | [**TemplateResource**](TemplateResource.md)| The user template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

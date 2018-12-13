@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **access_token_validity_seconds** | **Number** | The expiration time of an initial oauth token in seconds | [optional] 
+**client_customization** | [**ClientCustomizationResource**](ClientCustomizationResource.md) | The customizable fields for the login page | [optional] 
 **client_key** | **String** | The client_id field of the oauth token request | 
 **grant_types** | **[String]** | The oauth grant type as in: password (username/password auth), client_credentials (server-to-server, private clients), refresh_token (to allow clients to refresh their initial token), facebook, google, etc) See documentation for a complete list. Use dedicated endpoint PUT /grant-types to edit this list | [optional] 
 **id** | **Number** | Generated unique ID for the client | [optional] 

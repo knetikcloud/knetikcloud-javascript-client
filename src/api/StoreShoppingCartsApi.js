@@ -34,7 +34,7 @@
   /**
    * StoreShoppingCarts service.
    * @module api/StoreShoppingCartsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -229,7 +229,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.owner Set the owner of a cart. If not specified, defaults to the calling user&#39;s id. If specified and is not the calling user&#39;s id, SHOPPING_CARTS_ADMIN permission is required
      * @param {String} opts.currencyCode Set the currency for the cart, by currency code. May be disallowed by site settings.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.createCartWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -252,7 +252,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
         '/carts', 'POST',
@@ -267,7 +267,7 @@
      * @param {Object} opts Optional parameters
      * @param {Number} opts.owner Set the owner of a cart. If not specified, defaults to the calling user&#39;s id. If specified and is not the calling user&#39;s id, SHOPPING_CARTS_ADMIN permission is required
      * @param {String} opts.currencyCode Set the currency for the cart, by currency code. May be disallowed by site settings.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.createCart = function(opts) {
       return this.createCartWithHttpInfo(opts)

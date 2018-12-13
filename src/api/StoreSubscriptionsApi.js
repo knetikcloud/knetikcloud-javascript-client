@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PageResourceSubscriptionResource', 'model/PageResourceSubscriptionTemplateResource', 'model/Result', 'model/SubscriptionResource', 'model/SubscriptionTemplateResource'], factory);
+    define(['ApiClient', 'model/PageResourceSubscriptionResource', 'model/PageResourceSubscriptionTemplateResource', 'model/PatchResource', 'model/Result', 'model/SubscriptionResource', 'model/SubscriptionTemplateResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PageResourceSubscriptionResource'), require('../model/PageResourceSubscriptionTemplateResource'), require('../model/Result'), require('../model/SubscriptionResource'), require('../model/SubscriptionTemplateResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/PageResourceSubscriptionResource'), require('../model/PageResourceSubscriptionTemplateResource'), require('../model/PatchResource'), require('../model/Result'), require('../model/SubscriptionResource'), require('../model/SubscriptionTemplateResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.StoreSubscriptionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourceSubscriptionResource, root.KnetikCloud.PageResourceSubscriptionTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.SubscriptionResource, root.KnetikCloud.SubscriptionTemplateResource);
+    root.KnetikCloud.StoreSubscriptionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourceSubscriptionResource, root.KnetikCloud.PageResourceSubscriptionTemplateResource, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.SubscriptionResource, root.KnetikCloud.SubscriptionTemplateResource);
   }
-}(this, function(ApiClient, PageResourceSubscriptionResource, PageResourceSubscriptionTemplateResource, Result, SubscriptionResource, SubscriptionTemplateResource) {
+}(this, function(ApiClient, PageResourceSubscriptionResource, PageResourceSubscriptionTemplateResource, PatchResource, Result, SubscriptionResource, SubscriptionTemplateResource) {
   'use strict';
 
   /**
    * StoreSubscriptions service.
    * @module api/StoreSubscriptionsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -101,7 +101,7 @@
 
     /**
      * Create a subscription template
-     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionTemplateResource} opts.subscriptionTemplateResource The new subscription template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SubscriptionTemplateResource} and HTTP response
@@ -136,7 +136,7 @@
 
     /**
      * Create a subscription template
-     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionTemplateResource} opts.subscriptionTemplateResource The new subscription template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SubscriptionTemplateResource}
@@ -212,7 +212,7 @@
 
     /**
      * Delete a subscription template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -255,7 +255,7 @@
 
     /**
      * Delete a subscription template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -324,7 +324,7 @@
 
     /**
      * Get a single subscription template
-     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SubscriptionTemplateResource} and HTTP response
      */
@@ -363,7 +363,7 @@
 
     /**
      * Get a single subscription template
-     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SubscriptionTemplateResource}
      */
@@ -377,7 +377,7 @@
 
     /**
      * List and search subscription templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -417,7 +417,7 @@
 
     /**
      * List and search subscription templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -594,15 +594,16 @@
 
     /**
      * Update a subscription template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/SubscriptionTemplateResource} opts.subscriptionTemplateResource The subscription template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SubscriptionTemplateResource} and HTTP response
      */
     this.updateSubscriptionTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['subscriptionTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -614,6 +615,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -628,7 +630,7 @@
       var returnType = SubscriptionTemplateResource;
 
       return this.apiClient.callApi(
-        '/subscriptions/templates/{id}', 'PUT',
+        '/subscriptions/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -636,10 +638,11 @@
 
     /**
      * Update a subscription template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/SubscriptionTemplateResource} opts.subscriptionTemplateResource The subscription template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SubscriptionTemplateResource}
      */
     this.updateSubscriptionTemplate = function(id, opts) {

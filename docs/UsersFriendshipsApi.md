@@ -1,6 +1,6 @@
 # KnetikCloud.UsersFriendshipsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 <a name="getInviteToken"></a>
 # **getInviteToken**
-> &#39;String&#39; getInviteToken(userId)
+> StringWrapper getInviteToken(userId)
 
 Returns the invite token
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 

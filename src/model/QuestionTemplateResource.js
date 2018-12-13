@@ -37,7 +37,7 @@
   /**
    * The QuestionTemplateResource model module.
    * @module model/QuestionTemplateResource
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -48,7 +48,6 @@
    */
   var exports = function(name) {
     var _this = this;
-
 
 
 
@@ -70,9 +69,6 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('allow_additional')) {
-        obj['allow_additional'] = ApiClient.convertToType(data['allow_additional'], 'Boolean');
-      }
       if (data.hasOwnProperty('answer_property')) {
         obj['answer_property'] = PropertyDefinitionResource.constructFromObject(data['answer_property']);
       }
@@ -112,11 +108,6 @@
   var discriminatorValue = 'QuestionTemplateResource';
 
 
-  /**
-   * Whether to allow additional properties beyond those specified or not
-   * @member {Boolean} allow_additional
-   */
-  exports.prototype['allow_additional'] = undefined;
   /**
    * A property definition for all answers. If included each answer must match this definition's type and be valid
    * @member {module:model/PropertyDefinitionResource} answer_property

@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AchievementDefinitionResource', 'model/BreTriggerResource', 'model/IntWrapper', 'model/PageResourceAchievementDefinitionResource', 'model/PageResourceTemplateResource', 'model/PageResourceUserAchievementGroupResource', 'model/Result', 'model/TemplateResource', 'model/UserAchievementGroupResource'], factory);
+    define(['ApiClient', 'model/AchievementDefinitionResource', 'model/IntWrapper', 'model/PageResourceAchievementDefinitionResource', 'model/PageResourceBreTriggerResource', 'model/PageResourceTemplateResource', 'model/PageResourceUserAchievementGroupResource', 'model/PatchResource', 'model/Result', 'model/TemplateResource', 'model/UserAchievementGroupResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AchievementDefinitionResource'), require('../model/BreTriggerResource'), require('../model/IntWrapper'), require('../model/PageResourceAchievementDefinitionResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourceUserAchievementGroupResource'), require('../model/Result'), require('../model/TemplateResource'), require('../model/UserAchievementGroupResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/AchievementDefinitionResource'), require('../model/IntWrapper'), require('../model/PageResourceAchievementDefinitionResource'), require('../model/PageResourceBreTriggerResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourceUserAchievementGroupResource'), require('../model/PatchResource'), require('../model/Result'), require('../model/TemplateResource'), require('../model/UserAchievementGroupResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.GamificationAchievementsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AchievementDefinitionResource, root.KnetikCloud.BreTriggerResource, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceAchievementDefinitionResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourceUserAchievementGroupResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource, root.KnetikCloud.UserAchievementGroupResource);
+    root.KnetikCloud.GamificationAchievementsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AchievementDefinitionResource, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceAchievementDefinitionResource, root.KnetikCloud.PageResourceBreTriggerResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourceUserAchievementGroupResource, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource, root.KnetikCloud.UserAchievementGroupResource);
   }
-}(this, function(ApiClient, AchievementDefinitionResource, BreTriggerResource, IntWrapper, PageResourceAchievementDefinitionResource, PageResourceTemplateResource, PageResourceUserAchievementGroupResource, Result, TemplateResource, UserAchievementGroupResource) {
+}(this, function(ApiClient, AchievementDefinitionResource, IntWrapper, PageResourceAchievementDefinitionResource, PageResourceBreTriggerResource, PageResourceTemplateResource, PageResourceUserAchievementGroupResource, PatchResource, Result, TemplateResource, UserAchievementGroupResource) {
   'use strict';
 
   /**
    * GamificationAchievements service.
    * @module api/GamificationAchievementsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -101,7 +101,7 @@
 
     /**
      * Create an achievement template
-     * Achievement templates define a type of achievement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Achievement templates define a type of achievement and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The achievement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -136,7 +136,7 @@
 
     /**
      * Create an achievement template
-     * Achievement templates define a type of achievement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Achievement templates define a type of achievement and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The achievement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -204,7 +204,7 @@
 
     /**
      * Delete an achievement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -247,7 +247,7 @@
 
     /**
      * Delete an achievement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -316,7 +316,7 @@
 
     /**
      * Get a single achievement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -355,7 +355,7 @@
 
     /**
      * Get a single achievement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -369,7 +369,7 @@
 
     /**
      * List and search achievement templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -409,7 +409,7 @@
 
     /**
      * List and search achievement templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -427,15 +427,21 @@
     /**
      * Get the list of triggers that can be used to trigger an achievement progress update
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BreTriggerResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceBreTriggerResource} and HTTP response
      */
-    this.getAchievementTriggersWithHttpInfo = function() {
+    this.getAchievementTriggersWithHttpInfo = function(opts) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -447,7 +453,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [BreTriggerResource];
+      var returnType = PageResourceBreTriggerResource;
 
       return this.apiClient.callApi(
         '/achievements/triggers', 'GET',
@@ -459,10 +465,13 @@
     /**
      * Get the list of triggers that can be used to trigger an achievement progress update
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BreTriggerResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceBreTriggerResource}
      */
-    this.getAchievementTriggers = function() {
-      return this.getAchievementTriggersWithHttpInfo()
+    this.getAchievementTriggers = function(opts) {
+      return this.getAchievementTriggersWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -542,9 +551,13 @@
      * Get a list of derived achievements
      * Used by other services that depend on achievements.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} name The name of the derived achievement
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AchievementDefinitionResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceAchievementDefinitionResource} and HTTP response
      */
-    this.getDerivedAchievementsWithHttpInfo = function(name) {
+    this.getDerivedAchievementsWithHttpInfo = function(name, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'name' is set
@@ -557,6 +570,8 @@
         'name': name
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -568,7 +583,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [AchievementDefinitionResource];
+      var returnType = PageResourceAchievementDefinitionResource;
 
       return this.apiClient.callApi(
         '/achievements/derived/{name}', 'GET',
@@ -581,10 +596,13 @@
      * Get a list of derived achievements
      * Used by other services that depend on achievements.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} name The name of the derived achievement
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AchievementDefinitionResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceAchievementDefinitionResource}
      */
-    this.getDerivedAchievements = function(name) {
-      return this.getDerivedAchievementsWithHttpInfo(name)
+    this.getDerivedAchievements = function(name, opts) {
+      return this.getDerivedAchievementsWithHttpInfo(name, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -659,7 +677,7 @@
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
      * @param {String} opts.filterAchievementTagset Filter for achievements with specified tags (separated by comma)
-     * @param {String} opts.filterAchievementName Filter for achievements whose name contains a string
+     * @param {String} opts.filterGroupName Filter for achievements whose group/level name contains a string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceUserAchievementGroupResource} and HTTP response
@@ -680,7 +698,7 @@
       var queryParams = {
         'filter_achievement_derived': opts['filterAchievementDerived'],
         'filter_achievement_tagset': opts['filterAchievementTagset'],
-        'filter_achievement_name': opts['filterAchievementName'],
+        'filter_group_name': opts['filterGroupName'],
         'size': opts['size'],
         'page': opts['page'],
       };
@@ -710,7 +728,7 @@
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
      * @param {String} opts.filterAchievementTagset Filter for achievements with specified tags (separated by comma)
-     * @param {String} opts.filterAchievementName Filter for achievements whose name contains a string
+     * @param {String} opts.filterGroupName Filter for achievements whose group/level name contains a string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceUserAchievementGroupResource}
@@ -725,12 +743,12 @@
 
     /**
      * Retrieve progress on a given achievement for all users
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {String} achievementName The achievement&#39;s name
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
      * @param {String} opts.filterAchievementTagset Filter for achievements with specified tags (separated by comma)
-     * @param {String} opts.filterAchievementName Filter for achievements whose name contains a string
+     * @param {String} opts.filterGroupName Filter for achievements whose group/level name contains a string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceUserAchievementGroupResource} and HTTP response
@@ -751,7 +769,7 @@
       var queryParams = {
         'filter_achievement_derived': opts['filterAchievementDerived'],
         'filter_achievement_tagset': opts['filterAchievementTagset'],
-        'filter_achievement_name': opts['filterAchievementName'],
+        'filter_group_name': opts['filterGroupName'],
         'size': opts['size'],
         'page': opts['page'],
       };
@@ -776,12 +794,12 @@
 
     /**
      * Retrieve progress on a given achievement for all users
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {String} achievementName The achievement&#39;s name
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
      * @param {String} opts.filterAchievementTagset Filter for achievements with specified tags (separated by comma)
-     * @param {String} opts.filterAchievementName Filter for achievements whose name contains a string
+     * @param {String} opts.filterGroupName Filter for achievements whose group/level name contains a string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceUserAchievementGroupResource}
@@ -796,11 +814,11 @@
 
     /**
      * Retrieve progress on achievements for all users
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
      * @param {String} opts.filterAchievementTagset Filter for achievements with specified tags (separated by comma)
-     * @param {String} opts.filterAchievementName Filter for achievements whose name contains a string
+     * @param {String} opts.filterGroupName Filter for achievements whose group/level name contains a string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceUserAchievementGroupResource} and HTTP response
@@ -815,7 +833,7 @@
       var queryParams = {
         'filter_achievement_derived': opts['filterAchievementDerived'],
         'filter_achievement_tagset': opts['filterAchievementTagset'],
-        'filter_achievement_name': opts['filterAchievementName'],
+        'filter_group_name': opts['filterGroupName'],
         'size': opts['size'],
         'page': opts['page'],
       };
@@ -840,11 +858,11 @@
 
     /**
      * Retrieve progress on achievements for all users
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
      * @param {String} opts.filterAchievementTagset Filter for achievements with specified tags (separated by comma)
-     * @param {String} opts.filterAchievementName Filter for achievements whose name contains a string
+     * @param {String} opts.filterGroupName Filter for achievements whose group/level name contains a string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceUserAchievementGroupResource}
@@ -1049,15 +1067,16 @@
 
     /**
      * Update an achievement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.template The updated template
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
     this.updateAchievementTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['template'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -1069,6 +1088,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -1083,7 +1103,7 @@
       var returnType = TemplateResource;
 
       return this.apiClient.callApi(
-        '/achievements/templates/{id}', 'PUT',
+        '/achievements/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -1091,10 +1111,11 @@
 
     /**
      * Update an achievement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.template The updated template
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
     this.updateAchievementTemplate = function(id, opts) {

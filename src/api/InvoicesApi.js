@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddressResource', 'model/InvoiceCreateRequest', 'model/InvoicePaymentStatusRequest', 'model/InvoiceResource', 'model/PageResourceInvoiceLogEntry', 'model/PageResourceInvoiceResource', 'model/PayBySavedMethodRequest', 'model/Result', 'model/StringWrapper'], factory);
+    define(['ApiClient', 'model/AddressResource', 'model/InvoiceCreateRequest', 'model/InvoicePaymentStatusRequest', 'model/InvoiceResource', 'model/PageResourceInvoiceLogEntry', 'model/PageResourceInvoiceResource', 'model/PageResourcestring', 'model/PayBySavedMethodRequest', 'model/Result', 'model/StringWrapper'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AddressResource'), require('../model/InvoiceCreateRequest'), require('../model/InvoicePaymentStatusRequest'), require('../model/InvoiceResource'), require('../model/PageResourceInvoiceLogEntry'), require('../model/PageResourceInvoiceResource'), require('../model/PayBySavedMethodRequest'), require('../model/Result'), require('../model/StringWrapper'));
+    module.exports = factory(require('../ApiClient'), require('../model/AddressResource'), require('../model/InvoiceCreateRequest'), require('../model/InvoicePaymentStatusRequest'), require('../model/InvoiceResource'), require('../model/PageResourceInvoiceLogEntry'), require('../model/PageResourceInvoiceResource'), require('../model/PageResourcestring'), require('../model/PayBySavedMethodRequest'), require('../model/Result'), require('../model/StringWrapper'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.InvoicesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AddressResource, root.KnetikCloud.InvoiceCreateRequest, root.KnetikCloud.InvoicePaymentStatusRequest, root.KnetikCloud.InvoiceResource, root.KnetikCloud.PageResourceInvoiceLogEntry, root.KnetikCloud.PageResourceInvoiceResource, root.KnetikCloud.PayBySavedMethodRequest, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
+    root.KnetikCloud.InvoicesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AddressResource, root.KnetikCloud.InvoiceCreateRequest, root.KnetikCloud.InvoicePaymentStatusRequest, root.KnetikCloud.InvoiceResource, root.KnetikCloud.PageResourceInvoiceLogEntry, root.KnetikCloud.PageResourceInvoiceResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PayBySavedMethodRequest, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
   }
-}(this, function(ApiClient, AddressResource, InvoiceCreateRequest, InvoicePaymentStatusRequest, InvoiceResource, PageResourceInvoiceLogEntry, PageResourceInvoiceResource, PayBySavedMethodRequest, Result, StringWrapper) {
+}(this, function(ApiClient, AddressResource, InvoiceCreateRequest, InvoicePaymentStatusRequest, InvoiceResource, PageResourceInvoiceLogEntry, PageResourceInvoiceResource, PageResourcestring, PayBySavedMethodRequest, Result, StringWrapper) {
   'use strict';
 
   /**
    * Invoices service.
    * @module api/InvoicesApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -102,15 +102,21 @@
     /**
      * Lists available fulfillment statuses
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcestring} and HTTP response
      */
-    this.getFulFillmentStatusesWithHttpInfo = function() {
+    this.getFulFillmentStatusesWithHttpInfo = function(opts) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -122,7 +128,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourcestring;
 
       return this.apiClient.callApi(
         '/invoices/fulfillment-statuses', 'GET',
@@ -134,10 +140,13 @@
     /**
      * Lists available fulfillment statuses
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcestring}
      */
-    this.getFulFillmentStatuses = function() {
-      return this.getFulFillmentStatusesWithHttpInfo()
+    this.getFulFillmentStatuses = function(opts) {
+      return this.getFulFillmentStatusesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -361,15 +370,21 @@
     /**
      * Lists available payment statuses
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcestring} and HTTP response
      */
-    this.getPaymentStatusesWithHttpInfo = function() {
+    this.getPaymentStatusesWithHttpInfo = function(opts) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -381,7 +396,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourcestring;
 
       return this.apiClient.callApi(
         '/invoices/payment-statuses', 'GET',
@@ -393,10 +408,13 @@
     /**
      * Lists available payment statuses
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcestring}
      */
-    this.getPaymentStatuses = function() {
-      return this.getPaymentStatusesWithHttpInfo()
+    this.getPaymentStatuses = function(opts) {
+      return this.getPaymentStatusesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

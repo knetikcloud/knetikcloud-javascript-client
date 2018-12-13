@@ -1,6 +1,6 @@
 # KnetikCloud.GamificationTriviaApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,7 +32,7 @@ Method | HTTP request | Description
 [**updateImportJob**](GamificationTriviaApi.md#updateImportJob) | **PUT** /trivia/import/{id} | Update an import job
 [**updateQuestion**](GamificationTriviaApi.md#updateQuestion) | **PUT** /trivia/questions/{id} | Update a question
 [**updateQuestionAnswer**](GamificationTriviaApi.md#updateQuestionAnswer) | **PUT** /trivia/questions/{question_id}/answers/{id} | Update an answer for a question
-[**updateQuestionTemplate**](GamificationTriviaApi.md#updateQuestionTemplate) | **PUT** /trivia/questions/templates/{id} | Update a question template
+[**updateQuestionTemplate**](GamificationTriviaApi.md#updateQuestionTemplate) | **PATCH** /trivia/questions/templates/{id} | Update a question template
 [**updateQuestionsInBulk**](GamificationTriviaApi.md#updateQuestionsInBulk) | **PUT** /trivia/questions | Bulk update questions
 
 
@@ -329,7 +329,7 @@ Name | Type | Description  | Notes
 
 Create a question template
 
-Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
+Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -541,7 +541,7 @@ null (empty response body)
 
 Delete a question template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -817,7 +817,7 @@ Name | Type | Description  | Notes
 
 <a name="getQuestionAnswers"></a>
 # **getQuestionAnswers**
-> [AnswerResource] getQuestionAnswers(questionId)
+> PageResourceAnswerResource getQuestionAnswers(questionId, opts)
 
 List the answers available for a question
 
@@ -840,7 +840,11 @@ var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
 var questionId = "questionId_example"; // String | The id of the question
 
-apiInstance.getQuestionAnswers(questionId).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getQuestionAnswers(questionId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -853,10 +857,12 @@ apiInstance.getQuestionAnswers(questionId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **questionId** | **String**| The id of the question | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[AnswerResource]**](AnswerResource.md)
+[**PageResourceAnswerResource**](PageResourceAnswerResource.md)
 
 ### Authorization
 
@@ -869,7 +875,7 @@ Name | Type | Description  | Notes
 
 <a name="getQuestionDeltas"></a>
 # **getQuestionDeltas**
-> [DeltaResource] getQuestionDeltas(opts)
+> PageResourceDeltaResource getQuestionDeltas(opts)
 
 List question deltas in ascending order of updated date
 
@@ -891,7 +897,9 @@ oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
 var opts = { 
-  'since': 789 // Number | Timestamp in seconds
+  'since': 789, // Number | Timestamp in seconds
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
 };
 apiInstance.getQuestionDeltas(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -906,10 +914,12 @@ apiInstance.getQuestionDeltas(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **since** | **Number**| Timestamp in seconds | [optional] 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[DeltaResource]**](DeltaResource.md)
+[**PageResourceDeltaResource**](PageResourceDeltaResource.md)
 
 ### Authorization
 
@@ -922,7 +932,7 @@ Name | Type | Description  | Notes
 
 <a name="getQuestionTags"></a>
 # **getQuestionTags**
-> [&#39;String&#39;] getQuestionTags(id)
+> PageResourcestring getQuestionTags(id, opts)
 
 List the tags for a question
 
@@ -945,7 +955,11 @@ var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the question
 
-apiInstance.getQuestionTags(id).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getQuestionTags(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -958,10 +972,12 @@ apiInstance.getQuestionTags(id).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the question | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**PageResourcestring**](PageResourcestring.md)
 
 ### Authorization
 
@@ -978,7 +994,7 @@ Name | Type | Description  | Notes
 
 Get a single question template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -1030,7 +1046,7 @@ Name | Type | Description  | Notes
 
 List and search question templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -1156,7 +1172,7 @@ Name | Type | Description  | Notes
 
 <a name="getQuestionsCount"></a>
 # **getQuestionsCount**
-> &#39;Number&#39; getQuestionsCount(opts)
+> LongWrapper getQuestionsCount(opts)
 
 Count questions based on filters
 
@@ -1208,7 +1224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**LongWrapper**](LongWrapper.md)
 
 ### Authorization
 
@@ -1401,7 +1417,7 @@ Name | Type | Description  | Notes
 
 <a name="searchQuestionTags"></a>
 # **searchQuestionTags**
-> [&#39;String&#39;] searchQuestionTags(opts)
+> PageResourcestring searchQuestionTags(opts)
 
 List and search tags by the beginning of the string
 
@@ -1425,7 +1441,9 @@ var apiInstance = new KnetikCloud.GamificationTriviaApi();
 var opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for tags starting with the given text
   'filterCategory': "filterCategory_example", // String | Filter for tags on questions from a specific category
-  'filterImportId': 789 // Number | Filter for tags on questions from a specific import job
+  'filterImportId': 789, // Number | Filter for tags on questions from a specific import job
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
 };
 apiInstance.searchQuestionTags(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1442,10 +1460,12 @@ Name | Type | Description  | Notes
  **filterSearch** | **String**| Filter for tags starting with the given text | [optional] 
  **filterCategory** | **String**| Filter for tags on questions from a specific category | [optional] 
  **filterImportId** | **Number**| Filter for tags on questions from a specific import job | [optional] 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**PageResourcestring**](PageResourcestring.md)
 
 ### Authorization
 
@@ -1633,7 +1653,7 @@ null (empty response body)
 
 Update a question template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -1653,7 +1673,8 @@ var apiInstance = new KnetikCloud.GamificationTriviaApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'questionTemplateResource': new KnetikCloud.QuestionTemplateResource() // QuestionTemplateResource | The question template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateQuestionTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1668,7 +1689,8 @@ apiInstance.updateQuestionTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **questionTemplateResource** | [**QuestionTemplateResource**](QuestionTemplateResource.md)| The question template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

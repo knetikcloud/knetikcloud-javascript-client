@@ -63,12 +63,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property template (base name: "template")', function() {
-      // uncomment below and update the code to test the property template
-      //var instane = new KnetikCloud.DocumentRemoveRequest();
-      //expect(instance).to.be();
-    });
-
     it('should have the property type (base name: "type")', function() {
       // uncomment below and update the code to test the property type
       //var instane = new KnetikCloud.DocumentRemoveRequest();

@@ -57,8 +57,20 @@
       //expect(instance).to.be.a(KnetikCloud.BreEventLog);
     });
 
+    it('should have the property age (base name: "age")', function() {
+      // uncomment below and update the code to test the property age
+      //var instane = new KnetikCloud.BreEventLog();
+      //expect(instance).to.be();
+    });
+
     it('should have the property customer (base name: "customer")', function() {
       // uncomment below and update the code to test the property customer
+      //var instane = new KnetikCloud.BreEventLog();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eventExpansionDuration (base name: "event_expansion_duration")', function() {
+      // uncomment below and update the code to test the property eventExpansionDuration
       //var instane = new KnetikCloud.BreEventLog();
       //expect(instance).to.be();
     });
@@ -69,8 +81,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property eventLoggingDuration (base name: "event_logging_duration")', function() {
+      // uncomment below and update the code to test the property eventLoggingDuration
+      //var instane = new KnetikCloud.BreEventLog();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eventName (base name: "event_name")', function() {
       // uncomment below and update the code to test the property eventName
+      //var instane = new KnetikCloud.BreEventLog();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property eventReceivedDate (base name: "event_received_date")', function() {
+      // uncomment below and update the code to test the property eventReceivedDate
       //var instane = new KnetikCloud.BreEventLog();
       //expect(instance).to.be();
     });
@@ -95,6 +119,12 @@
 
     it('should have the property rules (base name: "rules")', function() {
       // uncomment below and update the code to test the property rules
+      //var instane = new KnetikCloud.BreEventLog();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property runtime (base name: "runtime")', function() {
+      // uncomment below and update the code to test the property runtime
       //var instane = new KnetikCloud.BreEventLog();
       //expect(instance).to.be();
     });

@@ -1,6 +1,6 @@
 # KnetikCloud.PaymentsAppleApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="verifyAppleReceipt"></a>
 # **verifyAppleReceipt**
-> &#39;String&#39; verifyAppleReceipt(opts)
+> StringWrapper verifyAppleReceipt(opts)
 
 Pay invoice with Apple receipt
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 

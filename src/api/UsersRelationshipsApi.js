@@ -34,7 +34,7 @@
   /**
    * UsersRelationships service.
    * @module api/UsersRelationshipsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a user relationship
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Object} opts Optional parameters
      * @param {module:model/UserRelationshipResource} opts.relationship The new relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserRelationshipResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a user relationship
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Object} opts Optional parameters
      * @param {module:model/UserRelationshipResource} opts.relationship The new relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserRelationshipResource}
@@ -101,7 +101,7 @@
 
     /**
      * Delete a user relationship
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -140,7 +140,7 @@
 
     /**
      * Delete a user relationship
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -154,16 +154,16 @@
 
     /**
      * Get a user relationship
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserRelationshipResource} and HTTP response
      */
-    this.getUserRelationshipWithHttpInfo = function(id) {
+    this.getRelationshipWithHttpInfo = function(id) {
       var postBody = null;
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling getUserRelationship");
+        throw new Error("Missing the required parameter 'id' when calling getRelationship");
       }
 
 
@@ -193,12 +193,12 @@
 
     /**
      * Get a user relationship
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserRelationshipResource}
      */
-    this.getUserRelationship = function(id) {
-      return this.getUserRelationshipWithHttpInfo(id)
+    this.getRelationship = function(id) {
+      return this.getRelationshipWithHttpInfo(id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -207,7 +207,7 @@
 
     /**
      * Get a list of user relationships
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
@@ -247,7 +247,7 @@
 
     /**
      * Get a list of user relationships
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
@@ -264,7 +264,7 @@
 
     /**
      * Update a user relationship
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the relationship
      * @param {Object} opts Optional parameters
      * @param {module:model/UserRelationshipResource} opts.relationship The new relationship
@@ -306,7 +306,7 @@
 
     /**
      * Update a user relationship
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the relationship
      * @param {Object} opts Optional parameters
      * @param {module:model/UserRelationshipResource} opts.relationship The new relationship

@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CampaignResource', 'model/PageResourceCampaignResource', 'model/PageResourceChallengeResource', 'model/PageResourceTemplateResource', 'model/Result', 'model/TemplateResource'], factory);
+    define(['ApiClient', 'model/CampaignResource', 'model/PageResourceCampaignResource', 'model/PageResourceChallengeResource', 'model/PageResourceTemplateResource', 'model/PatchResource', 'model/Result', 'model/TemplateResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CampaignResource'), require('../model/PageResourceCampaignResource'), require('../model/PageResourceChallengeResource'), require('../model/PageResourceTemplateResource'), require('../model/Result'), require('../model/TemplateResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/CampaignResource'), require('../model/PageResourceCampaignResource'), require('../model/PageResourceChallengeResource'), require('../model/PageResourceTemplateResource'), require('../model/PatchResource'), require('../model/Result'), require('../model/TemplateResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.CampaignsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CampaignResource, root.KnetikCloud.PageResourceCampaignResource, root.KnetikCloud.PageResourceChallengeResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource);
+    root.KnetikCloud.CampaignsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CampaignResource, root.KnetikCloud.PageResourceCampaignResource, root.KnetikCloud.PageResourceChallengeResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource);
   }
-}(this, function(ApiClient, CampaignResource, PageResourceCampaignResource, PageResourceChallengeResource, PageResourceTemplateResource, Result, TemplateResource) {
+}(this, function(ApiClient, CampaignResource, PageResourceCampaignResource, PageResourceChallengeResource, PageResourceTemplateResource, PatchResource, Result, TemplateResource) {
   'use strict';
 
   /**
    * Campaigns service.
    * @module api/CampaignsApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -159,7 +159,7 @@
 
     /**
      * Create a campaign template
-     * Campaign Templates define a type of campaign and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Campaign Templates define a type of campaign and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.campaignTemplateResource The campaign template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -194,7 +194,7 @@
 
     /**
      * Create a campaign template
-     * Campaign Templates define a type of campaign and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Campaign Templates define a type of campaign and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.campaignTemplateResource The campaign template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -262,7 +262,7 @@
 
     /**
      * Delete a campaign template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -305,7 +305,7 @@
 
     /**
      * Delete a campaign template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -445,7 +445,7 @@
 
     /**
      * Get a single campaign template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -484,7 +484,7 @@
 
     /**
      * Get a single campaign template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -498,7 +498,7 @@
 
     /**
      * List and search campaign templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -538,7 +538,7 @@
 
     /**
      * List and search campaign templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -734,15 +734,16 @@
 
     /**
      * Update an campaign template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.campaignTemplateResource The campaign template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
     this.updateCampaignTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['campaignTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -754,6 +755,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -768,7 +770,7 @@
       var returnType = TemplateResource;
 
       return this.apiClient.callApi(
-        '/campaigns/templates/{id}', 'PUT',
+        '/campaigns/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -776,10 +778,11 @@
 
     /**
      * Update an campaign template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.campaignTemplateResource The campaign template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
     this.updateCampaignTemplate = function(id, opts) {

@@ -71,10 +71,10 @@
         done();
       });
     });
-    describe('getUserRelationship', function() {
-      it('should call getUserRelationship successfully', function(done) {
-        //uncomment below and update the code to test getUserRelationship
-        //instance.getUserRelationship(function(error) {
+    describe('getRelationship', function() {
+      it('should call getRelationship successfully', function(done) {
+        //uncomment below and update the code to test getRelationship
+        //instance.getRelationship(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

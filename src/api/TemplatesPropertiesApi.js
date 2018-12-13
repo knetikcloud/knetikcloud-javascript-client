@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PropertyFieldListResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/PageResourcePropertyFieldListResource', 'model/PropertyFieldListResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PropertyFieldListResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/PageResourcePropertyFieldListResource'), require('../model/PropertyFieldListResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.TemplatesPropertiesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PropertyFieldListResource, root.KnetikCloud.Result);
+    root.KnetikCloud.TemplatesPropertiesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourcePropertyFieldListResource, root.KnetikCloud.PropertyFieldListResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, PropertyFieldListResource, Result) {
+}(this, function(ApiClient, PageResourcePropertyFieldListResource, PropertyFieldListResource, Result) {
   'use strict';
 
   /**
    * TemplatesProperties service.
    * @module api/TemplatesPropertiesApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -51,11 +51,15 @@
 
     /**
      * Get details for a template property type
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {String} type type
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyFieldListResource} and HTTP response
      */
-    this.getTemplatePropertyTypeWithHttpInfo = function(type) {
+    this.getTemplatePropertyTypeWithHttpInfo = function(type, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'type' is set
@@ -68,6 +72,8 @@
         'type': type
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -90,12 +96,15 @@
 
     /**
      * Get details for a template property type
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {String} type type
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyFieldListResource}
      */
-    this.getTemplatePropertyType = function(type) {
-      return this.getTemplatePropertyTypeWithHttpInfo(type)
+    this.getTemplatePropertyType = function(type, opts) {
+      return this.getTemplatePropertyTypeWithHttpInfo(type, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -104,8 +113,8 @@
 
     /**
      * List template property types
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyFieldListResource>} and HTTP response
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcePropertyFieldListResource} and HTTP response
      */
     this.getTemplatePropertyTypesWithHttpInfo = function() {
       var postBody = null;
@@ -125,7 +134,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [PropertyFieldListResource];
+      var returnType = PageResourcePropertyFieldListResource;
 
       return this.apiClient.callApi(
         '/templates/properties', 'GET',
@@ -136,8 +145,8 @@
 
     /**
      * List template property types
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyFieldListResource>}
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcePropertyFieldListResource}
      */
     this.getTemplatePropertyTypes = function() {
       return this.getTemplatePropertyTypesWithHttpInfo()

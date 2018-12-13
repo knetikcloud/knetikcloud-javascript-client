@@ -1,6 +1,6 @@
 # KnetikCloud.DispositionsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 <a name="getDispositionCounts"></a>
 # **getDispositionCounts**
-> [DispositionCount] getDispositionCounts(opts)
+> PageResourceDispositionCount getDispositionCounts(opts)
 
 Returns a list of disposition counts
 
@@ -194,7 +194,9 @@ var apiInstance = new KnetikCloud.DispositionsApi();
 var opts = { 
   'filterCreatedDate': "filterCreatedDate_example", // String | Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date=OP,ts&... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date=GT,1452154258,LT,1554254874
   'filterContext': "filterContext_example", // String | Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context=video:47
-  'filterOwner': "filterOwner_example" // String | Filter for dispositions from a specific user by id or 'me'
+  'filterOwner': "filterOwner_example", // String | Filter for dispositions from a specific user by id or 'me'
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
 };
 apiInstance.getDispositionCounts(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -211,10 +213,12 @@ Name | Type | Description  | Notes
  **filterCreatedDate** | **String**| Filters invoices by creation date. Multiple values possible for range search. Format: filter_created_date&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ) and ts is a unix timestamp in seconds. Ex: filter_created_date&#x3D;GT,1452154258,LT,1554254874 | [optional] 
  **filterContext** | **String**| Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47 | [optional] 
  **filterOwner** | **String**| Filter for dispositions from a specific user by id or &#39;me&#39; | [optional] 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[DispositionCount]**](DispositionCount.md)
+[**PageResourceDispositionCount**](PageResourceDispositionCount.md)
 
 ### Authorization
 

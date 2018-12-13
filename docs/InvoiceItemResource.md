@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bundle_sku** | **String** |  | [optional] 
 **current_fulfillment_status** | **String** |  | [optional] 
+**discount** | [**Discount**](Discount.md) |  | [optional] 
 **id** | **Number** |  | [optional] 
 **invoice_id** | **Number** |  | [optional] 
 **item_id** | **Number** |  | [optional] 

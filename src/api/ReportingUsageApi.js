@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PageResourceUsageInfo', 'model/Result'], factory);
+    define(['ApiClient', 'model/PageResourceUsageInfo', 'model/PageResourcestring', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PageResourceUsageInfo'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/PageResourceUsageInfo'), require('../model/PageResourcestring'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ReportingUsageApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourceUsageInfo, root.KnetikCloud.Result);
+    root.KnetikCloud.ReportingUsageApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourceUsageInfo, root.KnetikCloud.PageResourcestring, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, PageResourceUsageInfo, Result) {
+}(this, function(ApiClient, PageResourceUsageInfo, PageResourcestring, Result) {
   'use strict';
 
   /**
    * ReportingUsage service.
    * @module api/ReportingUsageApi
-   * @version 3.0.10
+   * @version 3.2.1
    */
 
   /**
@@ -449,7 +449,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcestring} and HTTP response
      */
     this.getUsageEndpointsWithHttpInfo = function(startDate, endDate) {
       var postBody = null;
@@ -481,7 +481,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourcestring;
 
       return this.apiClient.callApi(
         '/reporting/usage/endpoints', 'GET',
@@ -495,7 +495,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcestring}
      */
     this.getUsageEndpoints = function(startDate, endDate) {
       return this.getUsageEndpointsWithHttpInfo(startDate, endDate)

@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CreateBillingAgreementRequest', 'model/CreatePayPalPaymentRequest', 'model/FinalizeBillingAgreementRequest', 'model/FinalizePayPalPaymentRequest', 'model/Result'], factory);
+    define(['ApiClient', 'model/CreateBillingAgreementRequest', 'model/CreatePayPalPaymentRequest', 'model/FinalizeBillingAgreementRequest', 'model/FinalizePayPalPaymentRequest', 'model/IntWrapper', 'model/Result', 'model/StringWrapper'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CreateBillingAgreementRequest'), require('../model/CreatePayPalPaymentRequest'), require('../model/FinalizeBillingAgreementRequest'), require('../model/FinalizePayPalPaymentRequest'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/CreateBillingAgreementRequest'), require('../model/CreatePayPalPaymentRequest'), require('../model/FinalizeBillingAgreementRequest'), require('../model/FinalizePayPalPaymentRequest'), require('../model/IntWrapper'), require('../model/Result'), require('../model/StringWrapper'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.PaymentsPayPalClassicApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CreateBillingAgreementRequest, root.KnetikCloud.CreatePayPalPaymentRequest, root.KnetikCloud.FinalizeBillingAgreementRequest, root.KnetikCloud.FinalizePayPalPaymentRequest, root.KnetikCloud.Result);
+    root.KnetikCloud.PaymentsPayPalClassicApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CreateBillingAgreementRequest, root.KnetikCloud.CreatePayPalPaymentRequest, root.KnetikCloud.FinalizeBillingAgreementRequest, root.KnetikCloud.FinalizePayPalPaymentRequest, root.KnetikCloud.IntWrapper, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
   }
-}(this, function(ApiClient, CreateBillingAgreementRequest, CreatePayPalPaymentRequest, FinalizeBillingAgreementRequest, FinalizePayPalPaymentRequest, Result) {
+}(this, function(ApiClient, CreateBillingAgreementRequest, CreatePayPalPaymentRequest, FinalizeBillingAgreementRequest, FinalizePayPalPaymentRequest, IntWrapper, Result, StringWrapper) {
   'use strict';
 
   /**
    * PaymentsPayPalClassic service.
    * @module api/PaymentsPayPalClassicApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -54,7 +54,7 @@
      * Returns the token that should be used to forward the user to PayPal so they can accept the agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/CreateBillingAgreementRequest} opts.request The request to create a PayPal billing agreement
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.createPayPalBillingAgreementUrlWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -75,7 +75,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
         '/payment/provider/paypal/classic/agreements/start', 'POST',
@@ -89,7 +89,7 @@
      * Returns the token that should be used to forward the user to PayPal so they can accept the agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/CreateBillingAgreementRequest} opts.request The request to create a PayPal billing agreement
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.createPayPalBillingAgreementUrl = function(opts) {
       return this.createPayPalBillingAgreementUrlWithHttpInfo(opts)
@@ -104,7 +104,7 @@
      * Returns the token that should be used to forward the user to PayPal so they can complete the checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/CreatePayPalPaymentRequest} opts.request The request to create a PayPal payment token
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.createPayPalExpressCheckoutWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -125,7 +125,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
         '/payment/provider/paypal/classic/checkout/start', 'POST',
@@ -139,7 +139,7 @@
      * Returns the token that should be used to forward the user to PayPal so they can complete the checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/CreatePayPalPaymentRequest} opts.request The request to create a PayPal payment token
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.createPayPalExpressCheckout = function(opts) {
       return this.createPayPalExpressCheckoutWithHttpInfo(opts)
@@ -154,7 +154,7 @@
      * Returns the ID of the new payment method created for the user for the billing agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/FinalizeBillingAgreementRequest} opts.request The request to finalize a PayPal billing agreement
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'Number'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/IntWrapper} and HTTP response
      */
     this.finalizePayPalBillingAgreementWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -175,7 +175,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'Number';
+      var returnType = IntWrapper;
 
       return this.apiClient.callApi(
         '/payment/provider/paypal/classic/agreements/finish', 'POST',
@@ -189,7 +189,7 @@
      * Returns the ID of the new payment method created for the user for the billing agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/FinalizeBillingAgreementRequest} opts.request The request to finalize a PayPal billing agreement
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'Number'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/IntWrapper}
      */
     this.finalizePayPalBillingAgreement = function(opts) {
       return this.finalizePayPalBillingAgreementWithHttpInfo(opts)

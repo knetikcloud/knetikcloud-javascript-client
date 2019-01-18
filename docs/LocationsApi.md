@@ -1,6 +1,6 @@
 # KnetikCloud.LocationsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getCountries"></a>
 # **getCountries**
-> [CountryResource] getCountries()
+> PageResourceCountryResource getCountries(opts)
 
 Get a list of countries
 
@@ -32,7 +32,12 @@ var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant
 oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.LocationsApi();
-apiInstance.getCountries().then(function(data) {
+
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getCountries(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -41,11 +46,15 @@ apiInstance.getCountries().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[CountryResource]**](CountryResource.md)
+[**PageResourceCountryResource**](PageResourceCountryResource.md)
 
 ### Authorization
 
@@ -58,7 +67,7 @@ This endpoint does not need any parameter.
 
 <a name="getCountryByGeoLocation"></a>
 # **getCountryByGeoLocation**
-> &#39;String&#39; getCountryByGeoLocation()
+> StringWrapper getCountryByGeoLocation()
 
 Get the iso3 code of your country
 
@@ -91,7 +100,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**&#39;String&#39;**
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 
@@ -104,7 +113,7 @@ This endpoint does not need any parameter.
 
 <a name="getCountryStates"></a>
 # **getCountryStates**
-> [StateResource] getCountryStates(countryCodeIso3)
+> PageResourceStateResource getCountryStates(countryCodeIso3, opts)
 
 Get a list of a country&#39;s states
 
@@ -127,7 +136,11 @@ var apiInstance = new KnetikCloud.LocationsApi();
 
 var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
-apiInstance.getCountryStates(countryCodeIso3).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getCountryStates(countryCodeIso3, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -140,10 +153,12 @@ apiInstance.getCountryStates(countryCodeIso3).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **countryCodeIso3** | **String**| The iso3 code of the country | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[StateResource]**](StateResource.md)
+[**PageResourceStateResource**](PageResourceStateResource.md)
 
 ### Authorization
 

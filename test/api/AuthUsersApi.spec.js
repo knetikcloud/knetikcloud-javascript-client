@@ -61,20 +61,20 @@
         done();
       });
     });
-    describe('getSid', function() {
-      it('should call getSid successfully', function(done) {
-        //uncomment below and update the code to test getSid
-        //instance.getSid(function(error) {
+    describe('getResources1', function() {
+      it('should call getResources1 successfully', function(done) {
+        //uncomment below and update the code to test getResources1
+        //instance.getResources1(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('getSids', function() {
-      it('should call getSids successfully', function(done) {
-        //uncomment below and update the code to test getSids
-        //instance.getSids(function(error) {
+    describe('getSid', function() {
+      it('should call getSid successfully', function(done) {
+        //uncomment below and update the code to test getSid
+        //instance.getSid(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

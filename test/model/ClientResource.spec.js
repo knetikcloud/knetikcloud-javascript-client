@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property clientCustomization (base name: "client_customization")', function() {
+      // uncomment below and update the code to test the property clientCustomization
+      //var instane = new KnetikCloud.ClientResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property clientKey (base name: "client_key")', function() {
       // uncomment below and update the code to test the property clientKey
       //var instane = new KnetikCloud.ClientResource();

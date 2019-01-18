@@ -69,6 +69,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property forceTemplates (base name: "force_templates")', function() {
+      // uncomment below and update the code to test the property forceTemplates
+      //var instane = new KnetikCloud.CustomerConfig();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instane = new KnetikCloud.CustomerConfig();
@@ -77,6 +83,12 @@
 
     it('should have the property s3Config (base name: "s3_config")', function() {
       // uncomment below and update the code to test the property s3Config
+      //var instane = new KnetikCloud.CustomerConfig();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property searchEnabled (base name: "search_enabled")', function() {
+      // uncomment below and update the code to test the property searchEnabled
       //var instane = new KnetikCloud.CustomerConfig();
       //expect(instance).to.be();
     });

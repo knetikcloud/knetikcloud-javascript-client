@@ -37,7 +37,7 @@
   /**
    * The AggregateInvoiceReportResource model module.
    * @module model/AggregateInvoiceReportResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**

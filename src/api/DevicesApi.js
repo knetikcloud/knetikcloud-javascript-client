@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DeviceResource', 'model/PageResourceDeviceResource', 'model/PageResourceTemplateResource', 'model/Result', 'model/SimpleUserResource', 'model/TemplateResource'], factory);
+    define(['ApiClient', 'model/DeviceResource', 'model/PageResourceDeviceResource', 'model/PageResourceTemplateResource', 'model/PatchResource', 'model/Result', 'model/SimpleUserResource', 'model/TemplateResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/DeviceResource'), require('../model/PageResourceDeviceResource'), require('../model/PageResourceTemplateResource'), require('../model/Result'), require('../model/SimpleUserResource'), require('../model/TemplateResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/DeviceResource'), require('../model/PageResourceDeviceResource'), require('../model/PageResourceTemplateResource'), require('../model/PatchResource'), require('../model/Result'), require('../model/SimpleUserResource'), require('../model/TemplateResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.DevicesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.DeviceResource, root.KnetikCloud.PageResourceDeviceResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.SimpleUserResource, root.KnetikCloud.TemplateResource);
+    root.KnetikCloud.DevicesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.DeviceResource, root.KnetikCloud.PageResourceDeviceResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.SimpleUserResource, root.KnetikCloud.TemplateResource);
   }
-}(this, function(ApiClient, DeviceResource, PageResourceDeviceResource, PageResourceTemplateResource, Result, SimpleUserResource, TemplateResource) {
+}(this, function(ApiClient, DeviceResource, PageResourceDeviceResource, PageResourceTemplateResource, PatchResource, Result, SimpleUserResource, TemplateResource) {
   'use strict';
 
   /**
    * Devices service.
    * @module api/DevicesApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -56,17 +56,17 @@
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeviceResource} and HTTP response
      */
-    this.addDeviceUsersWithHttpInfo = function(userResources, id) {
+    this.addDeviceUserWithHttpInfo = function(userResources, id) {
       var postBody = userResources;
 
       // verify the required parameter 'userResources' is set
       if (userResources === undefined || userResources === null) {
-        throw new Error("Missing the required parameter 'userResources' when calling addDeviceUsers");
+        throw new Error("Missing the required parameter 'userResources' when calling addDeviceUser");
       }
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling addDeviceUsers");
+        throw new Error("Missing the required parameter 'id' when calling addDeviceUser");
       }
 
 
@@ -101,8 +101,8 @@
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeviceResource}
      */
-    this.addDeviceUsers = function(userResources, id) {
-      return this.addDeviceUsersWithHttpInfo(userResources, id)
+    this.addDeviceUser = function(userResources, id) {
+      return this.addDeviceUserWithHttpInfo(userResources, id)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -163,7 +163,7 @@
 
     /**
      * Create a device template
-     * Device Templates define a type of device and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Device Templates define a type of device and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.deviceTemplateResource The device template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -198,7 +198,7 @@
 
     /**
      * Create a device template
-     * Device Templates define a type of device and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Device Templates define a type of device and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.deviceTemplateResource The device template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -266,7 +266,7 @@
 
     /**
      * Delete an device template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -309,7 +309,7 @@
 
     /**
      * Delete an device template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -498,7 +498,7 @@
 
     /**
      * Get a single device template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; description
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -537,7 +537,7 @@
 
     /**
      * Get a single device template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; description
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -551,7 +551,7 @@
 
     /**
      * List and search device templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or DEVICES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -591,7 +591,7 @@
 
     /**
      * List and search device templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or DEVICES_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -743,15 +743,16 @@
 
     /**
      * Update an device template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.deviceTemplateResource The device template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
     this.updateDeviceTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['deviceTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -763,6 +764,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -777,7 +779,7 @@
       var returnType = TemplateResource;
 
       return this.apiClient.callApi(
-        '/devices/templates/{id}', 'PUT',
+        '/devices/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -785,10 +787,11 @@
 
     /**
      * Update an device template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/TemplateResource} opts.deviceTemplateResource The device template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
     this.updateDeviceTemplate = function(id, opts) {

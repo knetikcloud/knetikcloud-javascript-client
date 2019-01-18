@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ItemTemplateResource', 'model/ObjectResource', 'model/PageResourceItemTemplateResource', 'model/PageResourceObjectResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/ItemTemplateResource', 'model/ObjectResource', 'model/PageResourceItemTemplateResource', 'model/PageResourceObjectResource', 'model/PatchResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ItemTemplateResource'), require('../model/ObjectResource'), require('../model/PageResourceItemTemplateResource'), require('../model/PageResourceObjectResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/ItemTemplateResource'), require('../model/ObjectResource'), require('../model/PageResourceItemTemplateResource'), require('../model/PageResourceObjectResource'), require('../model/PatchResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ObjectsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.ObjectResource, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.PageResourceObjectResource, root.KnetikCloud.Result);
+    root.KnetikCloud.ObjectsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.ObjectResource, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.PageResourceObjectResource, root.KnetikCloud.PatchResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, ItemTemplateResource, ObjectResource, PageResourceItemTemplateResource, PageResourceObjectResource, Result) {
+}(this, function(ApiClient, ItemTemplateResource, ObjectResource, PageResourceItemTemplateResource, PageResourceObjectResource, PatchResource, Result) {
   'use strict';
 
   /**
    * Objects service.
    * @module api/ObjectsApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -112,7 +112,7 @@
 
     /**
      * Create an object template
-     * Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Object templates define a type of entitlement and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The entitlement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
@@ -147,7 +147,7 @@
 
     /**
      * Create an object template
-     * Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Object templates define a type of entitlement and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The entitlement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
@@ -223,7 +223,7 @@
 
     /**
      * Delete an entitlement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -266,7 +266,7 @@
 
     /**
      * Delete an entitlement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -408,7 +408,7 @@
 
     /**
      * Get a single entitlement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -447,7 +447,7 @@
 
     /**
      * Get a single entitlement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -461,7 +461,7 @@
 
     /**
      * List and search entitlement templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -501,7 +501,7 @@
 
     /**
      * List and search entitlement templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -587,15 +587,16 @@
 
     /**
      * Update an entitlement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/ItemTemplateResource} opts.template The updated template
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
     this.updateObjectTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['template'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -607,6 +608,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -621,7 +623,7 @@
       var returnType = ItemTemplateResource;
 
       return this.apiClient.callApi(
-        '/objects/templates/{id}', 'PUT',
+        '/objects/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -629,10 +631,11 @@
 
     /**
      * Update an entitlement template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/ItemTemplateResource} opts.template The updated template
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
     this.updateObjectTemplate = function(id, opts) {

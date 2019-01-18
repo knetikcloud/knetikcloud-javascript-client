@@ -34,7 +34,7 @@
   /**
    * Currencies service.
    * @module api/CurrenciesApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**

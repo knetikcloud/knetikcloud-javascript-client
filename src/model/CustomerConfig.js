@@ -37,7 +37,7 @@
   /**
    * The CustomerConfig model module.
    * @module model/CustomerConfig
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -71,11 +73,17 @@
       if (data.hasOwnProperty('database')) {
         obj['database'] = DatabaseConfig.constructFromObject(data['database']);
       }
+      if (data.hasOwnProperty('force_templates')) {
+        obj['force_templates'] = ApiClient.convertToType(data['force_templates'], 'Boolean');
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
       if (data.hasOwnProperty('s3_config')) {
         obj['s3_config'] = S3Config.constructFromObject(data['s3_config']);
+      }
+      if (data.hasOwnProperty('search_enabled')) {
+        obj['search_enabled'] = ApiClient.convertToType(data['search_enabled'], 'Boolean');
       }
     }
     return obj;
@@ -104,6 +112,10 @@
    */
   exports.prototype['database'] = undefined;
   /**
+   * @member {Boolean} force_templates
+   */
+  exports.prototype['force_templates'] = undefined;
+  /**
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
@@ -111,6 +123,10 @@
    * @member {module:model/S3Config} s3_config
    */
   exports.prototype['s3_config'] = undefined;
+  /**
+   * @member {Boolean} search_enabled
+   */
+  exports.prototype['search_enabled'] = undefined;
 
 
 

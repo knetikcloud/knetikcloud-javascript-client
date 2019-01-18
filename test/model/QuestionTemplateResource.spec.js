@@ -57,12 +57,6 @@
       //expect(instance).to.be.a(KnetikCloud.QuestionTemplateResource);
     });
 
-    it('should have the property allowAdditional (base name: "allow_additional")', function() {
-      // uncomment below and update the code to test the property allowAdditional
-      //var instane = new KnetikCloud.QuestionTemplateResource();
-      //expect(instance).to.be();
-    });
-
     it('should have the property answerProperty (base name: "answer_property")', function() {
       // uncomment below and update the code to test the property answerProperty
       //var instane = new KnetikCloud.QuestionTemplateResource();

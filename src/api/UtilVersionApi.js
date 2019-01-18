@@ -34,7 +34,7 @@
   /**
    * UtilVersion service.
    * @module api/UtilVersionApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**

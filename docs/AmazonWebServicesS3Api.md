@@ -1,16 +1,16 @@
 # KnetikCloud.AmazonWebServicesS3Api
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDownloadURL**](AmazonWebServicesS3Api.md#getDownloadURL) | **GET** /amazon/s3/downloadurl | Get a temporary signed S3 URL for download
-[**getSignedS3URL**](AmazonWebServicesS3Api.md#getSignedS3URL) | **GET** /amazon/s3/signedposturl | Get a signed S3 URL for upload
+[**getDownloadURL**](AmazonWebServicesS3Api.md#getDownloadURL) | **GET** /amazon/s3/download-url | Get a temporary signed S3 URL for download
+[**getSignedS3URL**](AmazonWebServicesS3Api.md#getSignedS3URL) | **GET** /amazon/s3/signed-post-url | Get a signed S3 URL for upload
 
 
 <a name="getDownloadURL"></a>
 # **getDownloadURL**
-> &#39;String&#39; getDownloadURL(opts)
+> StringWrapper getDownloadURL(opts)
 
 Get a temporary signed S3 URL for download
 
@@ -33,7 +33,7 @@ var apiInstance = new KnetikCloud.AmazonWebServicesS3Api();
 
 var opts = { 
   'bucket': "bucket_example", // String | S3 bucket name
-  'path': "path_example", // String | The path to the file relative to the bucket (the s3 object key)
+  'path': "path_example", // String | The path to the file relative the bucket (the s3 object key)
   'expiration': 60 // Number | The number of seconds this URL will be valid. Default to 60
 };
 apiInstance.getDownloadURL(opts).then(function(data) {
@@ -49,12 +49,12 @@ apiInstance.getDownloadURL(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bucket** | **String**| S3 bucket name | [optional] 
- **path** | **String**| The path to the file relative to the bucket (the s3 object key) | [optional] 
+ **path** | **String**| The path to the file relative the bucket (the s3 object key) | [optional] 
  **expiration** | **Number**| The number of seconds this URL will be valid. Default to 60 | [optional] [default to 60]
 
 ### Return type
 
-**&#39;String&#39;**
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 

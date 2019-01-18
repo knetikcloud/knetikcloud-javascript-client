@@ -37,7 +37,7 @@
   /**
    * The ArtistResource model module.
    * @module model/ArtistResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -178,7 +178,7 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * The sort order priority ofr the artist.  Default 100
+   * The sort order priority of the artist.  Default 100
    * @member {Number} priority
    */
   exports.prototype['priority'] = undefined;

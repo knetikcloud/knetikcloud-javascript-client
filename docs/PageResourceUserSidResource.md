@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **number** | **Number** |  | [optional] 
 **number_of_elements** | **Number** |  | [optional] 
 **size** | **Number** |  | [optional] 
-**sort** | [**[Order]**](Order.md) |  | [optional] 
 **total_elements** | **Number** |  | [optional] 
 **total_pages** | **Number** |  | [optional] 
 

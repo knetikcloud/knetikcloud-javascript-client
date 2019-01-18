@@ -1,6 +1,6 @@
 # KnetikCloud.ChatApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -291,7 +291,7 @@ Name | Type | Description  | Notes
 
 <a name="getChatMessageBlacklist"></a>
 # **getChatMessageBlacklist**
-> [ChatBlacklistResource] getChatMessageBlacklist(id)
+> PageResourceChatBlacklistResource getChatMessageBlacklist(id, opts)
 
 Get a list of blocked users for chat messaging
 
@@ -314,7 +314,11 @@ var apiInstance = new KnetikCloud.ChatApi();
 
 var id = "id_example"; // String | The user id or 'me'
 
-apiInstance.getChatMessageBlacklist(id).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getChatMessageBlacklist(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -327,10 +331,12 @@ apiInstance.getChatMessageBlacklist(id).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The user id or &#39;me&#39; | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[ChatBlacklistResource]**](ChatBlacklistResource.md)
+[**PageResourceChatBlacklistResource**](PageResourceChatBlacklistResource.md)
 
 ### Authorization
 

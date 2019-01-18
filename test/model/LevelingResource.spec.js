@@ -81,6 +81,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property template (base name: "template")', function() {
+      // uncomment below and update the code to test the property template
+      //var instane = new KnetikCloud.LevelingResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property tiers (base name: "tiers")', function() {
       // uncomment below and update the code to test the property tiers
       //var instane = new KnetikCloud.LevelingResource();

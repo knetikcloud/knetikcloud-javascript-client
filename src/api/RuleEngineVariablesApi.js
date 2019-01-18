@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PageResourceSimpleReferenceResourceobject', 'model/Result', 'model/VariableTypeResource'], factory);
+    define(['ApiClient', 'model/PageResourceSimpleReferenceResourceobject', 'model/PageResourceVariableTypeResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PageResourceSimpleReferenceResourceobject'), require('../model/Result'), require('../model/VariableTypeResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/PageResourceSimpleReferenceResourceobject'), require('../model/PageResourceVariableTypeResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.RuleEngineVariablesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourceSimpleReferenceResourceobject, root.KnetikCloud.Result, root.KnetikCloud.VariableTypeResource);
+    root.KnetikCloud.RuleEngineVariablesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourceSimpleReferenceResourceobject, root.KnetikCloud.PageResourceVariableTypeResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, PageResourceSimpleReferenceResourceobject, Result, VariableTypeResource) {
+}(this, function(ApiClient, PageResourceSimpleReferenceResourceobject, PageResourceVariableTypeResource, Result) {
   'use strict';
 
   /**
    * RuleEngineVariables service.
    * @module api/RuleEngineVariablesApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -52,15 +52,21 @@
     /**
      * Get a list of variable types available
      * Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VariableTypeResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceVariableTypeResource} and HTTP response
      */
-    this.getBREVariableTypesWithHttpInfo = function() {
+    this.getBREVariableTypesWithHttpInfo = function(opts) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -72,7 +78,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [VariableTypeResource];
+      var returnType = PageResourceVariableTypeResource;
 
       return this.apiClient.callApi(
         '/bre/variable-types', 'GET',
@@ -84,10 +90,13 @@
     /**
      * Get a list of variable types available
      * Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VariableTypeResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceVariableTypeResource}
      */
-    this.getBREVariableTypes = function() {
-      return this.getBREVariableTypesWithHttpInfo()
+    this.getBREVariableTypes = function(opts) {
+      return this.getBREVariableTypesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

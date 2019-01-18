@@ -1,6 +1,6 @@
 # KnetikCloud.RuleEngineActionsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getBREActions"></a>
 # **getBREActions**
-> [ActionResource] getBREActions(opts)
+> PageResourceActionResource getBREActions(opts)
 
 Get a list of available actions
 
@@ -34,7 +34,9 @@ var opts = {
   'filterCategory': "filterCategory_example", // String | Filter for actions that are within a specific category
   'filterName': "filterName_example", // String | Filter for actions that have names containing the given string
   'filterTags': "filterTags_example", // String | Filter for actions that have all of the given tags (comma separated list)
-  'filterSearch': "filterSearch_example" // String | Filter for actions containing the given words somewhere within name, description and tags
+  'filterSearch': "filterSearch_example", // String | Filter for actions containing the given words somewhere within name, description and tags
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
 };
 apiInstance.getBREActions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -52,10 +54,12 @@ Name | Type | Description  | Notes
  **filterName** | **String**| Filter for actions that have names containing the given string | [optional] 
  **filterTags** | **String**| Filter for actions that have all of the given tags (comma separated list) | [optional] 
  **filterSearch** | **String**| Filter for actions containing the given words somewhere within name, description and tags | [optional] 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[ActionResource]**](ActionResource.md)
+[**PageResourceActionResource**](PageResourceActionResource.md)
 
 ### Authorization
 

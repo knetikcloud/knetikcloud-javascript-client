@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PropertyDefinitionResource', 'model/PropertyFieldListResource'], factory);
+    define(['ApiClient', 'model/PropertyDefinitionResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./PropertyDefinitionResource'), require('./PropertyFieldListResource'));
+    module.exports = factory(require('../ApiClient'), require('./PropertyDefinitionResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.DatePropertyDefinitionResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PropertyDefinitionResource, root.KnetikCloud.PropertyFieldListResource);
+    root.KnetikCloud.DatePropertyDefinitionResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PropertyDefinitionResource);
   }
-}(this, function(ApiClient, PropertyDefinitionResource, PropertyFieldListResource) {
+}(this, function(ApiClient, PropertyDefinitionResource) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The DatePropertyDefinitionResource model module.
    * @module model/DatePropertyDefinitionResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -45,7 +45,7 @@
    * @alias module:model/DatePropertyDefinitionResource
    * @class
    * @extends module:model/PropertyDefinitionResource
-   * @param name {String} The name of the property
+   * @param name {String} The name of the property. Must start with a letter
    * @param required {Boolean} Whether the property is required
    * @param type {String} The type of the property. Used for polymorphic type recognition and thus must match an expected type with additional properties.
    */

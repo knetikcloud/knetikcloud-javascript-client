@@ -37,7 +37,7 @@
   /**
    * The ChatUserThreadResource model module.
    * @module model/ChatUserThreadResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**

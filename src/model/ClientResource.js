@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/ClientCustomizationResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./ClientCustomizationResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ClientResource = factory(root.KnetikCloud.ApiClient);
+    root.KnetikCloud.ClientResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ClientCustomizationResource);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, ClientCustomizationResource) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The ClientResource model module.
    * @module model/ClientResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -50,6 +50,7 @@
    */
   var exports = function(clientKey, name, secret) {
     var _this = this;
+
 
 
     _this['client_key'] = clientKey;
@@ -76,6 +77,9 @@
 
       if (data.hasOwnProperty('access_token_validity_seconds')) {
         obj['access_token_validity_seconds'] = ApiClient.convertToType(data['access_token_validity_seconds'], 'Number');
+      }
+      if (data.hasOwnProperty('client_customization')) {
+        obj['client_customization'] = ClientCustomizationResource.constructFromObject(data['client_customization']);
       }
       if (data.hasOwnProperty('client_key')) {
         obj['client_key'] = ApiClient.convertToType(data['client_key'], 'String');
@@ -127,6 +131,11 @@
    * @member {Number} access_token_validity_seconds
    */
   exports.prototype['access_token_validity_seconds'] = undefined;
+  /**
+   * The customizable fields for the login page
+   * @member {module:model/ClientCustomizationResource} client_customization
+   */
+  exports.prototype['client_customization'] = undefined;
   /**
    * The client_id field of the oauth token request
    * @member {String} client_key

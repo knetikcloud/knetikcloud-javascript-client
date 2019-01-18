@@ -37,7 +37,7 @@
   /**
    * The Sku model module.
    * @module model/Sku
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -55,8 +55,6 @@
 
     _this['currency_code'] = currencyCode;
     _this['description'] = description;
-
-
 
 
     _this['original_price'] = originalPrice;
@@ -94,12 +92,6 @@
       }
       if (data.hasOwnProperty('min_inventory_threshold')) {
         obj['min_inventory_threshold'] = ApiClient.convertToType(data['min_inventory_threshold'], 'Number');
-      }
-      if (data.hasOwnProperty('not_available')) {
-        obj['not_available'] = ApiClient.convertToType(data['not_available'], 'Boolean');
-      }
-      if (data.hasOwnProperty('not_displayable')) {
-        obj['not_displayable'] = ApiClient.convertToType(data['not_displayable'], 'Boolean');
       }
       if (data.hasOwnProperty('original_price')) {
         obj['original_price'] = ApiClient.convertToType(data['original_price'], 'Number');
@@ -168,14 +160,6 @@
    * @member {Number} min_inventory_threshold
    */
   exports.prototype['min_inventory_threshold'] = undefined;
-  /**
-   * @member {Boolean} not_available
-   */
-  exports.prototype['not_available'] = undefined;
-  /**
-   * @member {Boolean} not_displayable
-   */
-  exports.prototype['not_displayable'] = undefined;
   /**
    * The base price before any sale
    * @member {Number} original_price

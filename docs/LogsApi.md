@@ -1,6 +1,6 @@
 # KnetikCloud.LogsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**getBREEventLogs**](LogsApi.md#getBREEventLogs) | **GET** /bre/logs/event-log | Returns a list of BRE event log entries
 [**getBREForwardLog**](LogsApi.md#getBREForwardLog) | **GET** /bre/logs/forward-log/{id} | Get an existing forward log entry by id
 [**getBREForwardLogs**](LogsApi.md#getBREForwardLogs) | **GET** /bre/logs/forward-log | Returns a list of forward log entries
-[**getUserLog**](LogsApi.md#getUserLog) | **GET** /audit/logs/{id} | Returns a user log entry by id
-[**getUserLogs**](LogsApi.md#getUserLogs) | **GET** /audit/logs | Returns a page of user logs entries
+[**getUserLogs**](LogsApi.md#getUserLogs) | **GET** /audit/logs/{id} | Returns a user log entry by id
+[**getUserLogs1**](LogsApi.md#getUserLogs1) | **GET** /audit/logs | Returns a page of user logs entries
 
 
 <a name="getBREEventLog"></a>
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 Returns a list of BRE event log entries
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+Logs are kept for 24 hours. &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```javascript
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 Returns a list of forward log entries
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+Logs are kept for 24 hours. &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```javascript
@@ -246,9 +246,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getUserLog"></a>
-# **getUserLog**
-> UserActionLog getUserLog(id)
+<a name="getUserLogs"></a>
+# **getUserLogs**
+> UserActionLog getUserLogs(id)
 
 Returns a user log entry by id
 
@@ -271,7 +271,7 @@ var apiInstance = new KnetikCloud.LogsApi();
 
 var id = "id_example"; // String | The user log entry id
 
-apiInstance.getUserLog(id).then(function(data) {
+apiInstance.getUserLogs(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -298,9 +298,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getUserLogs"></a>
-# **getUserLogs**
-> PageResourceUserActionLog getUserLogs(opts)
+<a name="getUserLogs1"></a>
+# **getUserLogs1**
+> PageResourceUserActionLog getUserLogs1(opts)
 
 Returns a page of user logs entries
 
@@ -328,7 +328,7 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "timestamp:DESC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUserLogs(opts).then(function(data) {
+apiInstance.getUserLogs1(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);

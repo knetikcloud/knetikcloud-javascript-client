@@ -91,20 +91,20 @@
         done();
       });
     });
-    describe('deleteResource', function() {
-      it('should call deleteResource successfully', function(done) {
-        //uncomment below and update the code to test deleteResource
-        //instance.deleteResource(function(error) {
+    describe('deleteAllOfType', function() {
+      it('should call deleteAllOfType successfully', function(done) {
+        //uncomment below and update the code to test deleteAllOfType
+        //instance.deleteAllOfType(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('deleteResources', function() {
-      it('should call deleteResources successfully', function(done) {
-        //uncomment below and update the code to test deleteResources
-        //instance.deleteResources(function(error) {
+    describe('deleteResource', function() {
+      it('should call deleteResource successfully', function(done) {
+        //uncomment below and update the code to test deleteResource
+        //instance.deleteResource(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

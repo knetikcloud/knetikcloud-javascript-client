@@ -34,7 +34,7 @@
   /**
    * AuthUsers service.
    * @module api/AuthUsersApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -52,7 +52,7 @@
     /**
      * Add a sid to a user
      * No error returned if the user already has the sid. &lt;b&gt;Resources Needed:&lt;/b&gt; ROLE_SUPER_ADMIN
-     * @param {Number} userId The resource type
+     * @param {Number} userId The user id
      * @param {Object} opts Optional parameters
      * @param {module:model/UserSidResource} opts.sid The new sid for the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserSidResource} and HTTP response
@@ -94,7 +94,7 @@
     /**
      * Add a sid to a user
      * No error returned if the user already has the sid. &lt;b&gt;Resources Needed:&lt;/b&gt; ROLE_SUPER_ADMIN
-     * @param {Number} userId The resource type
+     * @param {Number} userId The user id
      * @param {Object} opts Optional parameters
      * @param {module:model/UserSidResource} opts.sid The new sid for the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserSidResource}
@@ -108,10 +108,75 @@
 
 
     /**
+     * List and search user sids
+     * &lt;b&gt;Resources Needed:&lt;/b&gt; VIEW_ACCESS
+     * @param {Number} userId The resource type
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to resource:ASC)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceUserSidResource} and HTTP response
+     */
+    this.getResources1WithHttpInfo = function(userId, opts) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling getResources1");
+      }
+
+
+      var pathParams = {
+        'user_id': userId
+      };
+      var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
+        'order': opts['order'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = PageResourceUserSidResource;
+
+      return this.apiClient.callApi(
+        '/access/users/{user_id}/sids', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * List and search user sids
+     * &lt;b&gt;Resources Needed:&lt;/b&gt; VIEW_ACCESS
+     * @param {Number} userId The resource type
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to resource:ASC)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceUserSidResource}
+     */
+    this.getResources1 = function(userId, opts) {
+      return this.getResources1WithHttpInfo(userId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Get a user sid
      * Http error 404 means the user does not have the sid&lt;b&gt;Resources Needed:&lt;/b&gt; VIEW_ACCESS
-     * @param {Number} userId The resource type
-     * @param {String} sid The resource id
+     * @param {Number} userId The user id
+     * @param {String} sid The security id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserSidResource} and HTTP response
      */
     this.getSidWithHttpInfo = function(userId, sid) {
@@ -156,77 +221,12 @@
     /**
      * Get a user sid
      * Http error 404 means the user does not have the sid&lt;b&gt;Resources Needed:&lt;/b&gt; VIEW_ACCESS
-     * @param {Number} userId The resource type
-     * @param {String} sid The resource id
+     * @param {Number} userId The user id
+     * @param {String} sid The security id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserSidResource}
      */
     this.getSid = function(userId, sid) {
       return this.getSidWithHttpInfo(userId, sid)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * List and search user sids
-     * &lt;b&gt;Resources Needed:&lt;/b&gt; VIEW_ACCESS
-     * @param {Number} userId The resource type
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.size The number of objects returned per page (default to 25)
-     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
-     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to resource:ASC)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceUserSidResource} and HTTP response
-     */
-    this.getSidsWithHttpInfo = function(userId, opts) {
-      opts = opts || {};
-      var postBody = null;
-
-      // verify the required parameter 'userId' is set
-      if (userId === undefined || userId === null) {
-        throw new Error("Missing the required parameter 'userId' when calling getSids");
-      }
-
-
-      var pathParams = {
-        'user_id': userId
-      };
-      var queryParams = {
-        'size': opts['size'],
-        'page': opts['page'],
-        'order': opts['order'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = PageResourceUserSidResource;
-
-      return this.apiClient.callApi(
-        '/access/users/{user_id}/sids', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * List and search user sids
-     * &lt;b&gt;Resources Needed:&lt;/b&gt; VIEW_ACCESS
-     * @param {Number} userId The resource type
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.size The number of objects returned per page (default to 25)
-     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
-     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to resource:ASC)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceUserSidResource}
-     */
-    this.getSids = function(userId, opts) {
-      return this.getSidsWithHttpInfo(userId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

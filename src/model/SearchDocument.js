@@ -37,7 +37,7 @@
   /**
    * The SearchDocument model module.
    * @module model/SearchDocument
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -47,8 +47,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
 
@@ -71,12 +69,6 @@
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
-      }
-      if (data.hasOwnProperty('template')) {
-        obj['template'] = ApiClient.convertToType(data['template'], 'String');
-      }
-      if (data.hasOwnProperty('template_version_data')) {
-        obj['template_version_data'] = ApiClient.convertToType(data['template_version_data'], Object);
       }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -107,14 +99,6 @@
    * @member {String} id
    */
   exports.prototype['id'] = undefined;
-  /**
-   * @member {String} template
-   */
-  exports.prototype['template'] = undefined;
-  /**
-   * @member {Object} template_version_data
-   */
-  exports.prototype['template_version_data'] = undefined;
   /**
    * @member {String} type
    */

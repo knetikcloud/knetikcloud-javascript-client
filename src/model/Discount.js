@@ -37,7 +37,7 @@
   /**
    * The Discount model module.
    * @module model/Discount
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -68,6 +69,9 @@
 
       if (data.hasOwnProperty('description')) {
         obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
+      if (data.hasOwnProperty('item_id')) {
+        obj['item_id'] = ApiClient.convertToType(data['item_id'], 'Number');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -103,6 +107,10 @@
    * @member {String} description
    */
   exports.prototype['description'] = undefined;
+  /**
+   * @member {Number} item_id
+   */
+  exports.prototype['item_id'] = undefined;
   /**
    * @member {String} name
    */

@@ -1,6 +1,6 @@
 # KnetikCloud.CategoriesApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**getCategoryTemplates**](CategoriesApi.md#getCategoryTemplates) | **GET** /categories/templates | List and search category templates
 [**getTags**](CategoriesApi.md#getTags) | **GET** /tags | List all trivia tags in the system
 [**updateCategory**](CategoriesApi.md#updateCategory) | **PUT** /categories/{id} | Update an existing category
-[**updateCategoryTemplate**](CategoriesApi.md#updateCategoryTemplate) | **PUT** /categories/templates/{id} | Update a category template
+[**updateCategoryTemplate**](CategoriesApi.md#updateCategoryTemplate) | **PATCH** /categories/templates/{id} | Update a category template
 
 
 <a name="createCategory"></a>
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 Create a category template
 
-Templates define a type of category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Templates define a type of category and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -181,7 +181,7 @@ null (empty response body)
 
 Delete a category template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 Get a single category template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 List and search category templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -570,7 +570,7 @@ Name | Type | Description  | Notes
 
 Update a category template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -590,7 +590,8 @@ var apiInstance = new KnetikCloud.CategoriesApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'template': new KnetikCloud.TemplateResource() // TemplateResource | The updated template information
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateCategoryTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -605,7 +606,8 @@ apiInstance.updateCategoryTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **template** | [**TemplateResource**](TemplateResource.md)| The updated template information | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

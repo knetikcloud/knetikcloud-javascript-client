@@ -1,25 +1,19 @@
 # KnetikCloud.ContentArticlesApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createArticle**](ContentArticlesApi.md#createArticle) | **POST** /content/articles | Create a new article
 [**createArticleTemplate**](ContentArticlesApi.md#createArticleTemplate) | **POST** /content/articles/templates | Create an article template
-[**createTemplate**](ContentArticlesApi.md#createTemplate) | **POST** /templates/{type_hint} | Create a template
 [**deleteArticle**](ContentArticlesApi.md#deleteArticle) | **DELETE** /content/articles/{id} | Delete an existing article
 [**deleteArticleTemplate**](ContentArticlesApi.md#deleteArticleTemplate) | **DELETE** /content/articles/templates/{id} | Delete an article template
-[**deleteTemplate**](ContentArticlesApi.md#deleteTemplate) | **DELETE** /templates/{type_hint}/{id} | Delete a template
 [**getArticle**](ContentArticlesApi.md#getArticle) | **GET** /content/articles/{id} | Get a single article
 [**getArticleTemplate**](ContentArticlesApi.md#getArticleTemplate) | **GET** /content/articles/templates/{id} | Get a single article template
 [**getArticleTemplates**](ContentArticlesApi.md#getArticleTemplates) | **GET** /content/articles/templates | List and search article templates
 [**getArticles**](ContentArticlesApi.md#getArticles) | **GET** /content/articles | List and search articles
-[**getTemplate**](ContentArticlesApi.md#getTemplate) | **GET** /templates/{type_hint}/{id} | Get a template
-[**getTemplates**](ContentArticlesApi.md#getTemplates) | **GET** /templates/{type_hint} | List and search templates
 [**updateArticle**](ContentArticlesApi.md#updateArticle) | **PUT** /content/articles/{id} | Update an existing article
-[**updateArticleTemplate**](ContentArticlesApi.md#updateArticleTemplate) | **PUT** /content/articles/templates/{id} | Update an article template
-[**updateTemplate**](ContentArticlesApi.md#updateTemplate) | **PUT** /templates/{type_hint}/{id} | Update a template
-[**validate**](ContentArticlesApi.md#validate) | **POST** /templates/{type_hint}/validate | Validate a templated resource
+[**updateArticleTemplate**](ContentArticlesApi.md#updateArticleTemplate) | **PATCH** /content/articles/templates/{id} | Update an article template
 
 
 <a name="createArticle"></a>
@@ -28,7 +22,7 @@ Method | HTTP request | Description
 
 Create a new article
 
-Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; POST
+Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -81,7 +75,7 @@ Name | Type | Description  | Notes
 
 Create an article template
 
-Article Templates define a type of article and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Article Templates define a type of article and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -114,62 +108,6 @@ apiInstance.createArticleTemplate(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **articleTemplateResource** | [**TemplateResource**](TemplateResource.md)| The article template resource object | [optional] 
-
-### Return type
-
-[**TemplateResource**](TemplateResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="createTemplate"></a>
-# **createTemplate**
-> TemplateResource createTemplate(typeHint, opts)
-
-Create a template
-
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.ContentArticlesApi();
-
-var typeHint = "typeHint_example"; // String | The type for the resource this template applies to
-
-var opts = { 
-  'template': new KnetikCloud.TemplateResource() // TemplateResource | The template
-};
-apiInstance.createTemplate(typeHint, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **typeHint** | **String**| The type for the resource this template applies to | 
- **template** | [**TemplateResource**](TemplateResource.md)| The template | [optional] 
 
 ### Return type
 
@@ -242,7 +180,7 @@ null (empty response body)
 
 Delete an article template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -278,65 +216,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
  **cascade** | **String**| The value needed to delete used templates | [optional] 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="deleteTemplate"></a>
-# **deleteTemplate**
-> deleteTemplate(typeHint, id, opts)
-
-Delete a template
-
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.ContentArticlesApi();
-
-var typeHint = "typeHint_example"; // String | The type for the resource this template applies to
-
-var id = "id_example"; // String | The id of the template
-
-var opts = { 
-  'cascade': "cascade_example" // String | How to cascade the delete
-};
-apiInstance.deleteTemplate(typeHint, id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **typeHint** | **String**| The type for the resource this template applies to | 
- **id** | **String**| The id of the template | 
- **cascade** | **String**| How to cascade the delete | [optional] 
 
 ### Return type
 
@@ -409,7 +288,7 @@ Name | Type | Description  | Notes
 
 Get a single article template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -461,7 +340,7 @@ Name | Type | Description  | Notes
 
 List and search article templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -518,7 +397,7 @@ Name | Type | Description  | Notes
 
 List and search articles
 
-Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -571,121 +450,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PageResourceArticleResource**](PageResourceArticleResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getTemplate"></a>
-# **getTemplate**
-> TemplateResource getTemplate(typeHint, id)
-
-Get a template
-
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.ContentArticlesApi();
-
-var typeHint = "typeHint_example"; // String | The type for the resource this template applies to
-
-var id = "id_example"; // String | The id of the template
-
-apiInstance.getTemplate(typeHint, id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **typeHint** | **String**| The type for the resource this template applies to | 
- **id** | **String**| The id of the template | 
-
-### Return type
-
-[**TemplateResource**](TemplateResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="getTemplates"></a>
-# **getTemplates**
-> PageResourceTemplateResource getTemplates(typeHint, opts)
-
-List and search templates
-
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.ContentArticlesApi();
-
-var typeHint = "typeHint_example"; // String | The type for the resource this template applies to
-
-var opts = { 
-  'size': 25, // Number | The number of objects returned per page
-  'page': 1, // Number | The number of the page returned, starting with 1
-  'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
-};
-apiInstance.getTemplates(typeHint, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **typeHint** | **String**| The type for the resource this template applies to | 
- **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
- **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
- **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]
-
-### Return type
-
-[**PageResourceTemplateResource**](PageResourceTemplateResource.md)
 
 ### Authorization
 
@@ -758,7 +522,7 @@ Name | Type | Description  | Notes
 
 Update an article template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -778,7 +542,8 @@ var apiInstance = new KnetikCloud.ContentArticlesApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'articleTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The article template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateArticleTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -793,126 +558,12 @@ apiInstance.updateArticleTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **articleTemplateResource** | [**TemplateResource**](TemplateResource.md)| The article template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 
 [**TemplateResource**](TemplateResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="updateTemplate"></a>
-# **updateTemplate**
-> TemplateResource updateTemplate(typeHint, id, opts)
-
-Update a template
-
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.ContentArticlesApi();
-
-var typeHint = "typeHint_example"; // String | The type for the resource this template applies to
-
-var id = "id_example"; // String | The id of the template
-
-var opts = { 
-  'template': new KnetikCloud.TemplateResource() // TemplateResource | The template
-};
-apiInstance.updateTemplate(typeHint, id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **typeHint** | **String**| The type for the resource this template applies to | 
- **id** | **String**| The id of the template | 
- **template** | [**TemplateResource**](TemplateResource.md)| The template | [optional] 
-
-### Return type
-
-[**TemplateResource**](TemplateResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="validate"></a>
-# **validate**
-> validate(typeHint, opts)
-
-Validate a templated resource
-
-Error code thrown if invalid.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATES_ADMIN
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.ContentArticlesApi();
-
-var typeHint = "typeHint_example"; // String | The type for the resource this template applies to
-
-var opts = { 
-  'resource': new KnetikCloud.BasicTemplatedResource() // BasicTemplatedResource | The resource to validate
-};
-apiInstance.validate(typeHint, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **typeHint** | **String**| The type for the resource this template applies to | 
- **resource** | [**BasicTemplatedResource**](BasicTemplatedResource.md)| The resource to validate | [optional] 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

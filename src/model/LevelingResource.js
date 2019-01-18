@@ -37,7 +37,7 @@
   /**
    * The LevelingResource model module.
    * @module model/LevelingResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -53,6 +53,7 @@
 
 
     _this['name'] = name;
+
 
 
 
@@ -80,6 +81,9 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('template')) {
+        obj['template'] = ApiClient.convertToType(data['template'], 'String');
       }
       if (data.hasOwnProperty('tiers')) {
         obj['tiers'] = ApiClient.convertToType(data['tiers'], [TierResource]);
@@ -128,6 +132,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * The template being used
+   * @member {String} template
+   */
+  exports.prototype['template'] = undefined;
   /**
    * A set of tiers that contain experience boundaries
    * @member {Array.<module:model/TierResource>} tiers

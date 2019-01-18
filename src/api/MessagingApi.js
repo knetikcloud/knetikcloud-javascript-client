@@ -34,7 +34,7 @@
   /**
    * Messaging service.
    * @module api/MessagingApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -56,7 +56,7 @@
      * @param {module:model/MessageTemplateBulkRequest} opts.request request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {'String': 'String'}>} and HTTP response
      */
-    this.compileMessageTemplateWithHttpInfo = function(opts) {
+    this.compileMessageTemplatesWithHttpInfo = function(opts) {
       opts = opts || {};
       var postBody = opts['request'];
 
@@ -91,8 +91,8 @@
      * @param {module:model/MessageTemplateBulkRequest} opts.request request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {'String': 'String'}>}
      */
-    this.compileMessageTemplate = function(opts) {
-      return this.compileMessageTemplateWithHttpInfo(opts)
+    this.compileMessageTemplates = function(opts) {
+      return this.compileMessageTemplatesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

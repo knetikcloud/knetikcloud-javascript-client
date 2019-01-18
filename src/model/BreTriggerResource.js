@@ -37,7 +37,7 @@
   /**
    * The BreTriggerResource model module.
    * @module model/BreTriggerResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -262,7 +262,17 @@
      * value: "event"
      * @const
      */
-    "event": "event"  };
+    "event": "event",
+    /**
+     * value: "monitoring"
+     * @const
+     */
+    "monitoring": "monitoring",
+    /**
+     * value: "verification"
+     * @const
+     */
+    "verification": "verification"  };
 
 
   return exports;

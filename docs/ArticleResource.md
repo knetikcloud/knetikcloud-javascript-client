@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 **body** | **String** | The body of the article | 
 **category** | [**NestedCategory**](NestedCategory.md) | The category for the article | 
 **created_date** | **Number** | The date/time this resource was created in seconds since unix epoch | [optional] 
-**id** | **String** | The id of the article | [optional] 
+**creator** | [**SimpleUserResource**](SimpleUserResource.md) | The creator of the article. Default: caller | [optional] 
+**id** | **String** | The id of the article. Default: random | [optional] 
 **tags** | **[String]** | The tags for the article | [optional] 
 **template** | **String** | An article template this article is validated against (private). May be null and no validation of additional_properties will be done | [optional] 
 **title** | **String** | The title of the article | 

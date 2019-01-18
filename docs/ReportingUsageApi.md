@@ -1,6 +1,6 @@
 # KnetikCloud.ReportingUsageApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsageEndpoints"></a>
 # **getUsageEndpoints**
-> [&#39;String&#39;] getUsageEndpoints(startDate, endDate)
+> PageResourcestring getUsageEndpoints(startDate, endDate)
 
 Returns list of endpoints called (method and url)
 
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**PageResourcestring**](PageResourcestring.md)
 
 ### Authorization
 

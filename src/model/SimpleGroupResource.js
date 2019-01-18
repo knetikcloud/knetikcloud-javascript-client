@@ -37,7 +37,7 @@
   /**
    * The SimpleGroupResource model module.
    * @module model/SimpleGroupResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**

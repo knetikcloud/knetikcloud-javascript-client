@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **description** | **String** | The friendly name of the SKU as it will appear on invoices and reports. Typically represents the option name like red, large, etc | 
 **inventory** | **Number** | The number of SKUs currently in stock | [optional] 
 **min_inventory_threshold** | **Number** | Alerts vendor when SKU inventory drops below this value | [optional] 
-**not_available** | **Boolean** |  | [optional] 
-**not_displayable** | **Boolean** |  | [optional] 
 **original_price** | **Number** | The base price before any sale | 
 **price** | **Number** | The current price of the SKU with sales, if any. Set original_price for the base | [optional] 
 **published** | **Boolean** | Whether or not the SKU is currently visible to users. This will not block users from purchase. Use start_date or stop_date to prevent purchase. Default: true | [optional] 

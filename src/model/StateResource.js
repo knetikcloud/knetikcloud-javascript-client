@@ -37,7 +37,7 @@
   /**
    * The StateResource model module.
    * @module model/StateResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**

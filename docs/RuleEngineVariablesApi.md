@@ -1,6 +1,6 @@
 # KnetikCloud.RuleEngineVariablesApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getBREVariableTypes"></a>
 # **getBREVariableTypes**
-> [VariableTypeResource] getBREVariableTypes()
+> PageResourceVariableTypeResource getBREVariableTypes(opts)
 
 Get a list of variable types available
 
@@ -30,7 +30,12 @@ var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant
 oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.RuleEngineVariablesApi();
-apiInstance.getBREVariableTypes().then(function(data) {
+
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getBREVariableTypes(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -39,11 +44,15 @@ apiInstance.getBREVariableTypes().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[VariableTypeResource]**](VariableTypeResource.md)
+[**PageResourceVariableTypeResource**](PageResourceVariableTypeResource.md)
 
 ### Authorization
 

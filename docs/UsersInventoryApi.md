@@ -1,6 +1,6 @@
 # KnetikCloud.UsersInventoryApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,13 +14,13 @@ Method | HTTP request | Description
 [**getEntitlementItems**](UsersInventoryApi.md#getEntitlementItems) | **GET** /entitlements | List and search entitlement items
 [**getEntitlementTemplate**](UsersInventoryApi.md#getEntitlementTemplate) | **GET** /entitlements/templates/{id} | Get a single entitlement template
 [**getEntitlementTemplates**](UsersInventoryApi.md#getEntitlementTemplates) | **GET** /entitlements/templates | List and search entitlement templates
+[**getInventoryList**](UsersInventoryApi.md#getInventoryList) | **GET** /inventories | List the user inventory entries for all users
 [**getUserInventories**](UsersInventoryApi.md#getUserInventories) | **GET** /users/{id}/inventory | List the user inventory entries for a given user
 [**getUserInventory**](UsersInventoryApi.md#getUserInventory) | **GET** /users/{user_id}/inventory/{id} | Get an inventory entry
 [**getUserInventoryLog**](UsersInventoryApi.md#getUserInventoryLog) | **GET** /users/{user_id}/inventory/{id}/log | List the log entries for this inventory entry
-[**getUsersInventory**](UsersInventoryApi.md#getUsersInventory) | **GET** /inventories | List the user inventory entries for all users
 [**grantUserEntitlement**](UsersInventoryApi.md#grantUserEntitlement) | **POST** /users/{user_id}/entitlements | Grant an entitlement
 [**updateEntitlementItem**](UsersInventoryApi.md#updateEntitlementItem) | **PUT** /entitlements/{entitlement_id} | Update an entitlement item
-[**updateEntitlementTemplate**](UsersInventoryApi.md#updateEntitlementTemplate) | **PUT** /entitlements/templates/{id} | Update an entitlement template
+[**updateEntitlementTemplate**](UsersInventoryApi.md#updateEntitlementTemplate) | **PATCH** /entitlements/templates/{id} | Update an entitlement template
 [**updateUserInventoryBehaviorData**](UsersInventoryApi.md#updateUserInventoryBehaviorData) | **PUT** /users/{user_id}/inventory/{id}/behavior-data | Set the behavior data for an inventory entry
 [**updateUserInventoryExpires**](UsersInventoryApi.md#updateUserInventoryExpires) | **PUT** /users/{user_id}/inventory/{id}/expires | Set the expiration date
 [**updateUserInventoryStatus**](UsersInventoryApi.md#updateUserInventoryStatus) | **PUT** /users/{user_id}/inventory/{id}/status | Set the status for an inventory entry
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 Create an entitlement template
 
-Entitlement templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Entitlement templates define a type of entitlement and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -308,7 +308,7 @@ null (empty response body)
 
 Delete an entitlement template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 Get a single entitlement template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 List and search entitlement templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -568,6 +568,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PageResourceItemTemplateResource**](PageResourceItemTemplateResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getInventoryList"></a>
+# **getInventoryList**
+> PageResourceUserInventoryResource getInventoryList(opts)
+
+List the user inventory entries for all users
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.UsersInventoryApi();
+
+var opts = { 
+  'inactive': false, // Boolean | If true, accepts inactive user inventories
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1, // Number | The number of the page returned, starting with 1
+  'filterItemName': "filterItemName_example", // String | Filter by items whose name starts with a string
+  'filterItemId': 56, // Number | Filter by item id
+  'filterUsername': "filterUsername_example", // String | Filter by entries owned by the user with the specified username
+  'filterGroup': "filterGroup_example", // String | Filter by entries owned by the users in a given group, by unique name
+  'filterDate': "filterDate_example" // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
+};
+apiInstance.getInventoryList(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inactive** | **Boolean**| If true, accepts inactive user inventories | [optional] [default to false]
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
+ **filterItemName** | **String**| Filter by items whose name starts with a string | [optional] 
+ **filterItemId** | **Number**| Filter by item id | [optional] 
+ **filterUsername** | **String**| Filter by entries owned by the user with the specified username | [optional] 
+ **filterGroup** | **String**| Filter by entries owned by the users in a given group, by unique name | [optional] 
+ **filterDate** | **String**| A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE). | [optional] 
+
+### Return type
+
+[**PageResourceUserInventoryResource**](PageResourceUserInventoryResource.md)
 
 ### Authorization
 
@@ -764,73 +831,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getUsersInventory"></a>
-# **getUsersInventory**
-> PageResourceUserInventoryResource getUsersInventory(opts)
-
-List the user inventory entries for all users
-
-&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.UsersInventoryApi();
-
-var opts = { 
-  'inactive': false, // Boolean | If true, accepts inactive user inventories
-  'size': 25, // Number | The number of objects returned per page
-  'page': 1, // Number | The number of the page returned, starting with 1
-  'filterItemName': "filterItemName_example", // String | Filter by items whose name starts with a string
-  'filterItemId': 56, // Number | Filter by item id
-  'filterUsername': "filterUsername_example", // String | Filter by entries owned by the user with the specified username
-  'filterGroup': "filterGroup_example", // String | Filter by entries owned by the users in a given group, by unique name
-  'filterDate': "filterDate_example" // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
-};
-apiInstance.getUsersInventory(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inactive** | **Boolean**| If true, accepts inactive user inventories | [optional] [default to false]
- **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
- **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
- **filterItemName** | **String**| Filter by items whose name starts with a string | [optional] 
- **filterItemId** | **Number**| Filter by item id | [optional] 
- **filterUsername** | **String**| Filter by entries owned by the user with the specified username | [optional] 
- **filterGroup** | **String**| Filter by entries owned by the users in a given group, by unique name | [optional] 
- **filterDate** | **String**| A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE). | [optional] 
-
-### Return type
-
-[**PageResourceUserInventoryResource**](PageResourceUserInventoryResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a name="grantUserEntitlement"></a>
 # **grantUserEntitlement**
 > grantUserEntitlement(userId, grantRequest)
@@ -950,7 +950,7 @@ null (empty response body)
 
 Update an entitlement template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -970,7 +970,8 @@ var apiInstance = new KnetikCloud.UsersInventoryApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'template': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The updated template
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateEntitlementTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -985,7 +986,8 @@ apiInstance.updateEntitlementTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **template** | [**ItemTemplateResource**](ItemTemplateResource.md)| The updated template | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

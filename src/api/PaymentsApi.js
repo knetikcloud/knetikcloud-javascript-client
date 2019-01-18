@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PageResourcePaymentMethodTypeResource', 'model/PaymentAuthorizationResource', 'model/PaymentMethodResource', 'model/PaymentMethodTypeResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/PageResourcePaymentMethodResource', 'model/PageResourcePaymentMethodTypeResource', 'model/PaymentAuthorizationResource', 'model/PaymentMethodResource', 'model/PaymentMethodTypeResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PageResourcePaymentMethodTypeResource'), require('../model/PaymentAuthorizationResource'), require('../model/PaymentMethodResource'), require('../model/PaymentMethodTypeResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/PageResourcePaymentMethodResource'), require('../model/PageResourcePaymentMethodTypeResource'), require('../model/PaymentAuthorizationResource'), require('../model/PaymentMethodResource'), require('../model/PaymentMethodTypeResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.PaymentsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourcePaymentMethodTypeResource, root.KnetikCloud.PaymentAuthorizationResource, root.KnetikCloud.PaymentMethodResource, root.KnetikCloud.PaymentMethodTypeResource, root.KnetikCloud.Result);
+    root.KnetikCloud.PaymentsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourcePaymentMethodResource, root.KnetikCloud.PageResourcePaymentMethodTypeResource, root.KnetikCloud.PaymentAuthorizationResource, root.KnetikCloud.PaymentMethodResource, root.KnetikCloud.PaymentMethodTypeResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, PageResourcePaymentMethodTypeResource, PaymentAuthorizationResource, PaymentMethodResource, PaymentMethodTypeResource, Result) {
+}(this, function(ApiClient, PageResourcePaymentMethodResource, PageResourcePaymentMethodTypeResource, PaymentAuthorizationResource, PaymentMethodResource, PaymentMethodTypeResource, Result) {
   'use strict';
 
   /**
    * Payments service.
    * @module api/PaymentsApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -354,7 +354,7 @@
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PaymentMethodResource>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourcePaymentMethodResource} and HTTP response
      */
     this.getPaymentMethodsWithHttpInfo = function(userId, opts) {
       opts = opts || {};
@@ -388,7 +388,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [PaymentMethodResource];
+      var returnType = PageResourcePaymentMethodResource;
 
       return this.apiClient.callApi(
         '/users/{user_id}/payment-methods', 'GET',
@@ -409,7 +409,7 @@
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PaymentMethodResource>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourcePaymentMethodResource}
      */
     this.getPaymentMethods = function(userId, opts) {
       return this.getPaymentMethodsWithHttpInfo(userId, opts)

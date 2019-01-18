@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AccessResourceCreateRequest', 'model/AccessTypeResource', 'model/PageResourceAccessTypeResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/AccessResourceCreateRequest', 'model/AccessTypeResource', 'model/PageResourceAccessResultsResource', 'model/PageResourceAccessTypeResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AccessResourceCreateRequest'), require('../model/AccessTypeResource'), require('../model/PageResourceAccessTypeResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/AccessResourceCreateRequest'), require('../model/AccessTypeResource'), require('../model/PageResourceAccessResultsResource'), require('../model/PageResourceAccessTypeResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.AuthTypesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AccessResourceCreateRequest, root.KnetikCloud.AccessTypeResource, root.KnetikCloud.PageResourceAccessTypeResource, root.KnetikCloud.Result);
+    root.KnetikCloud.AuthTypesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AccessResourceCreateRequest, root.KnetikCloud.AccessTypeResource, root.KnetikCloud.PageResourceAccessResultsResource, root.KnetikCloud.PageResourceAccessTypeResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, AccessResourceCreateRequest, AccessTypeResource, PageResourceAccessTypeResource, Result) {
+}(this, function(ApiClient, AccessResourceCreateRequest, AccessTypeResource, PageResourceAccessResultsResource, PageResourceAccessTypeResource, Result) {
   'use strict';
 
   /**
    * AuthTypes service.
    * @module api/AuthTypesApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -54,9 +54,13 @@
      * Checks for which actions can be taken against a given resource by the caller. &lt;b&gt;Types Needed:&lt;/b&gt; any
      * @param {String} type The type value
      * @param {String} id The resource id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceAccessResultsResource} and HTTP response
      */
-    this.allowedResourceActionsWithHttpInfo = function(type, id) {
+    this.allowedResourceActionsWithHttpInfo = function(type, id, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'type' is set
@@ -75,6 +79,8 @@
         'id': id
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -86,7 +92,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourceAccessResultsResource;
 
       return this.apiClient.callApi(
         '/access/resources/{type}/{id}/actions', 'GET',
@@ -100,10 +106,13 @@
      * Checks for which actions can be taken against a given resource by the caller. &lt;b&gt;Types Needed:&lt;/b&gt; any
      * @param {String} type The type value
      * @param {String} id The resource id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceAccessResultsResource}
      */
-    this.allowedResourceActions = function(type, id) {
-      return this.allowedResourceActionsWithHttpInfo(type, id)
+    this.allowedResourceActions = function(type, id, opts) {
+      return this.allowedResourceActionsWithHttpInfo(type, id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -114,9 +123,13 @@
      * Get allowed actions on a type
      * Checks for which actions can be taken against a given type by the caller. &lt;b&gt;Types Needed:&lt;/b&gt; any
      * @param {String} type The type value
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceAccessResultsResource} and HTTP response
      */
-    this.allowedTypeActionsWithHttpInfo = function(type) {
+    this.allowedTypeActionsWithHttpInfo = function(type, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'type' is set
@@ -129,6 +142,8 @@
         'type': type
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -140,7 +155,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = ['String'];
+      var returnType = PageResourceAccessResultsResource;
 
       return this.apiClient.callApi(
         '/access/types/{type}/actions', 'GET',
@@ -153,10 +168,13 @@
      * Get allowed actions on a type
      * Checks for which actions can be taken against a given type by the caller. &lt;b&gt;Types Needed:&lt;/b&gt; any
      * @param {String} type The type value
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceAccessResultsResource}
      */
-    this.allowedTypeActions = function(type) {
-      return this.allowedTypeActionsWithHttpInfo(type)
+    this.allowedTypeActions = function(type, opts) {
+      return this.allowedTypeActionsWithHttpInfo(type, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -272,6 +290,59 @@
 
 
     /**
+     * Delete all resources of a type
+     * &lt;b&gt;Types Needed:&lt;/b&gt; ROLE_SUPER_ADMIN
+     * @param {String} type The type value
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteAllOfTypeWithHttpInfo = function(type) {
+      var postBody = null;
+
+      // verify the required parameter 'type' is set
+      if (type === undefined || type === null) {
+        throw new Error("Missing the required parameter 'type' when calling deleteAllOfType");
+      }
+
+
+      var pathParams = {
+        'type': type
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/access/resources/{type}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Delete all resources of a type
+     * &lt;b&gt;Types Needed:&lt;/b&gt; ROLE_SUPER_ADMIN
+     * @param {String} type The type value
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.deleteAllOfType = function(type) {
+      return this.deleteAllOfTypeWithHttpInfo(type)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Delete a resource
      * Deletes a non-root level type&lt;br /&gt;&lt;b&gt;Types Needed:&lt;/b&gt; ROLE_SUPER_ADMIN
      * @param {String} type The type value
@@ -326,59 +397,6 @@
      */
     this.deleteResource = function(type, id) {
       return this.deleteResourceWithHttpInfo(type, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Delete all resources of a type
-     * &lt;b&gt;Types Needed:&lt;/b&gt; ROLE_SUPER_ADMIN
-     * @param {String} type The type value
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.deleteResourcesWithHttpInfo = function(type) {
-      var postBody = null;
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling deleteResources");
-      }
-
-
-      var pathParams = {
-        'type': type
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/access/resources/{type}', 'DELETE',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Delete all resources of a type
-     * &lt;b&gt;Types Needed:&lt;/b&gt; ROLE_SUPER_ADMIN
-     * @param {String} type The type value
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.deleteResources = function(type) {
-      return this.deleteResourcesWithHttpInfo(type)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

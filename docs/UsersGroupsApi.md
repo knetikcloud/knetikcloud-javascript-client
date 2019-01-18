@@ -1,16 +1,16 @@
 # KnetikCloud.UsersGroupsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addMemberToGroup**](UsersGroupsApi.md#addMemberToGroup) | **POST** /users/groups/{unique_name}/members | Adds a new member to the group
 [**addMembersToGroup**](UsersGroupsApi.md#addMembersToGroup) | **POST** /users/groups/{unique_name}/members/batch-add | Adds multiple members to the group
 [**createGroup**](UsersGroupsApi.md#createGroup) | **POST** /users/groups | Create a group
-[**createGroupMemberTemplate**](UsersGroupsApi.md#createGroupMemberTemplate) | **POST** /users/groups/members/templates | Create an group member template
+[**createGroupMemberTemplate**](UsersGroupsApi.md#createGroupMemberTemplate) | **POST** /users/groups/members/templates | Create a group member template
 [**createGroupTemplate**](UsersGroupsApi.md#createGroupTemplate) | **POST** /users/groups/templates | Create a group template
 [**deleteGroup**](UsersGroupsApi.md#deleteGroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system
-[**deleteGroupMemberTemplate**](UsersGroupsApi.md#deleteGroupMemberTemplate) | **DELETE** /users/groups/members/templates/{id} | Delete an group member template
+[**deleteGroupMemberTemplate**](UsersGroupsApi.md#deleteGroupMemberTemplate) | **DELETE** /users/groups/members/templates/{id} | Delete a group member template
 [**deleteGroupTemplate**](UsersGroupsApi.md#deleteGroupTemplate) | **DELETE** /users/groups/templates/{id} | Delete a group template
 [**disableGroupNotification**](UsersGroupsApi.md#disableGroupNotification) | **PUT** /users/groups/{unique_name}/members/{user_id}/messages/disabled | Enable or disable notification of group messages
 [**getGroup**](UsersGroupsApi.md#getGroup) | **GET** /users/groups/{unique_name} | Loads a specific group&#39;s details
@@ -27,11 +27,11 @@ Method | HTTP request | Description
 [**postGroupMessage**](UsersGroupsApi.md#postGroupMessage) | **POST** /users/groups/{unique_name}/messages | Send a group message
 [**removeGroupMember**](UsersGroupsApi.md#removeGroupMember) | **DELETE** /users/groups/{unique_name}/members/{user_id} | Removes a user from a group
 [**updateGroup**](UsersGroupsApi.md#updateGroup) | **PUT** /users/groups/{unique_name} | Update a group
-[**updateGroupMemberProperties**](UsersGroupsApi.md#updateGroupMemberProperties) | **PUT** /users/groups/{unique_name}/members/{user_id}/order | Change a user&#39;s order
-[**updateGroupMemberProperties1**](UsersGroupsApi.md#updateGroupMemberProperties1) | **PUT** /users/groups/{unique_name}/members/{user_id}/properties | Change a user&#39;s membership properties
+[**updateGroupMemberOrder**](UsersGroupsApi.md#updateGroupMemberOrder) | **PUT** /users/groups/{unique_name}/members/{user_id}/order | Change a user&#39;s order
+[**updateGroupMemberProperties**](UsersGroupsApi.md#updateGroupMemberProperties) | **PUT** /users/groups/{unique_name}/members/{user_id}/properties | Change a user&#39;s membership properties
 [**updateGroupMemberStatus**](UsersGroupsApi.md#updateGroupMemberStatus) | **PUT** /users/groups/{unique_name}/members/{user_id}/status | Change a user&#39;s status
-[**updateGroupMemberTemplate**](UsersGroupsApi.md#updateGroupMemberTemplate) | **PUT** /users/groups/members/templates/{id} | Update an group member template
-[**updateGroupTemplate**](UsersGroupsApi.md#updateGroupTemplate) | **PUT** /users/groups/templates/{id} | Update a group template
+[**updateGroupMemberTemplate**](UsersGroupsApi.md#updateGroupMemberTemplate) | **PATCH** /users/groups/members/templates/{id} | Update a group member template
+[**updateGroupTemplate**](UsersGroupsApi.md#updateGroupTemplate) | **PATCH** /users/groups/templates/{id} | Update a group template
 
 
 <a name="addMemberToGroup"></a>
@@ -40,7 +40,7 @@ Method | HTTP request | Description
 
 Adds a new member to the group
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; POST or JOIN if self
+&lt;b&gt;Permissions Needed:&lt;/b&gt; POST or JOIN if self&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 Adds multiple members to the group
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+&lt;b&gt;Permissions Needed:&lt;/b&gt; POST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 Create a group
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+&lt;b&gt;Permissions Needed:&lt;/b&gt; POST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -201,9 +201,9 @@ Name | Type | Description  | Notes
 # **createGroupMemberTemplate**
 > TemplateResource createGroupMemberTemplate(opts)
 
-Create an group member template
+Create a group member template
 
-GroupMember Templates define a type of group member and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+GroupMember Templates define a type of group member and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 Create a group template
 
-Group Templates define a type of group and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Group Templates define a type of group and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 Removes a group from the system
 
-All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
+All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -359,9 +359,9 @@ null (empty response body)
 # **deleteGroupMemberTemplate**
 > deleteGroupMemberTemplate(id, opts)
 
-Delete an group member template
+Delete a group member template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -417,7 +417,7 @@ null (empty response body)
 
 Delete a group template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -531,7 +531,7 @@ null (empty response body)
 
 Loads a specific group&#39;s details
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -579,11 +579,11 @@ Name | Type | Description  | Notes
 
 <a name="getGroupAncestors"></a>
 # **getGroupAncestors**
-> [GroupResource] getGroupAncestors(uniqueName)
+> PageResourceGroupResource getGroupAncestors(uniqueName, opts)
 
 Get group ancestors
 
-Returns a list of ancestor groups in reverse order (parent, then grandparent, etc). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+Returns a list of ancestor groups in reverse order (parent, then grandparent, etc). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -602,7 +602,11 @@ var apiInstance = new KnetikCloud.UsersGroupsApi();
 
 var uniqueName = "uniqueName_example"; // String | The group unique name
 
-apiInstance.getGroupAncestors(uniqueName).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getGroupAncestors(uniqueName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -615,10 +619,12 @@ apiInstance.getGroupAncestors(uniqueName).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uniqueName** | **String**| The group unique name | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[GroupResource]**](GroupResource.md)
+[**PageResourceGroupResource**](PageResourceGroupResource.md)
 
 ### Authorization
 
@@ -635,7 +641,7 @@ Name | Type | Description  | Notes
 
 Get a user from a group
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -690,7 +696,7 @@ Name | Type | Description  | Notes
 
 Get a single group member template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -742,7 +748,7 @@ Name | Type | Description  | Notes
 
 List and search group member templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -799,7 +805,7 @@ Name | Type | Description  | Notes
 
 Lists members of the group
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -880,7 +886,8 @@ var uniqueName = "uniqueName_example"; // String | The group unique name
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
-  'page': 1 // Number | The number of the page returned, starting with 1
+  'page': 1, // Number | The number of the page returned, starting with 1
+  'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
 apiInstance.getGroupMessages(uniqueName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -897,6 +904,7 @@ Name | Type | Description  | Notes
  **uniqueName** | **String**| The group unique name | 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
 
 ### Return type
 
@@ -917,7 +925,7 @@ Name | Type | Description  | Notes
 
 Get a single group template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -969,7 +977,7 @@ Name | Type | Description  | Notes
 
 List and search group templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or GROUP_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -1022,11 +1030,11 @@ Name | Type | Description  | Notes
 
 <a name="getGroupsForUser"></a>
 # **getGroupsForUser**
-> [&#39;String&#39;] getGroupsForUser(userId, opts)
+> PageResourcestring getGroupsForUser(userId, opts)
 
 List groups a user is in
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST_GROUPS
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST_GROUPS&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST_GROUPS
 
 ### Example
 ```javascript
@@ -1046,6 +1054,8 @@ var apiInstance = new KnetikCloud.UsersGroupsApi();
 var userId = 56; // Number | The id of the user
 
 var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1, // Number | The number of the page returned, starting with 1
   'filterChildren': true // Boolean | Whether to limit group list to children of groups only. If true, shows only groups with parents. If false, shows only groups with no parent.
 };
 apiInstance.getGroupsForUser(userId, opts).then(function(data) {
@@ -1061,11 +1071,13 @@ apiInstance.getGroupsForUser(userId, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The id of the user | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **filterChildren** | **Boolean**| Whether to limit group list to children of groups only. If true, shows only groups with parents. If false, shows only groups with no parent. | [optional] 
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**PageResourcestring**](PageResourcestring.md)
 
 ### Authorization
 
@@ -1082,7 +1094,7 @@ Name | Type | Description  | Notes
 
 List and search groups
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -1154,6 +1166,15 @@ Send a group message
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -1183,7 +1204,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
 
 ### HTTP request headers
 
@@ -1196,7 +1217,7 @@ No authorization required
 
 Removes a user from a group
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
+&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -1251,7 +1272,7 @@ null (empty response body)
 
 Update a group
 
-If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -1301,13 +1322,13 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateGroupMemberProperties"></a>
-# **updateGroupMemberProperties**
-> updateGroupMemberProperties(uniqueName, userId, order)
+<a name="updateGroupMemberOrder"></a>
+# **updateGroupMemberOrder**
+> updateGroupMemberOrder(uniqueName, userId, order)
 
 Change a user&#39;s order
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -1330,7 +1351,7 @@ var userId = 56; // Number | The user id of the member to modify
 
 var order = new KnetikCloud.StringWrapper(); // StringWrapper | The new order for the membership
 
-apiInstance.updateGroupMemberProperties(uniqueName, userId, order).then(function() {
+apiInstance.updateGroupMemberOrder(uniqueName, userId, order).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1359,13 +1380,13 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateGroupMemberProperties1"></a>
-# **updateGroupMemberProperties1**
-> updateGroupMemberProperties1(uniqueName, userId, properties)
+<a name="updateGroupMemberProperties"></a>
+# **updateGroupMemberProperties**
+> updateGroupMemberProperties(uniqueName, userId, properties)
 
 Change a user&#39;s membership properties
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -1388,7 +1409,7 @@ var userId = 56; // Number | The user id of the member to modify
 
 var properties = null; // Object | The new properties for the membership
 
-apiInstance.updateGroupMemberProperties1(uniqueName, userId, properties).then(function() {
+apiInstance.updateGroupMemberProperties(uniqueName, userId, properties).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -1423,7 +1444,7 @@ null (empty response body)
 
 Change a user&#39;s status
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -1479,9 +1500,9 @@ null (empty response body)
 # **updateGroupMemberTemplate**
 > TemplateResource updateGroupMemberTemplate(id, opts)
 
-Update an group member template
+Update a group member template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -1501,7 +1522,8 @@ var apiInstance = new KnetikCloud.UsersGroupsApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'groupMemberTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The group member template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateGroupMemberTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1516,7 +1538,8 @@ apiInstance.updateGroupMemberTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **groupMemberTemplateResource** | [**TemplateResource**](TemplateResource.md)| The group member template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 
@@ -1537,7 +1560,7 @@ Name | Type | Description  | Notes
 
 Update a group template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -1557,7 +1580,8 @@ var apiInstance = new KnetikCloud.UsersGroupsApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'groupTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The group template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateGroupTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1572,7 +1596,8 @@ apiInstance.updateGroupTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **groupTemplateResource** | [**TemplateResource**](TemplateResource.md)| The group template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

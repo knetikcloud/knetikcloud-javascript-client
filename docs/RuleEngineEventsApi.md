@@ -1,6 +1,6 @@
 # KnetikCloud.RuleEngineEventsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="sendBREEvent"></a>
 # **sendBREEvent**
-> &#39;String&#39; sendBREEvent(opts)
+> StringWrapper sendBREEvent(opts)
 
 Fire a new event, based on an existing trigger
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 

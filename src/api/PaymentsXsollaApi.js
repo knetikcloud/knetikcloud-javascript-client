@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Result', 'model/XsollaPaymentRequest'], factory);
+    define(['ApiClient', 'model/Result', 'model/StringWrapper', 'model/XsollaPaymentRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Result'), require('../model/XsollaPaymentRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/Result'), require('../model/StringWrapper'), require('../model/XsollaPaymentRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.PaymentsXsollaApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.Result, root.KnetikCloud.XsollaPaymentRequest);
+    root.KnetikCloud.PaymentsXsollaApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.XsollaPaymentRequest);
   }
-}(this, function(ApiClient, Result, XsollaPaymentRequest) {
+}(this, function(ApiClient, Result, StringWrapper, XsollaPaymentRequest) {
   'use strict';
 
   /**
    * PaymentsXsolla service.
    * @module api/PaymentsXsollaApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -54,7 +54,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/XsollaPaymentRequest} opts.request The payment request to be sent to XSolla
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.createXsollaTokenUrlWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -75,7 +75,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
         '/payment/provider/xsolla/payment', 'POST',
@@ -89,7 +89,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/XsollaPaymentRequest} opts.request The payment request to be sent to XSolla
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.createXsollaTokenUrl = function(opts) {
       return this.createXsollaTokenUrlWithHttpInfo(opts)

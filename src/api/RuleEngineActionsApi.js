@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ActionResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/PageResourceActionResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ActionResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/PageResourceActionResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.RuleEngineActionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActionResource, root.KnetikCloud.Result);
+    root.KnetikCloud.RuleEngineActionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PageResourceActionResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, ActionResource, Result) {
+}(this, function(ApiClient, PageResourceActionResource, Result) {
   'use strict';
 
   /**
    * RuleEngineActions service.
    * @module api/RuleEngineActionsApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -57,7 +57,9 @@
      * @param {String} opts.filterName Filter for actions that have names containing the given string
      * @param {String} opts.filterTags Filter for actions that have all of the given tags (comma separated list)
      * @param {String} opts.filterSearch Filter for actions containing the given words somewhere within name, description and tags
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ActionResource>} and HTTP response
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceActionResource} and HTTP response
      */
     this.getBREActionsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -71,6 +73,8 @@
         'filter_name': opts['filterName'],
         'filter_tags': opts['filterTags'],
         'filter_search': opts['filterSearch'],
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -82,7 +86,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [ActionResource];
+      var returnType = PageResourceActionResource;
 
       return this.apiClient.callApi(
         '/bre/actions', 'GET',
@@ -99,7 +103,9 @@
      * @param {String} opts.filterName Filter for actions that have names containing the given string
      * @param {String} opts.filterTags Filter for actions that have all of the given tags (comma separated list)
      * @param {String} opts.filterSearch Filter for actions containing the given words somewhere within name, description and tags
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ActionResource>}
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceActionResource}
      */
     this.getBREActions = function(opts) {
       return this.getBREActionsWithHttpInfo(opts)

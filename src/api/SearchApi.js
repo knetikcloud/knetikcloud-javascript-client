@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DocumentRemoveRequest', 'model/ReindexRequest', 'model/Result', 'model/SearchDocument', 'model/SearchObjectDefinition', 'model/SearchQuery'], factory);
+    define(['ApiClient', 'model/DocumentRemoveRequest', 'model/ReindexRequest', 'model/Result', 'model/SearchDocument', 'model/SearchQuery'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/DocumentRemoveRequest'), require('../model/ReindexRequest'), require('../model/Result'), require('../model/SearchDocument'), require('../model/SearchObjectDefinition'), require('../model/SearchQuery'));
+    module.exports = factory(require('../ApiClient'), require('../model/DocumentRemoveRequest'), require('../model/ReindexRequest'), require('../model/Result'), require('../model/SearchDocument'), require('../model/SearchQuery'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.SearchApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.DocumentRemoveRequest, root.KnetikCloud.ReindexRequest, root.KnetikCloud.Result, root.KnetikCloud.SearchDocument, root.KnetikCloud.SearchObjectDefinition, root.KnetikCloud.SearchQuery);
+    root.KnetikCloud.SearchApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.DocumentRemoveRequest, root.KnetikCloud.ReindexRequest, root.KnetikCloud.Result, root.KnetikCloud.SearchDocument, root.KnetikCloud.SearchQuery);
   }
-}(this, function(ApiClient, DocumentRemoveRequest, ReindexRequest, Result, SearchDocument, SearchObjectDefinition, SearchQuery) {
+}(this, function(ApiClient, DocumentRemoveRequest, ReindexRequest, Result, SearchDocument, SearchQuery) {
   'use strict';
 
   /**
    * Search service.
    * @module api/SearchApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Adds a document to be indexed. For system use only.
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_MANAGEMENT
      * @param {module:model/SearchDocument} document document
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -74,7 +75,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2_client_credentials_grant'];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -88,6 +89,7 @@
 
     /**
      * Adds a document to be indexed. For system use only.
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_MANAGEMENT
      * @param {module:model/SearchDocument} document document
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -100,66 +102,17 @@
 
 
     /**
-     * Register a new index definition. For system use only.
-     * @param {module:model/SearchObjectDefinition} definition definition
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.registerDefinitionWithHttpInfo = function(definition) {
-      var postBody = definition;
-
-      // verify the required parameter 'definition' is set
-      if (definition === undefined || definition === null) {
-        throw new Error("Missing the required parameter 'definition' when calling registerDefinition");
-      }
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/search/definitions', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Register a new index definition. For system use only.
-     * @param {module:model/SearchObjectDefinition} definition definition
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.registerDefinition = function(definition) {
-      return this.registerDefinitionWithHttpInfo(definition)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Triggers a full re-indexing of all documents of the specified type. For system use only.
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_MANAGEMENT
      * @param {module:model/ReindexRequest} request request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.reindexWithHttpInfo = function(request) {
+    this.reindexAllWithHttpInfo = function(request) {
       var postBody = request;
 
       // verify the required parameter 'request' is set
       if (request === undefined || request === null) {
-        throw new Error("Missing the required parameter 'request' when calling reindex");
+        throw new Error("Missing the required parameter 'request' when calling reindexAll");
       }
 
 
@@ -174,7 +127,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2_client_credentials_grant'];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = null;
@@ -188,11 +141,12 @@
 
     /**
      * Triggers a full re-indexing of all documents of the specified type. For system use only.
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_MANAGEMENT
      * @param {module:model/ReindexRequest} request request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.reindex = function(request) {
-      return this.reindexWithHttpInfo(request)
+    this.reindexAll = function(request) {
+      return this.reindexAllWithHttpInfo(request)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -201,6 +155,7 @@
 
     /**
      * Remove a document from the index. For system use only.
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_MANAGEMENT
      * @param {module:model/DocumentRemoveRequest} request request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -224,7 +179,7 @@
       var formParams = {
       };
 
-      var authNames = ['oauth2_client_credentials_grant'];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
@@ -238,6 +193,7 @@
 
     /**
      * Remove a document from the index. For system use only.
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_MANAGEMENT
      * @param {module:model/DocumentRemoveRequest} request request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -361,133 +317,6 @@
 
 
     /**
-     * Count matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchCountWithTemplateGETWithHttpInfo = function(type, template) {
-      var postBody = null;
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchCountWithTemplateGET");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchCountWithTemplateGET");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/count/{type}/{template}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Count matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchCountWithTemplateGET = function(type, template) {
-      return this.searchCountWithTemplateGETWithHttpInfo(type, template)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Count matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchCountWithTemplatePOSTWithHttpInfo = function(type, template, opts) {
-      opts = opts || {};
-      var postBody = opts['query'];
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchCountWithTemplatePOST");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchCountWithTemplatePOST");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/count/{type}/{template}', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Count matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _count.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchCountWithTemplatePOST = function(type, template, opts) {
-      return this.searchCountWithTemplatePOSTWithHttpInfo(type, template, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Get document with no template
      * This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
      * @param {String} type The index type
@@ -542,75 +371,6 @@
      */
     this.searchDocumentGET = function(type, id) {
       return this.searchDocumentGETWithHttpInfo(type, id)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Get document with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} id The index id
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchDocumentWithTemplateGETWithHttpInfo = function(type, id, template) {
-      var postBody = null;
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchDocumentWithTemplateGET");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling searchDocumentWithTemplateGET");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchDocumentWithTemplateGET");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'id': id,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/documents/{type}/{template}/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Get document with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} id The index id
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchDocumentWithTemplateGET = function(type, id, template) {
-      return this.searchDocumentWithTemplateGETWithHttpInfo(type, id, template)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -745,149 +505,6 @@
 
 
     /**
-     * Explain matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} id The index id
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchExplainWithTemplateGETWithHttpInfo = function(type, id, template) {
-      var postBody = null;
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchExplainWithTemplateGET");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling searchExplainWithTemplateGET");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchExplainWithTemplateGET");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'id': id,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/explain/{type}/{template}/{id}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Explain matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} id The index id
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchExplainWithTemplateGET = function(type, id, template) {
-      return this.searchExplainWithTemplateGETWithHttpInfo(type, id, template)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Explain matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} id The index id
-     * @param {String} template The index template
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchExplainWithTemplatePOSTWithHttpInfo = function(type, id, template, opts) {
-      opts = opts || {};
-      var postBody = opts['query'];
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchExplainWithTemplatePOST");
-      }
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling searchExplainWithTemplatePOST");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchExplainWithTemplatePOST");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'id': id,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/explain/{type}/{template}/{id}', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Explain matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _explain.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-count.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} id The index id
-     * @param {String} template The index template
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchExplainWithTemplatePOST = function(type, id, template, opts) {
-      return this.searchExplainWithTemplatePOSTWithHttpInfo(type, id, template, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Search an index with no template
      * This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
      * @param {String} type The index type
@@ -999,133 +616,6 @@
 
 
     /**
-     * Search an index with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchIndexWithTemplateGETWithHttpInfo = function(type, template) {
-      var postBody = null;
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchIndexWithTemplateGET");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchIndexWithTemplateGET");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/index/{type}/{template}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Search an index with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchIndexWithTemplateGET = function(type, template) {
-      return this.searchIndexWithTemplateGETWithHttpInfo(type, template)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Search an index with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchIndexWithTemplatePOSTWithHttpInfo = function(type, template, opts) {
-      opts = opts || {};
-      var postBody = opts['query'];
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchIndexWithTemplatePOST");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchIndexWithTemplatePOST");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/index/{type}/{template}', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Search an index with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _search.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchIndexWithTemplatePOST = function(type, template, opts) {
-      return this.searchIndexWithTemplatePOSTWithHttpInfo(type, template, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Get indices
      * This is a 1 to 1 mapping of a ElasticSearch call to _cat/indices for indices.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
@@ -1224,67 +714,6 @@
 
 
     /**
-     * Get mapping with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchMappingsWithTemplateGETWithHttpInfo = function(type, template) {
-      var postBody = null;
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchMappingsWithTemplateGET");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchMappingsWithTemplateGET");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/mappings/{type}/{template}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Get mapping with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _mapping.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-get-mapping.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchMappingsWithTemplateGET = function(type, template) {
-      return this.searchMappingsWithTemplateGETWithHttpInfo(type, template)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
      * Search public index with no template
      * Make an ElasticSearch query against a public index. Results filtered for records the caller has GET permission on. Further information on query format can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
      * @param {String} type The index type
@@ -1339,75 +768,6 @@
      */
     this.searchPublicIndex = function(type, opts) {
       return this.searchPublicIndexWithHttpInfo(type, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Search public index with template
-     * Make an ElasticSearch query against a public index. Results filtered for records the caller has GET permission on.  Further information on query format can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
-     * @param {String} type The index type
-     * @param {String} template The index type
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.user A user to impersonate for security. Requires SEARCH permission for actual caller
-     * @param {module:model/SearchQuery} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchPublicIndexWithTemplateWithHttpInfo = function(type, template, opts) {
-      opts = opts || {};
-      var postBody = opts['query'];
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchPublicIndexWithTemplate");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchPublicIndexWithTemplate");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'template': template
-      };
-      var queryParams = {
-        'user': opts['user'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/public/{type}/{template}', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Search public index with template
-     * Make an ElasticSearch query against a public index. Results filtered for records the caller has GET permission on.  Further information on query format can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH_ADMIN
-     * @param {String} type The index type
-     * @param {String} template The index type
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.user A user to impersonate for security. Requires SEARCH permission for actual caller
-     * @param {module:model/SearchQuery} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchPublicIndexWithTemplate = function(type, template, opts) {
-      return this.searchPublicIndexWithTemplateWithHttpInfo(type, template, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1519,133 +879,6 @@
      */
     this.searchValidatePOST = function(type, opts) {
       return this.searchValidatePOSTWithHttpInfo(type, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Validate matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchValidateWithTemplateGETWithHttpInfo = function(type, template) {
-      var postBody = null;
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchValidateWithTemplateGET");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchValidateWithTemplateGET");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = [];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/validate/{type}/{template}', 'GET',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Validate matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchValidateWithTemplateGET = function(type, template) {
-      return this.searchValidateWithTemplateGETWithHttpInfo(type, template)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Validate matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    this.searchValidateWithTemplatePOSTWithHttpInfo = function(type, template, opts) {
-      opts = opts || {};
-      var postBody = opts['query'];
-
-      // verify the required parameter 'type' is set
-      if (type === undefined || type === null) {
-        throw new Error("Missing the required parameter 'type' when calling searchValidateWithTemplatePOST");
-      }
-
-      // verify the required parameter 'template' is set
-      if (template === undefined || template === null) {
-        throw new Error("Missing the required parameter 'template' when calling searchValidateWithTemplatePOST");
-      }
-
-
-      var pathParams = {
-        'type': type,
-        'template': template
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Object;
-
-      return this.apiClient.callApi(
-        '/search/validate/{type}/{template}', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Validate matches with a template
-     * This is a 1 to 1 mapping of a ElasticSearch call to _validate/query.  Further information can be found at their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/search-validate.html&#39;&gt;API guide&lt;/a&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SEARCH
-     * @param {String} type The index type
-     * @param {String} template The index template
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The query to be used for the search
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    this.searchValidateWithTemplatePOST = function(type, template, opts) {
-      return this.searchValidateWithTemplatePOSTWithHttpInfo(type, template, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

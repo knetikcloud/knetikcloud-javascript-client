@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/IntWrapper', 'model/InventorySubscriptionResource', 'model/InvoiceResource', 'model/ReactivateSubscriptionRequest', 'model/Result', 'model/StringWrapper', 'model/SubscriptionPriceOverrideRequest', 'model/SubscriptionStatusWrapper'], factory);
+    define(['ApiClient', 'model/IntWrapper', 'model/InventorySubscriptionResource', 'model/InvoiceResource', 'model/PageResourceInventorySubscriptionResource', 'model/ReactivateSubscriptionRequest', 'model/Result', 'model/StringWrapper', 'model/SubscriptionPriceOverrideRequest', 'model/SubscriptionStatusWrapper'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/IntWrapper'), require('../model/InventorySubscriptionResource'), require('../model/InvoiceResource'), require('../model/ReactivateSubscriptionRequest'), require('../model/Result'), require('../model/StringWrapper'), require('../model/SubscriptionPriceOverrideRequest'), require('../model/SubscriptionStatusWrapper'));
+    module.exports = factory(require('../ApiClient'), require('../model/IntWrapper'), require('../model/InventorySubscriptionResource'), require('../model/InvoiceResource'), require('../model/PageResourceInventorySubscriptionResource'), require('../model/ReactivateSubscriptionRequest'), require('../model/Result'), require('../model/StringWrapper'), require('../model/SubscriptionPriceOverrideRequest'), require('../model/SubscriptionStatusWrapper'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.UsersSubscriptionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.IntWrapper, root.KnetikCloud.InventorySubscriptionResource, root.KnetikCloud.InvoiceResource, root.KnetikCloud.ReactivateSubscriptionRequest, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.SubscriptionPriceOverrideRequest, root.KnetikCloud.SubscriptionStatusWrapper);
+    root.KnetikCloud.UsersSubscriptionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.IntWrapper, root.KnetikCloud.InventorySubscriptionResource, root.KnetikCloud.InvoiceResource, root.KnetikCloud.PageResourceInventorySubscriptionResource, root.KnetikCloud.ReactivateSubscriptionRequest, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.SubscriptionPriceOverrideRequest, root.KnetikCloud.SubscriptionStatusWrapper);
   }
-}(this, function(ApiClient, IntWrapper, InventorySubscriptionResource, InvoiceResource, ReactivateSubscriptionRequest, Result, StringWrapper, SubscriptionPriceOverrideRequest, SubscriptionStatusWrapper) {
+}(this, function(ApiClient, IntWrapper, InventorySubscriptionResource, InvoiceResource, PageResourceInventorySubscriptionResource, ReactivateSubscriptionRequest, Result, StringWrapper, SubscriptionPriceOverrideRequest, SubscriptionStatusWrapper) {
   'use strict';
 
   /**
    * UsersSubscriptions service.
    * @module api/UsersSubscriptionsApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -114,9 +114,13 @@
      * Get details about a user&#39;s subscriptions
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InventorySubscriptionResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceInventorySubscriptionResource} and HTTP response
      */
-    this.getUsersSubscriptionDetailsWithHttpInfo = function(userId) {
+    this.getUsersSubscriptionDetailsWithHttpInfo = function(userId, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'userId' is set
@@ -129,6 +133,8 @@
         'user_id': userId
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -140,7 +146,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [InventorySubscriptionResource];
+      var returnType = PageResourceInventorySubscriptionResource;
 
       return this.apiClient.callApi(
         '/users/{user_id}/subscriptions', 'GET',
@@ -153,10 +159,13 @@
      * Get details about a user&#39;s subscriptions
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InventorySubscriptionResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceInventorySubscriptionResource}
      */
-    this.getUsersSubscriptionDetails = function(userId) {
-      return this.getUsersSubscriptionDetailsWithHttpInfo(userId)
+    this.getUsersSubscriptionDetails = function(userId, opts) {
+      return this.getUsersSubscriptionDetailsWithHttpInfo(userId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

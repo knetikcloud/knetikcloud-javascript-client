@@ -37,7 +37,7 @@
   /**
    * The AccessEntryResource model module.
    * @module model/AccessEntryResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -51,6 +51,7 @@
     var _this = this;
 
     _this['actions'] = actions;
+
     _this['sid'] = sid;
   };
 
@@ -67,6 +68,9 @@
 
       if (data.hasOwnProperty('actions')) {
         obj['actions'] = ApiClient.convertToType(data['actions'], ['String']);
+      }
+      if (data.hasOwnProperty('field_blacklist')) {
+        obj['field_blacklist'] = ApiClient.convertToType(data['field_blacklist'], ['String']);
       }
       if (data.hasOwnProperty('sid')) {
         obj['sid'] = ApiClient.convertToType(data['sid'], 'String');
@@ -94,6 +98,11 @@
    * @member {Array.<String>} actions
    */
   exports.prototype['actions'] = undefined;
+  /**
+   * Optional list of fields, in JSON Pointer notation (RFC 6901), that are not to be granted the associated actions for. Specifically, this affects LIST, GET, PUT, and POST by not allowing retrieval, edit, or creation of the field. For LIST the fields stripped from return objects based on parent ACL. The ACL is always additive, thus other access entries may grant these actions on these fields anyways
+   * @member {Array.<String>} field_blacklist
+   */
+  exports.prototype['field_blacklist'] = undefined;
   /**
    * The security id that gets this level of access. Security ids are prefixed with a type, foollowed by a hyphen, then an id. Formats: user-ID, group-UNIQUE_NAME, friend-USER_ID and role-ROLE
    * @member {String} sid

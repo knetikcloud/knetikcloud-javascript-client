@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ChatBlacklistResource', 'model/ChatMessageResource', 'model/IntWrapper', 'model/PageResourceChatMessageResource', 'model/PageResourceChatUserThreadResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/ChatMessageResource', 'model/IntWrapper', 'model/PageResourceChatBlacklistResource', 'model/PageResourceChatMessageResource', 'model/PageResourceChatUserThreadResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ChatBlacklistResource'), require('../model/ChatMessageResource'), require('../model/IntWrapper'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceChatUserThreadResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/ChatMessageResource'), require('../model/IntWrapper'), require('../model/PageResourceChatBlacklistResource'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceChatUserThreadResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ChatApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatBlacklistResource, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceChatUserThreadResource, root.KnetikCloud.Result);
+    root.KnetikCloud.ChatApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceChatBlacklistResource, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceChatUserThreadResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, ChatBlacklistResource, ChatMessageResource, IntWrapper, PageResourceChatMessageResource, PageResourceChatUserThreadResource, Result) {
+}(this, function(ApiClient, ChatMessageResource, IntWrapper, PageResourceChatBlacklistResource, PageResourceChatMessageResource, PageResourceChatUserThreadResource, Result) {
   'use strict';
 
   /**
    * Chat service.
    * @module api/ChatApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -336,9 +336,13 @@
      * Get a list of blocked users for chat messaging
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHAT_ADMIN or owner
      * @param {String} id The user id or &#39;me&#39;
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ChatBlacklistResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceChatBlacklistResource} and HTTP response
      */
-    this.getChatMessageBlacklistWithHttpInfo = function(id) {
+    this.getChatMessageBlacklistWithHttpInfo = function(id, opts) {
+      opts = opts || {};
       var postBody = null;
 
       // verify the required parameter 'id' is set
@@ -351,6 +355,8 @@
         'id': id
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -362,7 +368,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [ChatBlacklistResource];
+      var returnType = PageResourceChatBlacklistResource;
 
       return this.apiClient.callApi(
         '/chat/users/{id}/blacklist', 'GET',
@@ -375,10 +381,13 @@
      * Get a list of blocked users for chat messaging
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHAT_ADMIN or owner
      * @param {String} id The user id or &#39;me&#39;
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ChatBlacklistResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceChatBlacklistResource}
      */
-    this.getChatMessageBlacklist = function(id) {
-      return this.getChatMessageBlacklistWithHttpInfo(id)
+    this.getChatMessageBlacklist = function(id, opts) {
+      return this.getChatMessageBlacklistWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

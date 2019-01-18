@@ -1,6 +1,6 @@
 # KnetikCloud.PaymentsPayPalClassicApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createPayPalBillingAgreementUrl"></a>
 # **createPayPalBillingAgreementUrl**
-> &#39;String&#39; createPayPalBillingAgreementUrl(opts)
+> StringWrapper createPayPalBillingAgreementUrl(opts)
 
 Create a PayPal Classic billing agreement for the user
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 <a name="createPayPalExpressCheckout"></a>
 # **createPayPalExpressCheckout**
-> &#39;String&#39; createPayPalExpressCheckout(opts)
+> StringWrapper createPayPalExpressCheckout(opts)
 
 Create a payment token for PayPal express checkout
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 <a name="finalizePayPalBillingAgreement"></a>
 # **finalizePayPalBillingAgreement**
-> &#39;Number&#39; finalizePayPalBillingAgreement(opts)
+> IntWrapper finalizePayPalBillingAgreement(opts)
 
 Finalizes a billing agreement after the user has accepted through PayPal
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;Number&#39;**
+[**IntWrapper**](IntWrapper.md)
 
 ### Authorization
 

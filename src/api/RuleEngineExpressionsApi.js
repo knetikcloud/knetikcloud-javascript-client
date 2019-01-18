@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ExpressionResource', 'model/Result', 'model/StringWrapper'], factory);
+    define(['ApiClient', 'model/ExpressionResource', 'model/PageResourceExpressionResource', 'model/Result', 'model/StringWrapper'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ExpressionResource'), require('../model/Result'), require('../model/StringWrapper'));
+    module.exports = factory(require('../ApiClient'), require('../model/ExpressionResource'), require('../model/PageResourceExpressionResource'), require('../model/Result'), require('../model/StringWrapper'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.RuleEngineExpressionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ExpressionResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
+    root.KnetikCloud.RuleEngineExpressionsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ExpressionResource, root.KnetikCloud.PageResourceExpressionResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
   }
-}(this, function(ApiClient, ExpressionResource, Result, StringWrapper) {
+}(this, function(ApiClient, ExpressionResource, PageResourceExpressionResource, Result, StringWrapper) {
   'use strict';
 
   /**
    * RuleEngineExpressions service.
    * @module api/RuleEngineExpressionsApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -107,7 +107,9 @@
      * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.filterTypeGroup Filter for expressions by type group
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ExpressionResource>} and HTTP response
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceExpressionResource} and HTTP response
      */
     this.getBREExpressionsWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -118,6 +120,8 @@
       };
       var queryParams = {
         'filter_type_group': opts['filterTypeGroup'],
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -129,7 +133,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [ExpressionResource];
+      var returnType = PageResourceExpressionResource;
 
       return this.apiClient.callApi(
         '/bre/expressions', 'GET',
@@ -143,7 +147,9 @@
      * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.filterTypeGroup Filter for expressions by type group
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ExpressionResource>}
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceExpressionResource}
      */
     this.getBREExpressions = function(opts) {
       return this.getBREExpressionsWithHttpInfo(opts)

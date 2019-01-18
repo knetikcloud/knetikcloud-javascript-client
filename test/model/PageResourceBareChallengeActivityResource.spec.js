@@ -93,12 +93,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property sort (base name: "sort")', function() {
-      // uncomment below and update the code to test the property sort
-      //var instane = new KnetikCloud.PageResourceBareChallengeActivityResource();
-      //expect(instance).to.be();
-    });
-
     it('should have the property totalElements (base name: "total_elements")', function() {
       // uncomment below and update the code to test the property totalElements
       //var instane = new KnetikCloud.PageResourceBareChallengeActivityResource();

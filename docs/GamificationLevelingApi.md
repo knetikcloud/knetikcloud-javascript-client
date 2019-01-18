@@ -1,6 +1,6 @@
 # KnetikCloud.GamificationLevelingApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 <a name="getLevelTriggers"></a>
 # **getLevelTriggers**
-> [BreTriggerResource] getLevelTriggers()
+> PageResourceBreTriggerResource getLevelTriggers(opts)
 
 Get the list of triggers that can be used to trigger a leveling progress update
 
@@ -195,7 +195,12 @@ var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant
 oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.GamificationLevelingApi();
-apiInstance.getLevelTriggers().then(function(data) {
+
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getLevelTriggers(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -204,11 +209,15 @@ apiInstance.getLevelTriggers().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[BreTriggerResource]**](BreTriggerResource.md)
+[**PageResourceBreTriggerResource**](PageResourceBreTriggerResource.md)
 
 ### Authorization
 
@@ -515,7 +524,7 @@ null (empty response body)
 
 <a name="updateLevel"></a>
 # **updateLevel**
-> LevelingResource updateLevel(name, opts)
+> updateLevel(name, opts)
 
 Update a level
 
@@ -541,8 +550,8 @@ var name = "name_example"; // String | The level schema name
 var opts = { 
   'newLevel': new KnetikCloud.LevelingResource() // LevelingResource | The level schema definition
 };
-apiInstance.updateLevel(name, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.updateLevel(name, opts).then(function() {
+  console.log('API called successfully.');
 }, function(error) {
   console.error(error);
 });
@@ -558,7 +567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LevelingResource**](LevelingResource.md)
+null (empty response body)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 # KnetikCloud.MediaArtistsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**getArtistTemplates**](MediaArtistsApi.md#getArtistTemplates) | **GET** /media/artists/templates | List and search artist templates
 [**getArtists**](MediaArtistsApi.md#getArtists) | **GET** /media/artists | Search for artists
 [**updateArtist**](MediaArtistsApi.md#updateArtist) | **PUT** /media/artists/{id} | Modifies an artist details
-[**updateArtistTemplate**](MediaArtistsApi.md#updateArtistTemplate) | **PUT** /media/artists/templates/{id} | Update an artist template
+[**updateArtistTemplate**](MediaArtistsApi.md#updateArtistTemplate) | **PATCH** /media/artists/templates/{id} | Update an artist template
 
 
 <a name="addArtist"></a>
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 Create an artist template
 
-Artist Templates define a type of artist and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+Artist Templates define a type of artist and the properties they have.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
 
 ### Example
 ```javascript
@@ -180,7 +180,7 @@ null (empty response body)
 
 Delete an artist template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
 
 ### Example
 ```javascript
@@ -292,7 +292,7 @@ Name | Type | Description  | Notes
 
 Get a single artist template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
 
 ### Example
 ```javascript
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 List and search artist templates
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
 
 ### Example
 ```javascript
@@ -516,7 +516,7 @@ null (empty response body)
 
 Update an artist template
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -536,7 +536,8 @@ var apiInstance = new KnetikCloud.MediaArtistsApi();
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'artistTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The artist template resource object
+  'templatePatchResource': new KnetikCloud.PatchResource(), // PatchResource | The patch resource object
+  'testValidation': true // Boolean | If true, this will test validation but not submit the patch request
 };
 apiInstance.updateArtistTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -551,7 +552,8 @@ apiInstance.updateArtistTemplate(id, opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The id of the template | 
- **artistTemplateResource** | [**TemplateResource**](TemplateResource.md)| The artist template resource object | [optional] 
+ **templatePatchResource** | [**PatchResource**](PatchResource.md)| The patch resource object | [optional] 
+ **testValidation** | **Boolean**| If true, this will test validation but not submit the patch request | [optional] 
 
 ### Return type
 

@@ -57,12 +57,6 @@
       //expect(instance).to.be.a(KnetikCloud.StoreItemTemplateResource);
     });
 
-    it('should have the property allowAdditional (base name: "allow_additional")', function() {
-      // uncomment below and update the code to test the property allowAdditional
-      //var instane = new KnetikCloud.StoreItemTemplateResource();
-      //expect(instance).to.be();
-    });
-
     it('should have the property behaviors (base name: "behaviors")', function() {
       // uncomment below and update the code to test the property behaviors
       //var instane = new KnetikCloud.StoreItemTemplateResource();

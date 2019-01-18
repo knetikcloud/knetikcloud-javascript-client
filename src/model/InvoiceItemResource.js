@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Discount'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Discount'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.InvoiceItemResource = factory(root.KnetikCloud.ApiClient);
+    root.KnetikCloud.InvoiceItemResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.Discount);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Discount) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The InvoiceItemResource model module.
    * @module model/InvoiceItemResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -82,6 +83,9 @@
       }
       if (data.hasOwnProperty('current_fulfillment_status')) {
         obj['current_fulfillment_status'] = ApiClient.convertToType(data['current_fulfillment_status'], 'String');
+      }
+      if (data.hasOwnProperty('discount')) {
+        obj['discount'] = Discount.constructFromObject(data['discount']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -151,6 +155,10 @@
    * @member {String} current_fulfillment_status
    */
   exports.prototype['current_fulfillment_status'] = undefined;
+  /**
+   * @member {module:model/Discount} discount
+   */
+  exports.prototype['discount'] = undefined;
   /**
    * @member {Number} id
    */

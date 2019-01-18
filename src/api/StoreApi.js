@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BehaviorDefinitionResource', 'model/InvoiceResource', 'model/PageResourceStoreItem', 'model/PageResourceStoreItemTemplateResource', 'model/QuickBuyRequest', 'model/Result', 'model/StoreItem', 'model/StoreItemTemplateResource'], factory);
+    define(['ApiClient', 'model/InvoiceResource', 'model/PageResourceBehaviorDefinitionResource', 'model/PageResourceStoreItem', 'model/PageResourceStoreItemTemplateResource', 'model/PatchResource', 'model/QuickBuyRequest', 'model/Result', 'model/StoreItem', 'model/StoreItemTemplateResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BehaviorDefinitionResource'), require('../model/InvoiceResource'), require('../model/PageResourceStoreItem'), require('../model/PageResourceStoreItemTemplateResource'), require('../model/QuickBuyRequest'), require('../model/Result'), require('../model/StoreItem'), require('../model/StoreItemTemplateResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/InvoiceResource'), require('../model/PageResourceBehaviorDefinitionResource'), require('../model/PageResourceStoreItem'), require('../model/PageResourceStoreItemTemplateResource'), require('../model/PatchResource'), require('../model/QuickBuyRequest'), require('../model/Result'), require('../model/StoreItem'), require('../model/StoreItemTemplateResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.StoreApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.BehaviorDefinitionResource, root.KnetikCloud.InvoiceResource, root.KnetikCloud.PageResourceStoreItem, root.KnetikCloud.PageResourceStoreItemTemplateResource, root.KnetikCloud.QuickBuyRequest, root.KnetikCloud.Result, root.KnetikCloud.StoreItem, root.KnetikCloud.StoreItemTemplateResource);
+    root.KnetikCloud.StoreApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.InvoiceResource, root.KnetikCloud.PageResourceBehaviorDefinitionResource, root.KnetikCloud.PageResourceStoreItem, root.KnetikCloud.PageResourceStoreItemTemplateResource, root.KnetikCloud.PatchResource, root.KnetikCloud.QuickBuyRequest, root.KnetikCloud.Result, root.KnetikCloud.StoreItem, root.KnetikCloud.StoreItemTemplateResource);
   }
-}(this, function(ApiClient, BehaviorDefinitionResource, InvoiceResource, PageResourceStoreItem, PageResourceStoreItemTemplateResource, QuickBuyRequest, Result, StoreItem, StoreItemTemplateResource) {
+}(this, function(ApiClient, InvoiceResource, PageResourceBehaviorDefinitionResource, PageResourceStoreItem, PageResourceStoreItemTemplateResource, PatchResource, QuickBuyRequest, Result, StoreItem, StoreItemTemplateResource) {
   'use strict';
 
   /**
    * Store service.
    * @module api/StoreApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create an item template
-     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/StoreItemTemplateResource} opts.itemTemplateResource The new item template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreItemTemplateResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create an item template
-     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/StoreItemTemplateResource} opts.itemTemplateResource The new item template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreItemTemplateResource}
@@ -154,7 +154,7 @@
 
     /**
      * Delete an item template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -197,7 +197,7 @@
 
     /**
      * Delete an item template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DELETE
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -267,15 +267,21 @@
     /**
      * List available item behaviors
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BehaviorDefinitionResource>} and HTTP response
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceBehaviorDefinitionResource} and HTTP response
      */
-    this.getBehaviorsWithHttpInfo = function() {
+    this.getBehaviorsWithHttpInfo = function(opts) {
+      opts = opts || {};
       var postBody = null;
 
 
       var pathParams = {
       };
       var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
       };
       var collectionQueryParams = {
       };
@@ -287,7 +293,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [BehaviorDefinitionResource];
+      var returnType = PageResourceBehaviorDefinitionResource;
 
       return this.apiClient.callApi(
         '/store/items/behaviors', 'GET',
@@ -299,10 +305,13 @@
     /**
      * List available item behaviors
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BehaviorDefinitionResource>}
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceBehaviorDefinitionResource}
      */
-    this.getBehaviors = function() {
-      return this.getBehaviorsWithHttpInfo()
+    this.getBehaviors = function(opts) {
+      return this.getBehaviorsWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -311,7 +320,7 @@
 
     /**
      * Get a single item template
-     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreItemTemplateResource} and HTTP response
      */
@@ -350,7 +359,7 @@
 
     /**
      * Get a single item template
-     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; GET
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreItemTemplateResource}
      */
@@ -364,7 +373,7 @@
 
     /**
      * List and search item templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -404,7 +413,7 @@
 
     /**
      * List and search item templates
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -623,15 +632,16 @@
 
     /**
      * Update an item template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/StoreItemTemplateResource} opts.itemTemplateResource The item template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreItemTemplateResource} and HTTP response
      */
     this.updateItemTemplateWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['itemTemplateResource'];
+      var postBody = opts['templatePatchResource'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -643,6 +653,7 @@
         'id': id
       };
       var queryParams = {
+        'test_validation': opts['testValidation'],
       };
       var collectionQueryParams = {
       };
@@ -657,7 +668,7 @@
       var returnType = StoreItemTemplateResource;
 
       return this.apiClient.callApi(
-        '/store/items/templates/{id}', 'PUT',
+        '/store/items/templates/{id}', 'PATCH',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -665,10 +676,11 @@
 
     /**
      * Update an item template
-     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
-     * @param {module:model/StoreItemTemplateResource} opts.itemTemplateResource The item template resource object
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreItemTemplateResource}
      */
     this.updateItemTemplate = function(id, opts) {

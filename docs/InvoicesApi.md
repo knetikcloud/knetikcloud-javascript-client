@@ -1,6 +1,6 @@
 # KnetikCloud.InvoicesApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 <a name="getFulFillmentStatuses"></a>
 # **getFulFillmentStatuses**
-> [&#39;String&#39;] getFulFillmentStatuses()
+> PageResourcestring getFulFillmentStatuses(opts)
 
 Lists available fulfillment statuses
 
@@ -94,7 +94,12 @@ var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant
 oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.InvoicesApi();
-apiInstance.getFulFillmentStatuses().then(function(data) {
+
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getFulFillmentStatuses(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -103,11 +108,15 @@ apiInstance.getFulFillmentStatuses().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**PageResourcestring**](PageResourcestring.md)
 
 ### Authorization
 
@@ -315,7 +324,7 @@ Name | Type | Description  | Notes
 
 <a name="getPaymentStatuses"></a>
 # **getPaymentStatuses**
-> [&#39;String&#39;] getPaymentStatuses()
+> PageResourcestring getPaymentStatuses(opts)
 
 Lists available payment statuses
 
@@ -335,7 +344,12 @@ var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant
 oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 
 var apiInstance = new KnetikCloud.InvoicesApi();
-apiInstance.getPaymentStatuses().then(function(data) {
+
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getPaymentStatuses(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -344,11 +358,15 @@ apiInstance.getPaymentStatuses().then(function(data) {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-**[&#39;String&#39;]**
+[**PageResourcestring**](PageResourcestring.md)
 
 ### Authorization
 

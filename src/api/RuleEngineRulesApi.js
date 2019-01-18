@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BooleanResource', 'model/BreRule', 'model/Expressionobject', 'model/PageResourceBreRule', 'model/Result'], factory);
+    define(['ApiClient', 'model/BooleanResource', 'model/BreRule', 'model/Expressionobject', 'model/PageResourceBreRule', 'model/Result', 'model/StringWrapper'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BooleanResource'), require('../model/BreRule'), require('../model/Expressionobject'), require('../model/PageResourceBreRule'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/BooleanResource'), require('../model/BreRule'), require('../model/Expressionobject'), require('../model/PageResourceBreRule'), require('../model/Result'), require('../model/StringWrapper'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.RuleEngineRulesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.BooleanResource, root.KnetikCloud.BreRule, root.KnetikCloud.Expressionobject, root.KnetikCloud.PageResourceBreRule, root.KnetikCloud.Result);
+    root.KnetikCloud.RuleEngineRulesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.BooleanResource, root.KnetikCloud.BreRule, root.KnetikCloud.Expressionobject, root.KnetikCloud.PageResourceBreRule, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
   }
-}(this, function(ApiClient, BooleanResource, BreRule, Expressionobject, PageResourceBreRule, Result) {
+}(this, function(ApiClient, BooleanResource, BreRule, Expressionobject, PageResourceBreRule, Result, StringWrapper) {
   'use strict';
 
   /**
    * RuleEngineRules service.
    * @module api/RuleEngineRulesApi
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -157,7 +157,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Expressionobject} opts.expression The expression
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.getBREExpressionAsStringWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -178,7 +178,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = 'String';
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
         '/bre/rules/expression-as-string', 'POST',
@@ -192,7 +192,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Expressionobject} opts.expression The expression
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.getBREExpressionAsString = function(opts) {
       return this.getBREExpressionAsStringWithHttpInfo(opts)

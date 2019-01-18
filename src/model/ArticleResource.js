@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/NestedCategory', 'model/Property'], factory);
+    define(['ApiClient', 'model/NestedCategory', 'model/Property', 'model/SimpleUserResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./NestedCategory'), require('./Property'));
+    module.exports = factory(require('../ApiClient'), require('./NestedCategory'), require('./Property'), require('./SimpleUserResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ArticleResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.NestedCategory, root.KnetikCloud.Property);
+    root.KnetikCloud.ArticleResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.NestedCategory, root.KnetikCloud.Property, root.KnetikCloud.SimpleUserResource);
   }
-}(this, function(ApiClient, NestedCategory, Property) {
+}(this, function(ApiClient, NestedCategory, Property, SimpleUserResource) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The ArticleResource model module.
    * @module model/ArticleResource
-   * @version 3.0.10
+   * @version 3.0.11
    */
 
   /**
@@ -56,6 +56,7 @@
 
     _this['body'] = body;
     _this['category'] = category;
+
 
 
 
@@ -90,6 +91,9 @@
       }
       if (data.hasOwnProperty('created_date')) {
         obj['created_date'] = ApiClient.convertToType(data['created_date'], 'Number');
+      }
+      if (data.hasOwnProperty('creator')) {
+        obj['creator'] = SimpleUserResource.constructFromObject(data['creator']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -153,7 +157,12 @@
    */
   exports.prototype['created_date'] = undefined;
   /**
-   * The id of the article
+   * The creator of the article. Default: caller
+   * @member {module:model/SimpleUserResource} creator
+   */
+  exports.prototype['creator'] = undefined;
+  /**
+   * The id of the article. Default: random
    * @member {String} id
    */
   exports.prototype['id'] = undefined;

@@ -51,10 +51,10 @@
   }
 
   describe('DevicesApi', function() {
-    describe('addDeviceUsers', function() {
-      it('should call addDeviceUsers successfully', function(done) {
-        //uncomment below and update the code to test addDeviceUsers
-        //instance.addDeviceUsers(function(error) {
+    describe('addDeviceUser', function() {
+      it('should call addDeviceUser successfully', function(done) {
+        //uncomment below and update the code to test addDeviceUser
+        //instance.addDeviceUser(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

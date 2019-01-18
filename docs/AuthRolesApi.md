@@ -1,6 +1,6 @@
 # KnetikCloud.AuthRolesApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -127,7 +127,7 @@ null (empty response body)
 
 <a name="getClientRoles"></a>
 # **getClientRoles**
-> [RoleResource] getClientRoles(clientKey)
+> PageResourceRoleResource getClientRoles(clientKey, opts)
 
 Get roles for a client
 
@@ -150,7 +150,11 @@ var apiInstance = new KnetikCloud.AuthRolesApi();
 
 var clientKey = "clientKey_example"; // String | The client key
 
-apiInstance.getClientRoles(clientKey).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getClientRoles(clientKey, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -163,10 +167,12 @@ apiInstance.getClientRoles(clientKey).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientKey** | **String**| The client key | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[RoleResource]**](RoleResource.md)
+[**PageResourceRoleResource**](PageResourceRoleResource.md)
 
 ### Authorization
 
@@ -292,7 +298,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
-> [RoleResource] getUserRoles(userId)
+> PageResourceRoleResource getUserRoles(userId, opts)
 
 Get roles for a user
 
@@ -315,7 +321,11 @@ var apiInstance = new KnetikCloud.AuthRolesApi();
 
 var userId = 56; // Number | The user's id
 
-apiInstance.getUserRoles(userId).then(function(data) {
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getUserRoles(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -328,10 +338,12 @@ apiInstance.getUserRoles(userId).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The user&#39;s id | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
 ### Return type
 
-[**[RoleResource]**](RoleResource.md)
+[**PageResourceRoleResource**](PageResourceRoleResource.md)
 
 ### Authorization
 

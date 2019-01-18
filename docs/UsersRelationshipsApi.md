@@ -1,12 +1,12 @@
 # KnetikCloud.UsersRelationshipsApi
 
-All URIs are relative to *https://jsapi-integration.us-east-1.elasticbeanstalk.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createUserRelationship**](UsersRelationshipsApi.md#createUserRelationship) | **POST** /users/relationships | Create a user relationship
 [**deleteUserRelationship**](UsersRelationshipsApi.md#deleteUserRelationship) | **DELETE** /users/relationships/{id} | Delete a user relationship
-[**getUserRelationship**](UsersRelationshipsApi.md#getUserRelationship) | **GET** /users/relationships/{id} | Get a user relationship
+[**getRelationship**](UsersRelationshipsApi.md#getRelationship) | **GET** /users/relationships/{id} | Get a user relationship
 [**getUserRelationships**](UsersRelationshipsApi.md#getUserRelationships) | **GET** /users/relationships | Get a list of user relationships
 [**updateUserRelationship**](UsersRelationshipsApi.md#updateUserRelationship) | **PUT** /users/relationships/{id} | Update a user relationship
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create a user relationship
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 Delete a user relationship
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -116,13 +116,13 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="getUserRelationship"></a>
-# **getUserRelationship**
-> UserRelationshipResource getUserRelationship(id)
+<a name="getRelationship"></a>
+# **getRelationship**
+> UserRelationshipResource getRelationship(id)
 
 Get a user relationship
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -141,7 +141,7 @@ var apiInstance = new KnetikCloud.UsersRelationshipsApi();
 
 var id = 789; // Number | The id of the relationship
 
-apiInstance.getUserRelationship(id).then(function(data) {
+apiInstance.getRelationship(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 Get a list of user relationships
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 Update a user relationship
 
-&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
 
 ### Example
 ```javascript

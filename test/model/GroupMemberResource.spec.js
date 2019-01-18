@@ -75,6 +75,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property memberSince (base name: "member_since")', function() {
+      // uncomment below and update the code to test the property memberSince
+      //var instane = new KnetikCloud.GroupMemberResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property membershipId (base name: "membership_id")', function() {
       // uncomment below and update the code to test the property membershipId
       //var instane = new KnetikCloud.GroupMemberResource();
@@ -95,6 +101,12 @@
 
     it('should have the property template (base name: "template")', function() {
       // uncomment below and update the code to test the property template
+      //var instane = new KnetikCloud.GroupMemberResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property updatedDate (base name: "updated_date")', function() {
+      // uncomment below and update the code to test the property updatedDate
       //var instane = new KnetikCloud.GroupMemberResource();
       //expect(instance).to.be();
     });

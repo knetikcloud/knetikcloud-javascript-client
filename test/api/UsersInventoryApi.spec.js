@@ -151,6 +151,16 @@
         done();
       });
     });
+    describe('getInventoryList', function() {
+      it('should call getInventoryList successfully', function(done) {
+        //uncomment below and update the code to test getInventoryList
+        //instance.getInventoryList(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getUserInventories', function() {
       it('should call getUserInventories successfully', function(done) {
         //uncomment below and update the code to test getUserInventories
@@ -175,16 +185,6 @@
       it('should call getUserInventoryLog successfully', function(done) {
         //uncomment below and update the code to test getUserInventoryLog
         //instance.getUserInventoryLog(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('getUsersInventory', function() {
-      it('should call getUsersInventory successfully', function(done) {
-        //uncomment below and update the code to test getUsersInventory
-        //instance.getUsersInventory(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -37,7 +37,7 @@
   /**
    * The FileGroupProperty model module.
    * @module model/FileGroupProperty
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

@@ -34,7 +34,7 @@
   /**
    * UtilSecurity service.
    * @module api/UtilSecurityApi
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

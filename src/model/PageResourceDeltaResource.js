@@ -37,7 +37,7 @@
   /**
    * The PageResourceDeltaResource model module.
    * @module model/PageResourceDeltaResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

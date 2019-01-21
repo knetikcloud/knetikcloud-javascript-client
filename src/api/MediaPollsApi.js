@@ -34,7 +34,7 @@
   /**
    * MediaPolls service.
    * @module api/MediaPollsApi
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

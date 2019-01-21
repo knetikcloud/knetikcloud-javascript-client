@@ -241,16 +241,6 @@
         done();
       });
     });
-    describe('inviteToGroup', function() {
-      it('should call inviteToGroup successfully', function(done) {
-        //uncomment below and update the code to test inviteToGroup
-        //instance.inviteToGroup(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('listGroups', function() {
       it('should call listGroups successfully', function(done) {
         //uncomment below and update the code to test listGroups

@@ -37,7 +37,7 @@
   /**
    * The MonitoringAlertLevel model module.
    * @module model/MonitoringAlertLevel
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

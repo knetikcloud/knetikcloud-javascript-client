@@ -34,7 +34,7 @@
   /**
    * StoreShoppingCarts service.
    * @module api/StoreShoppingCartsApi
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

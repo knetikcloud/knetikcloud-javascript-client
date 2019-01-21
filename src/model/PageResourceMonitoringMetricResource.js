@@ -37,7 +37,7 @@
   /**
    * The PageResourceMonitoringMetricResource model module.
    * @module model/PageResourceMonitoringMetricResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

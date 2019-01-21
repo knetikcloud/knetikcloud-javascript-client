@@ -37,7 +37,7 @@
   /**
    * The ArtistResource model module.
    * @module model/ArtistResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

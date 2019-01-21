@@ -37,7 +37,7 @@
   /**
    * The PageResourceDispositionCount model module.
    * @module model/PageResourceDispositionCount
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

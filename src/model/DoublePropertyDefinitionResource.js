@@ -37,7 +37,7 @@
   /**
    * The DoublePropertyDefinitionResource model module.
    * @module model/DoublePropertyDefinitionResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

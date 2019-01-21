@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/GroupMemberResource', 'model/GroupResource', 'model/PageResourceChatMessageResource', 'model/PageResourceGroupMemberResource', 'model/PageResourceGroupResource', 'model/PageResourceTemplateResource', 'model/PageResourcestring', 'model/PatchResource', 'model/Result', 'model/StringWrapper', 'model/TemplateResource', 'model/ValueWrapperboolean', 'model/VerificationRequest'], factory);
+    define(['ApiClient', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/GroupMemberResource', 'model/GroupResource', 'model/PageResourceChatMessageResource', 'model/PageResourceGroupMemberResource', 'model/PageResourceGroupResource', 'model/PageResourceTemplateResource', 'model/PageResourcestring', 'model/PatchResource', 'model/Result', 'model/StringWrapper', 'model/TemplateResource', 'model/ValueWrapperboolean'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ChatMessageRequest'), require('../model/ChatMessageResource'), require('../model/GroupMemberResource'), require('../model/GroupResource'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceGroupMemberResource'), require('../model/PageResourceGroupResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourcestring'), require('../model/PatchResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'), require('../model/ValueWrapperboolean'), require('../model/VerificationRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/ChatMessageRequest'), require('../model/ChatMessageResource'), require('../model/GroupMemberResource'), require('../model/GroupResource'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceGroupMemberResource'), require('../model/PageResourceGroupResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourcestring'), require('../model/PatchResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'), require('../model/ValueWrapperboolean'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.UsersGroupsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatMessageRequest, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.GroupMemberResource, root.KnetikCloud.GroupResource, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceGroupMemberResource, root.KnetikCloud.PageResourceGroupResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource, root.KnetikCloud.ValueWrapperboolean, root.KnetikCloud.VerificationRequest);
+    root.KnetikCloud.UsersGroupsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatMessageRequest, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.GroupMemberResource, root.KnetikCloud.GroupResource, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceGroupMemberResource, root.KnetikCloud.PageResourceGroupResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource, root.KnetikCloud.ValueWrapperboolean);
   }
-}(this, function(ApiClient, ChatMessageRequest, ChatMessageResource, GroupMemberResource, GroupResource, PageResourceChatMessageResource, PageResourceGroupMemberResource, PageResourceGroupResource, PageResourceTemplateResource, PageResourcestring, PatchResource, Result, StringWrapper, TemplateResource, ValueWrapperboolean, VerificationRequest) {
+}(this, function(ApiClient, ChatMessageRequest, ChatMessageResource, GroupMemberResource, GroupResource, PageResourceChatMessageResource, PageResourceGroupMemberResource, PageResourceGroupResource, PageResourceTemplateResource, PageResourcestring, PatchResource, Result, StringWrapper, TemplateResource, ValueWrapperboolean) {
   'use strict';
 
   /**
    * UsersGroups service.
    * @module api/UsersGroupsApi
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**
@@ -1143,64 +1143,6 @@
      */
     this.getGroupsForUser = function(userId, opts) {
       return this.getGroupsForUserWithHttpInfo(userId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Invite to group
-     * This will create a verification for joining the group which uses the &#39;group_invite&#39; template and sets the additional_property &#39;group&#39; with the unique name
-     * @param {String} uniqueName The group unique name
-     * @param {Object} opts Optional parameters
-     * @param {module:model/VerificationRequest} opts.request The id of the user to invite
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VerificationRequest} and HTTP response
-     */
-    this.inviteToGroupWithHttpInfo = function(uniqueName, opts) {
-      opts = opts || {};
-      var postBody = opts['request'];
-
-      // verify the required parameter 'uniqueName' is set
-      if (uniqueName === undefined || uniqueName === null) {
-        throw new Error("Missing the required parameter 'uniqueName' when calling inviteToGroup");
-      }
-
-
-      var pathParams = {
-        'unique_name': uniqueName
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = VerificationRequest;
-
-      return this.apiClient.callApi(
-        '/users/groups/{unique_name}/invite', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Invite to group
-     * This will create a verification for joining the group which uses the &#39;group_invite&#39; template and sets the additional_property &#39;group&#39; with the unique name
-     * @param {String} uniqueName The group unique name
-     * @param {Object} opts Optional parameters
-     * @param {module:model/VerificationRequest} opts.request The id of the user to invite
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VerificationRequest}
-     */
-    this.inviteToGroup = function(uniqueName, opts) {
-      return this.inviteToGroupWithHttpInfo(uniqueName, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

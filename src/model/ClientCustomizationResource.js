@@ -37,7 +37,7 @@
   /**
    * The ClientCustomizationResource model module.
    * @module model/ClientCustomizationResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

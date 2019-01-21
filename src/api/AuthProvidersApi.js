@@ -34,7 +34,7 @@
   /**
    * AuthProviders service.
    * @module api/AuthProvidersApi
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

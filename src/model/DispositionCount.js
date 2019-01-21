@@ -37,7 +37,7 @@
   /**
    * The DispositionCount model module.
    * @module model/DispositionCount
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

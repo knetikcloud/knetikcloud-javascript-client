@@ -34,7 +34,7 @@
   /**
    * AuthTypes service.
    * @module api/AuthTypesApi
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

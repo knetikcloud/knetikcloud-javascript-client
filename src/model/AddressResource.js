@@ -37,7 +37,7 @@
   /**
    * The AddressResource model module.
    * @module model/AddressResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

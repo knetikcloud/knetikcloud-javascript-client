@@ -37,7 +37,7 @@
   /**
    * The PageResourceInvoiceResource model module.
    * @module model/PageResourceInvoiceResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

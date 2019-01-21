@@ -37,7 +37,7 @@
   /**
    * The FormattedTextPropertyDefinitionResource model module.
    * @module model/FormattedTextPropertyDefinitionResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The DoubleProperty model module.
    * @module model/DoubleProperty
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

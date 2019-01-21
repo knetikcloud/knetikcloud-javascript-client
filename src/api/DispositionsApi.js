@@ -34,7 +34,7 @@
   /**
    * Dispositions service.
    * @module api/DispositionsApi
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

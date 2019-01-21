@@ -37,7 +37,7 @@
   /**
    * The FormattedTextProperty model module.
    * @module model/FormattedTextProperty
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

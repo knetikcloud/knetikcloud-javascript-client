@@ -34,7 +34,7 @@
   /**
    * Users service.
    * @module api/UsersApi
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**
@@ -603,7 +603,6 @@
      * Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.test If true, test for valid code without changing password or burning code (default to false)
      * @param {module:model/NewPasswordRequest} opts.newPasswordRequest The new password request object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -621,7 +620,6 @@
         'id': id
       };
       var queryParams = {
-        'test': opts['test'],
       };
       var collectionQueryParams = {
       };
@@ -647,7 +645,6 @@
      * Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
-     * @param {Boolean} opts.test If true, test for valid code without changing password or burning code (default to false)
      * @param {module:model/NewPasswordRequest} opts.newPasswordRequest The new password request object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */

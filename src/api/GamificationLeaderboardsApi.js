@@ -34,7 +34,7 @@
   /**
    * GamificationLeaderboards service.
    * @module api/GamificationLeaderboardsApi
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

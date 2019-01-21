@@ -37,7 +37,7 @@
   /**
    * The LocationLogResource model module.
    * @module model/LocationLogResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

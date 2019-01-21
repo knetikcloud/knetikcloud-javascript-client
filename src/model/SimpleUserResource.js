@@ -37,7 +37,7 @@
   /**
    * The SimpleUserResource model module.
    * @module model/SimpleUserResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

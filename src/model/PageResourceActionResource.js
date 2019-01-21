@@ -37,7 +37,7 @@
   /**
    * The PageResourceActionResource model module.
    * @module model/PageResourceActionResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

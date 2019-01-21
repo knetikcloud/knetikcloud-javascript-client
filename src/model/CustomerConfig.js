@@ -37,7 +37,7 @@
   /**
    * The CustomerConfig model module.
    * @module model/CustomerConfig
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

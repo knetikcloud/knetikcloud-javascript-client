@@ -37,7 +37,7 @@
   /**
    * The ActionResource model module.
    * @module model/ActionResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**
@@ -254,12 +254,7 @@
      * value: "verification"
      * @const
      */
-    "verification": "verification",
-    /**
-     * value: "group"
-     * @const
-     */
-    "group": "group"  };
+    "verification": "verification"  };
 
 
   return exports;

@@ -37,7 +37,7 @@
   /**
    * The IntegerOperationResource model module.
    * @module model/IntegerOperationResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

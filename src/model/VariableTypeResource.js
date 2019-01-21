@@ -37,7 +37,7 @@
   /**
    * The VariableTypeResource model module.
    * @module model/VariableTypeResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

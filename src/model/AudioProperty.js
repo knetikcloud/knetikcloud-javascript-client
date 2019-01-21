@@ -37,7 +37,7 @@
   /**
    * The AudioProperty model module.
    * @module model/AudioProperty
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

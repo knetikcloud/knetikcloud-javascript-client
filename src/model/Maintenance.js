@@ -37,7 +37,7 @@
   /**
    * The Maintenance model module.
    * @module model/Maintenance
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

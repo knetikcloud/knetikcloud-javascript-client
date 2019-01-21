@@ -37,7 +37,7 @@
   /**
    * The TierResource model module.
    * @module model/TierResource
-   * @version 3.0.11
+   * @version 3.0.12
    */
 
   /**

@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**getGroupTemplate**](UsersGroupsApi.md#getGroupTemplate) | **GET** /users/groups/templates/{id} | Get a single group template
 [**getGroupTemplates**](UsersGroupsApi.md#getGroupTemplates) | **GET** /users/groups/templates | List and search group templates
 [**getGroupsForUser**](UsersGroupsApi.md#getGroupsForUser) | **GET** /users/{user_id}/groups | List groups a user is in
+[**inviteToGroup**](UsersGroupsApi.md#inviteToGroup) | **POST** /users/groups/{unique_name}/invite | Invite to group
 [**listGroups**](UsersGroupsApi.md#listGroups) | **GET** /users/groups | List and search groups
 [**postGroupMessage**](UsersGroupsApi.md#postGroupMessage) | **POST** /users/groups/{unique_name}/messages | Send a group message
 [**removeGroupMember**](UsersGroupsApi.md#removeGroupMember) | **DELETE** /users/groups/{unique_name}/members/{user_id} | Removes a user from a group
@@ -1086,6 +1087,62 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="inviteToGroup"></a>
+# **inviteToGroup**
+> VerificationRequest inviteToGroup(uniqueName, opts)
+
+Invite to group
+
+This will create a verification for joining the group which uses the &#39;group_invite&#39; template and sets the additional_property &#39;group&#39; with the unique name
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.UsersGroupsApi();
+
+var uniqueName = "uniqueName_example"; // String | The group unique name
+
+var opts = { 
+  'request': new KnetikCloud.VerificationRequest() // VerificationRequest | The id of the user to invite
+};
+apiInstance.inviteToGroup(uniqueName, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uniqueName** | **String**| The group unique name | 
+ **request** | [**VerificationRequest**](VerificationRequest.md)| The id of the user to invite | [optional] 
+
+### Return type
+
+[**VerificationRequest**](VerificationRequest.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="listGroups"></a>

@@ -62,6 +62,8 @@ Name | Type | Description | Notes
 
 * `verification` (value: `"verification"`)
 
+* `group` (value: `"group"`)
+
 
 
 

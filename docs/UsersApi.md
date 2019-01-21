@@ -572,6 +572,7 @@ var apiInstance = new KnetikCloud.UsersApi();
 var id = 56; // Number | The id of the user
 
 var opts = { 
+  'test': false, // Boolean | If true, test for valid code without changing password or burning code
   'newPasswordRequest': new KnetikCloud.NewPasswordRequest() // NewPasswordRequest | The new password request object
 };
 apiInstance.passwordReset(id, opts).then(function() {
@@ -587,6 +588,7 @@ apiInstance.passwordReset(id, opts).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| The id of the user | 
+ **test** | **Boolean**| If true, test for valid code without changing password or burning code | [optional] [default to false]
  **newPasswordRequest** | [**NewPasswordRequest**](NewPasswordRequest.md)| The new password request object | [optional] 
 
 ### Return type

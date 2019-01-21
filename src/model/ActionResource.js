@@ -254,7 +254,12 @@
      * value: "verification"
      * @const
      */
-    "verification": "verification"  };
+    "verification": "verification",
+    /**
+     * value: "group"
+     * @const
+     */
+    "group": "group"  };
 
 
   return exports;

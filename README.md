@@ -764,6 +764,7 @@ Class | Method | HTTP request | Description
 *KnetikCloud.UsersGroupsApi* | [**getGroupTemplate**](docs/UsersGroupsApi.md#getGroupTemplate) | **GET** /users/groups/templates/{id} | Get a single group template
 *KnetikCloud.UsersGroupsApi* | [**getGroupTemplates**](docs/UsersGroupsApi.md#getGroupTemplates) | **GET** /users/groups/templates | List and search group templates
 *KnetikCloud.UsersGroupsApi* | [**getGroupsForUser**](docs/UsersGroupsApi.md#getGroupsForUser) | **GET** /users/{user_id}/groups | List groups a user is in
+*KnetikCloud.UsersGroupsApi* | [**inviteToGroup**](docs/UsersGroupsApi.md#inviteToGroup) | **POST** /users/groups/{unique_name}/invite | Invite to group
 *KnetikCloud.UsersGroupsApi* | [**listGroups**](docs/UsersGroupsApi.md#listGroups) | **GET** /users/groups | List and search groups
 *KnetikCloud.UsersGroupsApi* | [**postGroupMessage**](docs/UsersGroupsApi.md#postGroupMessage) | **POST** /users/groups/{unique_name}/messages | Send a group message
 *KnetikCloud.UsersGroupsApi* | [**removeGroupMember**](docs/UsersGroupsApi.md#removeGroupMember) | **DELETE** /users/groups/{unique_name}/members/{user_id} | Removes a user from a group

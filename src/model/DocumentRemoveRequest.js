@@ -37,7 +37,7 @@
   /**
    * The DocumentRemoveRequest model module.
    * @module model/DocumentRemoveRequest
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

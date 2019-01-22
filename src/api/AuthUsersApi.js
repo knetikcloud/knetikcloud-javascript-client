@@ -34,7 +34,7 @@
   /**
    * AuthUsers service.
    * @module api/AuthUsersApi
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

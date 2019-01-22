@@ -37,7 +37,7 @@
   /**
    * The NewCustomerEvent model module.
    * @module model/NewCustomerEvent
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The ItemTemplateResource model module.
    * @module model/ItemTemplateResource
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

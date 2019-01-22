@@ -34,7 +34,7 @@
   /**
    * CampaignsChallenges service.
    * @module api/CampaignsChallengesApi
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

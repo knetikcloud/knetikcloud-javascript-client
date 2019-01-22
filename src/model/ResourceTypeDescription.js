@@ -37,7 +37,7 @@
   /**
    * The ResourceTypeDescription model module.
    * @module model/ResourceTypeDescription
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

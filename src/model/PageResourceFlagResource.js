@@ -37,7 +37,7 @@
   /**
    * The PageResourceFlagResource model module.
    * @module model/PageResourceFlagResource
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

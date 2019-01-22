@@ -34,7 +34,7 @@
   /**
    * ContentArticles service.
    * @module api/ContentArticlesApi
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

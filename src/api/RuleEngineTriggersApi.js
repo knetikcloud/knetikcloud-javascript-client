@@ -34,7 +34,7 @@
   /**
    * RuleEngineTriggers service.
    * @module api/RuleEngineTriggersApi
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

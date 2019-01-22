@@ -34,7 +34,7 @@
   /**
    * Leveling service.
    * @module api/LevelingApi
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

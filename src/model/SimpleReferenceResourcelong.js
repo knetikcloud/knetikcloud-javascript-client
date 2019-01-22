@@ -37,7 +37,7 @@
   /**
    * The SimpleReferenceResourcelong model module.
    * @module model/SimpleReferenceResourcelong
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

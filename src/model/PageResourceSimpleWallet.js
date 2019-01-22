@@ -37,7 +37,7 @@
   /**
    * The PageResourceSimpleWallet model module.
    * @module model/PageResourceSimpleWallet
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

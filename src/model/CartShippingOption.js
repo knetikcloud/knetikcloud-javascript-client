@@ -37,7 +37,7 @@
   /**
    * The CartShippingOption model module.
    * @module model/CartShippingOption
-   * @version 3.0.12
+   * @version 3.0.13
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The UsernameLookupResource model module.
    * @module model/UsernameLookupResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

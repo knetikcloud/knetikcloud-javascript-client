@@ -37,7 +37,7 @@
   /**
    * The InventorySubscriptionResource model module.
    * @module model/InventorySubscriptionResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

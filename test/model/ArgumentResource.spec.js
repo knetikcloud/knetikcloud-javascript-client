@@ -57,6 +57,12 @@
       //expect(instance).to.be.a(KnetikCloud.ArgumentResource);
     });
 
+    it('should have the property forceSoftness (base name: "force_softness")', function() {
+      // uncomment below and update the code to test the property forceSoftness
+      //var instane = new KnetikCloud.ArgumentResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instane = new KnetikCloud.ArgumentResource();

@@ -34,7 +34,7 @@
   /**
    * PaymentsOptimal service.
    * @module api/PaymentsOptimalApi
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

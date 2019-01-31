@@ -37,7 +37,7 @@
   /**
    * The PageResourceUserSidResource model module.
    * @module model/PageResourceUserSidResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The UserResource model module.
    * @module model/UserResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

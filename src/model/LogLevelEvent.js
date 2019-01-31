@@ -37,7 +37,7 @@
   /**
    * The LogLevelEvent model module.
    * @module model/LogLevelEvent
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

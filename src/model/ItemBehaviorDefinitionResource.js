@@ -37,7 +37,7 @@
   /**
    * The ItemBehaviorDefinitionResource model module.
    * @module model/ItemBehaviorDefinitionResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

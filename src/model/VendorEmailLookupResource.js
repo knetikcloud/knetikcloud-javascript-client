@@ -37,7 +37,7 @@
   /**
    * The VendorEmailLookupResource model module.
    * @module model/VendorEmailLookupResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The PollResponseResource model module.
    * @module model/PollResponseResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

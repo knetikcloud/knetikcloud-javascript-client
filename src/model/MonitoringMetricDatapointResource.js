@@ -37,7 +37,7 @@
   /**
    * The MonitoringMetricDatapointResource model module.
    * @module model/MonitoringMetricDatapointResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**
@@ -48,6 +48,7 @@
    */
   var exports = function(value) {
     var _this = this;
+
 
 
 
@@ -67,6 +68,9 @@
 
       if (data.hasOwnProperty('dimensions')) {
         obj['dimensions'] = ApiClient.convertToType(data['dimensions'], {'String': 'String'});
+      }
+      if (data.hasOwnProperty('id')) {
+        obj['id'] = ApiClient.convertToType(data['id'], 'String');
       }
       if (data.hasOwnProperty('timestamp')) {
         obj['timestamp'] = ApiClient.convertToType(data['timestamp'], 'Number');
@@ -97,6 +101,11 @@
    * @member {Object.<String, String>} dimensions
    */
   exports.prototype['dimensions'] = undefined;
+  /**
+   * The id of the metric. Required for batch endpoint
+   * @member {String} id
+   */
+  exports.prototype['id'] = undefined;
   /**
    * The unix timestamp in seconds the datapoint occurred, default: now
    * @member {Number} timestamp

@@ -37,7 +37,7 @@
   /**
    * The PageResourceSavedAddressResource model module.
    * @module model/PageResourceSavedAddressResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The PageResourceInventorySubscriptionResource model module.
    * @module model/PageResourceInventorySubscriptionResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

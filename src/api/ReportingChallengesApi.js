@@ -34,7 +34,7 @@
   /**
    * ReportingChallenges service.
    * @module api/ReportingChallengesApi
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

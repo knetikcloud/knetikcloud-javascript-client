@@ -37,7 +37,7 @@
   /**
    * The PageResourceUserLevelingResource model module.
    * @module model/PageResourceUserLevelingResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

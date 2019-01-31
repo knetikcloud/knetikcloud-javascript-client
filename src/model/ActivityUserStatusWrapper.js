@@ -37,7 +37,7 @@
   /**
    * The ActivityUserStatusWrapper model module.
    * @module model/ActivityUserStatusWrapper
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

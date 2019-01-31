@@ -37,7 +37,7 @@
   /**
    * The PageResourceStateTaxResource model module.
    * @module model/PageResourceStateTaxResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

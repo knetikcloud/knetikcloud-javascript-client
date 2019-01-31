@@ -37,7 +37,7 @@
   /**
    * The BatchRequest model module.
    * @module model/BatchRequest
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

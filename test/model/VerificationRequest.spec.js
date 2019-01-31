@@ -93,6 +93,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property originator (base name: "originator")', function() {
+      // uncomment below and update the code to test the property originator
+      //var instane = new KnetikCloud.VerificationRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property targetUser (base name: "target_user")', function() {
       // uncomment below and update the code to test the property targetUser
       //var instane = new KnetikCloud.VerificationRequest();

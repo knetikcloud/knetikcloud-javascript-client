@@ -37,7 +37,7 @@
   /**
    * The SubscriptionStatusWrapper model module.
    * @module model/SubscriptionStatusWrapper
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The FilePropertyDefinitionResource model module.
    * @module model/FilePropertyDefinitionResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getIncidents**](MonitoringApi.md#getIncidents) | **GET** /monitoring/incidents | List and search incidents
 [**getMetric**](MonitoringApi.md#getMetric) | **GET** /monitoring/metrics/{id} | Get a single metric
 [**getMetrics**](MonitoringApi.md#getMetrics) | **GET** /monitoring/metrics | List and search metrics
+[**postBatch**](MonitoringApi.md#postBatch) | **POST** /monitoring/metrics/datapoints | Post a metric datapoint batch
 [**postDatapoint**](MonitoringApi.md#postDatapoint) | **POST** /monitoring/metrics/{id}/datapoints | Post a metric datapoint
 [**receiveEvent**](MonitoringApi.md#receiveEvent) | **POST** /monitoring/incidents | Report an incident event
 [**startRecordMetric**](MonitoringApi.md#startRecordMetric) | **POST** /monitoring/metrics/{id}/start | Start recording a metric
@@ -671,6 +672,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="postBatch"></a>
+# **postBatch**
+> postBatch(opts)
+
+Post a metric datapoint batch
+
+Only works with counter and gauge metrics. Re-submit the entire batch in case of failure. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.MonitoringApi();
+
+var opts = { 
+  'batch': [new KnetikCloud.MonitoringMetricDatapointResource()] // [MonitoringMetricDatapointResource] | The metric datapoints
+};
+apiInstance.postBatch(opts).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **batch** | [**[MonitoringMetricDatapointResource]**](MonitoringMetricDatapointResource.md)| The metric datapoints | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="postDatapoint"></a>

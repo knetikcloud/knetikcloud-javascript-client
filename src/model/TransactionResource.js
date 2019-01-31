@@ -37,7 +37,7 @@
   /**
    * The TransactionResource model module.
    * @module model/TransactionResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

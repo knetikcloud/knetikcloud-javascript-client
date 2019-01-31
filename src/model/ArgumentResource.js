@@ -37,7 +37,7 @@
   /**
    * The ArgumentResource model module.
    * @module model/ArgumentResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -63,6 +64,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('force_softness')) {
+        obj['force_softness'] = ApiClient.convertToType(data['force_softness'], 'Boolean');
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
@@ -87,6 +91,10 @@
   var discriminatorValue = 'ArgumentResource';
 
 
+  /**
+   * @member {Boolean} force_softness
+   */
+  exports.prototype['force_softness'] = undefined;
   /**
    * @member {String} name
    */

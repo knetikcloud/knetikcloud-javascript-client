@@ -37,7 +37,7 @@
   /**
    * The DoubleOperationResource model module.
    * @module model/DoubleOperationResource
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

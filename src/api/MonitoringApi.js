@@ -34,7 +34,7 @@
   /**
    * Monitoring service.
    * @module api/MonitoringApi
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**
@@ -697,6 +697,56 @@
      */
     this.getMetrics = function(opts) {
       return this.getMetricsWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Post a metric datapoint batch
+     * Only works with counter and gauge metrics. Re-submit the entire batch in case of failure. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * @param {Object} opts Optional parameters
+     * @param {Array.<module:model/MonitoringMetricDatapointResource>} opts.batch The metric datapoints
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.postBatchWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = opts['batch'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/monitoring/metrics/datapoints', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Post a metric datapoint batch
+     * Only works with counter and gauge metrics. Re-submit the entire batch in case of failure. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * @param {Object} opts Optional parameters
+     * @param {Array.<module:model/MonitoringMetricDatapointResource>} opts.batch The metric datapoints
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.postBatch = function(opts) {
+      return this.postBatchWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -37,7 +37,7 @@
   /**
    * The PageResourceWalletTotalResponse model module.
    * @module model/PageResourceWalletTotalResponse
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

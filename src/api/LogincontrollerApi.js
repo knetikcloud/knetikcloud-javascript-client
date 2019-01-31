@@ -34,7 +34,7 @@
   /**
    * Logincontroller service.
    * @module api/LogincontrollerApi
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

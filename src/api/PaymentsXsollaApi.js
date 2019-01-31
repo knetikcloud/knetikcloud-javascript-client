@@ -34,7 +34,7 @@
   /**
    * PaymentsXsolla service.
    * @module api/PaymentsXsollaApi
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

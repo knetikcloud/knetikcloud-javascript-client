@@ -171,6 +171,16 @@
         done();
       });
     });
+    describe('postBatch', function() {
+      it('should call postBatch successfully', function(done) {
+        //uncomment below and update the code to test postBatch
+        //instance.postBatch(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('postDatapoint', function() {
       it('should call postDatapoint successfully', function(done) {
         //uncomment below and update the code to test postDatapoint

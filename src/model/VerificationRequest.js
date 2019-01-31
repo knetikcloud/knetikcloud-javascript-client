@@ -37,7 +37,7 @@
   /**
    * The VerificationRequest model module.
    * @module model/VerificationRequest
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -87,6 +88,9 @@
       }
       if (data.hasOwnProperty('include_numbers')) {
         obj['include_numbers'] = ApiClient.convertToType(data['include_numbers'], 'Boolean');
+      }
+      if (data.hasOwnProperty('originator')) {
+        obj['originator'] = SimpleUserResource.constructFromObject(data['originator']);
       }
       if (data.hasOwnProperty('target_user')) {
         obj['target_user'] = SimpleUserResource.constructFromObject(data['target_user']);
@@ -145,6 +149,11 @@
    * @member {Boolean} include_numbers
    */
   exports.prototype['include_numbers'] = undefined;
+  /**
+   * The originating user of the request, filled at 
+   * @member {module:model/SimpleUserResource} originator
+   */
+  exports.prototype['originator'] = undefined;
   /**
    * An optional user that is expected to respond
    * @member {module:model/SimpleUserResource} target_user

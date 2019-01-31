@@ -37,7 +37,7 @@
   /**
    * The SearchQuery model module.
    * @module model/SearchQuery
-   * @version 3.0.13
+   * @version 3.0.14
    */
 
   /**

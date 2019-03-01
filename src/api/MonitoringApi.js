@@ -34,7 +34,7 @@
   /**
    * Monitoring service.
    * @module api/MonitoringApi
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**
@@ -196,6 +196,65 @@
      */
     this.deleteAlert = function(id) {
       return this.deleteAlertWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a metric datapoint
+     * Only works for counter and guage type. &lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD
+     * @param {String} id The metric id
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.dimensions The dimensions of the specific datapoint to delete, in the form key1:value1,key2:val2
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteDatapointWithHttpInfo = function(id, opts) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteDatapoint");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+        'dimensions': opts['dimensions'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/monitoring/metrics/{id}/datapoints', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Delete a metric datapoint
+     * Only works for counter and guage type. &lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD
+     * @param {String} id The metric id
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.dimensions The dimensions of the specific datapoint to delete, in the form key1:value1,key2:val2
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.deleteDatapoint = function(id, opts) {
+      return this.deleteDatapointWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -705,7 +764,7 @@
 
     /**
      * Post a metric datapoint batch
-     * Only works with counter and gauge metrics. Re-submit the entire batch in case of failure. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * Only works with counter and gauge metrics. Re-submit the entire batch in case of failure. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/MonitoringMetricDatapointResource>} opts.batch The metric datapoints
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -740,7 +799,7 @@
 
     /**
      * Post a metric datapoint batch
-     * Only works with counter and gauge metrics. Re-submit the entire batch in case of failure. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
+     * Only works with counter and gauge metrics. Re-submit the entire batch in case of failure. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/MonitoringMetricDatapointResource>} opts.batch The metric datapoints
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

@@ -37,7 +37,7 @@
   /**
    * The BareActivityResource model module.
    * @module model/BareActivityResource
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

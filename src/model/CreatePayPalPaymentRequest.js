@@ -37,7 +37,7 @@
   /**
    * The CreatePayPalPaymentRequest model module.
    * @module model/CreatePayPalPaymentRequest
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

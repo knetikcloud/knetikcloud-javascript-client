@@ -37,7 +37,7 @@
   /**
    * The UsageInfo model module.
    * @module model/UsageInfo
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

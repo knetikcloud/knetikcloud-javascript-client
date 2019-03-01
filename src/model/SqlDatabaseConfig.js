@@ -37,7 +37,7 @@
   /**
    * The SqlDatabaseConfig model module.
    * @module model/SqlDatabaseConfig
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

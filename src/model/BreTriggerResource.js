@@ -37,7 +37,7 @@
   /**
    * The BreTriggerResource model module.
    * @module model/BreTriggerResource
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**
@@ -277,7 +277,12 @@
      * value: "group"
      * @const
      */
-    "group": "group"  };
+    "group": "group",
+    /**
+     * value: "access"
+     * @const
+     */
+    "access": "access"  };
 
 
   return exports;

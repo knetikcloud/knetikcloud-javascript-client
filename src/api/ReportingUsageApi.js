@@ -34,7 +34,7 @@
   /**
    * ReportingUsage service.
    * @module api/ReportingUsageApi
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The BundleItem model module.
    * @module model/BundleItem
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

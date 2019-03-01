@@ -34,7 +34,7 @@
   /**
    * Categories service.
    * @module api/CategoriesApi
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**
@@ -267,6 +267,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for categories whose names begin with provided string
      * @param {Boolean} opts.filterActive Filter for categories that are specifically active or inactive
+     * @param {String} opts.filterTemplate Filter for categories with a specific template
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
@@ -282,6 +283,7 @@
       var queryParams = {
         'filter_search': opts['filterSearch'],
         'filter_active': opts['filterActive'],
+        'filter_template': opts['filterTemplate'],
         'size': opts['size'],
         'page': opts['page'],
         'order': opts['order'],
@@ -311,6 +313,7 @@
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for categories whose names begin with provided string
      * @param {Boolean} opts.filterActive Filter for categories that are specifically active or inactive
+     * @param {String} opts.filterTemplate Filter for categories with a specific template
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)

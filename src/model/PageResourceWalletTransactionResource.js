@@ -37,7 +37,7 @@
   /**
    * The PageResourceWalletTransactionResource model module.
    * @module model/PageResourceWalletTransactionResource
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

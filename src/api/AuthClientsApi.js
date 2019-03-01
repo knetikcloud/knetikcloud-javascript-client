@@ -34,7 +34,7 @@
   /**
    * AuthClients service.
    * @module api/AuthClientsApi
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

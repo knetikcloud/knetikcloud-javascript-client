@@ -81,6 +81,16 @@
         done();
       });
     });
+    describe('deleteDatapoint', function() {
+      it('should call deleteDatapoint successfully', function(done) {
+        //uncomment below and update the code to test deleteDatapoint
+        //instance.deleteDatapoint(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteIncident', function() {
       it('should call deleteIncident successfully', function(done) {
         //uncomment below and update the code to test deleteIncident

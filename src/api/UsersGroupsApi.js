@@ -34,7 +34,7 @@
   /**
    * UsersGroups service.
    * @module api/UsersGroupsApi
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**
@@ -1151,7 +1151,7 @@
 
     /**
      * Invite to group
-     * This will create a verification for joining the group which uses the &#39;group_invite&#39; template and sets the additional_property &#39;group&#39; with the unique name
+     * This will create a verification for joining the group which uses the &#39;group_invite&#39; template and sets the additional_property &#39;group&#39; with the unique name&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVITE
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {module:model/VerificationRequest} opts.request The id of the user to invite
@@ -1193,7 +1193,7 @@
 
     /**
      * Invite to group
-     * This will create a verification for joining the group which uses the &#39;group_invite&#39; template and sets the additional_property &#39;group&#39; with the unique name
+     * This will create a verification for joining the group which uses the &#39;group_invite&#39; template and sets the additional_property &#39;group&#39; with the unique name&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVITE
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {module:model/VerificationRequest} opts.request The id of the user to invite

@@ -34,7 +34,7 @@
   /**
    * SocialFacebook service.
    * @module api/SocialFacebookApi
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

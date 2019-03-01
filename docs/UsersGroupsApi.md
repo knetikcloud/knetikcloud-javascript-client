@@ -1095,7 +1095,7 @@ Name | Type | Description  | Notes
 
 Invite to group
 
-This will create a verification for joining the group which uses the &#39;group_invite&#39; template and sets the additional_property &#39;group&#39; with the unique name
+This will create a verification for joining the group which uses the &#39;group_invite&#39; template and sets the additional_property &#39;group&#39; with the unique name&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVITE
 
 ### Example
 ```javascript

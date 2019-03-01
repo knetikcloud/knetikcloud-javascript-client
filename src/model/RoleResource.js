@@ -37,7 +37,7 @@
   /**
    * The RoleResource model module.
    * @module model/RoleResource
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The CouponDefinition model module.
    * @module model/CouponDefinition
-   * @version 3.0.14
+   * @version 3.0.15
    */
 
   /**

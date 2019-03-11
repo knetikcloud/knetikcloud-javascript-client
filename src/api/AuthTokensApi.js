@@ -34,7 +34,7 @@
   /**
    * AuthTokens service.
    * @module api/AuthTokensApi
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

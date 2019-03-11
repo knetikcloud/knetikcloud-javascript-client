@@ -37,7 +37,7 @@
   /**
    * The UserBaseResource model module.
    * @module model/UserBaseResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

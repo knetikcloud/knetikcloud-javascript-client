@@ -37,7 +37,7 @@
   /**
    * The DatePropertyDefinitionResource model module.
    * @module model/DatePropertyDefinitionResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

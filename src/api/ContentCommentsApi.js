@@ -34,7 +34,7 @@
   /**
    * ContentComments service.
    * @module api/ContentCommentsApi
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

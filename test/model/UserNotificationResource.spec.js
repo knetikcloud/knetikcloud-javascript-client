@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property message (base name: "message")', function() {
+      // uncomment below and update the code to test the property message
+      //var instane = new KnetikCloud.UserNotificationResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property notificationId (base name: "notification_id")', function() {
       // uncomment below and update the code to test the property notificationId
       //var instane = new KnetikCloud.UserNotificationResource();

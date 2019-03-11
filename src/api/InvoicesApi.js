@@ -34,7 +34,7 @@
   /**
    * Invoices service.
    * @module api/InvoicesApi
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

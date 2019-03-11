@@ -37,7 +37,7 @@
   /**
    * The CartShippingAddressRequest model module.
    * @module model/CartShippingAddressRequest
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

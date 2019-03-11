@@ -37,7 +37,7 @@
   /**
    * The UserNotificationResource model module.
    * @module model/UserNotificationResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**
@@ -52,6 +52,7 @@
    */
   var exports = function(notificationId, notificationTypeId, recipient, recipientType, userId) {
     var _this = this;
+
 
 
     _this['notification_id'] = notificationId;
@@ -77,6 +78,9 @@
 
       if (data.hasOwnProperty('data')) {
         obj['data'] = ApiClient.convertToType(data['data'], Object);
+      }
+      if (data.hasOwnProperty('message')) {
+        obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('notification_id')) {
         obj['notification_id'] = ApiClient.convertToType(data['notification_id'], 'String');
@@ -125,6 +129,11 @@
    * @member {Object} data
    */
   exports.prototype['data'] = undefined;
+  /**
+   * The resolved message, if template provided in the notification ype
+   * @member {String} message
+   */
+  exports.prototype['message'] = undefined;
   /**
    * The id of the notification
    * @member {String} notification_id

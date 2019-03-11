@@ -37,7 +37,7 @@
   /**
    * The VideoResource model module.
    * @module model/VideoResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

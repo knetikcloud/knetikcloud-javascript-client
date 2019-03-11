@@ -37,7 +37,7 @@
   /**
    * The NotificationResource model module.
    * @module model/NotificationResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**
@@ -50,6 +50,7 @@
    */
   var exports = function(notificationTypeId, recipient, recipientType) {
     var _this = this;
+
 
 
 
@@ -72,6 +73,9 @@
 
       if (data.hasOwnProperty('data')) {
         obj['data'] = ApiClient.convertToType(data['data'], Object);
+      }
+      if (data.hasOwnProperty('message')) {
+        obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }
       if (data.hasOwnProperty('notification_id')) {
         obj['notification_id'] = ApiClient.convertToType(data['notification_id'], 'String');
@@ -111,6 +115,11 @@
    * @member {Object} data
    */
   exports.prototype['data'] = undefined;
+  /**
+   * The resolved message template, if configured on the notification type
+   * @member {String} message
+   */
+  exports.prototype['message'] = undefined;
   /**
    * The id of this individual notification. Default: random
    * @member {String} notification_id

@@ -37,7 +37,7 @@
   /**
    * The LimitedGettable model module.
    * @module model/LimitedGettable
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

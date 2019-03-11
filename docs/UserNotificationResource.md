@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | **Object** | The data to send and fill templates | [optional] 
+**message** | **String** | The resolved message, if template provided in the notification ype | [optional] 
 **notification_id** | **String** | The id of the notification | 
 **notification_type_id** | **String** | The id of the notification type | 
 **recipient** | **String** | The id of the recipient, dependent on the recipient_type. The user&#39;s id or the topic&#39;s id | 

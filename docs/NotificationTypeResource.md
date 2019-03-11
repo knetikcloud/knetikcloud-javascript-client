@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **id** | **String** | The id of the notification type. Default: random | [optional] 
 **name** | **String** | The name of the notification type | 
 **sms_template_id** | **String** | The id of a message template to resolve the SMS message. If null, no sms message wil be sent | [optional] 
+**template_id** | **String** | The id of a message template to resolve the basic message (for user retrieval). If null, message wil be blank | [optional] 
 **updated_date** | **Number** | The date the type was last updated, as a unix timestamp in seconds | [optional] 
 
 

@@ -37,7 +37,7 @@
   /**
    * The GroupMemberResource model module.
    * @module model/GroupMemberResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

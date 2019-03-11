@@ -37,7 +37,7 @@
   /**
    * The ListProperty model module.
    * @module model/ListProperty
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

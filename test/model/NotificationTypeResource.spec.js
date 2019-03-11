@@ -99,6 +99,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property templateId (base name: "template_id")', function() {
+      // uncomment below and update the code to test the property templateId
+      //var instane = new KnetikCloud.NotificationTypeResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property updatedDate (base name: "updated_date")', function() {
       // uncomment below and update the code to test the property updatedDate
       //var instane = new KnetikCloud.NotificationTypeResource();

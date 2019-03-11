@@ -37,7 +37,7 @@
   /**
    * The RevenueCountryReportResource model module.
    * @module model/RevenueCountryReportResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

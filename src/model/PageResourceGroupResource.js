@@ -37,7 +37,7 @@
   /**
    * The PageResourceGroupResource model module.
    * @module model/PageResourceGroupResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

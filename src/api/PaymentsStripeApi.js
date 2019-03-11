@@ -34,7 +34,7 @@
   /**
    * PaymentsStripe service.
    * @module api/PaymentsStripeApi
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

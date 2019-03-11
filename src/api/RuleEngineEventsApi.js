@@ -34,7 +34,7 @@
   /**
    * RuleEngineEvents service.
    * @module api/RuleEngineEventsApi
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

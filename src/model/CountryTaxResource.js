@@ -37,7 +37,7 @@
   /**
    * The CountryTaxResource model module.
    * @module model/CountryTaxResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

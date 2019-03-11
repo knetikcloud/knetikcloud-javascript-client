@@ -37,7 +37,7 @@
   /**
    * The CommentResource model module.
    * @module model/CommentResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**

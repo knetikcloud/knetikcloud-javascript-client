@@ -37,7 +37,7 @@
   /**
    * The NotificationTypeResource model module.
    * @module model/NotificationTypeResource
-   * @version 3.0.15
+   * @version 3.0.16
    */
 
   /**
@@ -55,6 +55,7 @@
 
 
     _this['name'] = name;
+
 
 
   };
@@ -90,6 +91,9 @@
       }
       if (data.hasOwnProperty('sms_template_id')) {
         obj['sms_template_id'] = ApiClient.convertToType(data['sms_template_id'], 'String');
+      }
+      if (data.hasOwnProperty('template_id')) {
+        obj['template_id'] = ApiClient.convertToType(data['template_id'], 'String');
       }
       if (data.hasOwnProperty('updated_date')) {
         obj['updated_date'] = ApiClient.convertToType(data['updated_date'], 'Number');
@@ -147,6 +151,11 @@
    * @member {String} sms_template_id
    */
   exports.prototype['sms_template_id'] = undefined;
+  /**
+   * The id of a message template to resolve the basic message (for user retrieval). If null, message wil be blank
+   * @member {String} template_id
+   */
+  exports.prototype['template_id'] = undefined;
   /**
    * The date the type was last updated, as a unix timestamp in seconds
    * @member {Number} updated_date

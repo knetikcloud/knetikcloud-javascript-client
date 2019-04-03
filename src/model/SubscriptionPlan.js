@@ -37,7 +37,7 @@
   /**
    * The SubscriptionPlan model module.
    * @module model/SubscriptionPlan
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

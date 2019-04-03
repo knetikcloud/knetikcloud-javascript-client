@@ -34,7 +34,7 @@
   /**
    * UsersSubscriptions service.
    * @module api/UsersSubscriptionsApi
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

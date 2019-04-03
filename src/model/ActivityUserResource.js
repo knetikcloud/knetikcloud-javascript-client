@@ -37,7 +37,7 @@
   /**
    * The ActivityUserResource model module.
    * @module model/ActivityUserResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

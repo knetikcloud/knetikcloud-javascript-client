@@ -93,12 +93,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property triggerValue (base name: "trigger_value")', function() {
-      // uncomment below and update the code to test the property triggerValue
-      //var instane = new KnetikCloud.MonitoringIncidentEventResource();
-      //expect(instance).to.be();
-    });
-
   });
 
 }));

@@ -37,7 +37,7 @@
   /**
    * The InvoiceItemResource model module.
    * @module model/InvoiceItemResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -87,6 +89,9 @@
       if (data.hasOwnProperty('discount')) {
         obj['discount'] = Discount.constructFromObject(data['discount']);
       }
+      if (data.hasOwnProperty('gift_target')) {
+        obj['gift_target'] = ApiClient.convertToType(data['gift_target'], 'Number');
+      }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
@@ -98,6 +103,9 @@
       }
       if (data.hasOwnProperty('item_name')) {
         obj['item_name'] = ApiClient.convertToType(data['item_name'], 'String');
+      }
+      if (data.hasOwnProperty('notes')) {
+        obj['notes'] = ApiClient.convertToType(data['notes'], 'String');
       }
       if (data.hasOwnProperty('original_total_price')) {
         obj['original_total_price'] = ApiClient.convertToType(data['original_total_price'], 'Number');
@@ -160,6 +168,10 @@
    */
   exports.prototype['discount'] = undefined;
   /**
+   * @member {Number} gift_target
+   */
+  exports.prototype['gift_target'] = undefined;
+  /**
    * @member {Number} id
    */
   exports.prototype['id'] = undefined;
@@ -175,6 +187,10 @@
    * @member {String} item_name
    */
   exports.prototype['item_name'] = undefined;
+  /**
+   * @member {String} notes
+   */
+  exports.prototype['notes'] = undefined;
   /**
    * @member {Number} original_total_price
    */

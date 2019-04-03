@@ -37,7 +37,7 @@
   /**
    * The UserInventoryResource model module.
    * @module model/UserInventoryResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -95,6 +96,9 @@
       }
       if (data.hasOwnProperty('item_type_hint')) {
         obj['item_type_hint'] = ApiClient.convertToType(data['item_type_hint'], 'String');
+      }
+      if (data.hasOwnProperty('notes')) {
+        obj['notes'] = ApiClient.convertToType(data['notes'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -163,6 +167,11 @@
    * @member {String} item_type_hint
    */
   exports.prototype['item_type_hint'] = undefined;
+  /**
+   * Optional notes about the item
+   * @member {String} notes
+   */
+  exports.prototype['notes'] = undefined;
   /**
    * The status of the inventory. Pending inventory is not yet ready for use. Inactive inventory has expired or been used up
    * @member {module:model/UserInventoryResource.StatusEnum} status

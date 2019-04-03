@@ -34,7 +34,7 @@
   /**
    * Notifications service.
    * @module api/NotificationsApi
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

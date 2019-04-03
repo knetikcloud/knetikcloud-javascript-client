@@ -34,7 +34,7 @@
   /**
    * Verification service.
    * @module api/VerificationApi
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

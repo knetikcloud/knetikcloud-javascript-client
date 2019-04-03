@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/MonitoringAlertResource', 'model/MonitoringIncidentEventResource', 'model/MonitoringIncidentResource', 'model/MonitoringMetricDatapointResource', 'model/MonitoringMetricRecordResource', 'model/MonitoringMetricResource', 'model/PageResourceMonitoringAlertResource', 'model/PageResourceMonitoringIncidentEventResource', 'model/PageResourceMonitoringIncidentResource', 'model/PageResourceMonitoringMetricResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/MonitoringAlertResource', 'model/MonitoringIncidentEventResource', 'model/MonitoringIncidentResource', 'model/MonitoringMetricDatapointResource', 'model/MonitoringMetricResource', 'model/PageResourceMonitoringAlertResource', 'model/PageResourceMonitoringIncidentEventResource', 'model/PageResourceMonitoringIncidentResource', 'model/PageResourceMonitoringMetricResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/MonitoringAlertResource'), require('../model/MonitoringIncidentEventResource'), require('../model/MonitoringIncidentResource'), require('../model/MonitoringMetricDatapointResource'), require('../model/MonitoringMetricRecordResource'), require('../model/MonitoringMetricResource'), require('../model/PageResourceMonitoringAlertResource'), require('../model/PageResourceMonitoringIncidentEventResource'), require('../model/PageResourceMonitoringIncidentResource'), require('../model/PageResourceMonitoringMetricResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/MonitoringAlertResource'), require('../model/MonitoringIncidentEventResource'), require('../model/MonitoringIncidentResource'), require('../model/MonitoringMetricDatapointResource'), require('../model/MonitoringMetricResource'), require('../model/PageResourceMonitoringAlertResource'), require('../model/PageResourceMonitoringIncidentEventResource'), require('../model/PageResourceMonitoringIncidentResource'), require('../model/PageResourceMonitoringMetricResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.MonitoringApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.MonitoringAlertResource, root.KnetikCloud.MonitoringIncidentEventResource, root.KnetikCloud.MonitoringIncidentResource, root.KnetikCloud.MonitoringMetricDatapointResource, root.KnetikCloud.MonitoringMetricRecordResource, root.KnetikCloud.MonitoringMetricResource, root.KnetikCloud.PageResourceMonitoringAlertResource, root.KnetikCloud.PageResourceMonitoringIncidentEventResource, root.KnetikCloud.PageResourceMonitoringIncidentResource, root.KnetikCloud.PageResourceMonitoringMetricResource, root.KnetikCloud.Result);
+    root.KnetikCloud.MonitoringApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.MonitoringAlertResource, root.KnetikCloud.MonitoringIncidentEventResource, root.KnetikCloud.MonitoringIncidentResource, root.KnetikCloud.MonitoringMetricDatapointResource, root.KnetikCloud.MonitoringMetricResource, root.KnetikCloud.PageResourceMonitoringAlertResource, root.KnetikCloud.PageResourceMonitoringIncidentEventResource, root.KnetikCloud.PageResourceMonitoringIncidentResource, root.KnetikCloud.PageResourceMonitoringMetricResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, MonitoringAlertResource, MonitoringIncidentEventResource, MonitoringIncidentResource, MonitoringMetricDatapointResource, MonitoringMetricRecordResource, MonitoringMetricResource, PageResourceMonitoringAlertResource, PageResourceMonitoringIncidentEventResource, PageResourceMonitoringIncidentResource, PageResourceMonitoringMetricResource, Result) {
+}(this, function(ApiClient, MonitoringAlertResource, MonitoringIncidentEventResource, MonitoringIncidentResource, MonitoringMetricDatapointResource, MonitoringMetricResource, PageResourceMonitoringAlertResource, PageResourceMonitoringIncidentEventResource, PageResourceMonitoringIncidentResource, PageResourceMonitoringMetricResource, Result) {
   'use strict';
 
   /**
    * Monitoring service.
    * @module api/MonitoringApi
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**
@@ -914,122 +914,6 @@
      */
     this.receiveEvent = function(opts) {
       return this.receiveEventWithHttpInfo(opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Start recording a metric
-     * Only works with delta and timer metrics. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD
-     * @param {String} id The metric id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/MonitoringMetricRecordResource} opts.metricRecord The metric record
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.startRecordMetricWithHttpInfo = function(id, opts) {
-      opts = opts || {};
-      var postBody = opts['metricRecord'];
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling startRecordMetric");
-      }
-
-
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/monitoring/metrics/{id}/start', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Start recording a metric
-     * Only works with delta and timer metrics. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD
-     * @param {String} id The metric id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/MonitoringMetricRecordResource} opts.metricRecord The metric record
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.startRecordMetric = function(id, opts) {
-      return this.startRecordMetricWithHttpInfo(id, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Stop recording a metric
-     * Only works with delta and timer metrics. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD
-     * @param {String} id The metric id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/MonitoringMetricRecordResource} opts.metricRecord The metric record
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    this.stopRecordMetricWithHttpInfo = function(id, opts) {
-      opts = opts || {};
-      var postBody = opts['metricRecord'];
-
-      // verify the required parameter 'id' is set
-      if (id === undefined || id === null) {
-        throw new Error("Missing the required parameter 'id' when calling stopRecordMetric");
-      }
-
-
-      var pathParams = {
-        'id': id
-      };
-      var queryParams = {
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = null;
-
-      return this.apiClient.callApi(
-        '/monitoring/metrics/{id}/stop', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Stop recording a metric
-     * Only works with delta and timer metrics. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD
-     * @param {String} id The metric id
-     * @param {Object} opts Optional parameters
-     * @param {module:model/MonitoringMetricRecordResource} opts.metricRecord The metric record
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    this.stopRecordMetric = function(id, opts) {
-      return this.stopRecordMetricWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

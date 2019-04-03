@@ -37,7 +37,7 @@
   /**
    * The CartItemRequest model module.
    * @module model/CartItemRequest
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**
@@ -52,6 +52,8 @@
 
 
     _this['catalog_sku'] = catalogSku;
+
+
 
     _this['quantity'] = quantity;
   };
@@ -72,6 +74,12 @@
       }
       if (data.hasOwnProperty('catalog_sku')) {
         obj['catalog_sku'] = ApiClient.convertToType(data['catalog_sku'], 'String');
+      }
+      if (data.hasOwnProperty('gift_target')) {
+        obj['gift_target'] = ApiClient.convertToType(data['gift_target'], 'Number');
+      }
+      if (data.hasOwnProperty('notes')) {
+        obj['notes'] = ApiClient.convertToType(data['notes'], 'String');
       }
       if (data.hasOwnProperty('price_override')) {
         obj['price_override'] = ApiClient.convertToType(data['price_override'], 'Number');
@@ -107,6 +115,16 @@
    * @member {String} catalog_sku
    */
   exports.prototype['catalog_sku'] = undefined;
+  /**
+   * The id of a user that this is being gifted to
+   * @member {Number} gift_target
+   */
+  exports.prototype['gift_target'] = undefined;
+  /**
+   * Notes about this item purchase
+   * @member {String} notes
+   */
+  exports.prototype['notes'] = undefined;
   /**
    * Override the price of an item, if the behavior configuration permits it. Do not send if taking standard pricing. Minimum 0
    * @member {Number} price_override

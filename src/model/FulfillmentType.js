@@ -37,7 +37,7 @@
   /**
    * The FulfillmentType model module.
    * @module model/FulfillmentType
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

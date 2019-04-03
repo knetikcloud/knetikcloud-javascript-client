@@ -105,6 +105,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property notes (base name: "notes")', function() {
+      // uncomment below and update the code to test the property notes
+      //var instane = new KnetikCloud.UserInventoryResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instane = new KnetikCloud.UserInventoryResource();

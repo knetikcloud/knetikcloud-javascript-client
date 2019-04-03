@@ -37,7 +37,7 @@
   /**
    * The PageResourceVideoRelationshipResource model module.
    * @module model/PageResourceVideoRelationshipResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

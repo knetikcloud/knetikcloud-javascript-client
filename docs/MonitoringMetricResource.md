@@ -16,11 +16,7 @@ Name | Type | Description | Notes
 
 * `counter` (value: `"counter"`)
 
-* `delta` (value: `"delta"`)
-
 * `gauge` (value: `"gauge"`)
-
-* `timer` (value: `"timer"`)
 
 
 

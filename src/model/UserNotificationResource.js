@@ -37,7 +37,7 @@
   /**
    * The UserNotificationResource model module.
    * @module model/UserNotificationResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

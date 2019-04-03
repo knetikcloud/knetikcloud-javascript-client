@@ -37,7 +37,7 @@
   /**
    * The PageResourceRoleResource model module.
    * @module model/PageResourceRoleResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

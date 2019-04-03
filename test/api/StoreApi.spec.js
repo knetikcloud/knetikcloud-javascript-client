@@ -151,6 +151,16 @@
         done();
       });
     });
+    describe('quickPaid', function() {
+      it('should call quickPaid successfully', function(done) {
+        //uncomment below and update the code to test quickPaid
+        //instance.quickPaid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateItemTemplate', function() {
       it('should call updateItemTemplate successfully', function(done) {
         //uncomment below and update the code to test updateItemTemplate

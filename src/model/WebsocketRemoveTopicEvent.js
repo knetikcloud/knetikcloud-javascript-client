@@ -37,7 +37,7 @@
   /**
    * The WebsocketRemoveTopicEvent model module.
    * @module model/WebsocketRemoveTopicEvent
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

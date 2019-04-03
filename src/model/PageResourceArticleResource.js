@@ -37,7 +37,7 @@
   /**
    * The PageResourceArticleResource model module.
    * @module model/PageResourceArticleResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

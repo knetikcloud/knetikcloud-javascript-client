@@ -37,7 +37,7 @@
   /**
    * The VerificationRequest model module.
    * @module model/VerificationRequest
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

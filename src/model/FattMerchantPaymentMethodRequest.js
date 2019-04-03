@@ -37,7 +37,7 @@
   /**
    * The FattMerchantPaymentMethodRequest model module.
    * @module model/FattMerchantPaymentMethodRequest
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

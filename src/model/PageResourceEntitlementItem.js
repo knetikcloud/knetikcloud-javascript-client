@@ -37,7 +37,7 @@
   /**
    * The PageResourceEntitlementItem model module.
    * @module model/PageResourceEntitlementItem
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

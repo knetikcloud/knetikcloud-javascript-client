@@ -37,7 +37,7 @@
   /**
    * The EntitlementGrantRequest model module.
    * @module model/EntitlementGrantRequest
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The Participant model module.
    * @module model/Participant
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

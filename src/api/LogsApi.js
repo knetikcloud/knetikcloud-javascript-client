@@ -34,7 +34,7 @@
   /**
    * Logs service.
    * @module api/LogsApi
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

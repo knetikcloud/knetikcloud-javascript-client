@@ -69,6 +69,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property giftTarget (base name: "gift_target")', function() {
+      // uncomment below and update the code to test the property giftTarget
+      //var instane = new KnetikCloud.CartItemRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property notes (base name: "notes")', function() {
+      // uncomment below and update the code to test the property notes
+      //var instane = new KnetikCloud.CartItemRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property priceOverride (base name: "price_override")', function() {
       // uncomment below and update the code to test the property priceOverride
       //var instane = new KnetikCloud.CartItemRequest();

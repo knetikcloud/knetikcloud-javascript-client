@@ -37,7 +37,7 @@
   /**
    * The MonitoringMetricResource model module.
    * @module model/MonitoringMetricResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**
@@ -140,20 +140,10 @@
      */
     "counter": "counter",
     /**
-     * value: "delta"
-     * @const
-     */
-    "delta": "delta",
-    /**
      * value: "gauge"
      * @const
      */
-    "gauge": "gauge",
-    /**
-     * value: "timer"
-     * @const
-     */
-    "timer": "timer"  };
+    "gauge": "gauge"  };
 
 
   return exports;

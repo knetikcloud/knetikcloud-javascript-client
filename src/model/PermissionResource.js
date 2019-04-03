@@ -37,7 +37,7 @@
   /**
    * The PermissionResource model module.
    * @module model/PermissionResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

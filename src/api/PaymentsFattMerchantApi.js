@@ -34,7 +34,7 @@
   /**
    * PaymentsFattMerchant service.
    * @module api/PaymentsFattMerchantApi
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

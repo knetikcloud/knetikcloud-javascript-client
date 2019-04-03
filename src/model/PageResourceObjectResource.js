@@ -37,7 +37,7 @@
   /**
    * The PageResourceObjectResource model module.
    * @module model/PageResourceObjectResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

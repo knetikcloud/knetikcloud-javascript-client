@@ -37,7 +37,7 @@
   /**
    * The GroupResource model module.
    * @module model/GroupResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The CartLineItem model module.
    * @module model/CartLineItem
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -88,11 +90,17 @@
       if (data.hasOwnProperty('discount')) {
         obj['discount'] = Discount.constructFromObject(data['discount']);
       }
+      if (data.hasOwnProperty('gift_target')) {
+        obj['gift_target'] = ApiClient.convertToType(data['gift_target'], 'Number');
+      }
       if (data.hasOwnProperty('line_total')) {
         obj['line_total'] = ApiClient.convertToType(data['line_total'], 'Number');
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('notes')) {
+        obj['notes'] = ApiClient.convertToType(data['notes'], 'String');
       }
       if (data.hasOwnProperty('original_line_total')) {
         obj['original_line_total'] = ApiClient.convertToType(data['original_line_total'], 'Number');
@@ -164,6 +172,10 @@
    */
   exports.prototype['discount'] = undefined;
   /**
+   * @member {Number} gift_target
+   */
+  exports.prototype['gift_target'] = undefined;
+  /**
    * @member {Number} line_total
    */
   exports.prototype['line_total'] = undefined;
@@ -171,6 +183,10 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * @member {String} notes
+   */
+  exports.prototype['notes'] = undefined;
   /**
    * @member {Number} original_line_total
    */

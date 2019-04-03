@@ -20,8 +20,6 @@ Method | HTTP request | Description
 [**postBatch**](MonitoringApi.md#postBatch) | **POST** /monitoring/metrics/datapoints | Post a metric datapoint batch
 [**postDatapoint**](MonitoringApi.md#postDatapoint) | **POST** /monitoring/metrics/{id}/datapoints | Post a metric datapoint
 [**receiveEvent**](MonitoringApi.md#receiveEvent) | **POST** /monitoring/incidents | Report an incident event
-[**startRecordMetric**](MonitoringApi.md#startRecordMetric) | **POST** /monitoring/metrics/{id}/start | Start recording a metric
-[**stopRecordMetric**](MonitoringApi.md#stopRecordMetric) | **POST** /monitoring/metrics/{id}/stop | Stop recording a metric
 [**updateAlert**](MonitoringApi.md#updateAlert) | **PUT** /monitoring/alerts/{id} | Update an existing alert
 [**updateMetric**](MonitoringApi.md#updateMetric) | **PUT** /monitoring/metrics/{id} | Update an existing metric
 
@@ -883,118 +881,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MonitoringIncidentResource**](MonitoringIncidentResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="startRecordMetric"></a>
-# **startRecordMetric**
-> startRecordMetric(id, opts)
-
-Start recording a metric
-
-Only works with delta and timer metrics. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.MonitoringApi();
-
-var id = "id_example"; // String | The metric id
-
-var opts = { 
-  'metricRecord': new KnetikCloud.MonitoringMetricRecordResource() // MonitoringMetricRecordResource | The metric record
-};
-apiInstance.startRecordMetric(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The metric id | 
- **metricRecord** | [**MonitoringMetricRecordResource**](MonitoringMetricRecordResource.md)| The metric record | [optional] 
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="stopRecordMetric"></a>
-# **stopRecordMetric**
-> stopRecordMetric(id, opts)
-
-Stop recording a metric
-
-Only works with delta and timer metrics. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; RECORD
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.MonitoringApi();
-
-var id = "id_example"; // String | The metric id
-
-var opts = { 
-  'metricRecord': new KnetikCloud.MonitoringMetricRecordResource() // MonitoringMetricRecordResource | The metric record
-};
-apiInstance.stopRecordMetric(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| The metric id | 
- **metricRecord** | [**MonitoringMetricRecordResource**](MonitoringMetricRecordResource.md)| The metric record | [optional] 
-
-### Return type
-
-null (empty response body)
 
 ### Authorization
 

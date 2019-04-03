@@ -37,7 +37,7 @@
   /**
    * The TextProperty model module.
    * @module model/TextProperty
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The OperationResource model module.
    * @module model/OperationResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

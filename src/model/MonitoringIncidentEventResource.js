@@ -37,7 +37,7 @@
   /**
    * The MonitoringIncidentEventResource model module.
    * @module model/MonitoringIncidentEventResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**
@@ -57,7 +57,6 @@
 
     _this['level_name'] = levelName;
     _this['status'] = status;
-
   };
 
   /**
@@ -88,9 +87,6 @@
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
-      }
-      if (data.hasOwnProperty('trigger_value')) {
-        obj['trigger_value'] = ApiClient.convertToType(data['trigger_value'], 'String');
       }
     }
     return obj;
@@ -140,11 +136,6 @@
    * @member {module:model/MonitoringIncidentEventResource.StatusEnum} status
    */
   exports.prototype['status'] = undefined;
-  /**
-   * The value that triggered the alarm
-   * @member {String} trigger_value
-   */
-  exports.prototype['trigger_value'] = undefined;
 
 
   /**

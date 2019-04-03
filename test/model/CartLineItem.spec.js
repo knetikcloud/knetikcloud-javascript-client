@@ -75,6 +75,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property giftTarget (base name: "gift_target")', function() {
+      // uncomment below and update the code to test the property giftTarget
+      //var instane = new KnetikCloud.CartLineItem();
+      //expect(instance).to.be();
+    });
+
     it('should have the property lineTotal (base name: "line_total")', function() {
       // uncomment below and update the code to test the property lineTotal
       //var instane = new KnetikCloud.CartLineItem();
@@ -83,6 +89,12 @@
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
+      //var instane = new KnetikCloud.CartLineItem();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property notes (base name: "notes")', function() {
+      // uncomment below and update the code to test the property notes
       //var instane = new KnetikCloud.CartLineItem();
       //expect(instance).to.be();
     });

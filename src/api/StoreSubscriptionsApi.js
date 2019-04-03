@@ -34,7 +34,7 @@
   /**
    * StoreSubscriptions service.
    * @module api/StoreSubscriptionsApi
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**

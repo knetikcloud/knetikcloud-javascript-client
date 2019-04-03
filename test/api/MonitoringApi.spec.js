@@ -211,26 +211,6 @@
         done();
       });
     });
-    describe('startRecordMetric', function() {
-      it('should call startRecordMetric successfully', function(done) {
-        //uncomment below and update the code to test startRecordMetric
-        //instance.startRecordMetric(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('stopRecordMetric', function() {
-      it('should call stopRecordMetric successfully', function(done) {
-        //uncomment below and update the code to test stopRecordMetric
-        //instance.stopRecordMetric(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('updateAlert', function() {
       it('should call updateAlert successfully', function(done) {
         //uncomment below and update the code to test updateAlert

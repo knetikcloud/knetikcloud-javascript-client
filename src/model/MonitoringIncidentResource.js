@@ -37,7 +37,7 @@
   /**
    * The MonitoringIncidentResource model module.
    * @module model/MonitoringIncidentResource
-   * @version 3.0.17
+   * @version 3.0.18
    */
 
   /**
@@ -48,9 +48,8 @@
    * @param currentLevel {String} The name of the current alert level
    * @param id {String} The id of the incident. Cannot be changed
    * @param levels {Array.<module:model/MonitoringIncidentLevelResource>} The statuses of each level
-   * @param triggerValue {String} The value that triggered the incident
    */
-  var exports = function(alert, currentLevel, id, levels, triggerValue) {
+  var exports = function(alert, currentLevel, id, levels) {
     var _this = this;
 
     _this['alert'] = alert;
@@ -60,7 +59,6 @@
 
     _this['levels'] = levels;
 
-    _this['trigger_value'] = triggerValue;
   };
 
   /**
@@ -94,9 +92,6 @@
       }
       if (data.hasOwnProperty('start_date')) {
         obj['start_date'] = ApiClient.convertToType(data['start_date'], 'Number');
-      }
-      if (data.hasOwnProperty('trigger_value')) {
-        obj['trigger_value'] = ApiClient.convertToType(data['trigger_value'], 'String');
       }
     }
     return obj;
@@ -151,11 +146,6 @@
    * @member {Number} start_date
    */
   exports.prototype['start_date'] = undefined;
-  /**
-   * The value that triggered the incident
-   * @member {String} trigger_value
-   */
-  exports.prototype['trigger_value'] = undefined;
 
 
 

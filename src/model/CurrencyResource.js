@@ -37,7 +37,7 @@
   /**
    * The CurrencyResource model module.
    * @module model/CurrencyResource
-   * @version 3.0.16
+   * @version 3.0.17
    */
 
   /**

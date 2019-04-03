@@ -37,7 +37,7 @@
   /**
    * The QuestionTemplateResource model module.
    * @module model/QuestionTemplateResource
-   * @version 3.0.16
+   * @version 3.0.17
    */
 
   /**

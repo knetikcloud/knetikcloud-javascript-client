@@ -37,7 +37,7 @@
   /**
    * The PatchActionResource model module.
    * @module model/PatchActionResource
-   * @version 3.0.16
+   * @version 3.0.17
    */
 
   /**

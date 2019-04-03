@@ -37,7 +37,7 @@
   /**
    * The MessageContentResource model module.
    * @module model/MessageContentResource
-   * @version 3.0.16
+   * @version 3.0.17
    */
 
   /**

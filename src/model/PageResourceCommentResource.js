@@ -37,7 +37,7 @@
   /**
    * The PageResourceCommentResource model module.
    * @module model/PageResourceCommentResource
-   * @version 3.0.16
+   * @version 3.0.17
    */
 
   /**

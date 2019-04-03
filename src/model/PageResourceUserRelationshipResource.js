@@ -37,7 +37,7 @@
   /**
    * The PageResourceUserRelationshipResource model module.
    * @module model/PageResourceUserRelationshipResource
-   * @version 3.0.16
+   * @version 3.0.17
    */
 
   /**

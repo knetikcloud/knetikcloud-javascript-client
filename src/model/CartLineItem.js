@@ -37,7 +37,7 @@
   /**
    * The CartLineItem model module.
    * @module model/CartLineItem
-   * @version 3.0.16
+   * @version 3.0.17
    */
 
   /**

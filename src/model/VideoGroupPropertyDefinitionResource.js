@@ -37,7 +37,7 @@
   /**
    * The VideoGroupPropertyDefinitionResource model module.
    * @module model/VideoGroupPropertyDefinitionResource
-   * @version 3.0.16
+   * @version 3.0.17
    */
 
   /**

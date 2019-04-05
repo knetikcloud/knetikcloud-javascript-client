@@ -37,7 +37,7 @@
   /**
    * The PageResourcePropertyFieldListResource model module.
    * @module model/PageResourcePropertyFieldListResource
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

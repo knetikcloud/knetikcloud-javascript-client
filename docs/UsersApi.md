@@ -772,7 +772,7 @@ null (empty response body)
 
 Set a user&#39;s password
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. If not USERS_ADMIN, the correct current password must be supplied as wellPUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
 
 ### Example
 ```javascript
@@ -792,7 +792,7 @@ var apiInstance = new KnetikCloud.UsersApi();
 var id = 56; // Number | The id of the user
 
 var opts = { 
-  'password': new KnetikCloud.StringWrapper() // StringWrapper | The new plain text password
+  'passwordRequest': new KnetikCloud.PasswordChangeRequest() // PasswordChangeRequest | request body for password change
 };
 apiInstance.setPassword(id, opts).then(function() {
   console.log('API called successfully.');
@@ -807,7 +807,7 @@ apiInstance.setPassword(id, opts).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| The id of the user | 
- **password** | [**StringWrapper**](StringWrapper.md)| The new plain text password | [optional] 
+ **passwordRequest** | [**PasswordChangeRequest**](PasswordChangeRequest.md)| request body for password change | [optional] 
 
 ### Return type
 

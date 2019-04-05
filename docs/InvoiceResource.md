@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**additional_properties** | [**{String: Property}**](Property.md) | A map of additional properties, keyed on the property name (private). Must match the names and types defined in the template for this invoice type, or be an extra not from the template | [optional] 
 **billing_address1** | **String** | Line one of the customer&#39;s billing address | [optional] 
 **billing_address2** | **String** | Line two of the customer&#39;s billing address | [optional] 
 **billing_city_name** | **String** | The city for the customer&#39;s billing address | [optional] 
@@ -41,6 +42,7 @@ Name | Type | Description | Notes
 **sort** | **Number** | A number to use in sorting items. default 500. | [optional] 
 **state_tax** | **Number** | The amount of state tax added | [optional] 
 **subtotal** | **Number** | The sum price of all items before shipping, coupons and tax | [optional] 
+**template** | **String** | An invoice template this invoice is validated against (private). May be null and no validation of properties will be done | [optional] 
 **updated_date** | **Number** | The date the invoice was last updated, unix timestamp in seconds | [optional] 
 **user** | [**SimpleUserResource**](SimpleUserResource.md) | The owner of the invoice | [optional] 
 **vendor_id** | **Number** | The id of the vendor | [optional] 

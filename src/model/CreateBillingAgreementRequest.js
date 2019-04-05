@@ -37,7 +37,7 @@
   /**
    * The CreateBillingAgreementRequest model module.
    * @module model/CreateBillingAgreementRequest
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

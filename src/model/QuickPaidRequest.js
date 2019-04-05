@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/Property'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./Property'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.QuickPaidRequest = factory(root.KnetikCloud.ApiClient);
+    root.KnetikCloud.QuickPaidRequest = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.Property);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, Property) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The QuickPaidRequest model module.
    * @module model/QuickPaidRequest
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**
@@ -52,11 +52,13 @@
   var exports = function(giftTarget, paidAmount, sku, transactionType) {
     var _this = this;
 
+
     _this['gift_target'] = giftTarget;
 
     _this['paid_amount'] = paidAmount;
 
     _this['sku'] = sku;
+
 
     _this['transaction_type'] = transactionType;
 
@@ -73,6 +75,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('additional_properties')) {
+        obj['additional_properties'] = ApiClient.convertToType(data['additional_properties'], {'String': Property});
+      }
       if (data.hasOwnProperty('gift_target')) {
         obj['gift_target'] = ApiClient.convertToType(data['gift_target'], 'Number');
       }
@@ -87,6 +92,9 @@
       }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
+      }
+      if (data.hasOwnProperty('template')) {
+        obj['template'] = ApiClient.convertToType(data['template'], 'String');
       }
       if (data.hasOwnProperty('transaction_details')) {
         obj['transaction_details'] = ApiClient.convertToType(data['transaction_details'], 'String');
@@ -116,6 +124,11 @@
 
 
   /**
+   * A map of additional properties, keyed on the property name (private). Must match the names and types defined in the template for this invoice type, or be an extra not from the template
+   * @member {Object.<String, module:model/Property>} additional_properties
+   */
+  exports.prototype['additional_properties'] = undefined;
+  /**
    * An optional target user to give the item to as a gift
    * @member {Number} gift_target
    */
@@ -140,6 +153,11 @@
    * @member {String} sku
    */
   exports.prototype['sku'] = undefined;
+  /**
+   * An invoice template this invoice is validated against (private). May be null and no validation of properties will be done
+   * @member {String} template
+   */
+  exports.prototype['template'] = undefined;
   /**
    * Transaction details
    * @member {String} transaction_details

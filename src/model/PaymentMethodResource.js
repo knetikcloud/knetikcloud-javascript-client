@@ -37,7 +37,7 @@
   /**
    * The PaymentMethodResource model module.
    * @module model/PaymentMethodResource
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

@@ -34,7 +34,7 @@
   /**
    * UsersRelationships service.
    * @module api/UsersRelationshipsApi
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

@@ -57,6 +57,12 @@
       //expect(instance).to.be.a(KnetikCloud.QuickPaidRequest);
     });
 
+    it('should have the property additionalProperties (base name: "additional_properties")', function() {
+      // uncomment below and update the code to test the property additionalProperties
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property giftTarget (base name: "gift_target")', function() {
       // uncomment below and update the code to test the property giftTarget
       //var instane = new KnetikCloud.QuickPaidRequest();
@@ -83,6 +89,12 @@
 
     it('should have the property sku (base name: "sku")', function() {
       // uncomment below and update the code to test the property sku
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property template (base name: "template")', function() {
+      // uncomment below and update the code to test the property template
       //var instane = new KnetikCloud.QuickPaidRequest();
       //expect(instance).to.be();
     });

@@ -57,6 +57,12 @@
       //expect(instance).to.be.a(KnetikCloud.InvoiceResource);
     });
 
+    it('should have the property additionalProperties (base name: "additional_properties")', function() {
+      // uncomment below and update the code to test the property additionalProperties
+      //var instane = new KnetikCloud.InvoiceResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property billingAddress1 (base name: "billing_address1")', function() {
       // uncomment below and update the code to test the property billingAddress1
       //var instane = new KnetikCloud.InvoiceResource();
@@ -281,6 +287,12 @@
 
     it('should have the property subtotal (base name: "subtotal")', function() {
       // uncomment below and update the code to test the property subtotal
+      //var instane = new KnetikCloud.InvoiceResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property template (base name: "template")', function() {
+      // uncomment below and update the code to test the property template
       //var instane = new KnetikCloud.InvoiceResource();
       //expect(instance).to.be();
     });

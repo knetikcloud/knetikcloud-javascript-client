@@ -37,7 +37,7 @@
   /**
    * The ShippingItem model module.
    * @module model/ShippingItem
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

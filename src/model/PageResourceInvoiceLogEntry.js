@@ -37,7 +37,7 @@
   /**
    * The PageResourceInvoiceLogEntry model module.
    * @module model/PageResourceInvoiceLogEntry
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

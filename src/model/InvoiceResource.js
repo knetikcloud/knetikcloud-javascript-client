@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InvoiceItemResource', 'model/SimpleUserResource'], factory);
+    define(['ApiClient', 'model/InvoiceItemResource', 'model/Property', 'model/SimpleUserResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InvoiceItemResource'), require('./SimpleUserResource'));
+    module.exports = factory(require('../ApiClient'), require('./InvoiceItemResource'), require('./Property'), require('./SimpleUserResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.InvoiceResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.InvoiceItemResource, root.KnetikCloud.SimpleUserResource);
+    root.KnetikCloud.InvoiceResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.InvoiceItemResource, root.KnetikCloud.Property, root.KnetikCloud.SimpleUserResource);
   }
-}(this, function(ApiClient, InvoiceItemResource, SimpleUserResource) {
+}(this, function(ApiClient, InvoiceItemResource, Property, SimpleUserResource) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The InvoiceResource model module.
    * @module model/InvoiceResource
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**
@@ -47,6 +47,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -103,6 +105,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('additional_properties')) {
+        obj['additional_properties'] = ApiClient.convertToType(data['additional_properties'], {'String': Property});
+      }
       if (data.hasOwnProperty('billing_address1')) {
         obj['billing_address1'] = ApiClient.convertToType(data['billing_address1'], 'String');
       }
@@ -217,6 +222,9 @@
       if (data.hasOwnProperty('subtotal')) {
         obj['subtotal'] = ApiClient.convertToType(data['subtotal'], 'Number');
       }
+      if (data.hasOwnProperty('template')) {
+        obj['template'] = ApiClient.convertToType(data['template'], 'String');
+      }
       if (data.hasOwnProperty('updated_date')) {
         obj['updated_date'] = ApiClient.convertToType(data['updated_date'], 'Number');
       }
@@ -247,6 +255,11 @@
   var discriminatorValue = 'InvoiceResource';
 
 
+  /**
+   * A map of additional properties, keyed on the property name (private). Must match the names and types defined in the template for this invoice type, or be an extra not from the template
+   * @member {Object.<String, module:model/Property>} additional_properties
+   */
+  exports.prototype['additional_properties'] = undefined;
   /**
    * Line one of the customer's billing address
    * @member {String} billing_address1
@@ -437,6 +450,11 @@
    * @member {Number} subtotal
    */
   exports.prototype['subtotal'] = undefined;
+  /**
+   * An invoice template this invoice is validated against (private). May be null and no validation of properties will be done
+   * @member {String} template
+   */
+  exports.prototype['template'] = undefined;
   /**
    * The date the invoice was last updated, unix timestamp in seconds
    * @member {Number} updated_date

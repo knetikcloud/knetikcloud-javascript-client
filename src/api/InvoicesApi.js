@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddressResource', 'model/InvoiceCreateRequest', 'model/InvoicePaymentStatusRequest', 'model/InvoiceResource', 'model/PageResourceInvoiceLogEntry', 'model/PageResourceInvoiceResource', 'model/PageResourcestring', 'model/PayBySavedMethodRequest', 'model/Result', 'model/StringWrapper'], factory);
+    define(['ApiClient', 'model/AddressResource', 'model/InvoiceCreateRequest', 'model/InvoicePaymentStatusRequest', 'model/InvoiceResource', 'model/PageResourceInvoiceLogEntry', 'model/PageResourceInvoiceResource', 'model/PageResourceTemplateResource', 'model/PageResourcestring', 'model/PatchResource', 'model/PayBySavedMethodRequest', 'model/Result', 'model/StringWrapper', 'model/TemplateResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/AddressResource'), require('../model/InvoiceCreateRequest'), require('../model/InvoicePaymentStatusRequest'), require('../model/InvoiceResource'), require('../model/PageResourceInvoiceLogEntry'), require('../model/PageResourceInvoiceResource'), require('../model/PageResourcestring'), require('../model/PayBySavedMethodRequest'), require('../model/Result'), require('../model/StringWrapper'));
+    module.exports = factory(require('../ApiClient'), require('../model/AddressResource'), require('../model/InvoiceCreateRequest'), require('../model/InvoicePaymentStatusRequest'), require('../model/InvoiceResource'), require('../model/PageResourceInvoiceLogEntry'), require('../model/PageResourceInvoiceResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourcestring'), require('../model/PatchResource'), require('../model/PayBySavedMethodRequest'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.InvoicesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AddressResource, root.KnetikCloud.InvoiceCreateRequest, root.KnetikCloud.InvoicePaymentStatusRequest, root.KnetikCloud.InvoiceResource, root.KnetikCloud.PageResourceInvoiceLogEntry, root.KnetikCloud.PageResourceInvoiceResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PayBySavedMethodRequest, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper);
+    root.KnetikCloud.InvoicesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.AddressResource, root.KnetikCloud.InvoiceCreateRequest, root.KnetikCloud.InvoicePaymentStatusRequest, root.KnetikCloud.InvoiceResource, root.KnetikCloud.PageResourceInvoiceLogEntry, root.KnetikCloud.PageResourceInvoiceResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PatchResource, root.KnetikCloud.PayBySavedMethodRequest, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource);
   }
-}(this, function(ApiClient, AddressResource, InvoiceCreateRequest, InvoicePaymentStatusRequest, InvoiceResource, PageResourceInvoiceLogEntry, PageResourceInvoiceResource, PageResourcestring, PayBySavedMethodRequest, Result, StringWrapper) {
+}(this, function(ApiClient, AddressResource, InvoiceCreateRequest, InvoicePaymentStatusRequest, InvoiceResource, PageResourceInvoiceLogEntry, PageResourceInvoiceResource, PageResourceTemplateResource, PageResourcestring, PatchResource, PayBySavedMethodRequest, Result, StringWrapper, TemplateResource) {
   'use strict';
 
   /**
    * Invoices service.
    * @module api/InvoicesApi
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**
@@ -93,6 +93,115 @@
      */
     this.createInvoice = function(opts) {
       return this.createInvoiceWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create a invoice template
+     * Invoice templates define a type of invoice and the properties they have.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateResource} opts.invoiceTemplateResource The invoice template resource object
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
+     */
+    this.createInvoiceTemplateWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = opts['invoiceTemplateResource'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TemplateResource;
+
+      return this.apiClient.callApi(
+        '/invoices/templates', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Create a invoice template
+     * Invoice templates define a type of invoice and the properties they have.
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateResource} opts.invoiceTemplateResource The invoice template resource object
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
+     */
+    this.createInvoiceTemplate = function(opts) {
+      return this.createInvoiceTemplateWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a invoice template
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.
+     * @param {String} id The id of the template
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.cascade The value needed to delete used templates
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteInvoiceTemplateWithHttpInfo = function(id, opts) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteInvoiceTemplate");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+        'cascade': opts['cascade'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/invoices/templates/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Delete a invoice template
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects.
+     * @param {String} id The id of the template
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.cascade The value needed to delete used templates
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.deleteInvoiceTemplate = function(id, opts) {
+      return this.deleteInvoiceTemplateWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -262,6 +371,112 @@
      */
     this.getInvoiceLogs = function(id, opts) {
       return this.getInvoiceLogsWithHttpInfo(id, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get a single invoice template
+     * @param {String} id The id of the template
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
+     */
+    this.getInvoiceTemplateWithHttpInfo = function(id) {
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getInvoiceTemplate");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = TemplateResource;
+
+      return this.apiClient.callApi(
+        '/invoices/templates/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get a single invoice template
+     * @param {String} id The id of the template
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
+     */
+    this.getInvoiceTemplate = function(id) {
+      return this.getInvoiceTemplateWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List and search invoice templates
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceTemplateResource} and HTTP response
+     */
+    this.getInvoiceTemplatesWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
+        'order': opts['order'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = PageResourceTemplateResource;
+
+      return this.apiClient.callApi(
+        '/invoices/templates', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * List and search invoice templates
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceTemplateResource}
+     */
+    this.getInvoiceTemplates = function(opts) {
+      return this.getInvoiceTemplatesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -849,6 +1064,65 @@
      */
     this.updateBillingInfo = function(id, opts) {
       return this.updateBillingInfoWithHttpInfo(id, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a invoice template
+     * @param {String} id The id of the template
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
+     */
+    this.updateInvoiceTemplateWithHttpInfo = function(id, opts) {
+      opts = opts || {};
+      var postBody = opts['templatePatchResource'];
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateInvoiceTemplate");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+        'test_validation': opts['testValidation'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TemplateResource;
+
+      return this.apiClient.callApi(
+        '/invoices/templates/{id}', 'PATCH',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Update a invoice template
+     * @param {String} id The id of the template
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PatchResource} opts.templatePatchResource The patch resource object
+     * @param {Boolean} opts.testValidation If true, this will test validation but not submit the patch request
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
+     */
+    this.updateInvoiceTemplate = function(id, opts) {
+      return this.updateInvoiceTemplateWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

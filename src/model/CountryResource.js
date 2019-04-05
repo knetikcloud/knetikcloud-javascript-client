@@ -37,7 +37,7 @@
   /**
    * The CountryResource model module.
    * @module model/CountryResource
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

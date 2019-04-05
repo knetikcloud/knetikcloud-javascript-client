@@ -37,7 +37,7 @@
   /**
    * The TopicSubscriber model module.
    * @module model/TopicSubscriber
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

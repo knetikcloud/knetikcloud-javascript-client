@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/NewPasswordRequest', 'model/PageResourceChatMessageResource', 'model/PageResourceTemplateResource', 'model/PageResourceUserBaseResource', 'model/PageResourcestring', 'model/PasswordResetRequest', 'model/PatchResource', 'model/Result', 'model/StringWrapper', 'model/TemplateResource', 'model/UserResource'], factory);
+    define(['ApiClient', 'model/ChatMessageRequest', 'model/ChatMessageResource', 'model/NewPasswordRequest', 'model/PageResourceChatMessageResource', 'model/PageResourceTemplateResource', 'model/PageResourceUserBaseResource', 'model/PageResourcestring', 'model/PasswordChangeRequest', 'model/PasswordResetRequest', 'model/PatchResource', 'model/Result', 'model/StringWrapper', 'model/TemplateResource', 'model/UserResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ChatMessageRequest'), require('../model/ChatMessageResource'), require('../model/NewPasswordRequest'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourceUserBaseResource'), require('../model/PageResourcestring'), require('../model/PasswordResetRequest'), require('../model/PatchResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'), require('../model/UserResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/ChatMessageRequest'), require('../model/ChatMessageResource'), require('../model/NewPasswordRequest'), require('../model/PageResourceChatMessageResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourceUserBaseResource'), require('../model/PageResourcestring'), require('../model/PasswordChangeRequest'), require('../model/PasswordResetRequest'), require('../model/PatchResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'), require('../model/UserResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.UsersApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatMessageRequest, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.NewPasswordRequest, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourceUserBaseResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PasswordResetRequest, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource, root.KnetikCloud.UserResource);
+    root.KnetikCloud.UsersApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ChatMessageRequest, root.KnetikCloud.ChatMessageResource, root.KnetikCloud.NewPasswordRequest, root.KnetikCloud.PageResourceChatMessageResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourceUserBaseResource, root.KnetikCloud.PageResourcestring, root.KnetikCloud.PasswordChangeRequest, root.KnetikCloud.PasswordResetRequest, root.KnetikCloud.PatchResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource, root.KnetikCloud.UserResource);
   }
-}(this, function(ApiClient, ChatMessageRequest, ChatMessageResource, NewPasswordRequest, PageResourceChatMessageResource, PageResourceTemplateResource, PageResourceUserBaseResource, PageResourcestring, PasswordResetRequest, PatchResource, Result, StringWrapper, TemplateResource, UserResource) {
+}(this, function(ApiClient, ChatMessageRequest, ChatMessageResource, NewPasswordRequest, PageResourceChatMessageResource, PageResourceTemplateResource, PageResourceUserBaseResource, PageResourcestring, PasswordChangeRequest, PasswordResetRequest, PatchResource, Result, StringWrapper, TemplateResource, UserResource) {
   'use strict';
 
   /**
    * Users service.
    * @module api/UsersApi
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**
@@ -828,15 +828,15 @@
 
     /**
      * Set a user&#39;s password
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. If not USERS_ADMIN, the correct current password must be supplied as wellPUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
-     * @param {module:model/StringWrapper} opts.password The new plain text password
+     * @param {module:model/PasswordChangeRequest} opts.passwordRequest request body for password change
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.setPasswordWithHttpInfo = function(id, opts) {
       opts = opts || {};
-      var postBody = opts['password'];
+      var postBody = opts['passwordRequest'];
 
       // verify the required parameter 'id' is set
       if (id === undefined || id === null) {
@@ -870,10 +870,10 @@
 
     /**
      * Set a user&#39;s password
-     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security. If not USERS_ADMIN, the correct current password must be supplied as wellPUT&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PUT
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
-     * @param {module:model/StringWrapper} opts.password The new plain text password
+     * @param {module:model/PasswordChangeRequest} opts.passwordRequest request body for password change
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.setPassword = function(id, opts) {

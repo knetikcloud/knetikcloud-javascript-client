@@ -61,6 +61,26 @@
         done();
       });
     });
+    describe('createInvoiceTemplate', function() {
+      it('should call createInvoiceTemplate successfully', function(done) {
+        //uncomment below and update the code to test createInvoiceTemplate
+        //instance.createInvoiceTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteInvoiceTemplate', function() {
+      it('should call deleteInvoiceTemplate successfully', function(done) {
+        //uncomment below and update the code to test deleteInvoiceTemplate
+        //instance.deleteInvoiceTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getFulFillmentStatuses', function() {
       it('should call getFulFillmentStatuses successfully', function(done) {
         //uncomment below and update the code to test getFulFillmentStatuses
@@ -85,6 +105,26 @@
       it('should call getInvoiceLogs successfully', function(done) {
         //uncomment below and update the code to test getInvoiceLogs
         //instance.getInvoiceLogs(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getInvoiceTemplate', function() {
+      it('should call getInvoiceTemplate successfully', function(done) {
+        //uncomment below and update the code to test getInvoiceTemplate
+        //instance.getInvoiceTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getInvoiceTemplates', function() {
+      it('should call getInvoiceTemplates successfully', function(done) {
+        //uncomment below and update the code to test getInvoiceTemplates
+        //instance.getInvoiceTemplates(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -175,6 +215,16 @@
       it('should call updateBillingInfo successfully', function(done) {
         //uncomment below and update the code to test updateBillingInfo
         //instance.updateBillingInfo(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateInvoiceTemplate', function() {
+      it('should call updateInvoiceTemplate successfully', function(done) {
+        //uncomment below and update the code to test updateInvoiceTemplate
+        //instance.updateInvoiceTemplate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

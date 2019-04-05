@@ -37,7 +37,7 @@
   /**
    * The PageResourceChatUserThreadResource model module.
    * @module model/PageResourceChatUserThreadResource
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The BillingReport model module.
    * @module model/BillingReport
-   * @version 3.0.18
+   * @version 3.0.19
    */
 
   /**

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Property', 'model/UserRelationshipReferenceResource'], factory);
+    define(['ApiClient', 'model/Property'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Property'), require('./UserRelationshipReferenceResource'));
+    module.exports = factory(require('../ApiClient'), require('./Property'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.UserResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.Property, root.KnetikCloud.UserRelationshipReferenceResource);
+    root.KnetikCloud.UserResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.Property);
   }
-}(this, function(ApiClient, Property, UserRelationshipReferenceResource) {
+}(this, function(ApiClient, Property) {
   'use strict';
 
 
@@ -58,13 +58,7 @@
 
 
 
-
-
-
     _this['email'] = email;
-
-
-
 
 
 
@@ -105,17 +99,8 @@
       if (data.hasOwnProperty('avatar_url')) {
         obj['avatar_url'] = ApiClient.convertToType(data['avatar_url'], 'String');
       }
-      if (data.hasOwnProperty('children')) {
-        obj['children'] = ApiClient.convertToType(data['children'], [UserRelationshipReferenceResource]);
-      }
       if (data.hasOwnProperty('city')) {
         obj['city'] = ApiClient.convertToType(data['city'], 'String');
-      }
-      if (data.hasOwnProperty('country_code')) {
-        obj['country_code'] = ApiClient.convertToType(data['country_code'], 'String');
-      }
-      if (data.hasOwnProperty('currency_code')) {
-        obj['currency_code'] = ApiClient.convertToType(data['currency_code'], 'String');
       }
       if (data.hasOwnProperty('date_of_birth')) {
         obj['date_of_birth'] = ApiClient.convertToType(data['date_of_birth'], 'Number');
@@ -141,9 +126,6 @@
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
       }
-      if (data.hasOwnProperty('language_code')) {
-        obj['language_code'] = ApiClient.convertToType(data['language_code'], 'String');
-      }
       if (data.hasOwnProperty('last_activity')) {
         obj['last_activity'] = ApiClient.convertToType(data['last_activity'], 'Number');
       }
@@ -159,9 +141,6 @@
       if (data.hasOwnProperty('mobile_number')) {
         obj['mobile_number'] = ApiClient.convertToType(data['mobile_number'], 'String');
       }
-      if (data.hasOwnProperty('parents')) {
-        obj['parents'] = ApiClient.convertToType(data['parents'], [UserRelationshipReferenceResource]);
-      }
       if (data.hasOwnProperty('password')) {
         obj['password'] = ApiClient.convertToType(data['password'], 'String');
       }
@@ -176,9 +155,6 @@
       }
       if (data.hasOwnProperty('template')) {
         obj['template'] = ApiClient.convertToType(data['template'], 'String');
-      }
-      if (data.hasOwnProperty('timezone_code')) {
-        obj['timezone_code'] = ApiClient.convertToType(data['timezone_code'], 'String');
       }
       if (data.hasOwnProperty('username')) {
         obj['username'] = ApiClient.convertToType(data['username'], 'String');
@@ -222,25 +198,10 @@
    */
   exports.prototype['avatar_url'] = undefined;
   /**
-   * Relationships where this user is the parent. Read-Only, manage through separate endpoints
-   * @member {Array.<module:model/UserRelationshipReferenceResource>} children
-   */
-  exports.prototype['children'] = undefined;
-  /**
    * The user's city (private)
    * @member {String} city
    */
   exports.prototype['city'] = undefined;
-  /**
-   * The ISO3 code for the country from the user's address (private). Will be filled in based on GeoIP country at registration if not provided.
-   * @member {String} country_code
-   */
-  exports.prototype['country_code'] = undefined;
-  /**
-   * The code for the user's real money currency (private)
-   * @member {String} currency_code
-   */
-  exports.prototype['currency_code'] = undefined;
   /**
    * The user's date of birth (private) as a unix timestamp
    * @member {Number} date_of_birth
@@ -282,11 +243,6 @@
    */
   exports.prototype['id'] = undefined;
   /**
-   * The ISO3 code for the user's currency (private)
-   * @member {String} language_code
-   */
-  exports.prototype['language_code'] = undefined;
-  /**
    * The date the user last interacted with the API (private)
    * @member {Number} last_activity
    */
@@ -312,11 +268,6 @@
    */
   exports.prototype['mobile_number'] = undefined;
   /**
-   * Relationships where this user is the child. Read-Only, manage through separate endpoints
-   * @member {Array.<module:model/UserRelationshipReferenceResource>} parents
-   */
-  exports.prototype['parents'] = undefined;
-  /**
    * The plain text password for the new user account. Required for registration; ignored on profile update.  Use password specific endpoints for editing
    * @member {String} password
    */
@@ -341,11 +292,6 @@
    * @member {String} template
    */
   exports.prototype['template'] = undefined;
-  /**
-   * The code for the user's timezone (private)
-   * @member {String} timezone_code
-   */
-  exports.prototype['timezone_code'] = undefined;
   /**
    * The login username for the user (private). May be set to match email if system does not require usernames separately.
    * @member {String} username

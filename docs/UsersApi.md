@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**passwordReset**](UsersApi.md#passwordReset) | **PUT** /users/{id}/password-reset | Choose a new password after a reset
 [**postUserMessage**](UsersApi.md#postUserMessage) | **POST** /users/{recipient_id}/messages | Send a user message
 [**registerUser**](UsersApi.md#registerUser) | **POST** /users | Register a new user
+[**registerUserCuentas**](UsersApi.md#registerUserCuentas) | **POST** /users/cuentas | Register a new cuentas user
 [**removeUserTag**](UsersApi.md#removeUserTag) | **DELETE** /users/{user_id}/tags/{tag} | Remove a tag from a user
 [**setPassword**](UsersApi.md#setPassword) | **PUT** /users/{id}/password | Set a user&#39;s password
 [**startPasswordReset**](UsersApi.md#startPasswordReset) | **POST** /users/{id}/password-reset | Reset a user&#39;s password
@@ -685,6 +686,59 @@ var opts = {
   'userResource': new KnetikCloud.UserResource() // UserResource | The user resource object
 };
 apiInstance.registerUser(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userResource** | [**UserResource**](UserResource.md)| The user resource object | [optional] 
+
+### Return type
+
+[**UserResource**](UserResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="registerUserCuentas"></a>
+# **registerUserCuentas**
+> UserResource registerUserCuentas(opts)
+
+Register a new cuentas user
+
+Password should be in plain text and will be encrypted on receipt. Use SSL for security.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.UsersApi();
+
+var opts = { 
+  'userResource': new KnetikCloud.UserResource() // UserResource | The user resource object
+};
+apiInstance.registerUserCuentas(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);

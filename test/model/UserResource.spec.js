@@ -81,26 +81,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property children (base name: "children")', function() {
-      // uncomment below and update the code to test the property children
-      //var instane = new KnetikCloud.UserResource();
-      //expect(instance).to.be();
-    });
-
     it('should have the property city (base name: "city")', function() {
       // uncomment below and update the code to test the property city
-      //var instane = new KnetikCloud.UserResource();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property countryCode (base name: "country_code")', function() {
-      // uncomment below and update the code to test the property countryCode
-      //var instane = new KnetikCloud.UserResource();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property currencyCode (base name: "currency_code")', function() {
-      // uncomment below and update the code to test the property currencyCode
       //var instane = new KnetikCloud.UserResource();
       //expect(instance).to.be();
     });
@@ -153,12 +135,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property languageCode (base name: "language_code")', function() {
-      // uncomment below and update the code to test the property languageCode
-      //var instane = new KnetikCloud.UserResource();
-      //expect(instance).to.be();
-    });
-
     it('should have the property lastActivity (base name: "last_activity")', function() {
       // uncomment below and update the code to test the property lastActivity
       //var instane = new KnetikCloud.UserResource();
@@ -189,12 +165,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property parents (base name: "parents")', function() {
-      // uncomment below and update the code to test the property parents
-      //var instane = new KnetikCloud.UserResource();
-      //expect(instance).to.be();
-    });
-
     it('should have the property password (base name: "password")', function() {
       // uncomment below and update the code to test the property password
       //var instane = new KnetikCloud.UserResource();
@@ -221,12 +191,6 @@
 
     it('should have the property template (base name: "template")', function() {
       // uncomment below and update the code to test the property template
-      //var instane = new KnetikCloud.UserResource();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property timezoneCode (base name: "timezone_code")', function() {
-      // uncomment below and update the code to test the property timezoneCode
       //var instane = new KnetikCloud.UserResource();
       //expect(instance).to.be();
     });

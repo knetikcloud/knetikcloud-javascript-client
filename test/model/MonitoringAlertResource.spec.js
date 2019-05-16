@@ -75,6 +75,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property mergeLabel (base name: "merge_label")', function() {
+      // uncomment below and update the code to test the property mergeLabel
+      //var instane = new KnetikCloud.MonitoringAlertResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property metric (base name: "metric")', function() {
       // uncomment below and update the code to test the property metric
       //var instane = new KnetikCloud.MonitoringAlertResource();

@@ -46,16 +46,16 @@
    * @class
    * @param id {String} The id of the alert. Cannot be changed
    * @param levels {Array.<module:model/MonitoringAlertLevel>} The levels of alert to raise. Minimum 1 and maximum 10 entries. The alert level will be the one with the last one in the list that is passed its threshold
-   * @param metric {module:model/SimpleReferenceResourcestring} The id of the metric the alert is monitoring
    * @param name {String} The name of the alert, for display purposes
    */
-  var exports = function(id, levels, metric, name) {
+  var exports = function(id, levels, name) {
     var _this = this;
 
 
     _this['id'] = id;
     _this['levels'] = levels;
-    _this['metric'] = metric;
+
+
     _this['name'] = name;
   };
 
@@ -78,6 +78,9 @@
       }
       if (data.hasOwnProperty('levels')) {
         obj['levels'] = ApiClient.convertToType(data['levels'], [MonitoringAlertLevel]);
+      }
+      if (data.hasOwnProperty('merge_label')) {
+        obj['merge_label'] = ApiClient.convertToType(data['merge_label'], 'String');
       }
       if (data.hasOwnProperty('metric')) {
         obj['metric'] = SimpleReferenceResourcestring.constructFromObject(data['metric']);
@@ -118,6 +121,11 @@
    * @member {Array.<module:model/MonitoringAlertLevel>} levels
    */
   exports.prototype['levels'] = undefined;
+  /**
+   * The name of a label returned in the alert query that is used to merge multiple incidents when they match
+   * @member {String} merge_label
+   */
+  exports.prototype['merge_label'] = undefined;
   /**
    * The id of the metric the alert is monitoring
    * @member {module:model/SimpleReferenceResourcestring} metric

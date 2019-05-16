@@ -171,6 +171,16 @@
         done();
       });
     });
+    describe('registerUserCuentas', function() {
+      it('should call registerUserCuentas successfully', function(done) {
+        //uncomment below and update the code to test registerUserCuentas
+        //instance.registerUserCuentas(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('removeUserTag', function() {
       it('should call removeUserTag successfully', function(done) {
         //uncomment below and update the code to test removeUserTag

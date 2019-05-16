@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **String** | The id of the incident event | [optional] 
 **incident_id** | **String** | The id of the incident. will be added to any current incident for the alert or a new one created | [optional] 
 **level_name** | **String** | The name of the alert level | 
+**merge_value** | **String** | The value of the label from the alert that incidents are merged on | [optional] 
 **status** | **String** | The new status of the alert level | 
 
 

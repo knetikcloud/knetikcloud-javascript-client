@@ -56,6 +56,7 @@
 
 
     _this['level_name'] = levelName;
+
     _this['status'] = status;
   };
 
@@ -84,6 +85,9 @@
       }
       if (data.hasOwnProperty('level_name')) {
         obj['level_name'] = ApiClient.convertToType(data['level_name'], 'String');
+      }
+      if (data.hasOwnProperty('merge_value')) {
+        obj['merge_value'] = ApiClient.convertToType(data['merge_value'], 'String');
       }
       if (data.hasOwnProperty('status')) {
         obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -131,6 +135,11 @@
    * @member {String} level_name
    */
   exports.prototype['level_name'] = undefined;
+  /**
+   * The value of the label from the alert that incidents are merged on
+   * @member {String} merge_value
+   */
+  exports.prototype['merge_value'] = undefined;
   /**
    * The new status of the alert level
    * @member {module:model/MonitoringIncidentEventResource.StatusEnum} status

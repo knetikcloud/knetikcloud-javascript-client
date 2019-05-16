@@ -87,6 +87,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property mergeValue (base name: "merge_value")', function() {
+      // uncomment below and update the code to test the property mergeValue
+      //var instane = new KnetikCloud.MonitoringIncidentEventResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property status (base name: "status")', function() {
       // uncomment below and update the code to test the property status
       //var instane = new KnetikCloud.MonitoringIncidentEventResource();

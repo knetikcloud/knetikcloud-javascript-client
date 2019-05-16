@@ -766,6 +766,56 @@
 
 
     /**
+     * Register a new cuentas user
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
+     * @param {Object} opts Optional parameters
+     * @param {module:model/UserResource} opts.userResource The user resource object
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResource} and HTTP response
+     */
+    this.registerUserCuentasWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = opts['userResource'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = UserResource;
+
+      return this.apiClient.callApi(
+        '/users/cuentas', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Register a new cuentas user
+     * Password should be in plain text and will be encrypted on receipt. Use SSL for security.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; NONE
+     * @param {Object} opts Optional parameters
+     * @param {module:model/UserResource} opts.userResource The user resource object
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResource}
+     */
+    this.registerUserCuentas = function(opts) {
+      return this.registerUserCuentasWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Remove a tag from a user
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
      * @param {Number} userId The id of the user

@@ -734,6 +734,7 @@ Class | Method | HTTP request | Description
 *KnetikCloud.UsersApi* | [**passwordReset**](docs/UsersApi.md#passwordReset) | **PUT** /users/{id}/password-reset | Choose a new password after a reset
 *KnetikCloud.UsersApi* | [**postUserMessage**](docs/UsersApi.md#postUserMessage) | **POST** /users/{recipient_id}/messages | Send a user message
 *KnetikCloud.UsersApi* | [**registerUser**](docs/UsersApi.md#registerUser) | **POST** /users | Register a new user
+*KnetikCloud.UsersApi* | [**registerUserCuentas**](docs/UsersApi.md#registerUserCuentas) | **POST** /users/cuentas | Register a new cuentas user
 *KnetikCloud.UsersApi* | [**removeUserTag**](docs/UsersApi.md#removeUserTag) | **DELETE** /users/{user_id}/tags/{tag} | Remove a tag from a user
 *KnetikCloud.UsersApi* | [**setPassword**](docs/UsersApi.md#setPassword) | **PUT** /users/{id}/password | Set a user&#39;s password
 *KnetikCloud.UsersApi* | [**startPasswordReset**](docs/UsersApi.md#startPasswordReset) | **POST** /users/{id}/password-reset | Reset a user&#39;s password
@@ -1217,7 +1218,6 @@ Class | Method | HTTP request | Description
  - [KnetikCloud.UserLevelingResource](docs/UserLevelingResource.md)
  - [KnetikCloud.UserNotificationResource](docs/UserNotificationResource.md)
  - [KnetikCloud.UserNotificationStatusWrapper](docs/UserNotificationStatusWrapper.md)
- - [KnetikCloud.UserRelationshipReferenceResource](docs/UserRelationshipReferenceResource.md)
  - [KnetikCloud.UserRelationshipResource](docs/UserRelationshipResource.md)
  - [KnetikCloud.UserResource](docs/UserResource.md)
  - [KnetikCloud.UserSidResource](docs/UserSidResource.md)

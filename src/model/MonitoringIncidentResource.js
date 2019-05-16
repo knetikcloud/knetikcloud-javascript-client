@@ -59,6 +59,7 @@
 
     _this['levels'] = levels;
 
+
   };
 
   /**
@@ -89,6 +90,9 @@
       }
       if (data.hasOwnProperty('levels')) {
         obj['levels'] = ApiClient.convertToType(data['levels'], [MonitoringIncidentLevelResource]);
+      }
+      if (data.hasOwnProperty('merge_value')) {
+        obj['merge_value'] = ApiClient.convertToType(data['merge_value'], 'String');
       }
       if (data.hasOwnProperty('start_date')) {
         obj['start_date'] = ApiClient.convertToType(data['start_date'], 'Number');
@@ -141,6 +145,11 @@
    * @member {Array.<module:model/MonitoringIncidentLevelResource>} levels
    */
   exports.prototype['levels'] = undefined;
+  /**
+   * The value of the merge_label from the alert
+   * @member {String} merge_value
+   */
+  exports.prototype['merge_value'] = undefined;
   /**
    * The startDate as a unix timestamp in seconds the incident first started
    * @member {Number} start_date

@@ -37,7 +37,7 @@
   /**
    * The TopicSubscriberResource model module.
    * @module model/TopicSubscriberResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The TemplateSMSResource model module.
    * @module model/TemplateSMSResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

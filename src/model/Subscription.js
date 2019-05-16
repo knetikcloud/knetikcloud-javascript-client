@@ -37,7 +37,7 @@
   /**
    * The Subscription model module.
    * @module model/Subscription
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The Result model module.
    * @module model/Result
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The ServiceDeployedEvent model module.
    * @module model/ServiceDeployedEvent
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

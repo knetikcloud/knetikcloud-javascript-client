@@ -37,7 +37,7 @@
   /**
    * The XsollaPaymentRequest model module.
    * @module model/XsollaPaymentRequest
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

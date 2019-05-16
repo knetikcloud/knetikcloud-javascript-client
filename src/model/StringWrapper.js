@@ -37,7 +37,7 @@
   /**
    * The StringWrapper model module.
    * @module model/StringWrapper
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The SimpleReferenceResourcestring model module.
    * @module model/SimpleReferenceResourcestring
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

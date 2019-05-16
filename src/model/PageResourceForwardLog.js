@@ -37,7 +37,7 @@
   /**
    * The PageResourceForwardLog model module.
    * @module model/PageResourceForwardLog
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

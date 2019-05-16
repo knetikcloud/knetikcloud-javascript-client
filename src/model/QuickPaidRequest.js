@@ -37,7 +37,7 @@
   /**
    * The QuickPaidRequest model module.
    * @module model/QuickPaidRequest
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

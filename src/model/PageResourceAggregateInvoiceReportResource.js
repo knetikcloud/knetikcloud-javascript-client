@@ -37,7 +37,7 @@
   /**
    * The PageResourceAggregateInvoiceReportResource model module.
    * @module model/PageResourceAggregateInvoiceReportResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

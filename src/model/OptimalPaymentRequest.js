@@ -37,7 +37,7 @@
   /**
    * The OptimalPaymentRequest model module.
    * @module model/OptimalPaymentRequest
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

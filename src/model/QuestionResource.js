@@ -37,7 +37,7 @@
   /**
    * The QuestionResource model module.
    * @module model/QuestionResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

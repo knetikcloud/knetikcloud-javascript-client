@@ -37,7 +37,7 @@
   /**
    * The WebsocketUnsubscribeEvent model module.
    * @module model/WebsocketUnsubscribeEvent
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

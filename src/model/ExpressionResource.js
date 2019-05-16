@@ -37,7 +37,7 @@
   /**
    * The ExpressionResource model module.
    * @module model/ExpressionResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

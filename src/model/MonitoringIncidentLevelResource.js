@@ -37,7 +37,7 @@
   /**
    * The MonitoringIncidentLevelResource model module.
    * @module model/MonitoringIncidentLevelResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

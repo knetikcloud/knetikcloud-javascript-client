@@ -37,7 +37,7 @@
   /**
    * The GlobalResource model module.
    * @module model/GlobalResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

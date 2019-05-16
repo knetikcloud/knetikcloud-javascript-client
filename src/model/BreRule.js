@@ -37,7 +37,7 @@
   /**
    * The BreRule model module.
    * @module model/BreRule
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

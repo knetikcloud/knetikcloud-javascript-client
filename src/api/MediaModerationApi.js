@@ -34,7 +34,7 @@
   /**
    * MediaModeration service.
    * @module api/MediaModerationApi
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

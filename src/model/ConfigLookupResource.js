@@ -37,7 +37,7 @@
   /**
    * The ConfigLookupResource model module.
    * @module model/ConfigLookupResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

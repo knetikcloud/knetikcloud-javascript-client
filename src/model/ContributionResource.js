@@ -37,7 +37,7 @@
   /**
    * The ContributionResource model module.
    * @module model/ContributionResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

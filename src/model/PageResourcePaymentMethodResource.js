@@ -37,7 +37,7 @@
   /**
    * The PageResourcePaymentMethodResource model module.
    * @module model/PageResourcePaymentMethodResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The PriceOverridable model module.
    * @module model/PriceOverridable
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

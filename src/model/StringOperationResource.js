@@ -37,7 +37,7 @@
   /**
    * The StringOperationResource model module.
    * @module model/StringOperationResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

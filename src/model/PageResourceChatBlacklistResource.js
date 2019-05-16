@@ -37,7 +37,7 @@
   /**
    * The PageResourceChatBlacklistResource model module.
    * @module model/PageResourceChatBlacklistResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

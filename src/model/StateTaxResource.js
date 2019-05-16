@@ -37,7 +37,7 @@
   /**
    * The StateTaxResource model module.
    * @module model/StateTaxResource
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

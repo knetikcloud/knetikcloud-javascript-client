@@ -34,7 +34,7 @@
   /**
    * Store service.
    * @module api/StoreApi
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

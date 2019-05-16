@@ -37,7 +37,7 @@
   /**
    * The ActivityOccurrenceStatusWrapper model module.
    * @module model/ActivityOccurrenceStatusWrapper
-   * @version 3.0.19
+   * @version 3.0.20
    */
 
   /**

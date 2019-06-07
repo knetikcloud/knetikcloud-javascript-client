@@ -94,7 +94,8 @@ oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new KnetikCloud.VerificationApi();
 
 var opts = { 
-  'verificationRequest': new KnetikCloud.VerificationRequest() // VerificationRequest | The request
+  'verificationRequest': new KnetikCloud.VerificationRequest(), // VerificationRequest | The request
+  'originator': 56 // Number | Optional originator id, admin only
 };
 apiInstance.createVerificationRequest(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -109,6 +110,7 @@ apiInstance.createVerificationRequest(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **verificationRequest** | [**VerificationRequest**](VerificationRequest.md)| The request | [optional] 
+ **originator** | **Number**| Optional originator id, admin only | [optional] 
 
 ### Return type
 

@@ -1155,11 +1155,12 @@
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {module:model/VerificationRequest} opts.request The id of the user to invite
+     * @param {Number} opts.originator Optional originator id, admin only
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VerificationRequest} and HTTP response
      */
     this.inviteToGroupWithHttpInfo = function(uniqueName, opts) {
       opts = opts || {};
-      var postBody = opts['request'];
+      var postBody = opts['originator'];
 
       // verify the required parameter 'uniqueName' is set
       if (uniqueName === undefined || uniqueName === null) {
@@ -1197,6 +1198,7 @@
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {module:model/VerificationRequest} opts.request The id of the user to invite
+     * @param {Number} opts.originator Optional originator id, admin only
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VerificationRequest}
      */
     this.inviteToGroup = function(uniqueName, opts) {

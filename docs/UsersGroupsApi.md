@@ -1115,7 +1115,8 @@ var apiInstance = new KnetikCloud.UsersGroupsApi();
 var uniqueName = "uniqueName_example"; // String | The group unique name
 
 var opts = { 
-  'request': new KnetikCloud.VerificationRequest() // VerificationRequest | The id of the user to invite
+  'request': new KnetikCloud.VerificationRequest(), // VerificationRequest | The id of the user to invite
+  'originator': 56 // Number | Optional originator id, admin only
 };
 apiInstance.inviteToGroup(uniqueName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -1131,6 +1132,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uniqueName** | **String**| The group unique name | 
  **request** | [**VerificationRequest**](VerificationRequest.md)| The id of the user to invite | [optional] 
+ **originator** | **Number**| Optional originator id, admin only | [optional] 
 
 ### Return type
 

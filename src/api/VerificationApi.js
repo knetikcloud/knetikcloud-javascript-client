@@ -104,11 +104,12 @@
      * Verification requests ask for a user to respond and confirm something, like their email address of an invitation to join a group.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/VerificationRequest} opts.verificationRequest The request
+     * @param {Number} opts.originator Optional originator id, admin only
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VerificationRequest} and HTTP response
      */
     this.createVerificationRequestWithHttpInfo = function(opts) {
       opts = opts || {};
-      var postBody = opts['verificationRequest'];
+      var postBody = opts['originator'];
 
 
       var pathParams = {
@@ -139,6 +140,7 @@
      * Verification requests ask for a user to respond and confirm something, like their email address of an invitation to join a group.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POST
      * @param {Object} opts Optional parameters
      * @param {module:model/VerificationRequest} opts.verificationRequest The request
+     * @param {Number} opts.originator Optional originator id, admin only
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VerificationRequest}
      */
     this.createVerificationRequest = function(opts) {

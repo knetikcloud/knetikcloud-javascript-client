@@ -37,7 +37,7 @@
   /**
    * The ActivityOccurrenceResource model module.
    * @module model/ActivityOccurrenceResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

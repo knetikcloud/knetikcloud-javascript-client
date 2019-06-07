@@ -37,7 +37,7 @@
   /**
    * The PredicateResource model module.
    * @module model/PredicateResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

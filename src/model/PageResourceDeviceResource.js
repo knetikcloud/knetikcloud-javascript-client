@@ -37,7 +37,7 @@
   /**
    * The PageResourceDeviceResource model module.
    * @module model/PageResourceDeviceResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

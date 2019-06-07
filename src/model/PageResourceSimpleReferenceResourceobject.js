@@ -37,7 +37,7 @@
   /**
    * The PageResourceSimpleReferenceResourceobject model module.
    * @module model/PageResourceSimpleReferenceResourceobject
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

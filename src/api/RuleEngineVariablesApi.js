@@ -34,7 +34,7 @@
   /**
    * RuleEngineVariables service.
    * @module api/RuleEngineVariablesApi
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

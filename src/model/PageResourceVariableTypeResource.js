@@ -37,7 +37,7 @@
   /**
    * The PageResourceVariableTypeResource model module.
    * @module model/PageResourceVariableTypeResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

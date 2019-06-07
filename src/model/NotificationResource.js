@@ -37,7 +37,7 @@
   /**
    * The NotificationResource model module.
    * @module model/NotificationResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

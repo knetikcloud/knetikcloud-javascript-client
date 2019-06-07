@@ -34,7 +34,7 @@
   /**
    * StoreSales service.
    * @module api/StoreSalesApi
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

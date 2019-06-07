@@ -34,7 +34,7 @@
   /**
    * AccessToken service.
    * @module api/AccessTokenApi
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

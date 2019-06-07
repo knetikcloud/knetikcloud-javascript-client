@@ -37,7 +37,7 @@
   /**
    * The PageResourceCurrencyResource model module.
    * @module model/PageResourceCurrencyResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

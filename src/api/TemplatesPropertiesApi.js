@@ -34,7 +34,7 @@
   /**
    * TemplatesProperties service.
    * @module api/TemplatesPropertiesApi
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

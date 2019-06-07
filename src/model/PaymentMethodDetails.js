@@ -37,7 +37,7 @@
   /**
    * The PaymentMethodDetails model module.
    * @module model/PaymentMethodDetails
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

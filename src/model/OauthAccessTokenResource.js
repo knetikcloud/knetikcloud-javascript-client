@@ -37,7 +37,7 @@
   /**
    * The OauthAccessTokenResource model module.
    * @module model/OauthAccessTokenResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

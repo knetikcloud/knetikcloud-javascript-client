@@ -37,7 +37,7 @@
   /**
    * The RawPushResource model module.
    * @module model/RawPushResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

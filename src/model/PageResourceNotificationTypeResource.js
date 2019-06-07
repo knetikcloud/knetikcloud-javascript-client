@@ -37,7 +37,7 @@
   /**
    * The PageResourceNotificationTypeResource model module.
    * @module model/PageResourceNotificationTypeResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

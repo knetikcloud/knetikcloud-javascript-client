@@ -37,7 +37,7 @@
   /**
    * The LongPropertyDefinitionResource model module.
    * @module model/LongPropertyDefinitionResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

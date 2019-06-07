@@ -37,7 +37,7 @@
   /**
    * The SimpleReferenceResourceint model module.
    * @module model/SimpleReferenceResourceint
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

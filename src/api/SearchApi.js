@@ -34,7 +34,7 @@
   /**
    * Search service.
    * @module api/SearchApi
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

@@ -34,7 +34,7 @@
   /**
    * StoreShipping service.
    * @module api/StoreShippingApi
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

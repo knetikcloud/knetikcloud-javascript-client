@@ -37,7 +37,7 @@
   /**
    * The AvailableSettingResource model module.
    * @module model/AvailableSettingResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

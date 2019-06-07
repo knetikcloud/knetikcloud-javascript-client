@@ -37,7 +37,7 @@
   /**
    * The BooleanPropertyDefinitionResource model module.
    * @module model/BooleanPropertyDefinitionResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

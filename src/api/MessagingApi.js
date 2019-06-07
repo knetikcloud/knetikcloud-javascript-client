@@ -34,7 +34,7 @@
   /**
    * Messaging service.
    * @module api/MessagingApi
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

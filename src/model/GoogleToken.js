@@ -37,7 +37,7 @@
   /**
    * The GoogleToken model module.
    * @module model/GoogleToken
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

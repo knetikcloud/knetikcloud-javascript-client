@@ -34,7 +34,7 @@
   /**
    * Campaigns service.
    * @module api/CampaignsApi
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The OperationDefinitionResource model module.
    * @module model/OperationDefinitionResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

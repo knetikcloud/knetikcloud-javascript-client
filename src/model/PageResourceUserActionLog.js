@@ -37,7 +37,7 @@
   /**
    * The PageResourceUserActionLog model module.
    * @module model/PageResourceUserActionLog
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

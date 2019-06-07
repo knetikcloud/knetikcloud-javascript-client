@@ -37,7 +37,7 @@
   /**
    * The MonitoringIncidentEventResource model module.
    * @module model/MonitoringIncidentEventResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

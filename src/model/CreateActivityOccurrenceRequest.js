@@ -37,7 +37,7 @@
   /**
    * The CreateActivityOccurrenceRequest model module.
    * @module model/CreateActivityOccurrenceRequest
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

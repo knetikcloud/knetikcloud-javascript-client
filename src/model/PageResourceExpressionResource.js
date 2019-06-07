@@ -37,7 +37,7 @@
   /**
    * The PageResourceExpressionResource model module.
    * @module model/PageResourceExpressionResource
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

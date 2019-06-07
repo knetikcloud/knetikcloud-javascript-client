@@ -37,7 +37,7 @@
   /**
    * The FacebookToken model module.
    * @module model/FacebookToken
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

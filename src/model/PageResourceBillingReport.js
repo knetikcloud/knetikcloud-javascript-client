@@ -37,7 +37,7 @@
   /**
    * The PageResourceBillingReport model module.
    * @module model/PageResourceBillingReport
-   * @version 3.0.20
+   * @version 3.0.21
    */
 
   /**

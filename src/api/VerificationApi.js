@@ -109,12 +109,13 @@
      */
     this.createVerificationRequestWithHttpInfo = function(opts) {
       opts = opts || {};
-      var postBody = opts['originator'];
+      var postBody = opts['verificationRequest'];
 
 
       var pathParams = {
       };
       var queryParams = {
+        'originator': opts['originator'],
       };
       var collectionQueryParams = {
       };

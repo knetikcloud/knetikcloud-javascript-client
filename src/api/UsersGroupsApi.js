@@ -1160,7 +1160,7 @@
      */
     this.inviteToGroupWithHttpInfo = function(uniqueName, opts) {
       opts = opts || {};
-      var postBody = opts['originator'];
+      var postBody = opts['request'];
 
       // verify the required parameter 'uniqueName' is set
       if (uniqueName === undefined || uniqueName === null) {
@@ -1172,6 +1172,7 @@
         'unique_name': uniqueName
       };
       var queryParams = {
+        'originator': opts['originator'],
       };
       var collectionQueryParams = {
       };

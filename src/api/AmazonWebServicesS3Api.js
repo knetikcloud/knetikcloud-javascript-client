@@ -34,7 +34,7 @@
   /**
    * AmazonWebServicesS3 service.
    * @module api/AmazonWebServicesS3Api
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

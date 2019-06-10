@@ -37,7 +37,7 @@
   /**
    * The RevenueProductReportResource model module.
    * @module model/RevenueProductReportResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

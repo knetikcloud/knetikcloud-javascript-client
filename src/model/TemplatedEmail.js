@@ -37,7 +37,7 @@
   /**
    * The TemplatedEmail model module.
    * @module model/TemplatedEmail
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

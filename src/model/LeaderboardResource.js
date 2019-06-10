@@ -37,7 +37,7 @@
   /**
    * The LeaderboardResource model module.
    * @module model/LeaderboardResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

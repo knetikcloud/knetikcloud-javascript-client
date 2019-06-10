@@ -37,7 +37,7 @@
   /**
    * The BreEventLog model module.
    * @module model/BreEventLog
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

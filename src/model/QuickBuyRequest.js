@@ -37,7 +37,7 @@
   /**
    * The QuickBuyRequest model module.
    * @module model/QuickBuyRequest
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

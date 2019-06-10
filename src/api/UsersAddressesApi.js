@@ -34,7 +34,7 @@
   /**
    * UsersAddresses service.
    * @module api/UsersAddressesApi
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

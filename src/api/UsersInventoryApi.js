@@ -34,7 +34,7 @@
   /**
    * UsersInventory service.
    * @module api/UsersInventoryApi
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

@@ -34,7 +34,7 @@
   /**
    * PaymentsWallets service.
    * @module api/PaymentsWalletsApi
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

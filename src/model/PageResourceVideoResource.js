@@ -37,7 +37,7 @@
   /**
    * The PageResourceVideoResource model module.
    * @module model/PageResourceVideoResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The UserRelationshipResource model module.
    * @module model/UserRelationshipResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The TemplateResource model module.
    * @module model/TemplateResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

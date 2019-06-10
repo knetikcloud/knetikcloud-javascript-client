@@ -37,7 +37,7 @@
   /**
    * The ErrorResource model module.
    * @module model/ErrorResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

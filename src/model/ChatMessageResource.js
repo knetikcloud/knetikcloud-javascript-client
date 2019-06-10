@@ -37,7 +37,7 @@
   /**
    * The ChatMessageResource model module.
    * @module model/ChatMessageResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

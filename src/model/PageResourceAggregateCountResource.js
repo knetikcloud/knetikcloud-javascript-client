@@ -37,7 +37,7 @@
   /**
    * The PageResourceAggregateCountResource model module.
    * @module model/PageResourceAggregateCountResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The WalletTransactionResource model module.
    * @module model/WalletTransactionResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

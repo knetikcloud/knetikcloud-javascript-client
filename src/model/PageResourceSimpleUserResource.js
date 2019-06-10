@@ -37,7 +37,7 @@
   /**
    * The PageResourceSimpleUserResource model module.
    * @module model/PageResourceSimpleUserResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

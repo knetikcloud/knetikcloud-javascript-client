@@ -37,7 +37,7 @@
   /**
    * The ParameterResource model module.
    * @module model/ParameterResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

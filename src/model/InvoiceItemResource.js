@@ -37,7 +37,7 @@
   /**
    * The InvoiceItemResource model module.
    * @module model/InvoiceItemResource
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

@@ -34,7 +34,7 @@
   /**
    * ReportingSubscriptions service.
    * @module api/ReportingSubscriptionsApi
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

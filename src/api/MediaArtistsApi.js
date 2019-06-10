@@ -34,7 +34,7 @@
   /**
    * MediaArtists service.
    * @module api/MediaArtistsApi
-   * @version 3.0.21
+   * @version 3.0.263
    */
 
   /**

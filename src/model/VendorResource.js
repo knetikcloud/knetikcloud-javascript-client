@@ -37,7 +37,7 @@
   /**
    * The VendorResource model module.
    * @module model/VendorResource
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**

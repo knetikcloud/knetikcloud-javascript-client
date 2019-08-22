@@ -37,7 +37,7 @@
   /**
    * The UserInventoryAddRequest model module.
    * @module model/UserInventoryAddRequest
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**

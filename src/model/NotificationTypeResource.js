@@ -37,7 +37,7 @@
   /**
    * The NotificationTypeResource model module.
    * @module model/NotificationTypeResource
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**

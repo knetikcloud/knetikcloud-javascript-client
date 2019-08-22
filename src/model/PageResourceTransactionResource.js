@@ -37,7 +37,7 @@
   /**
    * The PageResourceTransactionResource model module.
    * @module model/PageResourceTransactionResource
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**

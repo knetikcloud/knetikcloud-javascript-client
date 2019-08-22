@@ -37,7 +37,7 @@
   /**
    * The SimpleWallet model module.
    * @module model/SimpleWallet
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**

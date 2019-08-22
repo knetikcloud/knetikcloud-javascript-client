@@ -37,7 +37,7 @@
   /**
    * The Cart model module.
    * @module model/Cart
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**

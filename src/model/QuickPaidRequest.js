@@ -37,7 +37,7 @@
   /**
    * The QuickPaidRequest model module.
    * @module model/QuickPaidRequest
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**
@@ -45,19 +45,20 @@
    * @alias module:model/QuickPaidRequest
    * @class
    * @param giftTarget {Number} An optional target user to give the item to as a gift
-   * @param paidAmount {Number} The amount already paid. Must match final price to complete purchase. Minimum 0
    * @param sku {String} SKU of item being purchased
    * @param transactionType {String} Transaction type
    */
-  var exports = function(giftTarget, paidAmount, sku, transactionType) {
+  var exports = function(giftTarget, sku, transactionType) {
     var _this = this;
+
 
 
     _this['gift_target'] = giftTarget;
 
-    _this['paid_amount'] = paidAmount;
+
 
     _this['sku'] = sku;
+
 
 
     _this['transaction_type'] = transactionType;
@@ -78,6 +79,9 @@
       if (data.hasOwnProperty('additional_properties')) {
         obj['additional_properties'] = ApiClient.convertToType(data['additional_properties'], {'String': Property});
       }
+      if (data.hasOwnProperty('federal_tax')) {
+        obj['federal_tax'] = ApiClient.convertToType(data['federal_tax'], 'Number');
+      }
       if (data.hasOwnProperty('gift_target')) {
         obj['gift_target'] = ApiClient.convertToType(data['gift_target'], 'Number');
       }
@@ -92,6 +96,9 @@
       }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
+      }
+      if (data.hasOwnProperty('state_tax')) {
+        obj['state_tax'] = ApiClient.convertToType(data['state_tax'], 'Number');
       }
       if (data.hasOwnProperty('template')) {
         obj['template'] = ApiClient.convertToType(data['template'], 'String');
@@ -129,6 +136,11 @@
    */
   exports.prototype['additional_properties'] = undefined;
   /**
+   * The amount of federal tax to add (increases final price of invoice even if using price override). Minimum 0
+   * @member {Number} federal_tax
+   */
+  exports.prototype['federal_tax'] = undefined;
+  /**
    * An optional target user to give the item to as a gift
    * @member {Number} gift_target
    */
@@ -139,7 +151,7 @@
    */
   exports.prototype['item_notes'] = undefined;
   /**
-   * The amount already paid. Must match final price to complete purchase. Minimum 0
+   * The amount already paid. Must match final price to complete purchase. Ignored for non-paid endpoints. Minimum 0
    * @member {Number} paid_amount
    */
   exports.prototype['paid_amount'] = undefined;
@@ -153,6 +165,11 @@
    * @member {String} sku
    */
   exports.prototype['sku'] = undefined;
+  /**
+   * The amount of state tax to add (increases final price of invoice even if using price override). Minimum 0
+   * @member {Number} state_tax
+   */
+  exports.prototype['state_tax'] = undefined;
   /**
    * An invoice template this invoice is validated against (private). May be null and no validation of properties will be done
    * @member {String} template

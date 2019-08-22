@@ -161,6 +161,16 @@
         done();
       });
     });
+    describe('quickProcessing', function() {
+      it('should call quickProcessing successfully', function(done) {
+        //uncomment below and update the code to test quickProcessing
+        //instance.quickProcessing(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('updateItemTemplate', function() {
       it('should call updateItemTemplate successfully', function(done) {
         //uncomment below and update the code to test updateItemTemplate

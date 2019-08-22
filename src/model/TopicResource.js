@@ -37,7 +37,7 @@
   /**
    * The TopicResource model module.
    * @module model/TopicResource
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**

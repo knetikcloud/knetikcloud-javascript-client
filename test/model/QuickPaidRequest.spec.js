@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property federalTax (base name: "federal_tax")', function() {
+      // uncomment below and update the code to test the property federalTax
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property giftTarget (base name: "gift_target")', function() {
       // uncomment below and update the code to test the property giftTarget
       //var instane = new KnetikCloud.QuickPaidRequest();
@@ -89,6 +95,12 @@
 
     it('should have the property sku (base name: "sku")', function() {
       // uncomment below and update the code to test the property sku
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property stateTax (base name: "state_tax")', function() {
+      // uncomment below and update the code to test the property stateTax
       //var instane = new KnetikCloud.QuickPaidRequest();
       //expect(instance).to.be();
     });

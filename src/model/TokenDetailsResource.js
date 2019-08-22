@@ -37,7 +37,7 @@
   /**
    * The TokenDetailsResource model module.
    * @module model/TokenDetailsResource
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**

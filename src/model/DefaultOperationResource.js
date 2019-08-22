@@ -37,7 +37,7 @@
   /**
    * The DefaultOperationResource model module.
    * @module model/DefaultOperationResource
-   * @version 3.0.263
+   * @version 3.0.264
    */
 
   /**

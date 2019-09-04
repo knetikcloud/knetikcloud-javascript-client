@@ -37,7 +37,7 @@
   /**
    * The PatchResource model module.
    * @module model/PatchResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The PageResourceBreRule model module.
    * @module model/PageResourceBreRule
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

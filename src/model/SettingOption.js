@@ -37,7 +37,7 @@
   /**
    * The SettingOption model module.
    * @module model/SettingOption
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

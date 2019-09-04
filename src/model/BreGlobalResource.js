@@ -37,7 +37,7 @@
   /**
    * The BreGlobalResource model module.
    * @module model/BreGlobalResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

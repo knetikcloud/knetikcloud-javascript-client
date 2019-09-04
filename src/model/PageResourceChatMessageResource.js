@@ -37,7 +37,7 @@
   /**
    * The PageResourceChatMessageResource model module.
    * @module model/PageResourceChatMessageResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

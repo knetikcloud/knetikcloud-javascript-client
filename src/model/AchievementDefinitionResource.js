@@ -37,7 +37,7 @@
   /**
    * The AchievementDefinitionResource model module.
    * @module model/AchievementDefinitionResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

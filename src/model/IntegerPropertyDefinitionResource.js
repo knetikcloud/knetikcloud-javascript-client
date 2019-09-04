@@ -37,7 +37,7 @@
   /**
    * The IntegerPropertyDefinitionResource model module.
    * @module model/IntegerPropertyDefinitionResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

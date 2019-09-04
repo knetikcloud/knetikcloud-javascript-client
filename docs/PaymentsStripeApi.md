@@ -63,11 +63,11 @@ Name | Type | Description  | Notes
 
 <a name="payStripeInvoice"></a>
 # **payStripeInvoice**
-> payStripeInvoice(opts)
+> StringWrapper payStripeInvoice(opts)
 
 Pay with a single use token
 
-Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. A 200 status code indicates sucess with a return value of \&quot;succeeded\&quot;. \&quot;pending\&quot; status is also a 200 and otherwise a non-200 will be sent for failures. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -87,8 +87,8 @@ var apiInstance = new KnetikCloud.PaymentsStripeApi();
 var opts = { 
   'request': new KnetikCloud.StripePaymentRequest() // StripePaymentRequest | The request to pay an invoice
 };
-apiInstance.payStripeInvoice(opts).then(function() {
-  console.log('API called successfully.');
+apiInstance.payStripeInvoice(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
 });
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 

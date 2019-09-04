@@ -37,7 +37,7 @@
   /**
    * The MonitoringMetricDatapointResource model module.
    * @module model/MonitoringMetricDatapointResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

@@ -34,7 +34,7 @@
   /**
    * AuthPermissions service.
    * @module api/AuthPermissionsApi
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

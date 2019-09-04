@@ -37,7 +37,7 @@
   /**
    * The TextPropertyDefinitionResource model module.
    * @module model/TextPropertyDefinitionResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

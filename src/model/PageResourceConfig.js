@@ -37,7 +37,7 @@
   /**
    * The PageResourceConfig model module.
    * @module model/PageResourceConfig
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

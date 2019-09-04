@@ -37,7 +37,7 @@
   /**
    * The SubscriptionPriceOverrideRequest model module.
    * @module model/SubscriptionPriceOverrideRequest
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

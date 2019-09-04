@@ -37,7 +37,7 @@
   /**
    * The ActivityOccurrenceSettingsResource model module.
    * @module model/ActivityOccurrenceSettingsResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The PageResourceCountryResource model module.
    * @module model/PageResourceCountryResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

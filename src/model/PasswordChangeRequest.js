@@ -37,7 +37,7 @@
   /**
    * The PasswordChangeRequest model module.
    * @module model/PasswordChangeRequest
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

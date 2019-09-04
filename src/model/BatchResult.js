@@ -37,7 +37,7 @@
   /**
    * The BatchResult model module.
    * @module model/BatchResult
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

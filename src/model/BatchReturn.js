@@ -37,7 +37,7 @@
   /**
    * The BatchReturn model module.
    * @module model/BatchReturn
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

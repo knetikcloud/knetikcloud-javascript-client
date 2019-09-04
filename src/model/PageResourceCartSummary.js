@@ -37,7 +37,7 @@
   /**
    * The PageResourceCartSummary model module.
    * @module model/PageResourceCartSummary
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/PaymentMethodResource', 'model/Result', 'model/StripeCreatePaymentMethod', 'model/StripePaymentRequest'], factory);
+    define(['ApiClient', 'model/PaymentMethodResource', 'model/Result', 'model/StringWrapper', 'model/StripeCreatePaymentMethod', 'model/StripePaymentRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/PaymentMethodResource'), require('../model/Result'), require('../model/StripeCreatePaymentMethod'), require('../model/StripePaymentRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/PaymentMethodResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/StripeCreatePaymentMethod'), require('../model/StripePaymentRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.PaymentsStripeApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PaymentMethodResource, root.KnetikCloud.Result, root.KnetikCloud.StripeCreatePaymentMethod, root.KnetikCloud.StripePaymentRequest);
+    root.KnetikCloud.PaymentsStripeApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.PaymentMethodResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.StripeCreatePaymentMethod, root.KnetikCloud.StripePaymentRequest);
   }
-}(this, function(ApiClient, PaymentMethodResource, Result, StripeCreatePaymentMethod, StripePaymentRequest) {
+}(this, function(ApiClient, PaymentMethodResource, Result, StringWrapper, StripeCreatePaymentMethod, StripePaymentRequest) {
   'use strict';
 
   /**
    * PaymentsStripe service.
    * @module api/PaymentsStripeApi
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**
@@ -101,10 +101,10 @@
 
     /**
      * Pay with a single use token
-     * Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. A 200 status code indicates sucess with a return value of \&quot;succeeded\&quot;. \&quot;pending\&quot; status is also a 200 and otherwise a non-200 will be sent for failures. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {module:model/StripePaymentRequest} opts.request The request to pay an invoice
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.payStripeInvoiceWithHttpInfo = function(opts) {
       opts = opts || {};
@@ -125,7 +125,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
         '/payment/provider/stripe/payments', 'POST',
@@ -136,10 +136,10 @@
 
     /**
      * Pay with a single use token
-     * Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+     * Obtain a token from Stripe, following their examples and documentation. Pays an invoice without creating a payment method. Ensure that Stripe itself has been configured with the webhook so that invoices are marked paid. A 200 status code indicates sucess with a return value of \&quot;succeeded\&quot;. \&quot;pending\&quot; status is also a 200 and otherwise a non-200 will be sent for failures. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {module:model/StripePaymentRequest} opts.request The request to pay an invoice
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.payStripeInvoice = function(opts) {
       return this.payStripeInvoiceWithHttpInfo(opts)

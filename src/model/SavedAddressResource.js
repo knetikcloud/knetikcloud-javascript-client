@@ -37,7 +37,7 @@
   /**
    * The SavedAddressResource model module.
    * @module model/SavedAddressResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

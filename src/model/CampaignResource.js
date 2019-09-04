@@ -37,7 +37,7 @@
   /**
    * The CampaignResource model module.
    * @module model/CampaignResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

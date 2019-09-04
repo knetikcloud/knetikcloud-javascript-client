@@ -37,7 +37,7 @@
   /**
    * The PageResourceVendorResource model module.
    * @module model/PageResourceVendorResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

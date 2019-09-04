@@ -37,7 +37,7 @@
   /**
    * The RawSMSResource model module.
    * @module model/RawSMSResource
-   * @version 3.0.264
+   * @version 3.0.266
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The AccessTypeResource model module.
    * @module model/AccessTypeResource
-   * @version 3.0.266
+   * @version 3.0.268
    */
 
   /**

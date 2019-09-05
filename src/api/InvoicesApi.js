@@ -34,7 +34,7 @@
   /**
    * Invoices service.
    * @module api/InvoicesApi
-   * @version 3.0.266
+   * @version 3.0.268
    */
 
   /**
@@ -642,7 +642,7 @@
      * @param {Number} id The id of the invoice
      * @param {Object} opts Optional parameters
      * @param {module:model/PayBySavedMethodRequest} opts.request The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
      */
     this.payInvoiceWithHttpInfo = function(id, opts) {
       opts = opts || {};
@@ -669,7 +669,7 @@
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = StringWrapper;
 
       return this.apiClient.callApi(
         '/invoices/{id}/payments', 'POST',
@@ -684,7 +684,7 @@
      * @param {Number} id The id of the invoice
      * @param {Object} opts Optional parameters
      * @param {module:model/PayBySavedMethodRequest} opts.request The payment method details. Will default to the appropriate user&#39;s wallet in the invoice currency if ommited.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}
      */
     this.payInvoice = function(id, opts) {
       return this.payInvoiceWithHttpInfo(id, opts)

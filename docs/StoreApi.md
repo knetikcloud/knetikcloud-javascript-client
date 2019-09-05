@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**getStoreItem**](StoreApi.md#getStoreItem) | **GET** /store/items/{id} | Get a single store item
 [**getStoreItems**](StoreApi.md#getStoreItems) | **GET** /store/items | List and search store items
 [**quickBuy**](StoreApi.md#quickBuy) | **POST** /store/quick-buy | One-step purchase and pay for a single SKU item from a user&#39;s wallet
+[**quickNew**](StoreApi.md#quickNew) | **POST** /store/quick-new | One-step invoice creation
 [**quickPaid**](StoreApi.md#quickPaid) | **POST** /store/quick-paid | One-step purchase when already paid
 [**quickProcessing**](StoreApi.md#quickProcessing) | **POST** /store/quick-processing | One-step invoice creation when already processing
 [**updateItemTemplate**](StoreApi.md#updateItemTemplate) | **PATCH** /store/items/templates/{id} | Update an item template
@@ -576,6 +577,59 @@ apiInstance.quickBuy(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **quickBuyRequest** | [**QuickBuyRequest**](QuickBuyRequest.md)| Quick buy details | [optional] 
+
+### Return type
+
+[**InvoiceResource**](InvoiceResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="quickNew"></a>
+# **quickNew**
+> InvoiceResource quickNew(opts)
+
+One-step invoice creation
+
+Used to create an invoice. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_USER and owner, or PAYMENTS_ADMIN
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.StoreApi();
+
+var opts = { 
+  'quickNewRequest': new KnetikCloud.QuickPaidRequest() // QuickPaidRequest | Quick new details
+};
+apiInstance.quickNew(opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **quickNewRequest** | [**QuickPaidRequest**](QuickPaidRequest.md)| Quick new details | [optional] 
 
 ### Return type
 

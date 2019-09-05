@@ -37,7 +37,7 @@
   /**
    * The PageResourceBreGlobalResource model module.
    * @module model/PageResourceBreGlobalResource
-   * @version 3.0.266
+   * @version 3.0.268
    */
 
   /**

@@ -598,7 +598,7 @@ Name | Type | Description  | Notes
 
 <a name="payInvoice"></a>
 # **payInvoice**
-> payInvoice(id, opts)
+> StringWrapper payInvoice(id, opts)
 
 Pay an invoice using a saved payment method
 
@@ -624,8 +624,8 @@ var id = 56; // Number | The id of the invoice
 var opts = { 
   'request': new KnetikCloud.PayBySavedMethodRequest() // PayBySavedMethodRequest | The payment method details. Will default to the appropriate user's wallet in the invoice currency if ommited.
 };
-apiInstance.payInvoice(id, opts).then(function() {
-  console.log('API called successfully.');
+apiInstance.payInvoice(id, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
 });
@@ -641,7 +641,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**StringWrapper**](StringWrapper.md)
 
 ### Authorization
 

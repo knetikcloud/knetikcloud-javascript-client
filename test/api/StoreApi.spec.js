@@ -151,6 +151,16 @@
         done();
       });
     });
+    describe('quickNew', function() {
+      it('should call quickNew successfully', function(done) {
+        //uncomment below and update the code to test quickNew
+        //instance.quickNew(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('quickPaid', function() {
       it('should call quickPaid successfully', function(done) {
         //uncomment below and update the code to test quickPaid

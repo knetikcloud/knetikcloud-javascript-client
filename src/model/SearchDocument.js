@@ -37,7 +37,7 @@
   /**
    * The SearchDocument model module.
    * @module model/SearchDocument
-   * @version 3.0.266
+   * @version 3.0.268
    */
 
   /**

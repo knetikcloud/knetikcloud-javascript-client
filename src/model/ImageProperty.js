@@ -37,7 +37,7 @@
   /**
    * The ImageProperty model module.
    * @module model/ImageProperty
-   * @version 3.0.266
+   * @version 3.0.268
    */
 
   /**

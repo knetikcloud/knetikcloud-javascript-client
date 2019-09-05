@@ -34,7 +34,7 @@
   /**
    * Store service.
    * @module api/StoreApi
-   * @version 3.0.266
+   * @version 3.0.268
    */
 
   /**
@@ -624,6 +624,56 @@
      */
     this.quickBuy = function(opts) {
       return this.quickBuyWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * One-step invoice creation
+     * Used to create an invoice. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_USER and owner, or PAYMENTS_ADMIN
+     * @param {Object} opts Optional parameters
+     * @param {module:model/QuickPaidRequest} opts.quickNewRequest Quick new details
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvoiceResource} and HTTP response
+     */
+    this.quickNewWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = opts['quickNewRequest'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = InvoiceResource;
+
+      return this.apiClient.callApi(
+        '/store/quick-new', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * One-step invoice creation
+     * Used to create an invoice. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_USER and owner, or PAYMENTS_ADMIN
+     * @param {Object} opts Optional parameters
+     * @param {module:model/QuickPaidRequest} opts.quickNewRequest Quick new details
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvoiceResource}
+     */
+    this.quickNew = function(opts) {
+      return this.quickNewWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

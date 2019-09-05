@@ -34,7 +34,7 @@
   /**
    * Monitoring service.
    * @module api/MonitoringApi
-   * @version 3.0.266
+   * @version 3.0.268
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The CategoryResource model module.
    * @module model/CategoryResource
-   * @version 3.0.266
+   * @version 3.0.268
    */
 
   /**

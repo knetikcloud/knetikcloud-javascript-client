@@ -37,7 +37,7 @@
   /**
    * The UserInventoryAddRequest model module.
    * @module model/UserInventoryAddRequest
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**
@@ -50,6 +50,7 @@
    */
   var exports = function(note, skipInvoice, sku) {
     var _this = this;
+
 
     _this['note'] = note;
 
@@ -68,6 +69,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('invoice_id')) {
+        obj['invoice_id'] = ApiClient.convertToType(data['invoice_id'], 'Number');
+      }
       if (data.hasOwnProperty('note')) {
         obj['note'] = ApiClient.convertToType(data['note'], 'String');
       }
@@ -98,6 +102,11 @@
   var discriminatorValue = 'UserInventoryAddRequest';
 
 
+  /**
+   * An invoice id to link the inventory to (skip_invoice should be true)
+   * @member {Number} invoice_id
+   */
+  exports.prototype['invoice_id'] = undefined;
   /**
    * A note to be passed to the invoice or transaction
    * @member {String} note

@@ -37,7 +37,7 @@
   /**
    * The GlobalCheckAndIncrementResource model module.
    * @module model/GlobalCheckAndIncrementResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

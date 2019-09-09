@@ -37,7 +37,7 @@
   /**
    * The DeltaResource model module.
    * @module model/DeltaResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

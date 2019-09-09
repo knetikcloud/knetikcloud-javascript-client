@@ -37,7 +37,7 @@
   /**
    * The InvoicePaymentStatusRequest model module.
    * @module model/InvoicePaymentStatusRequest
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

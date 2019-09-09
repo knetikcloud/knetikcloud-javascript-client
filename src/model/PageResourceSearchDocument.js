@@ -37,7 +37,7 @@
   /**
    * The PageResourceSearchDocument model module.
    * @module model/PageResourceSearchDocument
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

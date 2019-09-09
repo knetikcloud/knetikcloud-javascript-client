@@ -37,7 +37,7 @@
   /**
    * The PageResourceUserNotificationResource model module.
    * @module model/PageResourceUserNotificationResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

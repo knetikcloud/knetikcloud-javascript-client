@@ -57,6 +57,12 @@
       //expect(instance).to.be.a(KnetikCloud.UserInventoryAddRequest);
     });
 
+    it('should have the property invoiceId (base name: "invoice_id")', function() {
+      // uncomment below and update the code to test the property invoiceId
+      //var instane = new KnetikCloud.UserInventoryAddRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property note (base name: "note")', function() {
       // uncomment below and update the code to test the property note
       //var instane = new KnetikCloud.UserInventoryAddRequest();

@@ -37,7 +37,7 @@
   /**
    * The ActionResource model module.
    * @module model/ActionResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

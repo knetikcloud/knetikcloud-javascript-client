@@ -37,7 +37,7 @@
   /**
    * The SelectedSettingResource model module.
    * @module model/SelectedSettingResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

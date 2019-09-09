@@ -37,7 +37,7 @@
   /**
    * The SampleCountriesResponse model module.
    * @module model/SampleCountriesResponse
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

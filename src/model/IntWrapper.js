@@ -37,7 +37,7 @@
   /**
    * The IntWrapper model module.
    * @module model/IntWrapper
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

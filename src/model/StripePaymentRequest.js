@@ -37,7 +37,7 @@
   /**
    * The StripePaymentRequest model module.
    * @module model/StripePaymentRequest
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

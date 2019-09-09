@@ -37,7 +37,7 @@
   /**
    * The DeviceResource model module.
    * @module model/DeviceResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

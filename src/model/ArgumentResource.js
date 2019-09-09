@@ -37,7 +37,7 @@
   /**
    * The ArgumentResource model module.
    * @module model/ArgumentResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The CartSummary model module.
    * @module model/CartSummary
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The Expirable model module.
    * @module model/Expirable
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

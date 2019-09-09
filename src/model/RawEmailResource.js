@@ -37,7 +37,7 @@
   /**
    * The RawEmailResource model module.
    * @module model/RawEmailResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

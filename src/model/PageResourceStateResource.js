@@ -37,7 +37,7 @@
   /**
    * The PageResourceStateResource model module.
    * @module model/PageResourceStateResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

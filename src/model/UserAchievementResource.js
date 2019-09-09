@@ -37,7 +37,7 @@
   /**
    * The UserAchievementResource model module.
    * @module model/UserAchievementResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

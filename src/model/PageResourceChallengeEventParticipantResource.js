@@ -37,7 +37,7 @@
   /**
    * The PageResourceChallengeEventParticipantResource model module.
    * @module model/PageResourceChallengeEventParticipantResource
-   * @version 3.0.268
+   * @version 3.0.269
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The GrantTypeResource model module.
    * @module model/GrantTypeResource
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

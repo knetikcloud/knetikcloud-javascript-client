@@ -37,7 +37,7 @@
   /**
    * The PageResourceUserInventoryResource model module.
    * @module model/PageResourceUserInventoryResource
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

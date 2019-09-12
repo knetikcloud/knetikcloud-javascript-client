@@ -34,7 +34,7 @@
   /**
    * RuleEngineActions service.
    * @module api/RuleEngineActionsApi
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

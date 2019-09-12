@@ -37,7 +37,7 @@
   /**
    * The TimePeriodUsable model module.
    * @module model/TimePeriodUsable
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

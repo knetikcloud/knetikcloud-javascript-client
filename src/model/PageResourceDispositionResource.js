@@ -37,7 +37,7 @@
   /**
    * The PageResourceDispositionResource model module.
    * @module model/PageResourceDispositionResource
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

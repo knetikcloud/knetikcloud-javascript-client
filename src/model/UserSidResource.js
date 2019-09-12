@@ -37,7 +37,7 @@
   /**
    * The UserSidResource model module.
    * @module model/UserSidResource
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

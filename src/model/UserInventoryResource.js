@@ -37,7 +37,7 @@
   /**
    * The UserInventoryResource model module.
    * @module model/UserInventoryResource
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

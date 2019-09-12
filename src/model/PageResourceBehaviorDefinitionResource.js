@@ -37,7 +37,7 @@
   /**
    * The PageResourceBehaviorDefinitionResource model module.
    * @module model/PageResourceBehaviorDefinitionResource
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

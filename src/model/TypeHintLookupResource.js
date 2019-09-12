@@ -37,7 +37,7 @@
   /**
    * The TypeHintLookupResource model module.
    * @module model/TypeHintLookupResource
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

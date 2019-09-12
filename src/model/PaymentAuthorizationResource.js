@@ -37,7 +37,7 @@
   /**
    * The PaymentAuthorizationResource model module.
    * @module model/PaymentAuthorizationResource
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

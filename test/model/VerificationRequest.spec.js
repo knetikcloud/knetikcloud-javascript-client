@@ -87,6 +87,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property includeLetters (base name: "include_letters")', function() {
+      // uncomment below and update the code to test the property includeLetters
+      //var instane = new KnetikCloud.VerificationRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property includeNumbers (base name: "include_numbers")', function() {
       // uncomment below and update the code to test the property includeNumbers
       //var instane = new KnetikCloud.VerificationRequest();

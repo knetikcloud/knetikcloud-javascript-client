@@ -34,7 +34,7 @@
   /**
    * StoreCoupons service.
    * @module api/StoreCouponsApi
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

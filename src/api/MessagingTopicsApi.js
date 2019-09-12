@@ -34,7 +34,7 @@
   /**
    * MessagingTopics service.
    * @module api/MessagingTopicsApi
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The VerificationRequest model module.
    * @module model/VerificationRequest
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -85,6 +86,9 @@
       }
       if (data.hasOwnProperty('expiration_date')) {
         obj['expiration_date'] = ApiClient.convertToType(data['expiration_date'], 'Number');
+      }
+      if (data.hasOwnProperty('include_letters')) {
+        obj['include_letters'] = ApiClient.convertToType(data['include_letters'], 'Boolean');
       }
       if (data.hasOwnProperty('include_numbers')) {
         obj['include_numbers'] = ApiClient.convertToType(data['include_numbers'], 'Boolean');
@@ -144,6 +148,11 @@
    * @member {Number} expiration_date
    */
   exports.prototype['expiration_date'] = undefined;
+  /**
+   * Whether to include letters, if the code is auto-generated. Default: true
+   * @member {Boolean} include_letters
+   */
+  exports.prototype['include_letters'] = undefined;
   /**
    * Whether to include numbers, if the code is auto-generated. Default: true
    * @member {Boolean} include_numbers

@@ -34,7 +34,7 @@
   /**
    * StoreVendors service.
    * @module api/StoreVendorsApi
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

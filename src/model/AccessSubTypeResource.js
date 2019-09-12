@@ -37,7 +37,7 @@
   /**
    * The AccessSubTypeResource model module.
    * @module model/AccessSubTypeResource
-   * @version 3.0.269
+   * @version 3.0.270
    */
 
   /**

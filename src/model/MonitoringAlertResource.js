@@ -37,7 +37,7 @@
   /**
    * The MonitoringAlertResource model module.
    * @module model/MonitoringAlertResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

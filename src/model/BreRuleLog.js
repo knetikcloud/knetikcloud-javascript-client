@@ -37,7 +37,7 @@
   /**
    * The BreRuleLog model module.
    * @module model/BreRuleLog
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

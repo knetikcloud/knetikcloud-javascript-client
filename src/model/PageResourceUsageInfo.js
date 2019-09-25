@@ -37,7 +37,7 @@
   /**
    * The PageResourceUsageInfo model module.
    * @module model/PageResourceUsageInfo
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

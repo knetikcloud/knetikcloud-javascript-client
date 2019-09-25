@@ -37,7 +37,7 @@
   /**
    * The PageResourceLocationLogResource model module.
    * @module model/PageResourceLocationLogResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

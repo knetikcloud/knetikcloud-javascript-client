@@ -37,7 +37,7 @@
   /**
    * The PageResourceMonitoringIncidentResource model module.
    * @module model/PageResourceMonitoringIncidentResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

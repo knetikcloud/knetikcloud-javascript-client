@@ -37,7 +37,7 @@
   /**
    * The RewardItemResource model module.
    * @module model/RewardItemResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The WalletTotalResponse model module.
    * @module model/WalletTotalResponse
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

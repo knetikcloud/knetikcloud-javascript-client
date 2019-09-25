@@ -37,7 +37,7 @@
   /**
    * The PageResourceImportJobResource model module.
    * @module model/PageResourceImportJobResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

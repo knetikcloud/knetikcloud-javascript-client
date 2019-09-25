@@ -34,7 +34,7 @@
   /**
    * Invoices service.
    * @module api/InvoicesApi
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**
@@ -501,6 +501,7 @@
      * @param {String} opts.filterShipping Filters invoices by shipping price. Multiple values possible for range search. Format: filter_shipping&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_shipping&#x3D;GT,14.58,LT,15.54
      * @param {String} opts.filterVendorName Filters invoices by vendor name starting with given string
      * @param {String} opts.filterSku Filters invoices by item sku
+     * @param {String} opts.filterNotSku Filters for invoices that do not have an item sku
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -528,6 +529,7 @@
         'filter_shipping': opts['filterShipping'],
         'filter_vendor_name': opts['filterVendorName'],
         'filter_sku': opts['filterSku'],
+        'filter_not_sku': opts['filterNotSku'],
         'size': opts['size'],
         'page': opts['page'],
         'order': opts['order'],
@@ -569,6 +571,7 @@
      * @param {String} opts.filterShipping Filters invoices by shipping price. Multiple values possible for range search. Format: filter_shipping&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_shipping&#x3D;GT,14.58,LT,15.54
      * @param {String} opts.filterVendorName Filters invoices by vendor name starting with given string
      * @param {String} opts.filterSku Filters invoices by item sku
+     * @param {String} opts.filterNotSku Filters for invoices that do not have an item sku
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]

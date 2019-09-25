@@ -34,7 +34,7 @@
   /**
    * Templates service.
    * @module api/TemplatesApi
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

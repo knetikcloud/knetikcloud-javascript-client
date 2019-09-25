@@ -37,7 +37,7 @@
   /**
    * The BreGlobalScopeDefinition model module.
    * @module model/BreGlobalScopeDefinition
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

@@ -34,7 +34,7 @@
   /**
    * RuleEngineExpressions service.
    * @module api/RuleEngineExpressionsApi
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

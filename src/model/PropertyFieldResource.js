@@ -37,7 +37,7 @@
   /**
    * The PropertyFieldResource model module.
    * @module model/PropertyFieldResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

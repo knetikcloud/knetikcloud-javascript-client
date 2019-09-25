@@ -37,7 +37,7 @@
   /**
    * The DateOperationResource model module.
    * @module model/DateOperationResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

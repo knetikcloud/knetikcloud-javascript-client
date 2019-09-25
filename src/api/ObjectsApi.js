@@ -34,7 +34,7 @@
   /**
    * Objects service.
    * @module api/ObjectsApi
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

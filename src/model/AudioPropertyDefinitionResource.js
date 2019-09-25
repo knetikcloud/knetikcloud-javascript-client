@@ -37,7 +37,7 @@
   /**
    * The AudioPropertyDefinitionResource model module.
    * @module model/AudioPropertyDefinitionResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

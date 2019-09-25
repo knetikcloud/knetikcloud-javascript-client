@@ -37,7 +37,7 @@
   /**
    * The CouponItem model module.
    * @module model/CouponItem
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

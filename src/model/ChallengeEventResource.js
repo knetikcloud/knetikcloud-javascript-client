@@ -37,7 +37,7 @@
   /**
    * The ChallengeEventResource model module.
    * @module model/ChallengeEventResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

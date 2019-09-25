@@ -37,7 +37,7 @@
   /**
    * The VideoRelationshipResource model module.
    * @module model/VideoRelationshipResource
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

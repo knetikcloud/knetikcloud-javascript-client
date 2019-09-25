@@ -37,7 +37,7 @@
   /**
    * The StripeCreatePaymentMethod model module.
    * @module model/StripeCreatePaymentMethod
-   * @version 3.0.270
+   * @version 3.0.271
    */
 
   /**

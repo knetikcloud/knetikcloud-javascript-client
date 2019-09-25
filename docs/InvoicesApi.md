@@ -494,6 +494,7 @@ var opts = {
   'filterShipping': "filterShipping_example", // String | Filters invoices by shipping price. Multiple values possible for range search. Format: filter_shipping=OP,ts&... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_shipping=GT,14.58,LT,15.54
   'filterVendorName': "filterVendorName_example", // String | Filters invoices by vendor name starting with given string
   'filterSku': "filterSku_example", // String | Filters invoices by item sku
+  'filterNotSku': "filterNotSku_example", // String | Filters for invoices that do not have an item sku
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -524,6 +525,7 @@ Name | Type | Description  | Notes
  **filterShipping** | **String**| Filters invoices by shipping price. Multiple values possible for range search. Format: filter_shipping&#x3D;OP,ts&amp;... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_shipping&#x3D;GT,14.58,LT,15.54 | [optional] 
  **filterVendorName** | **String**| Filters invoices by vendor name starting with given string | [optional] 
  **filterSku** | **String**| Filters invoices by item sku | [optional] 
+ **filterNotSku** | **String**| Filters for invoices that do not have an item sku | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 

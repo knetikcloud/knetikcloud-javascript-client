@@ -34,7 +34,7 @@
   /**
    * Verification service.
    * @module api/VerificationApi
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**
@@ -427,6 +427,9 @@
      * List requests
      * Get a list of verification requests.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterTemplate Filter for verifications with specified template
+     * @param {String} opts.filterTarget Filter for verifications with specified user id as the target
+     * @param {String} opts.filterOriginator Filter for verifications with specified user id as the originator
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
@@ -440,6 +443,9 @@
       var pathParams = {
       };
       var queryParams = {
+        'filter_template': opts['filterTemplate'],
+        'filter_target': opts['filterTarget'],
+        'filter_originator': opts['filterOriginator'],
         'size': opts['size'],
         'page': opts['page'],
         'order': opts['order'],
@@ -467,6 +473,9 @@
      * List requests
      * Get a list of verification requests.&lt;br /&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LIST
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterTemplate Filter for verifications with specified template
+     * @param {String} opts.filterTarget Filter for verifications with specified user id as the target
+     * @param {String} opts.filterOriginator Filter for verifications with specified user id as the originator
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)

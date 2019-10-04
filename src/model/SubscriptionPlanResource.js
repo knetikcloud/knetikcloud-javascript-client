@@ -37,7 +37,7 @@
   /**
    * The SubscriptionPlanResource model module.
    * @module model/SubscriptionPlanResource
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**

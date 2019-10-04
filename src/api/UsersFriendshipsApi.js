@@ -34,7 +34,7 @@
   /**
    * UsersFriendships service.
    * @module api/UsersFriendshipsApi
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**

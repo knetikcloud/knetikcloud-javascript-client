@@ -37,7 +37,7 @@
   /**
    * The DispositionResource model module.
    * @module model/DispositionResource
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**

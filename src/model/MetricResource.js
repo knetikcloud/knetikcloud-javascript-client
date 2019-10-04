@@ -37,7 +37,7 @@
   /**
    * The MetricResource model module.
    * @module model/MetricResource
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**

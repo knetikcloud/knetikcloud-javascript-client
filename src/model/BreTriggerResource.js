@@ -37,7 +37,7 @@
   /**
    * The BreTriggerResource model module.
    * @module model/BreTriggerResource
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**

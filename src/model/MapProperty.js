@@ -37,7 +37,7 @@
   /**
    * The MapProperty model module.
    * @module model/MapProperty
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**

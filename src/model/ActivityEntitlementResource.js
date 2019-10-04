@@ -37,7 +37,7 @@
   /**
    * The ActivityEntitlementResource model module.
    * @module model/ActivityEntitlementResource
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**

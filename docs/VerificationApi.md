@@ -414,6 +414,9 @@ oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new KnetikCloud.VerificationApi();
 
 var opts = { 
+  'filterTemplate': "filterTemplate_example", // String | Filter for verifications with specified template
+  'filterTarget': "filterTarget_example", // String | Filter for verifications with specified user id as the target
+  'filterOriginator': "filterOriginator_example", // String | Filter for verifications with specified user id as the originator
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -430,6 +433,9 @@ apiInstance.getVerificationRequests(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filterTemplate** | **String**| Filter for verifications with specified template | [optional] 
+ **filterTarget** | **String**| Filter for verifications with specified user id as the target | [optional] 
+ **filterOriginator** | **String**| Filter for verifications with specified user id as the originator | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]

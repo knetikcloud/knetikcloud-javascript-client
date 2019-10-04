@@ -37,7 +37,7 @@
   /**
    * The BasicTemplatedResource model module.
    * @module model/BasicTemplatedResource
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**

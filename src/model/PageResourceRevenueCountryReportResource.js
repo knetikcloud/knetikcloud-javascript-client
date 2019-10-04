@@ -37,7 +37,7 @@
   /**
    * The PageResourceRevenueCountryReportResource model module.
    * @module model/PageResourceRevenueCountryReportResource
-   * @version 3.0.271
+   * @version 3.0.272
    */
 
   /**

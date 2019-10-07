@@ -37,7 +37,7 @@
   /**
    * The PropertyDefinitionResource model module.
    * @module model/PropertyDefinitionResource
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

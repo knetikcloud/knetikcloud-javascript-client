@@ -37,7 +37,7 @@
   /**
    * The IntegerProperty model module.
    * @module model/IntegerProperty
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

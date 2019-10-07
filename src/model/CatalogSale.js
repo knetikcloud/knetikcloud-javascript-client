@@ -37,7 +37,7 @@
   /**
    * The CatalogSale model module.
    * @module model/CatalogSale
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

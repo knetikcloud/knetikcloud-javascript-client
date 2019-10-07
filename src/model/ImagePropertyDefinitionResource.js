@@ -37,7 +37,7 @@
   /**
    * The ImagePropertyDefinitionResource model module.
    * @module model/ImagePropertyDefinitionResource
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

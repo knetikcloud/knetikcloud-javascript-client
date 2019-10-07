@@ -37,7 +37,7 @@
   /**
    * The AnswerResource model module.
    * @module model/AnswerResource
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

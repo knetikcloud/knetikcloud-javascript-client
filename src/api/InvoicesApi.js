@@ -34,7 +34,7 @@
   /**
    * Invoices service.
    * @module api/InvoicesApi
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**
@@ -691,6 +691,66 @@
      */
     this.payInvoice = function(id, opts) {
       return this.payInvoiceWithHttpInfo(id, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Set the additional properties of an invoice
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
+     * @param {Number} id The id of the invoice
+     * @param {Object} properties The new properties for the membership
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.setAdditionalPropertiesWithHttpInfo = function(id, properties) {
+      var postBody = properties;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling setAdditionalProperties");
+      }
+
+      // verify the required parameter 'properties' is set
+      if (properties === undefined || properties === null) {
+        throw new Error("Missing the required parameter 'properties' when calling setAdditionalProperties");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/invoices/{id}/properties', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Set the additional properties of an invoice
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
+     * @param {Number} id The id of the invoice
+     * @param {Object} properties The new properties for the membership
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.setAdditionalProperties = function(id, properties) {
+      return this.setAdditionalPropertiesWithHttpInfo(id, properties)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

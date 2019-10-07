@@ -37,7 +37,7 @@
   /**
    * The ChallengeActivityResource model module.
    * @module model/ChallengeActivityResource
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

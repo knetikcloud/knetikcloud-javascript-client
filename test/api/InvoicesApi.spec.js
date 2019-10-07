@@ -161,6 +161,16 @@
         done();
       });
     });
+    describe('setAdditionalProperties', function() {
+      it('should call setAdditionalProperties successfully', function(done) {
+        //uncomment below and update the code to test setAdditionalProperties
+        //instance.setAdditionalProperties(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('setBundledInvoiceItemFulfillmentStatus', function() {
       it('should call setBundledInvoiceItemFulfillmentStatus successfully', function(done) {
         //uncomment below and update the code to test setBundledInvoiceItemFulfillmentStatus

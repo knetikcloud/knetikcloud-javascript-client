@@ -37,7 +37,7 @@
   /**
    * The AccessResultsResource model module.
    * @module model/AccessResultsResource
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The PageResourceBareActivityResource model module.
    * @module model/PageResourceBareActivityResource
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

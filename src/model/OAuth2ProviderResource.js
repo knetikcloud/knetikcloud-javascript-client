@@ -37,7 +37,7 @@
   /**
    * The OAuth2ProviderResource model module.
    * @module model/OAuth2ProviderResource
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

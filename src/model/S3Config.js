@@ -37,7 +37,7 @@
   /**
    * The S3Config model module.
    * @module model/S3Config
-   * @version 3.0.272
+   * @version 3.0.273
    */
 
   /**

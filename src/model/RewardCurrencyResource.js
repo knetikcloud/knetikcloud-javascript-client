@@ -37,7 +37,7 @@
   /**
    * The RewardCurrencyResource model module.
    * @module model/RewardCurrencyResource
-   * @version 3.0.273
+   * @version 3.0.274
    */
 
   /**

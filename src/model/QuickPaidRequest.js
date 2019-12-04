@@ -37,7 +37,7 @@
   /**
    * The QuickPaidRequest model module.
    * @module model/QuickPaidRequest
-   * @version 3.0.273
+   * @version 3.0.274
    */
 
   /**
@@ -53,11 +53,26 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     _this['gift_target'] = giftTarget;
 
 
 
+
+
     _this['sku'] = sku;
+
 
 
 
@@ -79,6 +94,42 @@
       if (data.hasOwnProperty('additional_properties')) {
         obj['additional_properties'] = ApiClient.convertToType(data['additional_properties'], {'String': Property});
       }
+      if (data.hasOwnProperty('address1')) {
+        obj['address1'] = ApiClient.convertToType(data['address1'], 'String');
+      }
+      if (data.hasOwnProperty('address2')) {
+        obj['address2'] = ApiClient.convertToType(data['address2'], 'String');
+      }
+      if (data.hasOwnProperty('billing_address1')) {
+        obj['billing_address1'] = ApiClient.convertToType(data['billing_address1'], 'String');
+      }
+      if (data.hasOwnProperty('billing_address2')) {
+        obj['billing_address2'] = ApiClient.convertToType(data['billing_address2'], 'String');
+      }
+      if (data.hasOwnProperty('billing_city_name')) {
+        obj['billing_city_name'] = ApiClient.convertToType(data['billing_city_name'], 'String');
+      }
+      if (data.hasOwnProperty('billing_country_name')) {
+        obj['billing_country_name'] = ApiClient.convertToType(data['billing_country_name'], 'String');
+      }
+      if (data.hasOwnProperty('billing_full_name')) {
+        obj['billing_full_name'] = ApiClient.convertToType(data['billing_full_name'], 'String');
+      }
+      if (data.hasOwnProperty('billing_postal_code')) {
+        obj['billing_postal_code'] = ApiClient.convertToType(data['billing_postal_code'], 'String');
+      }
+      if (data.hasOwnProperty('billing_state_name')) {
+        obj['billing_state_name'] = ApiClient.convertToType(data['billing_state_name'], 'String');
+      }
+      if (data.hasOwnProperty('city_name')) {
+        obj['city_name'] = ApiClient.convertToType(data['city_name'], 'String');
+      }
+      if (data.hasOwnProperty('country_name')) {
+        obj['country_name'] = ApiClient.convertToType(data['country_name'], 'String');
+      }
+      if (data.hasOwnProperty('email')) {
+        obj['email'] = ApiClient.convertToType(data['email'], 'String');
+      }
       if (data.hasOwnProperty('federal_tax')) {
         obj['federal_tax'] = ApiClient.convertToType(data['federal_tax'], 'Number');
       }
@@ -88,14 +139,23 @@
       if (data.hasOwnProperty('item_notes')) {
         obj['item_notes'] = ApiClient.convertToType(data['item_notes'], 'String');
       }
+      if (data.hasOwnProperty('name_prefix')) {
+        obj['name_prefix'] = ApiClient.convertToType(data['name_prefix'], 'String');
+      }
       if (data.hasOwnProperty('paid_amount')) {
         obj['paid_amount'] = ApiClient.convertToType(data['paid_amount'], 'Number');
+      }
+      if (data.hasOwnProperty('postal_code')) {
+        obj['postal_code'] = ApiClient.convertToType(data['postal_code'], 'String');
       }
       if (data.hasOwnProperty('price_override')) {
         obj['price_override'] = ApiClient.convertToType(data['price_override'], 'Number');
       }
       if (data.hasOwnProperty('sku')) {
         obj['sku'] = ApiClient.convertToType(data['sku'], 'String');
+      }
+      if (data.hasOwnProperty('state_name')) {
+        obj['state_name'] = ApiClient.convertToType(data['state_name'], 'String');
       }
       if (data.hasOwnProperty('state_tax')) {
         obj['state_tax'] = ApiClient.convertToType(data['state_tax'], 'Number');
@@ -136,6 +196,66 @@
    */
   exports.prototype['additional_properties'] = undefined;
   /**
+   * Line one of the customer's shipping address
+   * @member {String} address1
+   */
+  exports.prototype['address1'] = undefined;
+  /**
+   * Line two of the customer's shipping address
+   * @member {String} address2
+   */
+  exports.prototype['address2'] = undefined;
+  /**
+   * Line one of the customer's billing address
+   * @member {String} billing_address1
+   */
+  exports.prototype['billing_address1'] = undefined;
+  /**
+   * Line two of the customer's billing address
+   * @member {String} billing_address2
+   */
+  exports.prototype['billing_address2'] = undefined;
+  /**
+   * The city for the customer's billing address
+   * @member {String} billing_city_name
+   */
+  exports.prototype['billing_city_name'] = undefined;
+  /**
+   * The country for the customer's billing address
+   * @member {String} billing_country_name
+   */
+  exports.prototype['billing_country_name'] = undefined;
+  /**
+   * The customer's name for the billing address
+   * @member {String} billing_full_name
+   */
+  exports.prototype['billing_full_name'] = undefined;
+  /**
+   * The postal code for the customer's billing address
+   * @member {String} billing_postal_code
+   */
+  exports.prototype['billing_postal_code'] = undefined;
+  /**
+   * The state for the customer's billing address
+   * @member {String} billing_state_name
+   */
+  exports.prototype['billing_state_name'] = undefined;
+  /**
+   * The city for the customer's shipping address
+   * @member {String} city_name
+   */
+  exports.prototype['city_name'] = undefined;
+  /**
+   * The country for the customer's shipping address
+   * @member {String} country_name
+   */
+  exports.prototype['country_name'] = undefined;
+  /**
+   * The customer's email address
+   * @member {String} email
+   */
+  exports.prototype['email'] = undefined;
+  /**
    * The amount of federal tax to add (increases final price of invoice even if using price override). Minimum 0
    * @member {Number} federal_tax
    */
@@ -151,10 +271,20 @@
    */
   exports.prototype['item_notes'] = undefined;
   /**
+   * The customer's name prefix
+   * @member {String} name_prefix
+   */
+  exports.prototype['name_prefix'] = undefined;
+  /**
    * The amount already paid. Must match final price to complete purchase. Ignored for non-paid endpoints. Minimum 0
    * @member {Number} paid_amount
    */
   exports.prototype['paid_amount'] = undefined;
+  /**
+   * The postal code for the customer's shipping address
+   * @member {String} postal_code
+   */
+  exports.prototype['postal_code'] = undefined;
   /**
    * Override the price of an item, if the behavior configuration permits it. Do not send if taking standard pricing. Minimum 0
    * @member {Number} price_override
@@ -165,6 +295,11 @@
    * @member {String} sku
    */
   exports.prototype['sku'] = undefined;
+  /**
+   * The state for the customer's shipping address
+   * @member {String} state_name
+   */
+  exports.prototype['state_name'] = undefined;
   /**
    * The amount of state tax to add (increases final price of invoice even if using price override). Minimum 0
    * @member {Number} state_tax

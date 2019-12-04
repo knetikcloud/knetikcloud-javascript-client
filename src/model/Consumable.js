@@ -37,7 +37,7 @@
   /**
    * The Consumable model module.
    * @module model/Consumable
-   * @version 3.0.273
+   * @version 3.0.274
    */
 
   /**

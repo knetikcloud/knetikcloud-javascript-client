@@ -34,7 +34,7 @@
   /**
    * Devices service.
    * @module api/DevicesApi
-   * @version 3.0.273
+   * @version 3.0.274
    */
 
   /**

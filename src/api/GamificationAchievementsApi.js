@@ -34,7 +34,7 @@
   /**
    * GamificationAchievements service.
    * @module api/GamificationAchievementsApi
-   * @version 3.0.273
+   * @version 3.0.274
    */
 
   /**

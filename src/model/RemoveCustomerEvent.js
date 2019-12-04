@@ -37,7 +37,7 @@
   /**
    * The RemoveCustomerEvent model module.
    * @module model/RemoveCustomerEvent
-   * @version 3.0.273
+   * @version 3.0.274
    */
 
   /**

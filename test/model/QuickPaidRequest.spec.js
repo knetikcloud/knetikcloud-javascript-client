@@ -63,6 +63,78 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property address1 (base name: "address1")', function() {
+      // uncomment below and update the code to test the property address1
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property address2 (base name: "address2")', function() {
+      // uncomment below and update the code to test the property address2
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billingAddress1 (base name: "billing_address1")', function() {
+      // uncomment below and update the code to test the property billingAddress1
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billingAddress2 (base name: "billing_address2")', function() {
+      // uncomment below and update the code to test the property billingAddress2
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billingCityName (base name: "billing_city_name")', function() {
+      // uncomment below and update the code to test the property billingCityName
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billingCountryName (base name: "billing_country_name")', function() {
+      // uncomment below and update the code to test the property billingCountryName
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billingFullName (base name: "billing_full_name")', function() {
+      // uncomment below and update the code to test the property billingFullName
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billingPostalCode (base name: "billing_postal_code")', function() {
+      // uncomment below and update the code to test the property billingPostalCode
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property billingStateName (base name: "billing_state_name")', function() {
+      // uncomment below and update the code to test the property billingStateName
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cityName (base name: "city_name")', function() {
+      // uncomment below and update the code to test the property cityName
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property countryName (base name: "country_name")', function() {
+      // uncomment below and update the code to test the property countryName
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property email (base name: "email")', function() {
+      // uncomment below and update the code to test the property email
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property federalTax (base name: "federal_tax")', function() {
       // uncomment below and update the code to test the property federalTax
       //var instane = new KnetikCloud.QuickPaidRequest();
@@ -81,8 +153,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property namePrefix (base name: "name_prefix")', function() {
+      // uncomment below and update the code to test the property namePrefix
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property paidAmount (base name: "paid_amount")', function() {
       // uncomment below and update the code to test the property paidAmount
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property postalCode (base name: "postal_code")', function() {
+      // uncomment below and update the code to test the property postalCode
       //var instane = new KnetikCloud.QuickPaidRequest();
       //expect(instance).to.be();
     });
@@ -95,6 +179,12 @@
 
     it('should have the property sku (base name: "sku")', function() {
       // uncomment below and update the code to test the property sku
+      //var instane = new KnetikCloud.QuickPaidRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property stateName (base name: "state_name")', function() {
+      // uncomment below and update the code to test the property stateName
       //var instane = new KnetikCloud.QuickPaidRequest();
       //expect(instance).to.be();
     });

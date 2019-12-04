@@ -37,7 +37,7 @@
   /**
    * The PayBySavedMethodRequest model module.
    * @module model/PayBySavedMethodRequest
-   * @version 3.0.273
+   * @version 3.0.274
    */
 
   /**

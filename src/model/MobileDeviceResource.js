@@ -37,7 +37,7 @@
   /**
    * The MobileDeviceResource model module.
    * @module model/MobileDeviceResource
-   * @version 3.0.273
+   * @version 3.0.274
    */
 
   /**

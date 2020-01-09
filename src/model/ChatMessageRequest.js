@@ -37,7 +37,7 @@
   /**
    * The ChatMessageRequest model module.
    * @module model/ChatMessageRequest
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

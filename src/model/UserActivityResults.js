@@ -37,7 +37,7 @@
   /**
    * The UserActivityResults model module.
    * @module model/UserActivityResults
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

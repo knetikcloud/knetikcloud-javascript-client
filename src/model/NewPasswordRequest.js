@@ -37,7 +37,7 @@
   /**
    * The NewPasswordRequest model module.
    * @module model/NewPasswordRequest
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

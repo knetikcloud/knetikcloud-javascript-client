@@ -37,7 +37,7 @@
   /**
    * The StoreItem model module.
    * @module model/StoreItem
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

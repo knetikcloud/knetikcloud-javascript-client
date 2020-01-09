@@ -37,7 +37,7 @@
   /**
    * The Sku model module.
    * @module model/Sku
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

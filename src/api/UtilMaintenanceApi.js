@@ -34,7 +34,7 @@
   /**
    * UtilMaintenance service.
    * @module api/UtilMaintenanceApi
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

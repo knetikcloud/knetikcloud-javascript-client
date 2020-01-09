@@ -37,7 +37,7 @@
   /**
    * The VideoGroupProperty model module.
    * @module model/VideoGroupProperty
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The CacheClearEvent model module.
    * @module model/CacheClearEvent
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

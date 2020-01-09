@@ -34,7 +34,7 @@
   /**
    * MediaVideos service.
    * @module api/MediaVideosApi
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

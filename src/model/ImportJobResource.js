@@ -37,7 +37,7 @@
   /**
    * The ImportJobResource model module.
    * @module model/ImportJobResource
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

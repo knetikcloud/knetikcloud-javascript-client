@@ -37,7 +37,7 @@
   /**
    * The PageResourcestring model module.
    * @module model/PageResourcestring
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

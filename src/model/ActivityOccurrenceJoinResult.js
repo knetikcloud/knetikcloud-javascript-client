@@ -37,7 +37,7 @@
   /**
    * The ActivityOccurrenceJoinResult model module.
    * @module model/ActivityOccurrenceJoinResult
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

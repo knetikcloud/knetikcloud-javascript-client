@@ -34,7 +34,7 @@
   /**
    * Locations service.
    * @module api/LocationsApi
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

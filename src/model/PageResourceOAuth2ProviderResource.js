@@ -37,7 +37,7 @@
   /**
    * The PageResourceOAuth2ProviderResource model module.
    * @module model/PageResourceOAuth2ProviderResource
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The FileProperty model module.
    * @module model/FileProperty
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

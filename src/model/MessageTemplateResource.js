@@ -37,7 +37,7 @@
   /**
    * The MessageTemplateResource model module.
    * @module model/MessageTemplateResource
-   * @version 3.0.274
+   * @version 3.0.2
    */
 
   /**

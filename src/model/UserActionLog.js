@@ -37,7 +37,7 @@
   /**
    * The UserActionLog model module.
    * @module model/UserActionLog
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

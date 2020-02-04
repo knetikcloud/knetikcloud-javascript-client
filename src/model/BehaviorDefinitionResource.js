@@ -37,7 +37,7 @@
   /**
    * The BehaviorDefinitionResource model module.
    * @module model/BehaviorDefinitionResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

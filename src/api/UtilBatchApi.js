@@ -34,7 +34,7 @@
   /**
    * UtilBatch service.
    * @module api/UtilBatchApi
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

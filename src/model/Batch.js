@@ -37,7 +37,7 @@
   /**
    * The Batch model module.
    * @module model/Batch
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

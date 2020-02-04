@@ -37,7 +37,7 @@
   /**
    * The InnerQuery model module.
    * @module model/InnerQuery
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

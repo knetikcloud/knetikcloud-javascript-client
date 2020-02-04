@@ -37,7 +37,7 @@
   /**
    * The MonitoringMetricResource model module.
    * @module model/MonitoringMetricResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

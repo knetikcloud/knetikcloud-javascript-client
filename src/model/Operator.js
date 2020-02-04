@@ -37,7 +37,7 @@
   /**
    * The Operator model module.
    * @module model/Operator
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

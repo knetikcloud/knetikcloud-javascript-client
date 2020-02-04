@@ -435,6 +435,7 @@ var apiInstance = new KnetikCloud.UsersInventoryApi();
 
 var opts = { 
   'filterTemplate': "filterTemplate_example", // String | Filter for entitlements using a specified template
+  'filterNameSearch': "filterNameSearch_example", // String | Filter for items whose name starts with a given string.
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -452,6 +453,7 @@ apiInstance.getEntitlementItems(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterTemplate** | **String**| Filter for entitlements using a specified template | [optional] 
+ **filterNameSearch** | **String**| Filter for items whose name starts with a given string. | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:ASC]

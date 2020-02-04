@@ -37,7 +37,7 @@
   /**
    * The ActionVariableResource model module.
    * @module model/ActionVariableResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The RefundRequest model module.
    * @module model/RefundRequest
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

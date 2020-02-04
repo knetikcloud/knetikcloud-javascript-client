@@ -37,7 +37,7 @@
   /**
    * The RewardSetResource model module.
    * @module model/RewardSetResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

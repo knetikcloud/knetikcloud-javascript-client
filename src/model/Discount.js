@@ -37,7 +37,7 @@
   /**
    * The Discount model module.
    * @module model/Discount
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

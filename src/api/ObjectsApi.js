@@ -34,7 +34,7 @@
   /**
    * Objects service.
    * @module api/ObjectsApi
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**
@@ -346,6 +346,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} templateId The id of the template to get objects for
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterNameSearch Filter for items whose name starts with a given string.
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
@@ -365,6 +366,7 @@
         'template_id': templateId
       };
       var queryParams = {
+        'filter_name_search': opts['filterNameSearch'],
         'size': opts['size'],
         'page': opts['page'],
         'order': opts['order'],
@@ -393,6 +395,7 @@
      * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} templateId The id of the template to get objects for
      * @param {Object} opts Optional parameters
+     * @param {String} opts.filterNameSearch Filter for items whose name starts with a given string.
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)

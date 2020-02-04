@@ -37,7 +37,7 @@
   /**
    * The ListPropertyDefinitionResource model module.
    * @module model/ListPropertyDefinitionResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

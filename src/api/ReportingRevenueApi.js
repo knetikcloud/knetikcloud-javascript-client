@@ -34,7 +34,7 @@
   /**
    * ReportingRevenue service.
    * @module api/ReportingRevenueApi
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

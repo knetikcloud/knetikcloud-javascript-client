@@ -37,7 +37,7 @@
   /**
    * The BareChallengeActivityResource model module.
    * @module model/BareChallengeActivityResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

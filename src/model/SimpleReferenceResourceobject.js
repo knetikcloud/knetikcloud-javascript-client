@@ -37,7 +37,7 @@
   /**
    * The SimpleReferenceResourceobject model module.
    * @module model/SimpleReferenceResourceobject
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

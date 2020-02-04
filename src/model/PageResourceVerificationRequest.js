@@ -37,7 +37,7 @@
   /**
    * The PageResourceVerificationRequest model module.
    * @module model/PageResourceVerificationRequest
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

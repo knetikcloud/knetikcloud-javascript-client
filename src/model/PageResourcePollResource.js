@@ -37,7 +37,7 @@
   /**
    * The PageResourcePollResource model module.
    * @module model/PageResourcePollResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The SubscriptionResource model module.
    * @module model/SubscriptionResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The MapPropertyDefinitionResource model module.
    * @module model/MapPropertyDefinitionResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

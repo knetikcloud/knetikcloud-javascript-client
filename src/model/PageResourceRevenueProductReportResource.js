@@ -37,7 +37,7 @@
   /**
    * The PageResourceRevenueProductReportResource model module.
    * @module model/PageResourceRevenueProductReportResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

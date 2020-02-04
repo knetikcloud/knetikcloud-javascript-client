@@ -37,7 +37,7 @@
   /**
    * The BooleanResource model module.
    * @module model/BooleanResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

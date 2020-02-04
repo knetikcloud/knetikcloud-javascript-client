@@ -37,7 +37,7 @@
   /**
    * The AccessEntryResource model module.
    * @module model/AccessEntryResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The Schedule model module.
    * @module model/Schedule
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

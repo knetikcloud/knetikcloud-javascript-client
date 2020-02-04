@@ -37,7 +37,7 @@
   /**
    * The ReindexRequest model module.
    * @module model/ReindexRequest
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The PageResourceFlagReportResource model module.
    * @module model/PageResourceFlagReportResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

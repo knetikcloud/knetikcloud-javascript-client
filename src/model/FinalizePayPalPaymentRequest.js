@@ -37,7 +37,7 @@
   /**
    * The FinalizePayPalPaymentRequest model module.
    * @module model/FinalizePayPalPaymentRequest
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The Spendable model module.
    * @module model/Spendable
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

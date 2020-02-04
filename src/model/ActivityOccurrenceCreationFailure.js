@@ -37,7 +37,7 @@
   /**
    * The ActivityOccurrenceCreationFailure model module.
    * @module model/ActivityOccurrenceCreationFailure
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

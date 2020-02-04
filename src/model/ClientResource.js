@@ -37,7 +37,7 @@
   /**
    * The ClientResource model module.
    * @module model/ClientResource
-   * @version 3.0.2
+   * @version 3.0.3
    */
 
   /**

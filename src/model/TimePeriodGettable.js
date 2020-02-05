@@ -37,7 +37,7 @@
   /**
    * The TimePeriodGettable model module.
    * @module model/TimePeriodGettable
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The SubscriptionCreditResource model module.
    * @module model/SubscriptionCreditResource
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

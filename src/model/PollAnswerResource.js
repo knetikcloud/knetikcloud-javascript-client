@@ -37,7 +37,7 @@
   /**
    * The PollAnswerResource model module.
    * @module model/PollAnswerResource
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

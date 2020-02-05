@@ -37,7 +37,7 @@
   /**
    * The InventoryStatusWrapper model module.
    * @module model/InventoryStatusWrapper
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

@@ -37,7 +37,7 @@
   /**
    * The UserItemLogResource model module.
    * @module model/UserItemLogResource
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

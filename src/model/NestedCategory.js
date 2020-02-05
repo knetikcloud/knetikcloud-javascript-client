@@ -37,7 +37,7 @@
   /**
    * The NestedCategory model module.
    * @module model/NestedCategory
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

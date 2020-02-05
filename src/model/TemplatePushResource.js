@@ -37,7 +37,7 @@
   /**
    * The TemplatePushResource model module.
    * @module model/TemplatePushResource
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

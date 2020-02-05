@@ -37,7 +37,7 @@
   /**
    * The ActivityResource model module.
    * @module model/ActivityResource
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

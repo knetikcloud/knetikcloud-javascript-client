@@ -37,7 +37,7 @@
   /**
    * The AmazonS3Activity model module.
    * @module model/AmazonS3Activity
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

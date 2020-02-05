@@ -37,7 +37,7 @@
   /**
    * The TemplateEmailResource model module.
    * @module model/TemplateEmailResource
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

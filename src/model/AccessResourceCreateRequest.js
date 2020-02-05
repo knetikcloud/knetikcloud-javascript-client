@@ -37,7 +37,7 @@
   /**
    * The AccessResourceCreateRequest model module.
    * @module model/AccessResourceCreateRequest
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

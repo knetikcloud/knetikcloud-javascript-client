@@ -34,7 +34,7 @@
   /**
    * Taxes service.
    * @module api/TaxesApi
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

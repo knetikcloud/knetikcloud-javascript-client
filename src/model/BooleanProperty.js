@@ -37,7 +37,7 @@
   /**
    * The BooleanProperty model module.
    * @module model/BooleanProperty
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

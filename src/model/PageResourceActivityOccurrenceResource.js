@@ -37,7 +37,7 @@
   /**
    * The PageResourceActivityOccurrenceResource model module.
    * @module model/PageResourceActivityOccurrenceResource
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

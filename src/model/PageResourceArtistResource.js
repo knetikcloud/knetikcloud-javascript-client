@@ -37,7 +37,7 @@
   /**
    * The PageResourceArtistResource model module.
    * @module model/PageResourceArtistResource
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

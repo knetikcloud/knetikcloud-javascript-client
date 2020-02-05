@@ -37,7 +37,7 @@
   /**
    * The EntitlementItem model module.
    * @module model/EntitlementItem
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

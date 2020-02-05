@@ -34,7 +34,7 @@
   /**
    * Chat service.
    * @module api/ChatApi
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

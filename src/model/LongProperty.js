@@ -37,7 +37,7 @@
   /**
    * The LongProperty model module.
    * @module model/LongProperty
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

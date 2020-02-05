@@ -37,7 +37,7 @@
   /**
    * The ActivityOccurrenceResults model module.
    * @module model/ActivityOccurrenceResults
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

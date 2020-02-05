@@ -37,7 +37,7 @@
   /**
    * The PageResourceQuestionResource model module.
    * @module model/PageResourceQuestionResource
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

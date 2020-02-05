@@ -37,7 +37,7 @@
   /**
    * The ForwardLog model module.
    * @module model/ForwardLog
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**

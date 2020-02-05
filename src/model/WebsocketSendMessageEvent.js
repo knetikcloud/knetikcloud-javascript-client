@@ -37,7 +37,7 @@
   /**
    * The WebsocketSendMessageEvent model module.
    * @module model/WebsocketSendMessageEvent
-   * @version 3.0.3
+   * @version 3.1.4
    */
 
   /**
